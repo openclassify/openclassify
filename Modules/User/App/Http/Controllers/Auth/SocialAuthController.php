@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Modules\User\App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Modules\User\App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,24 +10,33 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
+use Modules\User\App\Models\User;
+use Modules\User\App\Support\AuthProviderCatalog;
+use Modules\User\App\Support\AuthRedirector;
 use Throwable;
 
 class SocialAuthController extends Controller
 {
-    private array $allowedProviders = ['google', 'facebook', 'apple'];
+    public function __construct(
+        private AuthProviderCatalog $providers,
+        private AuthRedirector $redirector,
+    ) {
+    }
 
-    public function redirect(string $provider): RedirectResponse
+    public function redirect(Request $request, string $provider): RedirectResponse
     {
-        abort_unless($this->isProviderAllowed($provider), 404);
-        abort_unless($this->isProviderEnabled($provider), 404);
+        abort_unless($this->providers->isAllowed($provider), 404);
+        abort_unless($this->providers->isEnabled($provider), 404);
+
+        $this->redirector->rememberQueryTarget($request);
 
         return $this->driver($provider)->redirect();
     }
 
     public function callback(Request $request, string $provider): RedirectResponse
     {
-        abort_unless($this->isProviderAllowed($provider), 404);
-        abort_unless($this->isProviderEnabled($provider), 404);
+        abort_unless($this->providers->isAllowed($provider), 404);
+        abort_unless($this->providers->isEnabled($provider), 404);
 
         try {
             $oauthUser = $this->driver($provider)->user();
@@ -42,6 +50,16 @@ class SocialAuthController extends Controller
                 ->withErrors(['email' => __('Unable to read social account identity.')]);
         }
 
+        $user = $this->resolveUser($provider, $oauthUser);
+
+        Auth::guard('web')->login($user, true);
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('dashboard', absolute: false));
+    }
+
+    private function resolveUser(string $provider, mixed $oauthUser): User
+    {
         $socialiteUser = DB::table('socialite_users')
             ->where('provider', $provider)
             ->where('provider_id', (string) $oauthUser->getId())
@@ -81,13 +99,10 @@ class SocialAuthController extends Controller
             ],
         );
 
-        Auth::guard('web')->login($user, true);
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
+        return $user;
     }
 
-    private function driver(string $provider)
+    private function driver(string $provider): mixed
     {
         $driver = Socialite::driver($provider)
             ->redirectUrl(route('auth.social.callback', ['provider' => $provider], absolute: true));
@@ -97,17 +112,5 @@ class SocialAuthController extends Controller
         }
 
         return $driver;
-    }
-
-    private function isProviderAllowed(string $provider): bool
-    {
-        return in_array($provider, $this->allowedProviders, true);
-    }
-
-    private function isProviderEnabled(string $provider): bool
-    {
-        return (bool) config("services.{$provider}.enabled", false)
-            && filled(config("services.{$provider}.client_id"))
-            && filled(config("services.{$provider}.client_secret"));
     }
 }

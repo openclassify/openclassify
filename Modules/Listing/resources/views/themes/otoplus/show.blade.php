@@ -17,7 +17,7 @@
 
     $locationLabel = collect([$listing->city, $listing->country])
         ->filter(fn ($value) => is_string($value) && trim($value) !== '')
-        ->implode(', ');
+        ->implode(' / ');
 
     $publishedAt = $listing->created_at?->format('M j, Y') ?? 'Recently';
     $postedAgo = $listing->created_at?->diffForHumans() ?? 'Listed recently';
@@ -37,6 +37,7 @@
         ? 'Member since '.$listing->user->created_at->format('M Y')
         : 'New seller';
 
+    $referenceCode = '#'.str_pad((string) $listing->getKey(), 8, '0', STR_PAD_LEFT);
     $canContactSeller = $listing->user && (! auth()->check() || (int) auth()->id() !== (int) $listing->user_id);
     $isOwnListing = auth()->check() && (int) auth()->id() === (int) $listing->user_id;
 
@@ -52,35 +53,31 @@
 
     $mapQuery = filled($listing->latitude) && filled($listing->longitude)
         ? trim((string) $listing->latitude).','.trim((string) $listing->longitude)
-        : $locationLabel;
+        : str_replace(' / ', ', ', $locationLabel);
     $mapUrl = $mapQuery !== ''
         ? 'https://www.google.com/maps/search/?api=1&query='.urlencode($mapQuery)
         : null;
 
     $reportEmail = config('mail.from.address', 'support@example.com');
-    $reportUrl = 'mailto:'.$reportEmail.'?subject='.rawurlencode('Report listing #'.$listing->getKey());
+    $reportUrl = 'mailto:'.$reportEmail.'?subject='.rawurlencode('Report listing '.$referenceCode);
     $shareUrl = route('listings.show', $listing);
 
-    $overviewItems = collect([
-        ['label' => 'Listing ID', 'value' => '#'.$listing->getKey()],
-        ['label' => 'Category', 'value' => $listing->category?->name ?? 'General'],
-        ['label' => 'Location', 'value' => $locationLabel !== '' ? $locationLabel : 'Not specified'],
+    $specRows = collect([
+        ['label' => 'Price', 'value' => $priceLabel],
         ['label' => 'Published', 'value' => $publishedAt],
+        ['label' => 'Listing ID', 'value' => $referenceCode],
+        ['label' => 'Category', 'value' => $listing->category?->name ?? 'General'],
+        ['label' => 'Location', 'value' => $locationLabel !== '' ? str_replace(' / ', ' / ', $locationLabel) : 'Not specified'],
     ])
-        ->filter(fn (array $item) => trim((string) $item['value']) !== '')
+        ->merge(
+            collect($presentableCustomFields ?? [])->map(fn (array $field) => [
+                'label' => trim((string) ($field['label'] ?? '')),
+                'value' => trim((string) ($field['value'] ?? '')),
+            ])
+        )
+        ->filter(fn (array $item) => $item['label'] !== '' && $item['value'] !== '')
+        ->unique(fn (array $item) => mb_strtolower($item['label']))
         ->values();
-
-    $detailItems = collect($presentableCustomFields ?? [])
-        ->map(fn (array $field) => [
-            'label' => trim((string) ($field['label'] ?? '')),
-            'value' => trim((string) ($field['value'] ?? '')),
-        ])
-        ->filter(fn (array $field) => $field['label'] !== '' && $field['value'] !== '')
-        ->values();
-
-    if ($detailItems->isEmpty()) {
-        $detailItems = $overviewItems;
-    }
 @endphp
 
 <div class="lt-wrap">
@@ -94,155 +91,227 @@
         <span>{{ $displayTitle }}</span>
     </nav>
 
+    <section class="lt-card lt-hero-card">
+        <div class="lt-hero-main">
+            <div class="lt-hero-copy">
+                <p class="lt-overline">{{ $listing->category?->name ?? 'Marketplace listing' }}</p>
+                <h1 class="lt-hero-title">{{ $displayTitle }}</h1>
+                <div class="lt-hero-meta">
+                    <span>{{ $referenceCode }}</span>
+                    <span>{{ $sellerName }}</span>
+                    <span>{{ $postedAgo }}</span>
+                </div>
+            </div>
+
+            <div class="lt-hero-side">
+                <div class="lt-hero-price">{{ $priceLabel }}</div>
+                @if($locationLabel !== '')
+                    <div class="lt-address-chip">{{ $locationLabel }}</div>
+                @endif
+
+                <div class="lt-hero-tools">
+                    <button
+                        type="button"
+                        class="lt-link-action"
+                        data-listing-share
+                        data-share-url="{{ $shareUrl }}"
+                        data-share-title="{{ $displayTitle }}"
+                    >
+                        Share
+                    </button>
+
+                    @auth
+                        <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}" class="lt-inline-form">
+                            @csrf
+                            <button type="submit" class="lt-link-action">
+                                {{ $isListingFavorited ? 'Saved' : 'Save listing' }}
+                            </button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="lt-link-action">Save listing</a>
+                    @endauth
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="lt-grid">
         <div class="lt-main-column">
-            <section class="lt-card lt-media-card" data-gallery>
-                <div class="lt-gallery-main">
-                    <div class="lt-gallery-top">
-                        <div class="lt-gallery-pills">
-                            <span class="lt-badge lt-badge-soft">{{ $listing->category?->name ?? 'Listing' }}</span>
-                            @if($listing->is_featured)
-                                <span class="lt-badge">Featured</span>
-                            @endif
-                            @if($galleryCount > 0)
-                                <span class="lt-badge lt-badge-muted">{{ $galleryCount }} {{ \Illuminate\Support\Str::plural('photo', $galleryCount) }}</span>
-                            @endif
-                        </div>
+            <div class="lt-media-spec-grid">
+                <section class="lt-card lt-media-card" data-gallery>
+                    <div class="lt-gallery-main">
+                        <div class="lt-gallery-top">
+                            <div class="lt-gallery-spacer"></div>
 
-                        <div class="lt-gallery-utility">
-                            <button
-                                type="button"
-                                class="lt-icon-btn"
-                                data-listing-share
-                                data-share-url="{{ $shareUrl }}"
-                                data-share-title="{{ $displayTitle }}"
-                                aria-label="Share listing"
-                            >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                                    <path d="M15 8a3 3 0 1 0-2.83-4H12a3 3 0 0 0 .17 1L8.91 6.94a3 3 0 0 0-1.91-.69 3 3 0 1 0 1.91 5.31l3.27 1.94A3 3 0 0 0 12 15a3 3 0 1 0 2.82 4H15a3 3 0 0 0-.17-1l-3.26-1.94a3 3 0 0 0 0-3.12L14.83 10A3 3 0 0 0 15 10h0a3 3 0 0 0 0-2Z"/>
-                                </svg>
-                            </button>
+                            <div class="lt-gallery-utility">
+                                <button
+                                    type="button"
+                                    class="lt-icon-btn"
+                                    data-listing-share
+                                    data-share-url="{{ $shareUrl }}"
+                                    data-share-title="{{ $displayTitle }}"
+                                    aria-label="Share listing"
+                                >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                                        <path d="M15 8a3 3 0 1 0-2.83-4H12a3 3 0 0 0 .17 1L8.91 6.94a3 3 0 0 0-1.91-.69 3 3 0 1 0 1.91 5.31l3.27 1.94A3 3 0 0 0 12 15a3 3 0 1 0 2.82 4H15a3 3 0 0 0-.17-1l-3.26-1.94a3 3 0 0 0 0-3.12L14.83 10A3 3 0 0 0 15 10h0a3 3 0 0 0 0-2Z"/>
+                                    </svg>
+                                </button>
 
-                            @auth
-                                <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
-                                    @csrf
-                                    <button
-                                        type="submit"
-                                        class="lt-icon-btn {{ $isListingFavorited ? 'is-active' : '' }}"
-                                        aria-label="{{ $isListingFavorited ? 'Remove from saved listings' : 'Save listing' }}"
-                                    >
+                                @auth
+                                    <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
+                                        @csrf
+                                        <button
+                                            type="submit"
+                                            class="lt-icon-btn {{ $isListingFavorited ? 'is-active' : '' }}"
+                                            aria-label="{{ $isListingFavorited ? 'Remove from saved listings' : 'Save listing' }}"
+                                        >
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                                                <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('login') }}" class="lt-icon-btn" aria-label="Sign in to save this listing">
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
                                             <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
                                         </svg>
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ route('login') }}" class="lt-icon-btn" aria-label="Sign in to save this listing">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                                        <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
-                                    </svg>
-                                </a>
-                            @endauth
+                                    </a>
+                                @endauth
+                            </div>
                         </div>
+
+                        @if($initialGalleryImage)
+                            <img src="{{ $initialGalleryImage }}" alt="{{ $displayTitle }}" data-gallery-main>
+                        @else
+                            <div class="lt-gallery-main-empty">No photos uploaded yet.</div>
+                        @endif
+
+                        @if($galleryCount > 1)
+                            <button type="button" class="lt-gallery-nav" data-gallery-prev aria-label="Previous photo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m15 18-6-6 6-6"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="lt-gallery-nav" data-gallery-next aria-label="Next photo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m9 18 6-6-6-6"/>
+                                </svg>
+                            </button>
+                        @endif
+
+                        @if($galleryCount > 0)
+                            <div class="lt-gallery-count">
+                                <span data-gallery-current>1</span> / <span>{{ $galleryCount }}</span>
+                            </div>
+                        @endif
                     </div>
 
-                    @if($initialGalleryImage)
-                        <img src="{{ $initialGalleryImage }}" alt="{{ $displayTitle }}" data-gallery-main>
-                    @else
-                        <div class="lt-gallery-main-empty">No photos uploaded yet.</div>
+                    @if($galleryImages !== [])
+                        <div class="lt-thumbs" data-gallery-thumbs>
+                            @foreach($galleryImages as $index => $image)
+                                <button
+                                    type="button"
+                                    class="lt-thumb {{ $index === 0 ? 'is-active' : '' }}"
+                                    data-gallery-thumb
+                                    data-gallery-index="{{ $index }}"
+                                    data-gallery-src="{{ $image }}"
+                                    aria-label="Open photo {{ $index + 1 }}"
+                                >
+                                    <img src="{{ $image }}" alt="{{ $displayTitle }} {{ $index + 1 }}">
+                                </button>
+                            @endforeach
+                        </div>
                     @endif
+                </section>
 
-                    @if($galleryCount > 1)
-                        <button type="button" class="lt-gallery-nav" data-gallery-prev aria-label="Previous photo">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m15 18-6-6 6-6"/>
-                            </svg>
-                        </button>
-                        <button type="button" class="lt-gallery-nav" data-gallery-next aria-label="Next photo">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m9 18 6-6-6-6"/>
-                            </svg>
-                        </button>
-                    @endif
+                <div class="lt-info-column">
+                    <section class="lt-card lt-spec-card lt-desktop-only">
+                        <div class="lt-card-head">
+                            <div>
+                                <h2 class="lt-section-title">Listing details</h2>
+                                <p class="lt-section-copy">Everything important, laid out cleanly.</p>
+                            </div>
+                        </div>
+
+                        @if($locationLabel !== '')
+                            <div class="lt-address-chip lt-address-chip-soft">{{ $locationLabel }}</div>
+                        @endif
+
+                        <div class="lt-spec-table">
+                            @foreach($specRows as $row)
+                                <div class="lt-spec-row">
+                                    <span>{{ $row['label'] }}</span>
+                                    <strong>{{ $row['value'] }}</strong>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <a href="{{ $reportUrl }}" class="lt-inline-link">Report this listing</a>
+                    </section>
+
+                    <section class="lt-card lt-description-card lt-desktop-only">
+                        <div class="lt-card-head">
+                            <div>
+                                <h2 class="lt-section-title">Description</h2>
+                                <p class="lt-section-copy">Seller notes, condition, and extra context.</p>
+                            </div>
+                        </div>
+
+                        <div class="lt-description">
+                            {!! nl2br(e($displayDescription)) !!}
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <section class="lt-card lt-mobile-seller-card lt-mobile-only">
+                <div class="lt-mobile-seller-row">
+                    <div class="lt-avatar">{{ $sellerInitial !== '' ? $sellerInitial : 'S' }}</div>
+                    <div>
+                        <p class="lt-mobile-seller-name">{{ $sellerName }}</p>
+                        <p class="lt-mobile-seller-meta">{{ $sellerMemberText }}</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lt-card lt-mobile-tabs lt-mobile-only" data-detail-tabs>
+                <div class="lt-tab-list" role="tablist" aria-label="Listing sections">
+                    <button type="button" class="lt-tab-button is-active" data-detail-tab-button data-tab="details" role="tab" aria-selected="true">
+                        Listing details
+                    </button>
+                    <button type="button" class="lt-tab-button" data-detail-tab-button data-tab="description" role="tab" aria-selected="false">
+                        Description
+                    </button>
                 </div>
 
-                @if($galleryImages !== [])
-                    <div class="lt-thumbs" data-gallery-thumbs>
-                        @foreach($galleryImages as $index => $image)
-                            <button
-                                type="button"
-                                class="lt-thumb {{ $index === 0 ? 'is-active' : '' }}"
-                                data-gallery-thumb
-                                data-gallery-index="{{ $index }}"
-                                data-gallery-src="{{ $image }}"
-                                aria-label="Open photo {{ $index + 1 }}"
-                            >
-                                <img src="{{ $image }}" alt="{{ $displayTitle }} {{ $index + 1 }}">
-                            </button>
+                <div class="lt-tab-panel is-active" data-detail-tab-panel data-panel="details" role="tabpanel">
+                    @if($locationLabel !== '')
+                        <div class="lt-address-chip lt-address-chip-soft">{{ $locationLabel }}</div>
+                    @endif
+
+                    <div class="lt-spec-table">
+                        @foreach($specRows as $row)
+                            <div class="lt-spec-row">
+                                <span>{{ $row['label'] }}</span>
+                                <strong>{{ $row['value'] }}</strong>
+                            </div>
                         @endforeach
                     </div>
-                @endif
-            </section>
+                </div>
 
-            <section class="lt-card lt-summary-card">
-                <div class="lt-summary-copy">
-                    <p class="lt-overline">{{ $listing->category?->name ?? 'Marketplace listing' }}</p>
-                    <div class="lt-price">{{ $priceLabel }}</div>
-                    <h1 class="lt-title">{{ $displayTitle }}</h1>
-                    <div class="lt-summary-meta-row">
-                        <span class="lt-summary-meta-item">{{ $locationLabel !== '' ? $locationLabel : 'Location not specified' }}</span>
-                        <span class="lt-summary-meta-item">{{ $publishedAt }}</span>
+                <div class="lt-tab-panel" data-detail-tab-panel data-panel="description" role="tabpanel">
+                    <div class="lt-description">
+                        {!! nl2br(e($displayDescription)) !!}
                     </div>
-                    <p class="lt-subtitle">{{ $postedAgo }}</p>
-                </div>
-
-                <div class="lt-overview-grid">
-                    @foreach($overviewItems as $item)
-                        <div class="lt-overview-item">
-                            <span class="lt-overview-label">{{ $item['label'] }}</span>
-                            <strong class="lt-overview-value">{{ $item['value'] }}</strong>
-                        </div>
-                    @endforeach
-                </div>
-            </section>
-
-            <section class="lt-card lt-detail-card">
-                <div class="lt-section-head">
-                    <div>
-                        <h2 class="lt-section-title">Listing details</h2>
-                        <p class="lt-section-copy">A quick view of the important information.</p>
-                    </div>
-                </div>
-
-                <div class="lt-feature-grid">
-                    @foreach($detailItems as $field)
-                        <div class="lt-feature-item">
-                            <span>{{ $field['label'] }}</span>
-                            <strong>{{ $field['value'] }}</strong>
-                        </div>
-                    @endforeach
-                </div>
-            </section>
-
-            <section class="lt-card lt-detail-card">
-                <div class="lt-section-head">
-                    <div>
-                        <h2 class="lt-section-title">Description</h2>
-                        <p class="lt-section-copy">Condition notes, usage details, and seller context.</p>
-                    </div>
-                </div>
-
-                <div class="lt-description">
-                    {!! nl2br(e($displayDescription)) !!}
                 </div>
             </section>
 
             @if(($listingVideos ?? collect())->isNotEmpty())
-                <section class="lt-card lt-detail-card">
-                    <div class="lt-section-head">
+                <section class="lt-card lt-video-section">
+                    <div class="lt-card-head">
                         <div>
                             <h2 class="lt-section-title">Videos</h2>
-                            <p class="lt-section-copy">Extra media attached to this listing.</p>
+                            <p class="lt-section-copy">Additional media attached to the listing.</p>
                         </div>
                     </div>
 
@@ -258,8 +327,8 @@
             @endif
         </div>
 
-        <aside class="lt-card lt-side-card">
-            <div class="lt-seller-panel">
+        <aside class="lt-side-rail">
+            <section class="lt-card lt-side-card">
                 <div class="lt-seller-head">
                     <div class="lt-avatar">{{ $sellerInitial !== '' ? $sellerInitial : 'S' }}</div>
                     <div>
@@ -268,6 +337,22 @@
                         <div class="lt-seller-meta">{{ $sellerMemberText }}</div>
                     </div>
                 </div>
+
+                @if(filled($listing->contact_phone) || filled($listing->contact_email))
+                    <div class="lt-contact-panel">
+                        @if(filled($listing->contact_phone))
+                            <a href="tel:{{ preg_replace('/\s+/', '', (string) $listing->contact_phone) }}" class="lt-contact-primary">
+                                {{ $listing->contact_phone }}
+                            </a>
+                        @endif
+
+                        @if(filled($listing->contact_email))
+                            <a href="mailto:{{ $listing->contact_email }}" class="lt-contact-secondary">
+                                {{ $listing->contact_email }}
+                            </a>
+                        @endif
+                    </div>
+                @endif
 
                 <div class="lt-actions">
                     <div class="lt-row-2">
@@ -341,26 +426,13 @@
                         @endif
                     </div>
                 </div>
+            </section>
 
-                @if(filled($listing->contact_phone) || filled($listing->contact_email))
-                    <div class="lt-contact-strip">
-                        @if(filled($listing->contact_phone))
-                            <a href="tel:{{ preg_replace('/\s+/', '', (string) $listing->contact_phone) }}" class="lt-contact-link">
-                                {{ $listing->contact_phone }}
-                            </a>
-                        @endif
-
-                        @if(filled($listing->contact_email))
-                            <a href="mailto:{{ $listing->contact_email }}" class="lt-contact-link">
-                                {{ $listing->contact_email }}
-                            </a>
-                        @endif
-                    </div>
-                @endif
-
-                <a href="{{ $reportUrl }}" class="lt-report">Report this listing</a>
-                <div class="lt-policy">Buyer protection depends on the final agreement with the seller.</div>
-            </div>
+            <section class="lt-card lt-safety-card">
+                <h3 class="lt-safety-title">Safety tips</h3>
+                <p class="lt-safety-copy">Inspect the item in person, avoid sending money in advance, and confirm the seller identity before closing the deal.</p>
+                <a href="{{ $reportUrl }}" class="lt-inline-link">Report this listing</a>
+            </section>
         </aside>
     </div>
 
@@ -418,8 +490,10 @@
         <section class="lt-related">
             @if(($relatedListings ?? collect())->isNotEmpty())
                 <div class="lt-related-head">
-                    <h3 class="lt-related-title">Similar listings</h3>
-                    <p class="lt-related-copy">More listings with a similar feel and category mix.</p>
+                    <div>
+                        <h3 class="lt-related-title">Similar listings</h3>
+                        <p class="lt-related-copy">More listings with a similar category and visual profile.</p>
+                    </div>
                 </div>
 
                 <div class="lt-scroll-wrap" data-theme-scroll>
@@ -492,6 +566,7 @@
             const thumbButtons = Array.from(galleryRoot.querySelectorAll('[data-gallery-thumb]'));
             const prevButton = galleryRoot.querySelector('[data-gallery-prev]');
             const nextButton = galleryRoot.querySelector('[data-gallery-next]');
+            const currentCounter = galleryRoot.querySelector('[data-gallery-current]');
 
             if (!mainImage || thumbButtons.length === 0) {
                 return;
@@ -512,6 +587,10 @@
                 const src = thumbButtons[index].dataset.gallerySrc;
                 if (src) {
                     mainImage.src = src;
+                }
+
+                if (currentCounter) {
+                    currentCounter.textContent = String(activeIndex + 1);
                 }
 
                 thumbButtons.forEach((button, buttonIndex) => {
@@ -575,6 +654,27 @@
                 } catch (error) {
                     window.prompt('Copy this link', url);
                 }
+            });
+        });
+
+        document.querySelectorAll('[data-detail-tabs]').forEach((tabsRoot) => {
+            const buttons = Array.from(tabsRoot.querySelectorAll('[data-detail-tab-button]'));
+            const panels = Array.from(tabsRoot.querySelectorAll('[data-detail-tab-panel]'));
+
+            const activate = (target) => {
+                buttons.forEach((button) => {
+                    const active = button.dataset.tab === target;
+                    button.classList.toggle('is-active', active);
+                    button.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+
+                panels.forEach((panel) => {
+                    panel.classList.toggle('is-active', panel.dataset.panel === target);
+                });
+            };
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => activate(button.dataset.tab || 'details'));
             });
         });
     })();

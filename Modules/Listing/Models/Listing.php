@@ -23,6 +23,8 @@ class Listing extends Model implements HasMedia
 {
     use HasFactory, HasStates, InteractsWithMedia, LogsActivity;
 
+    private const DEFAULT_PANEL_EXPIRY_WINDOW_DAYS = 30;
+
     protected $fillable = [
         'title', 'description', 'price', 'currency', 'category_id',
         'user_id', 'status', 'images', 'custom_fields', 'slug',
@@ -240,8 +242,106 @@ class Listing extends Model implements HasMedia
 
         return [
             'all' => (int) $counts->sum(),
+            'active' => (int) ($counts['active'] ?? 0),
+            'pending' => (int) ($counts['pending'] ?? 0),
             'sold' => (int) ($counts['sold'] ?? 0),
             'expired' => (int) ($counts['expired'] ?? 0),
+        ];
+    }
+
+    public function panelPrimaryImageUrl(): ?string
+    {
+        $url = trim((string) $this->getFirstMediaUrl('listing-images'));
+
+        return $url !== '' ? $url : null;
+    }
+
+    public function panelPriceLabel(): string
+    {
+        if (is_null($this->price)) {
+            return 'Ücretsiz';
+        }
+
+        return number_format((float) $this->price, 2, ',', '.').' '.($this->currency ?? 'TL');
+    }
+
+    public function panelStatusMeta(): array
+    {
+        return match ($this->statusValue()) {
+            'sold' => [
+                'label' => 'Satıldı',
+                'badge_class' => 'is-success',
+                'hint' => 'İlan satıldı olarak işaretlendi.',
+            ],
+            'expired' => [
+                'label' => 'Süresi doldu',
+                'badge_class' => 'is-danger',
+                'hint' => 'Yeniden yayına alınmayı bekliyor.',
+            ],
+            'pending' => [
+                'label' => 'İncelemede',
+                'badge_class' => 'is-warning',
+                'hint' => 'Moderasyon onayı bekleniyor.',
+            ],
+            default => [
+                'label' => 'Yayında',
+                'badge_class' => 'is-primary',
+                'hint' => 'Şu anda ziyaretçilere görünüyor.',
+            ],
+        };
+    }
+
+    public function panelLocationLabel(): string
+    {
+        $parts = collect([
+            trim((string) $this->city),
+            trim((string) $this->country),
+        ])->filter()->values();
+
+        return $parts->isNotEmpty() ? $parts->implode(', ') : 'Konum belirtilmedi';
+    }
+
+    public function panelPublishedAt(): ?Carbon
+    {
+        $createdAt = $this->created_at?->copy();
+        $expiresAt = $this->expires_at?->copy();
+
+        if (! $createdAt) {
+            return $expiresAt;
+        }
+
+        if (! $expiresAt || $expiresAt->greaterThanOrEqualTo($createdAt)) {
+            return $createdAt;
+        }
+
+        return $expiresAt->subDays(self::DEFAULT_PANEL_EXPIRY_WINDOW_DAYS);
+    }
+
+    public function panelExpirySummary(): string
+    {
+        if (! $this->expires_at) {
+            return 'Süre sınırı yok';
+        }
+
+        $expiresAt = $this->expires_at->copy()->startOfDay();
+        $days = Carbon::today()->diffInDays($expiresAt, false);
+
+        return match (true) {
+            $days > 0 => $days.' gün kaldı',
+            $days === 0 => 'Bugün sona eriyor',
+            default => abs($days).' gün önce sona erdi',
+        };
+    }
+
+    public function panelVideoSummary(int $total, int $ready, int $pending): ?array
+    {
+        if ($total < 1) {
+            return null;
+        }
+
+        return [
+            'label' => $total.' video',
+            'detail' => $ready.' hazır'.($pending > 0 ? ', '.$pending.' işleniyor' : ''),
         ];
     }
 

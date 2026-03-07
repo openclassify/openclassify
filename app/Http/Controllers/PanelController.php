@@ -46,7 +46,7 @@ class PanelController extends Controller
                     VideoStatus::Processing->value,
                 ]),
             ])
-            ->when($search !== '', fn ($query) => $query->where('title', 'like', "%{$search}%"))
+            ->searchTerm($search)
             ->forPanelStatus($status)
             ->latest('id')
             ->paginate(10)

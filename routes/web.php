@@ -28,5 +28,3 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group(function () {
     Route::delete('/videos/{video}', [PanelController::class, 'destroyVideo'])->name('videos.destroy');
     Route::get('/my-profile', [PanelController::class, 'profile'])->name('profile.edit');
 });
-
-require __DIR__.'/auth.php';
