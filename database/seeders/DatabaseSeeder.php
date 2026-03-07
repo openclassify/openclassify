@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             \Modules\Location\Database\Seeders\LocationSeeder::class,
             \Modules\Category\Database\Seeders\CategorySeeder::class,
             \Modules\Listing\Database\Seeders\ListingCustomFieldSeeder::class,
+            \Modules\Listing\Database\Seeders\ListingSeeder::class,
         ]);
 
         if ((bool) config('demo.enabled') || (bool) config('demo.provisioning')) {

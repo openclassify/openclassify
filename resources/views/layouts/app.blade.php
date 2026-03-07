@@ -78,7 +78,7 @@
     'bg-slate-50' => $demoLandingMode,
     'bg-[#f5f5f7]' => $simplePage && ! $demoLandingMode,
 ])>
-    @if(!$demoLandingMode && $simplePage)
+    @if($simplePage)
     <nav class="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-2xl">
         <div class="mx-auto flex min-h-[76px] max-w-[1120px] items-center justify-between gap-4 px-4">
             <a href="{{ route('home') }}" class="oc-brand">
@@ -102,7 +102,7 @@
             </div>
         </div>
     </nav>
-    @elseif(!$demoLandingMode)
+    @else
     <nav class="market-nav-surface sticky top-0 z-50">
         <div class="oc-nav-wrap">
             <div class="oc-nav-main">
@@ -215,14 +215,12 @@
                         <button type="submit" class="oc-text-link">{{ __('messages.logout') }}</button>
                     </form>
                     @else
-                    @if(!$demoLandingMode)
                     <a href="{{ $loginRoute }}" class="oc-text-link oc-auth-link">
                         {{ __('messages.login') }}
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
                     </a>
-                    @endif
                     @endauth
                 </div>
             </div>
@@ -282,7 +280,6 @@
                                 </svg>
                             </a>
                             @else
-                            @if(!$demoLandingMode)
                             <a href="{{ $loginRoute }}" class="oc-mobile-menu-link">
                                 <span>Login</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,7 +292,6 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
                                 </svg>
                             </a>
-                            @endif
                             @endauth
                         </div>
                     </div>
@@ -341,14 +337,13 @@
         </div>
     </nav>
     @endif
-    @if(!$demoLandingMode && $demoRemainingLabel)
+    @if($demoRemainingLabel)
     <div class="sticky top-0 z-40 border-b border-amber-200 bg-amber-50/95 backdrop-blur-md">
         <div class="mx-auto flex min-h-12 max-w-[1320px] items-center justify-center px-4 py-2 text-center text-sm font-semibold text-amber-900">
             Demo auto deletes in {{ $demoRemainingLabel }}
         </div>
     </div>
     @endif
-    @unless($demoLandingMode)
     @if(session('success'))
     <div class="max-w-[1320px] mx-auto px-4 pt-3">
         <div class="bg-emerald-100 border border-emerald-300 text-emerald-800 px-4 py-3 rounded-xl text-sm">{{ session('success') }}</div>
@@ -359,12 +354,11 @@
         <div class="bg-rose-100 border border-rose-300 text-rose-700 px-4 py-3 rounded-xl text-sm">{{ session('error') }}</div>
     </div>
     @endif
-    @endunless
     <main @class([
         'site-main',
         'min-h-screen' => $demoLandingMode,
     ])>@yield('content')</main>
-    @if(!$demoLandingMode && !$simplePage)
+    @if(!$simplePage)
     <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200">
         <div class="max-w-[1320px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">

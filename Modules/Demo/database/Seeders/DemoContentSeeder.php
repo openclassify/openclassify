@@ -10,7 +10,6 @@ class DemoContentSeeder extends Seeder
     {
         $this->call([
             \Modules\User\Database\Seeders\AuthUserSeeder::class,
-            \Modules\Listing\Database\Seeders\ListingSeeder::class,
             \Modules\Listing\Database\Seeders\ListingPanelDemoSeeder::class,
             \Modules\Favorite\Database\Seeders\FavoriteDemoSeeder::class,
             \Modules\Conversation\Database\Seeders\ConversationDemoSeeder::class,

@@ -7,13 +7,12 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function edit(Request $request): View
+    public function edit(): RedirectResponse
     {
-        return view('user::profile.edit', ['user' => $request->user()]);
+        return redirect()->route('panel.profile.edit');
     }
 
     public function update(Request $request): RedirectResponse
