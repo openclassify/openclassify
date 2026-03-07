@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Modules\Listing\Models\Listing;
+use Modules\S3\Support\MediaStorage;
 use Modules\User\App\Models\User;
 use Modules\Video\Enums\VideoStatus;
 use Modules\Video\Jobs\ProcessVideo;
@@ -87,7 +88,7 @@ class Video extends Model
 
     public static function createFromTemporaryUpload(Listing $listing, TemporaryUploadedFile $file, array $attributes = []): self
     {
-        $disk = (string) config('video.disk', 'public');
+        $disk = (string) config('video.disk', MediaStorage::activeDisk());
         $path = $file->storeAs(
             trim((string) config('video.upload_directory', 'videos/uploads').'/'.$listing->getKey(), '/'),
             Str::ulid().'.'.($file->getClientOriginalExtension() ?: $file->guessExtension() ?: 'mp4'),
@@ -133,9 +134,9 @@ class Video extends Model
         $uploadPath = $this->upload_path;
 
         $this->forceFill([
-            'disk' => $attributes['disk'] ?? (string) config('video.disk', 'public'),
+            'disk' => $attributes['disk'] ?? (string) config('video.disk', MediaStorage::activeDisk()),
             'path' => $attributes['path'] ?? null,
-            'upload_disk' => (string) config('video.disk', 'public'),
+            'upload_disk' => (string) config('video.disk', MediaStorage::activeDisk()),
             'upload_path' => null,
             'mime_type' => $attributes['mime_type'] ?? 'video/mp4',
             'size' => $attributes['size'] ?? null,
@@ -184,14 +185,14 @@ class Video extends Model
         $status = $this->currentStatus();
 
         if (($status !== VideoStatus::Ready) && filled($this->upload_path)) {
-            return (string) ($this->upload_disk ?: config('video.disk', 'public'));
+            return (string) ($this->upload_disk ?: config('video.disk', MediaStorage::activeDisk()));
         }
 
         if (filled($this->path)) {
-            return (string) ($this->disk ?: config('video.disk', 'public'));
+            return (string) ($this->disk ?: config('video.disk', MediaStorage::activeDisk()));
         }
 
-        return (string) ($this->upload_disk ?: config('video.disk', 'public'));
+        return (string) ($this->upload_disk ?: config('video.disk', MediaStorage::activeDisk()));
     }
 
     public function playableUrl(): ?string
@@ -293,7 +294,7 @@ class Video extends Model
 
         $this->previousUploadDisk = filled($this->getOriginal('upload_disk'))
             ? (string) $this->getOriginal('upload_disk')
-            : (string) config('video.disk', 'public');
+            : (string) config('video.disk', MediaStorage::activeDisk());
 
         $this->previousUploadPath = filled($this->getOriginal('upload_path'))
             ? (string) $this->getOriginal('upload_path')
@@ -318,11 +319,11 @@ class Video extends Model
     protected function normalizeStatus(): void
     {
         if (blank($this->disk)) {
-            $this->disk = (string) config('video.disk', 'public');
+            $this->disk = (string) config('video.disk', MediaStorage::activeDisk());
         }
 
         if (blank($this->upload_disk)) {
-            $this->upload_disk = (string) config('video.disk', 'public');
+            $this->upload_disk = (string) config('video.disk', MediaStorage::activeDisk());
         }
 
         if (! $this->isDirty('upload_path')) {

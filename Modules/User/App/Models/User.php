@@ -19,6 +19,7 @@ use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
+use Modules\S3\Support\MediaStorage;
 use Modules\User\App\States\UserStatus;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -133,7 +134,27 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAvata
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return filled($this->avatar_url) ? Storage::disk('public')->url($this->avatar_url) : null;
+        if (! filled($this->avatar_url)) {
+            return null;
+        }
+
+        $path = trim((string) $this->avatar_url);
+
+        if (! MediaStorage::managesPath($path)) {
+            return MediaStorage::url($path);
+        }
+
+        $activeDisk = MediaStorage::activeDisk();
+
+        if (Storage::disk($activeDisk)->exists($path)) {
+            return Storage::disk($activeDisk)->url($path);
+        }
+
+        if ($activeDisk !== 'public' && Storage::disk('public')->exists($path)) {
+            return Storage::disk('public')->url($path);
+        }
+
+        return MediaStorage::url($path, $activeDisk);
     }
 
     public function getDisplayName(): string

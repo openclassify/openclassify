@@ -1,0 +1,11 @@
+{
+    "name": "Demo",
+    "alias": "demo",
+    "description": "Temporary per-visitor demo schemas",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Demo\\App\\Providers\\DemoServiceProvider"
+    ],
+    "files": []
+}

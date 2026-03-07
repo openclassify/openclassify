@@ -9,6 +9,7 @@ use Filament\Pages\SettingsPage;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\Width;
 use Modules\Admin\Support\HomeSlideFormSchema;
+use Modules\S3\Support\MediaStorage;
 use UnitEnum;
 
 class ManageHomeSlides extends SettingsPage
@@ -30,8 +31,18 @@ class ManageHomeSlides extends SettingsPage
     protected function mutateFormDataBeforeFill(array $data): array
     {
         return [
-            'home_slides' => $this->normalizeHomeSlides($data['home_slides'] ?? $this->defaultHomeSlides()),
+            'home_slides' => $this->normalizeHomeSlides(
+                $data['home_slides'] ?? $this->defaultHomeSlides(),
+                MediaStorage::storedDisk('public'),
+            ),
         ];
+    }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['home_slides'] = $this->normalizeHomeSlides($data['home_slides'] ?? [], MediaStorage::activeDisk());
+
+        return $data;
     }
 
     public function form(Schema $schema): Schema
@@ -40,7 +51,7 @@ class ManageHomeSlides extends SettingsPage
             ->components([
                 HomeSlideFormSchema::make(
                     $this->defaultHomeSlides(),
-                    fn ($state): array => $this->normalizeHomeSlides($state),
+                    fn ($state): array => $this->normalizeHomeSlides($state, MediaStorage::activeDisk()),
                 ),
             ]);
     }
@@ -50,8 +61,8 @@ class ManageHomeSlides extends SettingsPage
         return HomeSlideDefaults::defaults();
     }
 
-    private function normalizeHomeSlides(mixed $state): array
+    private function normalizeHomeSlides(mixed $state, ?string $defaultDisk = null): array
     {
-        return HomeSlideDefaults::normalize($state);
+        return HomeSlideDefaults::normalize($state, $defaultDisk);
     }
 }

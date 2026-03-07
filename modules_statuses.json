@@ -8,5 +8,7 @@
     "Conversation": true,
     "Favorite": true,
     "User": true,
-    "Video": true
+    "Video": true,
+    "S3": true,
+    "Demo": true
 }

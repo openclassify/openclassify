@@ -14,6 +14,31 @@
     $panelListingsRoute = auth()->check() ? route('panel.listings.index') : $loginRoute;
     $inboxRoute = auth()->check() ? route('panel.inbox.index') : $loginRoute;
     $favoritesRoute = auth()->check() ? route('favorites.index') : $loginRoute;
+    $demoEnabled = (bool) config('demo.enabled');
+    $prepareDemoRoute = $demoEnabled ? route('demo.prepare') : null;
+    $prepareDemoRedirect = url()->full();
+    $hasDemoSession = (bool) session('is_demo_session') || filled(session('demo_uuid'));
+    $demoLandingMode = $demoEnabled && request()->routeIs('home') && !auth()->check() && !$hasDemoSession;
+    $demoExpiresAt = session('demo_expires_at');
+    $demoExpiresAt = filled($demoExpiresAt) ? \Illuminate\Support\Carbon::parse($demoExpiresAt) : null;
+    $demoRemainingLabel = null;
+
+    if ($demoExpiresAt?->isFuture()) {
+        $remainingMinutes = now()->diffInMinutes($demoExpiresAt, false);
+        $remainingHours = intdiv($remainingMinutes, 60);
+        $remainingRemainderMinutes = $remainingMinutes % 60;
+        $remainingParts = [];
+
+        if ($remainingHours > 0) {
+            $remainingParts[] = $remainingHours.' '.\Illuminate\Support\Str::plural('hour', $remainingHours);
+        }
+
+        if ($remainingRemainderMinutes > 0) {
+            $remainingParts[] = $remainingRemainderMinutes.' '.\Illuminate\Support\Str::plural('minute', $remainingRemainderMinutes);
+        }
+
+        $demoRemainingLabel = $remainingParts !== [] ? implode(' ', $remainingParts) : 'less than a minute';
+    }
     $availableLocales = config('app.available_locales', ['en']);
     $localeLabels = [
         'en' => 'English',
@@ -49,7 +74,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="min-h-screen font-sans antialiased">
+<body @class([
+    'min-h-screen font-sans antialiased',
+    'bg-slate-50' => $demoLandingMode,
+])>
+    @unless($demoLandingMode)
     <nav class="market-nav-surface sticky top-0 z-50">
         <div class="oc-nav-wrap">
             <div class="oc-nav-main">
@@ -162,12 +191,21 @@
                         <button type="submit" class="oc-text-link">{{ __('messages.logout') }}</button>
                     </form>
                     @else
+                    @if(!$demoLandingMode && $demoEnabled && $prepareDemoRoute)
+                    <form method="POST" action="{{ $prepareDemoRoute }}" class="oc-demo-prepare">
+                        @csrf
+                        <input type="hidden" name="redirect_to" value="{{ $prepareDemoRedirect }}">
+                        <button type="submit" class="oc-text-link oc-auth-link">Prepare Demo</button>
+                    </form>
+                    @endif
+                    @if(!$demoLandingMode)
                     <a href="{{ $loginRoute }}" class="oc-text-link oc-auth-link">
                         {{ __('messages.login') }}
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
                     </a>
+                    @endif
                     @endauth
                 </div>
             </div>
@@ -227,6 +265,7 @@
                                 </svg>
                             </a>
                             @else
+                            @if(!$demoLandingMode)
                             <a href="{{ $loginRoute }}" class="oc-mobile-menu-link">
                                 <span>Login</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -239,6 +278,19 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
                                 </svg>
                             </a>
+                            @endif
+                            @if($demoEnabled && $prepareDemoRoute)
+                            <form method="POST" action="{{ $prepareDemoRoute }}" class="w-full">
+                                @csrf
+                                <input type="hidden" name="redirect_to" value="{{ $prepareDemoRedirect }}">
+                                <button type="submit" class="oc-mobile-menu-link w-full text-left">
+                                    <span>Prepare Demo</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                    </svg>
+                                </button>
+                            </form>
+                            @endif
                             @endauth
                         </div>
                     </div>
@@ -283,6 +335,15 @@
             </div>
         </div>
     </nav>
+    @endunless
+    @if(!$demoLandingMode && $demoRemainingLabel)
+    <div class="sticky top-0 z-40 border-b border-amber-200 bg-amber-50/95 backdrop-blur-md">
+        <div class="mx-auto flex min-h-12 max-w-[1320px] items-center justify-center px-4 py-2 text-center text-sm font-semibold text-amber-900">
+            Demo auto deletes in {{ $demoRemainingLabel }}
+        </div>
+    </div>
+    @endif
+    @unless($demoLandingMode)
     @if(session('success'))
     <div class="max-w-[1320px] mx-auto px-4 pt-3">
         <div class="bg-emerald-100 border border-emerald-300 text-emerald-800 px-4 py-3 rounded-xl text-sm">{{ session('success') }}</div>
@@ -293,7 +354,12 @@
         <div class="bg-rose-100 border border-rose-300 text-rose-700 px-4 py-3 rounded-xl text-sm">{{ session('error') }}</div>
     </div>
     @endif
-    <main class="site-main">@yield('content')</main>
+    @endunless
+    <main @class([
+        'site-main',
+        'min-h-screen' => $demoLandingMode,
+    ])>@yield('content')</main>
+    @unless($demoLandingMode)
     <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200">
         <div class="max-w-[1320px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -345,6 +411,7 @@
             </div>
         </div>
     </footer>
+    @endunless
     @livewireScripts
     <script>
         (() => {

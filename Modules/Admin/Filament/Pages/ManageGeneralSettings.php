@@ -2,19 +2,23 @@
 
 namespace Modules\Admin\Filament\Pages;
 
-use App\Support\HomeSlideDefaults;
-use App\Support\CountryCodeManager;
 use App\Settings\GeneralSettings;
+use App\Support\CountryCodeManager;
+use App\Support\HomeSlideDefaults;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Modules\Admin\Support\HomeSlideFormSchema;
+use Modules\S3\Support\MediaStorage;
 use Tapp\FilamentCountryCodeField\Forms\Components\CountryCodeSelect;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
@@ -40,8 +44,15 @@ class ManageGeneralSettings extends SettingsPage
         return [
             'site_name' => filled($data['site_name'] ?? null) ? $data['site_name'] : $defaults['site_name'],
             'site_description' => filled($data['site_description'] ?? null) ? $data['site_description'] : $defaults['site_description'],
-            'home_slides' => $this->normalizeHomeSlides($data['home_slides'] ?? $defaults['home_slides']),
+            'media_disk' => MediaStorage::normalizeDriver($data['media_disk'] ?? $defaults['media_disk']),
+            'home_slides' => $this->normalizeHomeSlides(
+                $data['home_slides'] ?? $defaults['home_slides'],
+                MediaStorage::storedDisk('public'),
+            ),
             'site_logo' => $data['site_logo'] ?? null,
+            'site_logo_disk' => filled($data['site_logo'] ?? null)
+                ? MediaStorage::storedDisk($data['site_logo_disk'] ?? 'public')
+                : null,
             'sender_name' => filled($data['sender_name'] ?? null) ? $data['sender_name'] : $defaults['sender_name'],
             'sender_email' => filled($data['sender_email'] ?? null) ? $data['sender_email'] : $defaults['sender_email'],
             'default_language' => filled($data['default_language'] ?? null) ? $data['default_language'] : $defaults['default_language'],
@@ -64,6 +75,21 @@ class ManageGeneralSettings extends SettingsPage
         ];
     }
 
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $mediaDriver = MediaStorage::normalizeDriver($data['media_disk'] ?? null);
+        $mediaDisk = MediaStorage::diskFromDriver($mediaDriver);
+
+        $data['media_disk'] = $mediaDriver;
+        $data['home_slides'] = $this->normalizeHomeSlides($data['home_slides'] ?? [], $mediaDisk);
+        $data['site_logo_disk'] = MediaStorage::managesPath($data['site_logo'] ?? null)
+            ? MediaStorage::storedDisk($data['site_logo_disk'] ?? null, $mediaDriver)
+            : null;
+        $data['currencies'] = $this->normalizeCurrencies($data['currencies'] ?? []);
+
+        return $data;
+    }
+
     public function form(Schema $schema): Schema
     {
         $defaults = $this->defaultFormData();
@@ -80,16 +106,32 @@ class ManageGeneralSettings extends SettingsPage
                     ->default($defaults['site_description'])
                     ->rows(3)
                     ->maxLength(500),
+                Select::make('media_disk')
+                    ->label('Medya Depolama')
+                    ->options(MediaStorage::options())
+                    ->default($defaults['media_disk'])
+                    ->required()
+                    ->native(false)
+                    ->helperText('İlan resimleri, videolar, logo ve slide görselleri için kullanılacak depolama sürücüsü.'),
                 HomeSlideFormSchema::make(
                     $defaults['home_slides'],
-                    fn ($state): array => $this->normalizeHomeSlides($state),
+                    fn ($state): array => $this->normalizeHomeSlides($state, MediaStorage::activeDisk()),
                 ),
+                Hidden::make('site_logo_disk'),
                 FileUpload::make('site_logo')
                     ->label('Site Logosu')
                     ->image()
-                    ->disk('public')
+                    ->disk(fn (Get $get): string => MediaStorage::storedDisk($get('site_logo_disk'), $get('media_disk')))
                     ->directory('settings')
-                    ->visibility('public'),
+                    ->visibility('public')
+                    ->afterStateUpdated(function (Get $get, Set $set, mixed $state): void {
+                        $set(
+                            'site_logo_disk',
+                            MediaStorage::managesPath($state)
+                                ? MediaStorage::diskFromDriver($get('media_disk'))
+                                : null,
+                        );
+                    }),
                 TextInput::make('sender_name')
                     ->label('Gönderici Adı')
                     ->default($defaults['sender_name'])
@@ -200,7 +242,9 @@ class ManageGeneralSettings extends SettingsPage
         return [
             'site_name' => $siteName,
             'site_description' => 'Alim satim icin hizli ve guvenli ilan platformu.',
+            'media_disk' => MediaStorage::defaultDriver(),
             'home_slides' => $this->defaultHomeSlides(),
+            'site_logo_disk' => null,
             'sender_name' => $siteName,
             'sender_email' => (string) config('mail.from.address', 'info@' . $siteHost),
             'default_language' => in_array(config('app.locale'), array_keys($this->localeOptions()), true) ? (string) config('app.locale') : 'tr',
@@ -248,8 +292,8 @@ class ManageGeneralSettings extends SettingsPage
         return HomeSlideDefaults::defaults();
     }
 
-    private function normalizeHomeSlides(mixed $state): array
+    private function normalizeHomeSlides(mixed $state, ?string $defaultDisk = null): array
     {
-        return HomeSlideDefaults::normalize($state);
+        return HomeSlideDefaults::normalize($state, $defaultDisk);
     }
 }

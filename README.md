@@ -10,6 +10,7 @@ A modern classified ads platform built with Laravel 12, FilamentPHP v5, and Lara
 - 👤 **User Profiles** — Manage your listings and account
 - 🔐 **Admin Panel** — Full control via FilamentPHP v5 at `/admin`
 - 🤝 **Partner Panel** — Users manage their own listings at `/partner/{id}` (tenant isolation)
+- 🧪 **Demo Mode** — Per-visitor PostgreSQL schema provisioning with seeded data and automatic cleanup
 - 🌍 **10 Languages** — English, Turkish, Arabic, German, French, Spanish, Portuguese, Russian, Chinese, Japanese
 - 🐳 **Docker Ready** — One-command production and development setup
 - ☁️ **GitHub Codespaces** — Zero-config cloud development
@@ -31,8 +32,8 @@ Project-level custom instruction set files are available at:
 | Modules | nWidart/laravel-modules v11 |
 | Auth/Roles | Spatie Laravel Permission |
 | Frontend | Blade + TailwindCSS + Vite |
-| Database | MySQL / SQLite |
-| Cache/Queue | Redis |
+| Database | PostgreSQL (required for demo mode), SQLite for minimal local dev |
+| Cache/Queue | Database or Redis |
 
 ## Quick Start (Docker)
 
@@ -50,12 +51,14 @@ docker compose up -d
 # The application will be available at http://localhost:8000
 ```
 
-### Default Credentials
+### Demo Credentials (`DEMO=1` only)
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@openclassify.com | password |
-| Partner | partner@openclassify.com | password |
+| Admin | a@a.com | 236330 |
+| Partner | b@b.com | 36330 |
+
+Demo preparation auto-logs the visitor into the schema-local admin account, so manual login is usually not required.
 
 **Admin Panel:** http://localhost:8000/admin
 **Partner Panel:** http://localhost:8000/partner
@@ -82,7 +85,7 @@ docker compose -f docker-compose.dev.yml logs -f app
 
 ### Option 3: Local (PHP + Node)
 
-**Requirements:** PHP 8.2+, Composer, Node 18+, SQLite or MySQL
+**Requirements:** PHP 8.2+, Composer, Node 18+, PostgreSQL for demo mode
 
 ```bash
 # Install dependencies
@@ -101,6 +104,53 @@ php artisan db:seed
 # Start all services (server + queue + vite)
 composer run dev
 ```
+
+## Demo Mode
+
+Demo mode is designed for isolated visitor sessions. When enabled, each visitor can provision a private temporary marketplace backed by its own PostgreSQL schema.
+
+### Requirements
+
+- `DB_CONNECTION=pgsql`
+- `DEMO=1`
+- database-backed session / cache / queue drivers are supported and will stay on the public schema via `pgsql_public`
+
+If `DEMO=1` is set while the app is not using PostgreSQL, the application fails fast during boot.
+
+### Runtime Behavior
+
+- On the first guest homepage visit, the primary visible CTA is a single large `Prepare Demo` button.
+- The homepage shows how long the temporary demo will live before automatic deletion.
+- Clicking `Prepare Demo` provisions a visitor-specific schema, runs `migrate` and `db:seed`, and logs the visitor into the seeded admin account.
+- The same browser reuses its active demo instead of creating duplicate schemas.
+- Demo lifetime defaults to `360` minutes from explicit prepare / reopen time.
+- Expired demos are removed by `demo:cleanup`, which is scheduled hourly.
+
+### Environment
+
+```env
+DB_CONNECTION=pgsql
+DEMO=1
+DEMO_TTL_MINUTES=360
+DEMO_SCHEMA_PREFIX=demo_
+DEMO_COOKIE_NAME=oc2_demo
+DEMO_LOGIN_EMAIL=a@a.com
+DEMO_PUBLIC_SCHEMA=public
+```
+
+### Commands
+
+```bash
+php artisan migrate --force
+php artisan db:seed --force
+php artisan demo:prepare
+php artisan demo:cleanup
+```
+
+### Notes
+
+- `php artisan db:seed` only injects demo-heavy listings, favorites, inbox threads, and demo users when demo mode is enabled.
+- Public infrastructure tables such as sessions, cache, jobs, and failed jobs remain on the public schema even while visitor requests are switched into demo schemas.
 
 ---
 

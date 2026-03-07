@@ -3,12 +3,10 @@
 namespace App\Support;
 
 use Illuminate\Support\Arr;
+use Modules\S3\Support\MediaStorage;
 
 final class HomeSlideDefaults
 {
-    /**
-     * @return array<int, array{badge: string, title: string, subtitle: string, primary_button_text: string, secondary_button_text: string, image_path: string}>
-     */
     public static function defaults(): array
     {
         return [
@@ -19,6 +17,7 @@ final class HomeSlideDefaults
                 'primary_button_text' => 'Browse Listings',
                 'secondary_button_text' => 'Post Listing',
                 'image_path' => 'images/home-slides/slide-marketplace.svg',
+                'disk' => null,
             ],
             [
                 'badge' => 'Fresh Categories',
@@ -27,6 +26,7 @@ final class HomeSlideDefaults
                 'primary_button_text' => 'See Categories',
                 'secondary_button_text' => 'Start Now',
                 'image_path' => 'images/home-slides/slide-categories.svg',
+                'disk' => null,
             ],
             [
                 'badge' => 'Local Shopping',
@@ -35,14 +35,12 @@ final class HomeSlideDefaults
                 'primary_button_text' => 'Nearby Deals',
                 'secondary_button_text' => 'Sell for Free',
                 'image_path' => 'images/home-slides/slide-local.svg',
+                'disk' => null,
             ],
         ];
     }
 
-    /**
-     * @return array<int, array{badge: string, title: string, subtitle: string, primary_button_text: string, secondary_button_text: string, image_path: string|null}>
-     */
-    public static function normalize(mixed $slides): array
+    public static function normalize(mixed $slides, ?string $defaultDisk = null): array
     {
         $defaults = self::defaults();
         $source = is_array($slides) ? $slides : [];
@@ -58,6 +56,9 @@ final class HomeSlideDefaults
                 $primaryButtonText = trim((string) ($slide['primary_button_text'] ?? ''));
                 $secondaryButtonText = trim((string) ($slide['secondary_button_text'] ?? ''));
                 $imagePath = self::normalizeImagePath($slide['image_path'] ?? null);
+                $disk = MediaStorage::managesPath($imagePath)
+                    ? MediaStorage::storedDisk($slide['disk'] ?? null, $defaultDisk)
+                    : null;
 
                 if ($title === '') {
                     return null;
@@ -70,6 +71,7 @@ final class HomeSlideDefaults
                     'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : $fallback['primary_button_text'],
                     'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : $fallback['secondary_button_text'],
                     'image_path' => $imagePath !== '' ? $imagePath : ($fallback['image_path'] ?? null),
+                    'disk' => $imagePath !== '' ? $disk : ($fallback['disk'] ?? null),
                 ];
             })
             ->filter(fn ($slide): bool => is_array($slide))

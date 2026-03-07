@@ -1,6 +1,7 @@
 <?php
 namespace Modules\Partner\Providers;
 
+use App\Http\Middleware\BootstrapAppData;
 use A909M\FilamentStateFusion\FilamentStateFusionPlugin;
 use Modules\User\App\Models\User;
 use DutchCodingCompany\FilamentDeveloperLogins\FilamentDeveloperLoginsPlugin;
@@ -24,6 +25,7 @@ use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
+use Modules\Demo\App\Http\Middleware\ResolveDemoRequest;
 use Modules\Partner\Support\Filament\SocialiteProviderResolver;
 use Spatie\Permission\Models\Role;
 
@@ -67,6 +69,8 @@ class PartnerPanelProvider extends PanelProvider
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
+                ResolveDemoRequest::class,
+                BootstrapAppData::class,
                 AuthenticateSession::class,
                 ShareErrorsFromSession::class,
                 VerifyCsrfToken::class,

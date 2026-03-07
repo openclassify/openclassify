@@ -5,6 +5,25 @@
     $heroListing = $featuredListings->first() ?? $recentListings->first();
     $heroImage = $heroListing?->getFirstMediaUrl('listing-images');
     $listingCards = $recentListings->take(6);
+    $demoEnabled = (bool) config('demo.enabled');
+    $prepareDemoRoute = $demoEnabled ? route('demo.prepare') : null;
+    $prepareDemoRedirect = url()->full();
+    $hasDemoSession = (bool) session('is_demo_session') || filled(session('demo_uuid'));
+    $demoLandingMode = $demoEnabled && !auth()->check() && !$hasDemoSession;
+    $demoTtlMinutes = (int) config('demo.ttl_minutes', 360);
+    $demoTtlHours = intdiv($demoTtlMinutes, 60);
+    $demoTtlRemainderMinutes = $demoTtlMinutes % 60;
+    $demoTtlLabelParts = [];
+
+    if ($demoTtlHours > 0) {
+        $demoTtlLabelParts[] = $demoTtlHours.' '.\Illuminate\Support\Str::plural('hour', $demoTtlHours);
+    }
+
+    if ($demoTtlRemainderMinutes > 0) {
+        $demoTtlLabelParts[] = $demoTtlRemainderMinutes.' '.\Illuminate\Support\Str::plural('minute', $demoTtlRemainderMinutes);
+    }
+
+    $demoTtlLabel = $demoTtlLabelParts !== [] ? implode(' ', $demoTtlLabelParts) : '0 minutes';
     $homeSlides = collect($generalSettings['home_slides'] ?? [])
         ->filter(fn ($slide): bool => is_array($slide))
         ->map(function (array $slide): array {
@@ -21,13 +40,7 @@
                 'subtitle' => $subtitle !== '' ? $subtitle : 'Buy and sell everything in your area',
                 'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : 'Browse Listings',
                 'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : 'Post Listing',
-                'image_url' => $imagePath !== ''
-                    ? (str_starts_with($imagePath, 'http://') || str_starts_with($imagePath, 'https://')
-                        ? $imagePath
-                        : (str_starts_with($imagePath, 'images/')
-                            ? asset($imagePath)
-                            : \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath)))
-                    : null,
+                'image_url' => \Modules\S3\Support\MediaStorage::url($imagePath, $slide['disk'] ?? null),
             ];
         })
         ->values();
@@ -67,6 +80,24 @@
     ];
 @endphp
 
+@if($demoLandingMode && $prepareDemoRoute)
+<div class="min-h-screen flex items-center justify-center px-5 py-10">
+    <form method="POST" action="{{ $prepareDemoRoute }}" class="w-full max-w-xl rounded-[32px] border border-slate-200 bg-white p-8 md:p-10 shadow-xl">
+        @csrf
+        <input type="hidden" name="redirect_to" value="{{ $prepareDemoRedirect }}">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-950">Prepare Demo</h1>
+        <p class="mt-5 text-base md:text-lg leading-8 text-slate-600">
+            Launch a private seeded marketplace for this browser. Listings, favorites, inbox data, and admin access are prepared automatically.
+        </p>
+        <p class="mt-4 text-base text-slate-500">
+            This demo is deleted automatically after {{ $demoTtlLabel }}.
+        </p>
+        <button type="submit" class="mt-8 inline-flex min-h-16 w-full items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-blue-700">
+            Prepare Demo
+        </button>
+    </form>
+</div>
+@else
 <div class="max-w-[1320px] mx-auto px-4 py-5 md:py-7 space-y-7">
     <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-xl">
         <div class="absolute -top-20 -left-24 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl"></div>
@@ -292,15 +323,17 @@
             @endphp
             <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
                 <div class="relative h-64 md:h-[290px] bg-slate-100">
-                    @if($listingImage)
-                    <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
-                    @else
-                    <div class="w-full h-full grid place-items-center text-slate-400">
-                        <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 16l4.5-4.5a2 2 0 012.8 0L16 16m-1.5-1.5l1.8-1.8a2 2 0 012.8 0L21 14m-7-8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    @endif
+                    <a href="{{ route('listings.show', $listing) }}" class="block h-full w-full" aria-label="{{ $listing->title }}">
+                        @if($listingImage)
+                        <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
+                        @else
+                        <div class="w-full h-full grid place-items-center text-slate-400">
+                            <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 16l4.5-4.5a2 2 0 012.8 0L16 16m-1.5-1.5l1.8-1.8a2 2 0 012.8 0L21 14m-7-8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        @endif
+                    </a>
                     <div class="absolute top-3 left-3 flex items-center gap-2">
                         @if($listing->is_featured)
                         <span class="bg-amber-300 text-amber-950 text-xs font-bold px-2.5 py-1 rounded-full">Öne Çıkan</span>
@@ -330,12 +363,6 @@
                         <span class="truncate">{{ $locationLabel !== '' ? $locationLabel : 'Konum belirtilmedi' }}</span>
                         <span>{{ $listing->created_at->diffForHumans() }}</span>
                     </div>
-                    <a href="{{ route('listings.show', $listing) }}" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 transition">
-                        İlan detayını aç
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
             </article>
             @empty
@@ -364,6 +391,7 @@
         </div>
     </section>
 </div>
+@endif
 <script>
     (() => {
         const setupTrendCategories = () => {

@@ -10,7 +10,11 @@ class GeneralSettings extends Settings
 
     public string $site_description;
 
+    public string $media_disk;
+
     public ?string $site_logo;
+
+    public ?string $site_logo_disk;
 
     public string $default_language;
 

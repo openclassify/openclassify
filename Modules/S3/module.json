@@ -1,0 +1,12 @@
+{
+    "name": "S3",
+    "alias": "s3",
+    "description": "Media storage selection and S3 object storage integration",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\S3\\Providers\\S3ServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}
