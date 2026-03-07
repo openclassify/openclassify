@@ -1,7 +1,7 @@
 @extends('app::layouts.app')
 @section('content')
 @php
-    $totalListings = (int) $listings->total();
+    $totalListings = isset($allListingsTotal) ? (int) $allListingsTotal : (int) $listings->total();
     $activeCategoryName = $selectedCategory?->name ? trim((string) $selectedCategory->name) : '';
     $pageTitle = $activeCategoryName !== ''
         ? 'İkinci El '.$activeCategoryName.' İlanları ve Fiyatları'

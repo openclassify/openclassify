@@ -39,6 +39,7 @@ class FavoriteController extends Controller
         }
 
         $user = $request->user();
+        $requiresLogin = ! $user;
 
         $categories = collect();
         if ($this->tableExists('categories')) {
@@ -55,7 +56,7 @@ class FavoriteController extends Controller
         $selectedConversation = null;
         $buyerConversationListingMap = [];
 
-        if ($activeTab === 'listings') {
+        if ($user && $activeTab === 'listings') {
             try {
                 if ($this->tableExists('favorite_listings')) {
                     $favoriteListings = $user->favoriteListings()
@@ -100,7 +101,7 @@ class FavoriteController extends Controller
             }
         }
 
-        if ($activeTab === 'searches') {
+        if ($user && $activeTab === 'searches') {
             try {
                 if ($this->tableExists('favorite_searches')) {
                     $favoriteSearches = $user->favoriteSearches()
@@ -114,7 +115,7 @@ class FavoriteController extends Controller
             }
         }
 
-        if ($activeTab === 'sellers') {
+        if ($user && $activeTab === 'sellers') {
             try {
                 if ($this->tableExists('favorite_sellers')) {
                     $favoriteSellers = $user->favoriteSellers()
@@ -143,6 +144,7 @@ class FavoriteController extends Controller
             'selectedConversation' => $selectedConversation,
             'buyerConversationListingMap' => $buyerConversationListingMap,
             'quickMessages' => QuickMessageCatalog::all(),
+            'requiresLogin' => $requiresLogin,
         ]);
     }
 

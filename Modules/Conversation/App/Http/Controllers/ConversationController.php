@@ -16,13 +16,15 @@ class ConversationController extends Controller
 {
     public function inbox(Request $request): View
     {
-        $userId = (int) $request->user()->getKey();
+        $user = $request->user();
+        $userId = $user ? (int) $user->getKey() : null;
+        $requiresLogin = ! $user;
         $messageFilter = $this->resolveMessageFilter($request);
 
         $conversations = collect();
         $selectedConversation = null;
 
-        if ($this->messagingTablesReady()) {
+        if ($userId && $this->messagingTablesReady()) {
             try {
                 $conversations = Conversation::inboxForUser($userId, $messageFilter);
                 $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
@@ -50,6 +52,7 @@ class ConversationController extends Controller
             'selectedConversation' => $selectedConversation,
             'messageFilter' => $messageFilter,
             'quickMessages' => QuickMessageCatalog::all(),
+            'requiresLogin' => $requiresLogin,
         ]);
     }
 

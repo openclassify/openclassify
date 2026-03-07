@@ -13,13 +13,21 @@
             $subtitle = trim((string) ($slide['subtitle'] ?? ''));
             $primaryButtonText = trim((string) ($slide['primary_button_text'] ?? ''));
             $secondaryButtonText = trim((string) ($slide['secondary_button_text'] ?? ''));
+            $imagePath = trim((string) ($slide['image_path'] ?? ''));
 
             return [
                 'badge' => $badge !== '' ? $badge : 'OpenClassify Marketplace',
-                'title' => $title !== '' ? $title : 'İlan ücreti ödemeden ürününü hızla sat!',
+                'title' => $title !== '' ? $title : 'Sell faster with a cleaner local marketplace.',
                 'subtitle' => $subtitle !== '' ? $subtitle : 'Buy and sell everything in your area',
-                'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : 'İncele',
+                'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : 'Browse Listings',
                 'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : 'Post Listing',
+                'image_url' => $imagePath !== ''
+                    ? (str_starts_with($imagePath, 'http://') || str_starts_with($imagePath, 'https://')
+                        ? $imagePath
+                        : (str_starts_with($imagePath, 'images/')
+                            ? asset($imagePath)
+                            : \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath)))
+                    : null,
             ];
         })
         ->values();
@@ -28,10 +36,11 @@
         $homeSlides = collect([
             [
                 'badge' => 'OpenClassify Marketplace',
-                'title' => 'İlan ücreti ödemeden ürününü hızla sat!',
+                'title' => 'Sell faster with a cleaner local marketplace.',
                 'subtitle' => 'Buy and sell everything in your area',
-                'primary_button_text' => 'İncele',
+                'primary_button_text' => 'Browse Listings',
                 'secondary_button_text' => 'Post Listing',
+                'image_url' => null,
             ],
         ]);
     }
@@ -134,7 +143,7 @@
                     <div class="w-full h-full rounded-[24px] bg-white overflow-hidden">
                         <div class="px-3 py-2 border-b border-slate-100">
                             <p class="text-rose-500 text-sm font-bold">OpenClassify</p>
-                            <p class="text-[10px] text-slate-400 mt-1">Ürün, kategori, satıcı ara</p>
+                            <p class="text-[10px] text-slate-400 mt-1">Search listings, categories, and sellers</p>
                         </div>
                         <div class="p-2 space-y-2">
                             <div class="h-10 rounded-xl bg-slate-100"></div>
@@ -150,15 +159,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="absolute right-0 bottom-0 w-[78%] h-[88%] rounded-[28px] bg-gradient-to-br from-white/20 to-blue-500/40 border border-white/20 shadow-2xl flex items-end justify-center p-4">
-                    @if($heroImage)
-                    <img src="{{ $heroImage }}" alt="{{ $heroListing?->title }}" class="w-full h-full object-cover rounded-2xl">
-                    @else
-                    <div class="w-full h-full rounded-2xl bg-white/90 text-slate-800 flex flex-col justify-center items-center gap-3">
-                        <span class="text-6xl">🚗</span>
-                        <p class="text-sm font-semibold px-4 text-center">Görsel eklendiğinde burada öne çıkan ilan yer alacak.</p>
+                <div class="absolute right-0 bottom-0 w-[78%] h-[88%] rounded-[28px] bg-gradient-to-br from-white/20 to-blue-500/40 border border-white/20 shadow-2xl flex items-end justify-center p-4 overflow-hidden">
+                    @foreach($homeSlides as $index => $slide)
+                    <div
+                        data-home-slide-visual
+                        @class(['absolute inset-4 transition-opacity duration-300', 'hidden' => $index !== 0])
+                        aria-hidden="{{ $index === 0 ? 'false' : 'true' }}"
+                    >
+                        @if($slide['image_url'])
+                        <img src="{{ $slide['image_url'] }}" alt="{{ $slide['title'] }}" class="w-full h-full object-cover rounded-2xl">
+                        @elseif($heroImage)
+                        <img src="{{ $heroImage }}" alt="{{ $heroListing?->title }}" class="w-full h-full object-cover rounded-2xl">
+                        @else
+                        <div class="w-full h-full rounded-2xl bg-white/90 text-slate-800 flex flex-col justify-center items-center gap-3">
+                            <span class="text-6xl">◌</span>
+                            <p class="text-sm font-semibold px-4 text-center">Upload a slide image to make this area feel complete.</p>
+                        </div>
+                        @endif
                     </div>
-                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -375,6 +394,7 @@
             }
 
             const slides = Array.from(slider.querySelectorAll('[data-home-slide]'));
+            const visuals = Array.from(document.querySelectorAll('[data-home-slide-visual]'));
             const dots = Array.from(slider.querySelectorAll('[data-home-slide-dot]'));
             const previousButton = slider.querySelector('[data-home-slide-prev]');
             const nextButton = slider.querySelector('[data-home-slide-next]');
@@ -394,6 +414,13 @@
 
                     slide.classList.toggle('hidden', !isActive);
                     slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                });
+
+                visuals.forEach((visual, visualIndex) => {
+                    const isActive = visualIndex === activeIndex;
+
+                    visual.classList.toggle('hidden', !isActive);
+                    visual.setAttribute('aria-hidden', isActive ? 'false' : 'true');
                 });
 
                 dots.forEach((dot, dotIndex) => {

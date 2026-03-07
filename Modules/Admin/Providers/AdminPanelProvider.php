@@ -7,6 +7,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -24,7 +25,6 @@ use Modules\Admin\Filament\Resources\CategoryResource;
 use Modules\Admin\Filament\Resources\ListingResource;
 use Modules\Admin\Filament\Resources\LocationResource;
 use Modules\Admin\Filament\Resources\UserResource;
-use TallCms\Cms\TallCmsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -39,10 +39,15 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: module_path('Admin', 'Filament/Resources'), for: 'Modules\\Admin\\Filament\\Resources')
             ->discoverPages(in: module_path('Admin', 'Filament/Pages'), for: 'Modules\\Admin\\Filament\\Pages')
             ->discoverWidgets(in: module_path('Admin', 'Filament/Widgets'), for: 'Modules\\Admin\\Filament\\Widgets')
+            ->userMenuItems([
+                'view-site' => MenuItem::make()
+                    ->label('View Site')
+                    ->icon('heroicon-o-globe-alt')
+                    ->url(fn (): string => url('/'))
+                    ->sort(-2),
+            ])
             ->plugins([
                 FilamentStateFusionPlugin::make(),
-                TallCmsPlugin::make()
-                    ->withoutUsers(),
                 BreezyCore::make()
                     ->myProfile(
                         shouldRegisterNavigation: true,

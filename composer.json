@@ -28,7 +28,6 @@
         "spatie/laravel-permission": "^6.24",
         "spatie/laravel-settings": "^3.7",
         "stechstudio/filament-impersonate": "^5.1",
-        "tallcms/cms": "^3.2",
         "tapp/filament-country-code-field": "^2.0",
         "ysfkaya/filament-phone-input": "^4.1"
     },

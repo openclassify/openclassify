@@ -15,6 +15,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Admin\Filament\Resources\CityResource\Pages;
 use Modules\Location\Models\City;
 use UnitEnum;
@@ -23,7 +24,7 @@ class CityResource extends Resource
 {
     protected static ?string $model = City::class;
     protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-building-office-2';
-    protected static string | UnitEnum | null $navigationGroup = 'Settings';
+    protected static string | UnitEnum | null $navigationGroup = 'Location';
     protected static ?string $label = 'City';
     protected static ?string $pluralLabel = 'Cities';
     protected static ?int $navigationSort = 3;
@@ -52,6 +53,13 @@ class CityResource extends Resource
                 ->relationship('country', 'name')
                 ->searchable()
                 ->preload(),
+            TernaryFilter::make('has_districts')
+                ->label('Has districts')
+                ->queries(
+                    true: fn (Builder $query): Builder => $query->has('districts'),
+                    false: fn (Builder $query): Builder => $query->doesntHave('districts'),
+                    blank: fn (Builder $query): Builder => $query,
+                ),
             TernaryFilter::make('is_active')->label('Active'),
         ])->actions([
             EditAction::make(),

@@ -3,8 +3,8 @@ namespace Modules\Category\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Modules\Listing\Models\Listing;
 use Spatie\Activitylog\LogOptions;
@@ -48,6 +48,34 @@ class Category extends Model
     public function scopeOrdered(Builder $query): Builder
     {
         return $query->orderBy('sort_order')->orderBy('name');
+    }
+
+    public function scopeForAdminHierarchy(Builder $query, array $expandedParentIds = []): Builder
+    {
+        $expandedParentIds = collect($expandedParentIds)
+            ->map(fn ($id): int => (int) $id)
+            ->filter()
+            ->unique()
+            ->values()
+            ->all();
+
+        return $query
+            ->select('categories.*')
+            ->leftJoin('categories as parent_categories', 'categories.parent_id', '=', 'parent_categories.id')
+            ->with(['parent:id,name'])
+            ->withCount(['children', 'listings'])
+            ->where(function (Builder $nestedQuery) use ($expandedParentIds): void {
+                $nestedQuery->whereNull('categories.parent_id');
+
+                if ($expandedParentIds !== []) {
+                    $nestedQuery->orWhereIn('categories.parent_id', $expandedParentIds);
+                }
+            })
+            ->orderByRaw('COALESCE(parent_categories.sort_order, categories.sort_order)')
+            ->orderByRaw('COALESCE(parent_categories.name, categories.name)')
+            ->orderByRaw('CASE WHEN categories.parent_id IS NULL THEN 0 ELSE 1 END')
+            ->orderBy('categories.sort_order')
+            ->orderBy('categories.name');
     }
 
     public static function filterOptions(): Collection

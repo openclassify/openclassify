@@ -46,19 +46,19 @@
 </head>
 <body class="min-h-screen font-sans antialiased">
     <nav class="market-nav-surface sticky top-0 z-50">
-        <div class="max-w-[1320px] mx-auto px-4 py-4">
-            <div class="flex items-center gap-3 md:gap-4">
-                <a href="{{ route('home') }}" class="shrink-0 flex items-center gap-2.5">
+        <div class="oc-nav-wrap">
+            <div class="oc-nav-main">
+                <a href="{{ route('home') }}" class="oc-brand">
                     @if($siteLogoUrl)
-                    <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="h-9 w-auto rounded">
+                    <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="h-9 w-auto rounded-xl">
                     @else
                     <span class="brand-logo" aria-hidden="true"></span>
                     @endif
                     <span class="brand-text leading-none">{{ $siteName }}</span>
                 </a>
 
-                <form action="{{ route('listings.index') }}" method="GET" class="hidden lg:flex flex-1 search-shell items-center gap-2 px-4 py-2.5">
-                    <svg class="w-5 h-5 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <form action="{{ route('listings.index') }}" method="GET" class="oc-search hidden lg:flex">
+                    <svg class="w-5 h-5 oc-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
                     </svg>
                     <input
@@ -66,57 +66,57 @@
                         name="search"
                         value="{{ request('search') }}"
                         placeholder="{{ __('messages.search_placeholder') }}"
-                        class="w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none"
+                        class="oc-search-input"
                     >
-                    <button type="submit" class="text-xs font-semibold text-slate-500 hover:text-slate-700 transition">
+                    <button type="submit" class="oc-search-submit">
                         {{ __('messages.search') }}
                     </button>
                 </form>
 
-                <details class="relative hidden md:block" data-location-widget data-cities-url-template="{{ $citiesRouteTemplate }}">
-                    <summary class="chip-btn list-none cursor-pointer px-4 py-2.5 text-sm text-slate-700 inline-flex items-center gap-2">
-                        <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
-                            <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
-                        </svg>
-                        <span data-location-label class="max-w-44 truncate">Choose location</span>
-                        <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
-                        </svg>
-                    </summary>
-                    <div class="location-panel absolute right-0 mt-2 bg-white border border-slate-200 shadow-xl rounded-2xl p-4 space-y-3">
-                        <div class="flex items-center justify-between gap-3">
-                            <p class="text-sm font-semibold text-slate-900">Location</p>
-                            <button type="button" data-location-detect class="text-xs font-semibold text-rose-500 hover:text-rose-600 transition">Use my location</button>
+                <div class="oc-actions">
+                    <details class="relative hidden md:block" data-location-widget data-cities-url-template="{{ $citiesRouteTemplate }}">
+                        <summary class="oc-pill list-none cursor-pointer">
+                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
+                                <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
+                            </svg>
+                            <span data-location-label class="max-w-40 truncate">Choose location</span>
+                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </summary>
+                        <div class="location-panel absolute right-0 top-full mt-3 bg-white border border-slate-200 shadow-xl rounded-2xl p-4 space-y-3">
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-sm font-semibold text-slate-900">Location</p>
+                                <button type="button" data-location-detect class="text-xs font-semibold text-slate-600 hover:text-slate-900 transition">Use my location</button>
+                            </div>
+                            <p data-location-status class="text-xs text-slate-500">Auto-select country and city from your browser location.</p>
+                            <div class="space-y-2">
+                                <label class="block text-xs font-semibold text-slate-600">Country</label>
+                                <select data-location-country class="w-full">
+                                    <option value="">Select country</option>
+                                    @foreach($locationCountries as $country)
+                                    <option
+                                        value="{{ $country['id'] }}"
+                                        data-code="{{ strtoupper($country['code'] ?? '') }}"
+                                        data-name="{{ $country['name'] }}"
+                                        data-default="{{ strtoupper($country['code'] ?? '') === $defaultCountryIso2 ? '1' : '0' }}"
+                                    >
+                                        {{ $country['name'] }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-xs font-semibold text-slate-600">City</label>
+                                <select data-location-city class="w-full" disabled>
+                                    <option value="">Select country first</option>
+                                </select>
+                            </div>
+                            <button type="button" data-location-save class="w-full btn-primary px-4 py-2.5 text-sm font-semibold transition">Apply</button>
                         </div>
-                        <p data-location-status class="text-xs text-slate-500">Auto-select country and city from your browser location.</p>
-                        <div class="space-y-2">
-                            <label class="block text-xs font-semibold text-slate-600">Country</label>
-                            <select data-location-country class="w-full">
-                                <option value="">Select country</option>
-                                @foreach($locationCountries as $country)
-                                <option
-                                    value="{{ $country['id'] }}"
-                                    data-code="{{ strtoupper($country['code'] ?? '') }}"
-                                    data-name="{{ $country['name'] }}"
-                                    data-default="{{ strtoupper($country['code'] ?? '') === $defaultCountryIso2 ? '1' : '0' }}"
-                                >
-                                    {{ $country['name'] }}
-                                </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="block text-xs font-semibold text-slate-600">City</label>
-                            <select data-location-city class="w-full" disabled>
-                                <option value="">Select country first</option>
-                            </select>
-                        </div>
-                        <button type="button" data-location-save class="w-full btn-primary px-4 py-2.5 text-sm font-semibold hover:brightness-95 transition">Apply</button>
-                    </div>
-                </details>
+                    </details>
 
-                <div class="ml-auto flex items-center gap-2 md:gap-3">
                     @auth
                     <a href="{{ $favoritesRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Favorites">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,27 +134,27 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10h14V10"/>
                         </svg>
                     </a>
-                    <a href="{{ $panelCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
+                    <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
                     </a>
                     <form method="POST" action="{{ $logoutRoute }}" class="hidden xl:block">
                         @csrf
-                        <button type="submit" class="text-sm text-slate-500 hover:text-rose-500 transition">{{ __('messages.logout') }}</button>
+                        <button type="submit" class="oc-text-link">{{ __('messages.logout') }}</button>
                     </form>
                     @else
-                    <a href="{{ $loginRoute }}" class="bg-rose-50 text-rose-500 px-4 md:px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-rose-100 transition">
+                    <a href="{{ $loginRoute }}" class="oc-text-link hidden md:inline-flex">
                         {{ __('messages.login') }}
                     </a>
-                    <a href="{{ $panelCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
+                    <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
                     </a>
                     @endauth
                 </div>
             </div>
 
-            <div class="mt-3 space-y-2 lg:hidden">
-                <form action="{{ route('listings.index') }}" method="GET" class="search-shell flex items-center gap-2 px-3 py-2.5">
-                    <svg class="w-4 h-4 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="oc-mobile-tools lg:hidden">
+                <form action="{{ route('listings.index') }}" method="GET" class="oc-search">
+                    <svg class="w-5 h-5 oc-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
                     </svg>
                     <input
@@ -162,31 +162,32 @@
                         name="search"
                         value="{{ request('search') }}"
                         placeholder="{{ __('messages.search_placeholder') }}"
-                        class="w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none"
+                        class="oc-search-input"
                     >
-                    <button type="submit" class="text-xs text-slate-500">{{ __('messages.search') }}</button>
+                    <button type="submit" class="oc-search-submit">{{ __('messages.search') }}</button>
                 </form>
-                <div class="flex items-center gap-2 overflow-x-auto pb-1">
-                    <span class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-slate-700" data-location-label-mobile>Choose location</span>
-                    <a href="{{ $panelCreateRoute }}" class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-rose-600 font-semibold">Sell</a>
+
+                <div class="oc-mobile-pills">
+                    <span class="oc-pill" data-location-label-mobile>Choose location</span>
+                    <a href="{{ $panelCreateRoute }}" class="oc-pill oc-pill-strong">Sell</a>
                 </div>
             </div>
 
-            <div class="mt-4 border-t border-slate-200 pt-3 overflow-x-auto">
-                <div class="flex items-center gap-2 min-w-max pb-1">
-                    <a href="{{ route('categories.index') }}" class="chip-btn inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
+            <div class="oc-category-row">
+                <div class="oc-category-track">
+                    <a href="{{ route('categories.index') }}" class="oc-category-pill">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
-                        All Categories
+                        <span>All Categories</span>
                     </a>
                     @forelse($headerCategories as $headerCategory)
-                    <a href="{{ route('listings.index', ['category' => $headerCategory['id']]) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+                    <a href="{{ route('listings.index', ['category' => $headerCategory['id']]) }}" class="oc-category-link">
                         {{ $headerCategory['name'] }}
                     </a>
                     @empty
-                    <a href="{{ route('home') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.home') }}</a>
-                    <a href="{{ route('listings.index') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.listings') }}</a>
+                    <a href="{{ route('home') }}" class="oc-category-link">{{ __('messages.home') }}</a>
+                    <a href="{{ route('listings.index') }}" class="oc-category-link">{{ __('messages.listings') }}</a>
                     @endforelse
                 </div>
             </div>
@@ -291,7 +292,7 @@
 
             const formatLocationLabel = (location) => {
                 if (!location || typeof location !== 'object') {
-                    return 'Konum seç';
+                    return 'Choose location';
                 }
 
                 const cityName = (location.cityName ?? '').toString().trim();
@@ -305,7 +306,7 @@
                     return countryName;
                 }
 
-                return 'Konum seç';
+                return 'Choose location';
             };
 
             const updateLabels = (location) => {
@@ -372,13 +373,13 @@
                 }
 
                 if (normalizedCountryId === '' || template === '') {
-                    citySelect.innerHTML = '<option value="">Önce ülke seç</option>';
+                    citySelect.innerHTML = '<option value="">Select country first</option>';
                     citySelect.disabled = true;
                     return;
                 }
 
                 citySelect.disabled = true;
-                citySelect.innerHTML = '<option value="">Şehir yükleniyor...</option>';
+                citySelect.innerHTML = '<option value="">Loading cities...</option>';
 
                 try {
                     const primaryUrl = buildCitiesUrl(template, normalizedCountryId);
@@ -412,10 +413,10 @@
                         cityOptions = await fetchCityOptions(fallbackUrl);
                     }
 
-                    citySelect.innerHTML = '<option value="">Şehir seç</option>';
+                    citySelect.innerHTML = '<option value="">Select city</option>';
 
                     if (cityOptions.length === 0) {
-                        citySelect.innerHTML = '<option value="">Şehir bulunamadı</option>';
+                        citySelect.innerHTML = '<option value="">No cities found</option>';
                         citySelect.disabled = true;
                         return;
                     }
@@ -439,12 +440,46 @@
                         }
                     }
                 } catch (error) {
-                    citySelect.innerHTML = '<option value="">Şehir yüklenemedi</option>';
+                    citySelect.innerHTML = '<option value="">Could not load cities</option>';
                     citySelect.disabled = true;
                     if (statusText) {
-                        statusText.textContent = 'Şehir listesi alınamadı. Lütfen tekrar deneyin.';
+                        statusText.textContent = 'Could not load the city list. Please try again.';
                     }
                 }
+            };
+
+            const findMatchingCityOption = (citySelect, candidates) => {
+                const normalizedCandidates = candidates
+                    .map((candidate) => normalize(candidate))
+                    .filter((candidate) => candidate !== '');
+
+                if (normalizedCandidates.length === 0) {
+                    return null;
+                }
+
+                const options = Array.from(citySelect.options).filter((option) => option.value !== '');
+
+                for (const candidate of normalizedCandidates) {
+                    const exactMatch = options.find((option) => normalize(option.dataset.name || option.textContent) === candidate);
+
+                    if (exactMatch) {
+                        return exactMatch;
+                    }
+                }
+
+                for (const candidate of normalizedCandidates) {
+                    const containsMatch = options.find((option) => {
+                        const optionName = normalize(option.dataset.name || option.textContent);
+
+                        return optionName.includes(candidate) || candidate.includes(optionName);
+                    });
+
+                    if (containsMatch) {
+                        return containsMatch;
+                    }
+                }
+
+                return null;
             };
 
             const saveFromInputs = (root, extra = {}) => {
@@ -453,7 +488,7 @@
                 const details = root.closest('details');
 
                 if (!countrySelect || !citySelect || !countrySelect.value) {
-                    return;
+                    return false;
                 }
 
                 const countryOption = countrySelect.options[countrySelect.selectedIndex];
@@ -476,6 +511,8 @@
                 if (details && details.hasAttribute('open')) {
                     details.removeAttribute('open');
                 }
+
+                return true;
             };
 
             const reverseLookup = async (latitude, longitude) => {
@@ -502,7 +539,9 @@
                 return {
                     countryCode: (address.country_code ?? '').toUpperCase(),
                     countryName: address.country ?? '',
-                    cityName: address.city ?? address.town ?? address.village ?? address.municipality ?? address.state_district ?? address.state ?? '',
+                    cityName: address.city ?? address.town ?? address.village ?? address.municipality ?? '',
+                    regionName: address.state ?? address.province ?? '',
+                    districtName: address.state_district ?? address.county ?? '',
                 };
             };
 
@@ -574,25 +613,26 @@
 
                 countrySelect.addEventListener('change', async () => {
                     if (statusText) {
-                        statusText.textContent = 'Ülkeye göre şehirler güncelleniyor...';
+                        statusText.textContent = 'Updating cities for the selected country...';
                     }
                     await loadCities(root, countrySelect.value, null, null);
                     if (statusText) {
-                        statusText.textContent = 'Şehir seçimini tamamlayıp uygulayabilirsiniz.';
+                        statusText.textContent = 'Select a city and apply.';
                     }
                 });
 
                 saveButton.addEventListener('click', () => {
-                    saveFromInputs(root);
-                    if (statusText) {
-                        statusText.textContent = 'Konum kaydedildi.';
+                    const saved = saveFromInputs(root);
+
+                    if (saved && statusText) {
+                        statusText.textContent = 'Location saved.';
                     }
                 });
 
                 if (detectButton) {
                     detectButton.addEventListener('click', async () => {
                         if (statusText) {
-                            statusText.textContent = 'Konumunuz alınıyor...';
+                            statusText.textContent = 'Getting your location...';
                         }
 
                         try {
@@ -609,23 +649,47 @@
 
                             if (!matchedCountry) {
                                 if (statusText) {
-                                    statusText.textContent = 'Ülke eşleşmesi bulunamadı, lütfen manuel seçim yapın.';
+                                    statusText.textContent = 'No matching country found. Please choose it manually.';
                                 }
                                 return;
                             }
 
                             countrySelect.value = matchedCountry.value;
-                            await loadCities(root, matchedCountry.value, null, guessed.cityName);
-                            saveFromInputs(root, { latitude, longitude });
+                            await loadCities(root, matchedCountry.value, null, null);
 
-                            if (statusText) {
-                                statusText.textContent = 'Konum otomatik seçildi.';
+                            const matchedCity = findMatchingCityOption(citySelect, [
+                                guessed.cityName,
+                                guessed.regionName,
+                                guessed.districtName,
+                            ]);
+
+                            if (matchedCity) {
+                                citySelect.value = matchedCity.value;
+                            }
+
+                            if (!matchedCity && !citySelect.disabled && citySelect.options.length > 1) {
+                                if (statusText) {
+                                    statusText.textContent = 'Country was selected, but the city could not be matched automatically. Please choose your city.';
+                                }
+
+                                const details = root.closest('details');
+                                if (details) {
+                                    details.setAttribute('open', 'open');
+                                }
+
+                                return;
+                            }
+
+                            const saved = saveFromInputs(root, { latitude, longitude });
+
+                            if (saved && statusText) {
+                                statusText.textContent = 'Location selected automatically.';
                             }
                         } catch (error) {
                             if (statusText) {
                                 statusText.textContent = error?.message === 'secure_context_required'
-                                    ? 'Tarayıcı konumu için HTTPS gerekli. Lütfen siteyi güvenli bağlantıdan açın.'
-                                    : 'Konum alınamadı. Tarayıcı izinlerini kontrol edin.';
+                                    ? 'HTTPS is required for browser location. Open the site over a secure connection.'
+                                    : 'Could not access location. Check your browser permissions.';
                             }
                         }
                     });

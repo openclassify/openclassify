@@ -7,7 +7,6 @@ use App\Support\CountryCodeManager;
 use App\Settings\GeneralSettings;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
@@ -15,6 +14,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Schema;
+use Modules\Admin\Support\HomeSlideFormSchema;
 use Tapp\FilamentCountryCodeField\Forms\Components\CountryCodeSelect;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
@@ -80,39 +80,10 @@ class ManageGeneralSettings extends SettingsPage
                     ->default($defaults['site_description'])
                     ->rows(3)
                     ->maxLength(500),
-                Repeater::make('home_slides')
-                    ->label('Ana Sayfa Slider')
-                    ->schema([
-                        TextInput::make('badge')
-                            ->label('Rozet')
-                            ->required()
-                            ->maxLength(255),
-                        TextInput::make('title')
-                            ->label('Başlık')
-                            ->required()
-                            ->maxLength(255),
-                        Textarea::make('subtitle')
-                            ->label('Alt Başlık')
-                            ->rows(2)
-                            ->required()
-                            ->maxLength(500),
-                        TextInput::make('primary_button_text')
-                            ->label('Birincil Buton Metni')
-                            ->required()
-                            ->maxLength(120),
-                        TextInput::make('secondary_button_text')
-                            ->label('İkincil Buton Metni')
-                            ->required()
-                            ->maxLength(120),
-                    ])
-                    ->default($defaults['home_slides'])
-                    ->minItems(1)
-                    ->collapsible()
-                    ->reorderableWithButtons()
-                    ->addActionLabel('Slide Ekle')
-                    ->itemLabel(fn (array $state): ?string => filled($state['title'] ?? null) ? (string) $state['title'] : 'Slide')
-                    ->afterStateHydrated(fn (Repeater $component, $state) => $component->state($this->normalizeHomeSlides($state)))
-                    ->dehydrateStateUsing(fn ($state) => $this->normalizeHomeSlides($state)),
+                HomeSlideFormSchema::make(
+                    $defaults['home_slides'],
+                    fn ($state): array => $this->normalizeHomeSlides($state),
+                ),
                 FileUpload::make('site_logo')
                     ->label('Site Logosu')
                     ->image()

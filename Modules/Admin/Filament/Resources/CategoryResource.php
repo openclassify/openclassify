@@ -40,12 +40,21 @@ class CategoryResource extends Resource
     {
         return $table->columns([
             TextColumn::make('id')->sortable(),
-            TextColumn::make('name')->searchable()->sortable(),
+            TextColumn::make('name')
+                ->searchable()
+                ->formatStateUsing(fn (string $state, Category $record): string => $record->parent_id === null ? $state : '↳ ' . $state)
+                ->weight(fn (Category $record): string => $record->parent_id === null ? 'semi-bold' : 'normal'),
             TextColumn::make('parent.name')->label('Parent')->default('-'),
-            TextColumn::make('listings_count')->counts('listings')->label('Listings'),
+            TextColumn::make('children_count')->label('Subcategories'),
+            TextColumn::make('listings_count')->label('Listings'),
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('sort_order')->sortable(),
-        ])->defaultSort('id', 'desc')->actions([
+        ])->actions([
+            Action::make('toggleChildren')
+                ->label(fn (Category $record, Pages\ListCategories $livewire): string => $livewire->hasExpandedChildren($record) ? 'Hide subcategories' : 'Show subcategories')
+                ->icon(fn (Category $record, Pages\ListCategories $livewire): string => $livewire->hasExpandedChildren($record) ? 'heroicon-o-chevron-down' : 'heroicon-o-chevron-right')
+                ->action(fn (Category $record, Pages\ListCategories $livewire) => $livewire->toggleChildren($record))
+                ->visible(fn (Category $record): bool => $record->parent_id === null && $record->children_count > 0),
             EditAction::make(),
             Action::make('activities')
                 ->icon('heroicon-o-clock')

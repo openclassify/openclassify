@@ -11,19 +11,27 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
-    /**
-     * Display the login view.
-     */
     public function create(): View
     {
-        return view('auth.login');
+        $redirectTo = $this->sanitizeRedirectTarget(request()->query('redirect'));
+
+        if ($redirectTo) {
+            request()->session()->put('url.intended', $redirectTo);
+        }
+
+        return view('auth.login', [
+            'redirectTo' => $redirectTo,
+        ]);
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
     public function store(LoginRequest $request): RedirectResponse
     {
+        $redirectTo = $this->sanitizeRedirectTarget($request->input('redirect'));
+
+        if ($redirectTo) {
+            $request->session()->put('url.intended', $redirectTo);
+        }
+
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -31,9 +39,6 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
@@ -43,5 +48,35 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    private function sanitizeRedirectTarget(?string $target): ?string
+    {
+        $target = trim((string) $target);
+
+        if ($target === '' || str_starts_with($target, '//')) {
+            return null;
+        }
+
+        if (str_starts_with($target, '/')) {
+            return $target;
+        }
+
+        if (! filter_var($target, FILTER_VALIDATE_URL)) {
+            return null;
+        }
+
+        $applicationUrl = parse_url(url('/'));
+        $targetUrl = parse_url($target);
+
+        if (($applicationUrl['host'] ?? null) !== ($targetUrl['host'] ?? null)) {
+            return null;
+        }
+
+        $path = $targetUrl['path'] ?? '/';
+        $query = isset($targetUrl['query']) ? '?' . $targetUrl['query'] : '';
+        $fragment = isset($targetUrl['fragment']) ? '#' . $targetUrl['fragment'] : '';
+
+        return $path . $query . $fragment;
     }
 }

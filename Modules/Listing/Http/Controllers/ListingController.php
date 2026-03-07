@@ -4,7 +4,6 @@ namespace Modules\Listing\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
 use Modules\Location\Models\City;
@@ -67,18 +66,28 @@ class ListingController extends Controller
 
         $listingDirectory = Category::listingDirectory($categoryId);
 
+        $browseFilters = [
+            'search' => $search,
+            'country' => $selectedCountryName,
+            'city' => $selectedCityName,
+            'min_price' => $minPrice,
+            'max_price' => $maxPrice,
+            'date_filter' => $dateFilter,
+        ];
+
+        $allListingsTotal = Listing::query()
+            ->active()
+            ->forBrowseFilters($browseFilters)
+            ->count();
+
         $listingsQuery = Listing::query()
             ->active()
             ->with('category:id,name')
-            ->searchTerm($search)
-            ->forCategoryIds($listingDirectory['filterIds'])
-            ->when($selectedCountryName, fn ($query) => $query->where('country', $selectedCountryName))
-            ->when($selectedCityName, fn ($query) => $query->where('city', $selectedCityName))
-            ->when(! is_null($minPrice), fn ($query) => $query->whereNotNull('price')->where('price', '>=', $minPrice))
-            ->when(! is_null($maxPrice), fn ($query) => $query->whereNotNull('price')->where('price', '<=', $maxPrice));
-
-        $this->applyDateFilter($listingsQuery, $dateFilter);
-        $this->applySorting($listingsQuery, $sort);
+            ->forBrowseFilters([
+                ...$browseFilters,
+                'category_ids' => $listingDirectory['filterIds'],
+            ])
+            ->applyBrowseSort($sort);
 
         $listings = $listingsQuery
             ->paginate(16)
@@ -136,6 +145,7 @@ class ListingController extends Controller
             'favoriteListingIds',
             'isCurrentSearchSaved',
             'conversationListingMap',
+            'allListingsTotal',
         ));
     }
 
@@ -302,24 +312,4 @@ class ListingController extends Controller
         }
     }
 
-    private function applyDateFilter($query, string $dateFilter): void
-    {
-        match ($dateFilter) {
-            'today' => $query->where('created_at', '>=', Carbon::now()->startOfDay()),
-            'week' => $query->where('created_at', '>=', Carbon::now()->subDays(7)),
-            'month' => $query->where('created_at', '>=', Carbon::now()->subDays(30)),
-            default => null,
-        };
-    }
-
-    private function applySorting($query, string $sort): void
-    {
-        match ($sort) {
-            'newest' => $query->reorder()->orderByDesc('created_at'),
-            'oldest' => $query->reorder()->orderBy('created_at'),
-            'price_asc' => $query->reorder()->orderByRaw('price is null')->orderBy('price'),
-            'price_desc' => $query->reorder()->orderByRaw('price is null')->orderByDesc('price'),
-            default => $query->reorder()->orderByDesc('is_featured')->orderByDesc('created_at'),
-        };
-    }
 }

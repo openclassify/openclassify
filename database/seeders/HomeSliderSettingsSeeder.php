@@ -11,13 +11,8 @@ class HomeSliderSettingsSeeder extends Seeder
     public function run(): void
     {
         $settings = app(GeneralSettings::class);
-        $settings->home_slides = HomeSlideDefaults::normalize($settings->home_slides ?? []);
+        $settings->home_slides = HomeSlideDefaults::defaults();
 
         $settings->save();
-    }
-
-    private function defaultHomeSlides(): array
-    {
-        return HomeSlideDefaults::defaults();
     }
 }

@@ -15,6 +15,13 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
+        @php
+            $redirectInput = old('redirect', $redirectTo ?? request('redirect'));
+        @endphp
+
+        @if(filled($redirectInput))
+            <input type="hidden" name="redirect" value="{{ $redirectInput }}">
+        @endif
 
         <!-- Email Address -->
         <div>

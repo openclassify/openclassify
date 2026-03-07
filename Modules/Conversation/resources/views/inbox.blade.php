@@ -8,6 +8,18 @@
         @include('panel.partials.sidebar', ['activeMenu' => 'inbox'])
 
         <section class="bg-white border border-slate-200 rounded-xl p-0 overflow-hidden">
+            @if($requiresLogin ?? false)
+            <div class="border-b border-slate-200 px-5 py-4 bg-slate-50 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <h1 class="text-xl font-semibold text-slate-900">Inbox</h1>
+                    <p class="text-sm text-slate-500 mt-1">Stay on this page and log in when you want to access your conversations.</p>
+                </div>
+                <a href="{{ route('login', ['redirect' => request()->fullUrl()]) }}" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 transition">
+                    Log in
+                </a>
+            </div>
+            @endif
+
             <div class="grid grid-cols-1 xl:grid-cols-[420px,1fr] min-h-[620px]">
                 <div class="border-b xl:border-b-0 xl:border-r border-slate-200">
                     <div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between gap-3">

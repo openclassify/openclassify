@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
@@ -116,6 +117,43 @@ class Listing extends Model implements HasMedia
         }
 
         return $query->whereIn('category_id', $categoryIds);
+    }
+
+    public function scopeForBrowseFilters(Builder $query, array $filters): Builder
+    {
+        $search = trim((string) ($filters['search'] ?? ''));
+        $country = isset($filters['country']) ? trim((string) $filters['country']) : null;
+        $city = isset($filters['city']) ? trim((string) $filters['city']) : null;
+        $minPrice = is_numeric($filters['min_price'] ?? null) ? max((float) $filters['min_price'], 0) : null;
+        $maxPrice = is_numeric($filters['max_price'] ?? null) ? max((float) $filters['max_price'], 0) : null;
+        $dateFilter = (string) ($filters['date_filter'] ?? 'all');
+        $categoryIds = $filters['category_ids'] ?? null;
+
+        $query
+            ->searchTerm($search)
+            ->forCategoryIds(is_array($categoryIds) ? $categoryIds : null)
+            ->when($country !== null && $country !== '', fn (Builder $builder) => $builder->where('country', $country))
+            ->when($city !== null && $city !== '', fn (Builder $builder) => $builder->where('city', $city))
+            ->when(! is_null($minPrice), fn (Builder $builder) => $builder->whereNotNull('price')->where('price', '>=', $minPrice))
+            ->when(! is_null($maxPrice), fn (Builder $builder) => $builder->whereNotNull('price')->where('price', '<=', $maxPrice));
+
+        return match ($dateFilter) {
+            'today' => $query->where('created_at', '>=', Carbon::now()->startOfDay()),
+            'week' => $query->where('created_at', '>=', Carbon::now()->subDays(7)),
+            'month' => $query->where('created_at', '>=', Carbon::now()->subDays(30)),
+            default => $query,
+        };
+    }
+
+    public function scopeApplyBrowseSort(Builder $query, string $sort): Builder
+    {
+        return match ($sort) {
+            'newest' => $query->reorder()->orderByDesc('created_at'),
+            'oldest' => $query->reorder()->orderBy('created_at'),
+            'price_asc' => $query->reorder()->orderByRaw('price is null')->orderBy('price'),
+            'price_desc' => $query->reorder()->orderByRaw('price is null')->orderByDesc('price'),
+            default => $query->reorder()->orderByDesc('is_featured')->orderByDesc('created_at'),
+        };
     }
 
     public function themeGallery(): array

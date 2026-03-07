@@ -135,6 +135,16 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAvata
         return filled($this->avatar_url) ? Storage::disk('public')->url($this->avatar_url) : null;
     }
 
+    public function getDisplayName(): string
+    {
+        return trim((string) ($this->name ?: $this->email ?: 'User'));
+    }
+
+    public function getEmail(): string
+    {
+        return trim((string) $this->email);
+    }
+
     public function toggleFavoriteListing(Listing $listing): bool
     {
         $isFavorite = $this->favoriteListings()->whereKey($listing->getKey())->exists();

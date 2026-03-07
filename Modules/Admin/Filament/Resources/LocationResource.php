@@ -11,8 +11,10 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Admin\Filament\Resources\LocationResource\Pages;
 use Modules\Location\Models\Country;
 use UnitEnum;
@@ -21,7 +23,7 @@ class LocationResource extends Resource
 {
     protected static ?string $model = Country::class;
     protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-globe-alt';
-    protected static string | UnitEnum | null $navigationGroup = 'Settings';
+    protected static string | UnitEnum | null $navigationGroup = 'Location';
     protected static ?string $label = 'Country';
     protected static ?string $pluralLabel = 'Countries';
     protected static ?int $navigationSort = 2;
@@ -47,6 +49,16 @@ class LocationResource extends Resource
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
         ])->defaultSort('id', 'desc')->filters([
+            SelectFilter::make('code')
+                ->label('Code')
+                ->options(fn (): array => Country::query()->orderBy('code')->pluck('code', 'code')->all()),
+            TernaryFilter::make('has_cities')
+                ->label('Has cities')
+                ->queries(
+                    true: fn (Builder $query): Builder => $query->has('cities'),
+                    false: fn (Builder $query): Builder => $query->doesntHave('cities'),
+                    blank: fn (Builder $query): Builder => $query,
+                ),
             TernaryFilter::make('is_active')->label('Active'),
         ])->actions([
             EditAction::make(),
