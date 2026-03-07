@@ -1,228 +1,286 @@
-<div class="max-w-[1320px] mx-auto px-4 py-5 sm:py-8">
+@php
+    $maxPhotoCount = (int) config('quick-listing.max_photo_count', 20);
+    $maxVideoCount = (int) config('video.max_listing_videos', 5);
+    $currency = \Modules\Listing\Support\ListingPanelHelper::defaultCurrency();
+    $displayPrice = is_numeric($price) ? number_format((float) $price, 0, ',', '.') : $price;
+@endphp
+
+<div class="mx-auto w-full max-w-[920px] px-4 py-6 sm:py-10">
     <style>
         .qc-shell {
-            --qc-card: #ffffff;
-            --qc-border: #e2e8f0;
-            --qc-text: #0f172a;
-            --qc-muted: #64748b;
-            --qc-primary: #f43f5e;
-            --qc-primary-soft: #ffe4ea;
-            --qc-warn: #f6edc5;
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
+            --qc-surface: rgba(255, 255, 255, 0.9);
+            --qc-surface-soft: #f5f5f7;
+            --qc-surface-subtle: #fbfbfd;
+            --qc-border: rgba(15, 23, 42, 0.08);
+            --qc-border-strong: rgba(15, 23, 42, 0.12);
+            --qc-text: #1d1d1f;
+            --qc-muted: #6e6e73;
+            --qc-primary: #0071e3;
+            --qc-primary-strong: #0066cc;
+            --qc-primary-soft: #e8f3ff;
+            --qc-danger: #dc2626;
             color: var(--qc-text);
+            font-family: "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
         }
 
-        .qc-head {
-            display: flex;
-            justify-content: space-between;
+        .qc-header {
+            display: grid;
+            gap: 0.75rem;
+            justify-items: center;
+            text-align: center;
+            margin-bottom: 1.9rem;
+        }
+
+        .qc-step-chip {
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: .85rem;
+            justify-content: center;
+            min-height: 2rem;
+            padding: 0 0.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--qc-border);
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--qc-muted);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
         }
 
         .qc-title {
-            font-size: 2rem;
+            margin: 0;
+            font-size: clamp(2.2rem, 5vw, 4.5rem);
             font-weight: 700;
-            letter-spacing: -0.015em;
-            line-height: 1.12;
-        }
-
-        .qc-progress-wrap {
-            display: flex;
-            align-items: center;
-            gap: .65rem;
+            line-height: 0.98;
+            letter-spacing: -0.06em;
         }
 
         .qc-progress {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: .35rem;
-            width: 190px;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.45rem;
+            width: min(280px, 72vw);
         }
 
         .qc-progress > span {
-            height: .24rem;
+            height: 0.28rem;
             border-radius: 999px;
-            background: #cbd5e1;
+            background: rgba(15, 23, 42, 0.1);
         }
 
         .qc-progress > span.is-on {
-            background: var(--qc-primary);
-        }
-
-        .qc-step-label {
-            font-size: 1.55rem;
-            font-weight: 700;
-            line-height: 1;
+            background: linear-gradient(90deg, var(--qc-primary), #4aa8ff);
         }
 
         .qc-card {
             border: 1px solid var(--qc-border);
-            border-radius: .75rem;
-            background: var(--qc-card);
+            border-radius: 2.25rem;
+            background: var(--qc-surface);
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.07);
             overflow: hidden;
+            backdrop-filter: saturate(180%) blur(20px);
         }
 
         .qc-body {
-            padding: 1.25rem;
-            min-height: 480px;
+            padding: 1.4rem;
         }
 
-        .qc-footer {
-            border-top: 1px solid var(--qc-border);
-            background: #fff;
-            padding: .9rem 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: .75rem;
+        .qc-stack {
+            display: grid;
+            gap: 0.9rem;
         }
 
-        .qc-btn {
-            border: 0;
-            border-radius: 999px;
-            min-width: 190px;
-            padding: .74rem 1.2rem;
-            font-size: .97rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: .15s ease;
-        }
-
-        .qc-btn-primary {
-            background: var(--qc-primary);
-            color: #fff;
-        }
-
-        .qc-btn-primary:hover {
-            filter: brightness(.95);
-        }
-
-        .qc-btn-secondary {
-            background: #dedede;
-            color: #3d3d3d;
-        }
-
-        .qc-btn:disabled {
-            background: #d8dbe1;
-            color: #f3f4f6;
-            cursor: not-allowed;
-            filter: none;
+        .qc-panel,
+        .qc-upload-zone,
+        .qc-summary-card,
+        .qc-notice,
+        .qc-empty,
+        .qc-photo-strip {
+            border: 1px solid var(--qc-border);
+            border-radius: 1.5rem;
+            background: var(--qc-surface-subtle);
         }
 
         .qc-upload-zone {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: .65rem;
+            display: grid;
+            place-items: center;
             text-align: center;
-            border: 1px dashed #cbd5e1;
-            border-radius: .75rem;
-            background: #f8fafc;
-            padding: 1.4rem .95rem;
+            gap: 0.8rem;
+            min-height: 360px;
+            padding: 2.5rem 1.5rem;
             cursor: pointer;
+            border-style: dashed;
+            border-color: rgba(0, 113, 227, 0.16);
+            background:
+                radial-gradient(circle at top, rgba(0, 113, 227, 0.08), transparent 34%),
+                #fbfbfd;
         }
 
-        .qc-upload-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.25;
+        .qc-upload-zone:hover {
+            border-color: rgba(0, 113, 227, 0.26);
+            background:
+                radial-gradient(circle at top, rgba(0, 113, 227, 0.1), transparent 34%),
+                #ffffff;
         }
 
-        .qc-upload-desc {
-            color: #475569;
-            max-width: 560px;
-            line-height: 1.45;
-            font-size: .95rem;
-        }
-
-        .qc-upload-btn {
+        .qc-upload-icon {
+            width: 4.25rem;
+            height: 4.25rem;
+            border-radius: 1.35rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 170px;
-            border-radius: 999px;
-            background: var(--qc-primary);
-            color: #fff;
-            font-size: .95rem;
+            background: #fff;
+            color: var(--qc-text);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .qc-upload-title {
+            font-size: 2rem;
+            line-height: 1.04;
+            letter-spacing: -0.04em;
             font-weight: 700;
-            padding: .66rem 1.2rem;
         }
 
-        .qc-help {
-            margin-top: .85rem;
-            text-align: center;
-            font-size: .9rem;
-            color: #64748b;
-            line-height: 1.5;
+        .qc-copy {
+            color: var(--qc-muted);
+            font-size: 0.94rem;
+            line-height: 1.55;
+            max-width: 28rem;
+            margin: 0;
         }
 
-        .qc-error {
-            margin-top: .5rem;
-            font-size: .85rem;
-            color: #b42318;
-            font-weight: 600;
-        }
-
-        .qc-ai-note {
-            margin-top: 1.4rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
+        .qc-primary-pill,
+        .qc-secondary-pill,
+        .qc-button,
+        .qc-button-secondary,
+        .qc-chip,
+        .qc-icon-button {
+            display: inline-flex;
             align-items: center;
-            gap: .45rem;
-        }
-
-        .qc-ai-note h3 {
-            font-size: 1.5rem;
+            justify-content: center;
+            border-radius: 999px;
             font-weight: 700;
-            line-height: 1.25;
+            transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
         }
 
-        .qc-ai-note p {
-            color: #475569;
-            line-height: 1.45;
-            font-size: .95rem;
+        .qc-primary-pill,
+        .qc-button {
+            min-height: 3.25rem;
+            padding: 0 1.4rem;
+            border: 1px solid transparent;
+            background: linear-gradient(180deg, #2997ff, var(--qc-primary));
+            color: #fff;
+            box-shadow: 0 14px 28px rgba(0, 113, 227, 0.18);
         }
 
-        .qc-photo-title {
-            margin-top: 1.45rem;
-            text-align: center;
-            font-size: 1.35rem;
+        .qc-primary-pill:hover,
+        .qc-button:hover {
+            transform: translateY(-1px);
+            background: linear-gradient(180deg, #1587ff, var(--qc-primary-strong));
+        }
+
+        .qc-secondary-pill,
+        .qc-button-secondary,
+        .qc-chip,
+        .qc-icon-button {
+            min-height: 3rem;
+            padding: 0 1rem;
+            border: 1px solid var(--qc-border);
+            background: #fff;
+            color: var(--qc-text);
+        }
+
+        .qc-secondary-pill:hover,
+        .qc-button-secondary:hover,
+        .qc-chip:hover,
+        .qc-icon-button:hover {
+            transform: translateY(-1px);
+            border-color: var(--qc-border-strong);
+            background: #fff;
+        }
+
+        .qc-panel {
+            padding: 1rem 1.05rem;
+        }
+
+        .qc-panel-head,
+        .qc-panel-row,
+        .qc-summary-card,
+        .qc-review-meta,
+        .qc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .qc-panel-head h2,
+        .qc-panel-row h2 {
+            margin: 0;
+            font-size: 1.05rem;
             font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
-        .qc-photo-sub {
-            margin: .75rem auto 1rem;
-            width: fit-content;
-            border-radius: .8rem;
-            background: #e3e7ee;
-            color: #5b6371;
-            padding: .5rem 1rem;
-            font-size: .92rem;
+        .qc-panel-head p,
+        .qc-panel-row p,
+        .qc-summary-copy,
+        .qc-meta-copy,
+        .qc-seller-copy {
+            margin: 0.2rem 0 0;
+            color: var(--qc-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .qc-count {
+            flex-shrink: 0;
+            color: var(--qc-muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .qc-photo-grid,
+        .qc-photo-strip {
+            display: grid;
+            gap: 0.8rem;
         }
 
         .qc-photo-grid {
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: .65rem;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-top: 1rem;
         }
 
-        .qc-photo-slot {
+        .qc-photo-strip {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            padding: 0.9rem;
+            background: #fff;
+        }
+
+        .qc-photo-slot,
+        .qc-review-thumb,
+        .qc-gallery-main {
             position: relative;
-            border: 1px solid #d2d2d2;
-            border-radius: .5rem;
-            aspect-ratio: 1;
-            background: #dddddd;
+            border-radius: 1.15rem;
             overflow: hidden;
+            border: 1px solid var(--qc-border);
+            background: #eef2f7;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .qc-photo-slot img {
+        .qc-photo-slot {
+            aspect-ratio: 1;
+            min-height: 120px;
+        }
+
+        .qc-photo-slot img,
+        .qc-review-thumb img,
+        .qc-gallery-main img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -230,270 +288,270 @@
 
         .qc-remove {
             position: absolute;
-            top: .28rem;
-            right: .28rem;
-            width: 1.5rem;
-            height: 1.5rem;
+            top: 0.5rem;
+            right: 0.5rem;
+            width: 1.9rem;
+            height: 1.9rem;
             border-radius: 999px;
             border: 0;
-            background: rgba(26, 26, 26, .86);
+            background: rgba(15, 23, 42, 0.88);
             color: #fff;
-            font-size: .85rem;
+            font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
         }
 
         .qc-cover {
             position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--qc-primary);
-            color: #fff;
-            text-align: center;
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .02em;
-            padding: .2rem 0;
-        }
-
-        .qc-warning {
-            display: flex;
-            align-items: center;
-            gap: .55rem;
-            background: var(--qc-warn);
-            border-bottom: 1px solid #eadb93;
-            padding: .8rem 1rem;
-            font-size: .95rem;
-            font-weight: 600;
-        }
-
-        .qc-warning-sub {
-            display: block;
-            font-size: .82rem;
-            color: #4a4a4a;
-            font-weight: 500;
-            margin-top: .2rem;
-        }
-
-        .qc-browser-header {
-            border-bottom: 1px solid #d8d8d8;
-            padding: .9rem 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: .8rem;
-            font-weight: 700;
-        }
-
-        .qc-back-btn {
-            border: 0;
-            background: transparent;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: .2rem;
-            color: #202020;
-            font-size: .95rem;
-        }
-
-        .qc-root-grid {
-            padding: 1rem;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: .85rem;
-        }
-
-        .qc-root-item {
-            border: 1px solid transparent;
-            border-radius: .7rem;
-            background: transparent;
-            cursor: pointer;
-            padding: .7rem .4rem;
-            text-align: center;
-        }
-
-        .qc-root-item:hover {
-            border-color: #d4d4d4;
-            background: #fafafa;
-        }
-
-        .qc-root-item.is-selected {
-            border-color: var(--qc-primary);
-            background: var(--qc-primary-soft);
-        }
-
-        .qc-root-icon {
-            width: 4rem;
-            height: 4rem;
+            left: 0.55rem;
+            bottom: 0.55rem;
+            min-height: 1.8rem;
+            padding: 0 0.7rem;
             border-radius: 999px;
-            background: #ece2d4;
-            margin: 0 auto .5rem;
+            background: rgba(255, 255, 255, 0.96);
+            color: var(--qc-text);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .qc-root-name {
-            font-size: .95rem;
+            font-size: 0.72rem;
             font-weight: 700;
-            line-height: 1.3;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-        .qc-search {
-            padding: .8rem 1rem;
-            border-bottom: 1px solid #dfdfdf;
+        .qc-empty {
+            padding: 1.15rem 1.2rem;
+            text-align: center;
+            color: var(--qc-muted);
+            font-size: 0.93rem;
+            line-height: 1.6;
         }
 
-        .qc-search input {
-            width: 100%;
-            border: 1px solid #d6d6d6;
-            border-radius: .6rem;
-            background: #f2f2f2;
-            padding: .68rem .9rem;
-            font-size: .95rem;
-        }
-
-        .qc-list {
-            padding: 0 1rem 1rem;
-        }
-
-        .qc-row {
+        .qc-video-list {
             display: grid;
-            grid-template-columns: 1fr auto auto;
-            gap: .4rem;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .qc-video-item {
+            display: flex;
             align-items: center;
-            border-bottom: 1px solid #e0e0e0;
-            padding: .84rem .1rem;
+            justify-content: space-between;
+            gap: 0.8rem;
+            padding: 0.95rem 1rem;
+            border: 1px solid var(--qc-border);
+            border-radius: 1.1rem;
+            background: #fff;
         }
 
-        .qc-row-main,
-        .qc-row-child {
-            border: 0;
-            background: transparent;
-            cursor: pointer;
-            text-align: left;
+        .qc-video-meta {
+            min-width: 0;
         }
 
-        .qc-row-main {
-            color: #1d1d1d;
-            font-size: 1rem;
-        }
-
-        .qc-row-main.is-selected {
+        .qc-video-name {
+            color: var(--qc-text);
+            font-size: 0.93rem;
             font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .qc-row-child {
-            color: #8a8a8a;
+        .qc-video-size {
+            margin-top: 0.2rem;
+            color: var(--qc-muted);
+            font-size: 0.84rem;
         }
 
-        .qc-row-check {
-            color: var(--qc-primary);
+        .qc-notice {
+            padding: 0.9rem 1rem;
+            color: var(--qc-text);
+            font-size: 0.9rem;
+            line-height: 1.55;
         }
 
-        .qc-selection {
-            padding: .85rem 1rem 0;
-            font-size: .92rem;
-            color: #3b3b3b;
-        }
-
-        .qc-inline-actions {
-            padding: .85rem 1rem 0;
+        .qc-chip-row {
             display: flex;
             flex-wrap: wrap;
-            gap: .5rem;
+            gap: 0.6rem;
         }
 
-        .qc-chip {
-            border: 1px solid #d8d8d8;
-            border-radius: 999px;
-            background: #fafafa;
-            color: #404040;
-            font-size: .82rem;
-            font-weight: 600;
-            padding: .35rem .7rem;
-            cursor: pointer;
-        }
-
-        .qc-strip {
-            border: 1px solid #d7d7d7;
-            border-radius: .7rem;
-            background: #eeeeee;
-            padding: .75rem;
+        .qc-category-grid {
             display: grid;
-            grid-template-columns: repeat(7, minmax(0, 1fr));
-            gap: .55rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
         }
 
-        .qc-summary {
-            margin-top: .95rem;
-            border-top: 1px solid #d9d9d9;
-            padding-top: .9rem;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: .8rem;
-        }
-
-        .qc-summary h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        .qc-summary p {
-            margin: .45rem 0 0;
-            font-size: .98rem;
-            color: #2f2f2f;
-        }
-
-        .qc-link-btn {
-            border: 0;
-            background: transparent;
-            color: var(--qc-primary);
-            font-size: 1rem;
-            font-weight: 700;
-            text-decoration: underline;
+        .qc-category-card {
+            border: 1px solid var(--qc-border);
+            border-radius: 1.4rem;
+            background: #fff;
+            padding: 1.1rem 1rem;
+            text-align: center;
             cursor: pointer;
-            white-space: nowrap;
+            transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, background 0.18s ease;
         }
 
-        .qc-form-grid {
-            margin-top: 1rem;
-            display: grid;
-            gap: 1rem;
+        .qc-category-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
         }
 
-        .qc-field label {
-            display: inline-block;
-            margin-bottom: .4rem;
-            font-size: .95rem;
+        .qc-category-card.is-selected {
+            border-color: rgba(0, 113, 227, 0.24);
+            background: var(--qc-primary-soft);
+        }
+
+        .qc-category-icon {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 0.8rem;
+            border-radius: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--qc-surface-soft);
+            color: var(--qc-text);
+        }
+
+        .qc-category-name {
+            font-size: 0.95rem;
             font-weight: 700;
+            line-height: 1.35;
         }
 
-        .qc-field .qc-hint {
-            margin-top: .3rem;
-            font-size: .85rem;
-            color: #787878;
+        .qc-search-wrap {
+            display: grid;
+            gap: 0.8rem;
         }
 
         .qc-input,
         .qc-select,
         .qc-textarea {
             width: 100%;
-            border: 1px solid #d6d6d6;
-            border-radius: .65rem;
-            background: #efefef;
-            color: #2a2a2a;
-            padding: .76rem .92rem;
-            font-size: 1rem;
+            min-height: 3.25rem;
+            padding: 0 1rem;
+            border: 1px solid var(--qc-border);
+            border-radius: 1rem;
+            background: #fff;
+            color: var(--qc-text);
+            font-size: 0.96rem;
+            transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
         }
 
         .qc-textarea {
-            min-height: 140px;
+            min-height: 10rem;
+            padding-top: 0.9rem;
+            padding-bottom: 0.9rem;
             resize: vertical;
+        }
+
+        .qc-input:focus,
+        .qc-select:focus,
+        .qc-textarea:focus {
+            outline: none;
+            border-color: rgba(0, 113, 227, 0.28);
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.12);
+        }
+
+        .qc-category-list {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .qc-category-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 0.6rem;
+            align-items: center;
+            padding: 0.7rem;
+            border: 1px solid var(--qc-border);
+            border-radius: 1rem;
+            background: #fff;
+        }
+
+        .qc-category-main,
+        .qc-category-next,
+        .qc-back-link,
+        .qc-text-link {
+            border: 0;
+            background: transparent;
+            color: var(--qc-text);
+            cursor: pointer;
+        }
+
+        .qc-category-main {
+            text-align: left;
+            font-size: 0.96rem;
+            font-weight: 600;
+        }
+
+        .qc-category-main.is-selected {
+            color: var(--qc-primary);
+        }
+
+        .qc-category-check {
+            color: var(--qc-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qc-back-link,
+        .qc-text-link {
+            color: var(--qc-primary);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .qc-summary-card {
+            padding: 0.95rem 1rem;
+            background: #fff;
+        }
+
+        .qc-summary-label {
+            display: block;
+            color: var(--qc-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .qc-summary-value {
+            display: block;
+            margin-top: 0.3rem;
+            color: var(--qc-text);
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .qc-fields {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .qc-fields.two-col {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .qc-field {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .qc-field label {
+            color: var(--qc-text);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .qc-counter {
+            text-align: right;
+            color: var(--qc-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .qc-input-row {
@@ -503,936 +561,399 @@
         .qc-input-suffix {
             position: absolute;
             top: 50%;
-            right: .9rem;
+            right: 1rem;
             transform: translateY(-50%);
-            font-size: 1.25rem;
+            color: var(--qc-muted);
+            font-size: 0.92rem;
             font-weight: 700;
-            color: #8a8a8a;
         }
 
-        .qc-counter {
-            margin-top: .35rem;
-            text-align: right;
-            color: #858585;
-            font-size: .85rem;
-            font-weight: 600;
-        }
-
-        .qc-two-col {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: .75rem;
-        }
-
-        .qc-dynamic-grid {
-            margin-top: 1rem;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: .8rem;
-        }
-
-        .qc-toggle-line {
+        .qc-toggle {
             display: inline-flex;
             align-items: center;
-            gap: .45rem;
-            font-size: .95rem;
+            gap: 0.55rem;
+            min-height: 3.25rem;
+            padding: 0 1rem;
+            border: 1px solid var(--qc-border);
+            border-radius: 1rem;
+            background: #fff;
+            color: var(--qc-text);
+            font-size: 0.95rem;
             font-weight: 600;
-            color: #323232;
         }
 
-        .qc-info-box {
-            margin-top: .8rem;
-            border: 1px dashed #c8c8c8;
-            border-radius: .75rem;
-            background: #f4f4f4;
-            color: #555;
-            font-size: .92rem;
-            padding: .85rem 1rem;
-            line-height: 1.45;
+        .qc-toggle input {
+            accent-color: var(--qc-primary);
         }
 
-        .qc-preview-breadcrumb {
-            color: #6a6a6a;
-            font-size: .92rem;
+        .qc-error {
+            color: var(--qc-danger);
+            font-size: 0.84rem;
+            line-height: 1.5;
             font-weight: 600;
-            margin-bottom: .85rem;
         }
 
-        .qc-preview-grid {
+        .qc-footer {
+            padding: 1rem 1.1rem;
+            border-top: 1px solid var(--qc-border);
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        .qc-footer.is-single {
+            justify-content: flex-end;
+        }
+
+        .qc-review-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 330px;
-            gap: .9rem;
-            align-items: start;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 1rem;
         }
 
-        .qc-preview-panel {
-            border: 1px solid #d8d8d8;
-            border-radius: .75rem;
-            background: #f8f8f8;
-            padding: .9rem;
-        }
-
-        .qc-gallery {
+        .qc-review-gallery {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: .55rem;
+            gap: 0.8rem;
         }
 
-        .qc-gallery-item {
-            border-radius: .65rem;
-            overflow: hidden;
-            background: #2f2f35;
-            min-height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .qc-gallery-main {
+            min-height: 420px;
+            background: #f0f4f8;
         }
 
-        .qc-gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .qc-review-thumbs {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.7rem;
         }
 
-        .qc-main-meta {
-            margin-top: 1rem;
-            border-top: 1px solid #dfdfdf;
-            padding-top: 1rem;
+        .qc-review-thumb {
+            aspect-ratio: 1;
+            min-height: 86px;
         }
 
-        .qc-main-price {
-            font-size: 1.9rem;
-            font-weight: 900;
-            line-height: 1;
+        .qc-review-panel {
+            padding: 1.1rem;
         }
 
-        .qc-main-location {
-            margin-top: .5rem;
-            color: #545454;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: .35rem;
-        }
-
-        .qc-main-title {
-            margin-top: .95rem;
-            font-size: 1.15rem;
+        .qc-review-price {
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1;
+            letter-spacing: -0.06em;
         }
 
-        .qc-main-desc {
-            margin-top: .5rem;
-            color: #333;
-            line-height: 1.55;
-            font-size: .98rem;
+        .qc-review-location {
+            color: var(--qc-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: right;
         }
 
-        .qc-preview-features {
+        .qc-review-title {
+            margin: 1rem 0 0;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+        }
+
+        .qc-review-description {
+            margin: 0.8rem 0 0;
+            color: var(--qc-text);
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        .qc-feature-list {
+            display: grid;
+            gap: 0.8rem;
             margin-top: 1rem;
-            border-top: 1px solid #dfdfdf;
-            padding-top: .8rem;
-        }
-
-        .qc-preview-features h5 {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin: 0 0 .6rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--qc-border);
         }
 
         .qc-feature-row {
             display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: .7rem;
-            border-top: 1px solid #ececec;
-            padding: .55rem 0;
-            font-size: .95rem;
-        }
-
-        .qc-feature-row:first-child {
-            border-top: 0;
-            padding-top: 0;
+            grid-template-columns: 150px 1fr;
+            gap: 0.9rem;
+            align-items: start;
         }
 
         .qc-feature-label {
-            color: #6a6a6a;
-            font-weight: 600;
+            color: var(--qc-muted);
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .qc-feature-value {
-            color: #1f1f1f;
-            font-weight: 700;
+            color: var(--qc-text);
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .qc-side-stack {
+            display: grid;
+            gap: 1rem;
+            align-self: start;
         }
 
         .qc-seller-card {
-            border: 1px solid #d8d8d8;
-            border-radius: .75rem;
-            background: #f8f8f8;
-            padding: 1rem;
+            padding: 1rem 1.1rem;
         }
 
         .qc-seller-head {
             display: flex;
             align-items: center;
-            gap: .65rem;
+            gap: 0.8rem;
         }
 
         .qc-avatar {
-            width: 3.1rem;
-            height: 3.1rem;
+            width: 3.3rem;
+            height: 3.3rem;
             border-radius: 999px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #f1d9df;
-            color: #b43353;
-            font-weight: 800;
-            font-size: 1.35rem;
+            background: var(--qc-surface-soft);
+            color: var(--qc-text);
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         .qc-seller-name {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .qc-seller-email {
-            color: #757575;
-            font-size: .9rem;
+            margin-top: 0.2rem;
+            color: var(--qc-muted);
+            font-size: 0.88rem;
         }
 
-        .qc-seller-actions {
-            margin-top: .95rem;
+        .qc-publish-stack {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: .5rem;
+            gap: 0.7rem;
         }
 
-        .qc-pill {
-            border: 1px solid #e8c9d2;
-            border-radius: 999px;
-            background: #fff;
-            color: #d34565;
-            font-size: .95rem;
-            font-weight: 700;
-            padding: .55rem .6rem;
-            text-align: center;
+        .qc-button,
+        .qc-button-secondary {
+            min-height: 3.25rem;
+            padding: 0 1.2rem;
+            font-size: 0.95rem;
         }
 
-        .qc-publish-wrap {
-            margin-top: .9rem;
-            display: grid;
-            gap: .55rem;
-        }
-
-        .qc-publish {
-            width: 100%;
-            border: 0;
-            border-radius: 999px;
-            background: var(--qc-primary);
-            color: #fff;
-            font-size: 1.05rem;
-            font-weight: 700;
-            padding: .7rem 1rem;
-            cursor: pointer;
-        }
-
-        .qc-publish:hover {
-            filter: brightness(.95);
-        }
-
-        .qc-publish:disabled {
-            background: #d8d8d8;
-            color: #efefef;
+        .qc-button:disabled {
+            background: #d8dbe1;
+            color: #f3f4f6;
+            box-shadow: none;
             cursor: not-allowed;
+            transform: none;
         }
 
-        .qc-muted-btn {
-            width: 100%;
-            border: 1px solid #d7d7d7;
-            border-radius: 999px;
-            background: #f7f7f7;
-            color: #555;
-            font-size: .95rem;
-            font-weight: 700;
-            padding: .6rem .9rem;
-            cursor: pointer;
+        .qc-button-secondary {
+            box-shadow: none;
         }
 
-        @media (max-width: 1120px) {
-            .qc-preview-grid {
+        @media (max-width: 1023px) {
+            .qc-review-grid {
                 grid-template-columns: 1fr;
             }
+
+            .qc-side-stack {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
-        @media (max-width: 900px) {
-            .qc-title {
-                font-size: 1.7rem;
-            }
-
-            .qc-step-label {
-                font-size: 1.3rem;
-            }
-
-            .qc-body {
+        @media (max-width: 767px) {
+            .qc-body,
+            .qc-footer {
                 padding: 1rem;
-                min-height: 420px;
             }
 
-            .qc-progress {
-                width: 160px;
-                gap: .3rem;
+            .qc-panel-head,
+            .qc-panel-row,
+            .qc-summary-card,
+            .qc-review-meta,
+            .qc-footer,
+            .qc-side-stack {
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .qc-upload-title,
-            .qc-ai-note h3 {
-                font-size: 1.3rem;
+            .qc-footer {
+                justify-content: stretch;
             }
 
-            .qc-upload-desc,
-            .qc-ai-note p,
-            .qc-help {
-                font-size: .97rem;
+            .qc-upload-zone {
+                min-height: 260px;
             }
 
-            .qc-photo-grid {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-
-            .qc-root-grid {
+            .qc-category-grid,
+            .qc-photo-grid,
+            .qc-photo-strip,
+            .qc-review-thumbs,
+            .qc-fields.two-col {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .qc-strip {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-
-            .qc-two-col,
-            .qc-dynamic-grid {
-                grid-template-columns: 1fr;
             }
 
             .qc-feature-row {
                 grid-template-columns: 1fr;
-                gap: .2rem;
+                gap: 0.3rem;
+            }
+
+            .qc-review-location {
+                text-align: left;
             }
         }
 
-        @media (max-width: 640px) {
-            .qc-head {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: .7rem;
-            }
-
-            .qc-progress-wrap {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .qc-progress {
-                width: min(58vw, 180px);
-            }
-
-            .qc-btn {
-                min-width: 170px;
-                font-size: .95rem;
-            }
-
-            .qc-upload-zone {
-                padding: 1.2rem .85rem;
-            }
-
-            .qc-upload-title,
-            .qc-ai-note h3 {
-                font-size: 1.2rem;
-            }
-
-            .qc-photo-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-
-        .qc-shell {
-            --qc-card: #ffffff;
-            --qc-border: #dbe3ee;
-            --qc-text: #0f172a;
-            --qc-muted: #64748b;
-            --qc-primary: #111827;
-            --qc-primary-soft: #f3f4f6;
-            --qc-warn: #f8fafc;
-            color: var(--qc-text);
-            font-family: "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-        }
-
-        .qc-hero {
-            display: grid;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .qc-hero-copy {
-            min-width: 0;
-        }
-
-        .qc-eyebrow {
-            display: inline-flex;
-            width: fit-content;
-            align-items: center;
-            border-radius: 999px;
-            background: #f1f5f9;
-            color: #475569;
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            padding: .42rem .7rem;
-        }
-
-        .qc-title {
-            margin-top: .5rem;
-            font-size: 1.9rem;
-            line-height: 1.05;
-            letter-spacing: -0.04em;
-            font-weight: 700;
-            text-align: left;
-        }
-
-        .qc-subtitle {
-            margin-top: .45rem;
-            color: var(--qc-muted);
-            font-size: .95rem;
-            line-height: 1.55;
-            max-width: 56rem;
-            text-align: left;
-        }
-
-        .qc-head {
-            display: grid;
-            gap: .55rem;
-            margin: 0;
-            padding: 0;
-            min-width: 0;
-            background: transparent;
-            border: 0;
-            box-shadow: none;
-        }
-
-        .qc-progress-wrap {
-            width: 100%;
-            justify-content: space-between;
-            gap: .9rem;
-        }
-
-        .qc-progress {
-            width: 100%;
-            gap: .45rem;
-        }
-
-        .qc-progress > span {
-            height: .3rem;
-            background: #e2e8f0;
-        }
-
-        .qc-progress > span.is-on {
-            background: var(--qc-primary);
-        }
-
-        .qc-step-label {
-            font-size: .92rem;
-            color: #334155;
-            font-weight: 700;
-        }
-
-        .qc-stage {
-            padding: 0;
-            border: 0;
-            background: transparent;
-            box-shadow: none;
-        }
-
-        .qc-card {
-            border: 1px solid var(--qc-border);
-            border-radius: 1rem;
-            background: var(--qc-card);
-            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-        }
-
-        .qc-body {
-            min-height: 0;
-            padding: 1rem;
-        }
-
-        .qc-body > * {
-            max-width: 100%;
-        }
-
-        .qc-footer {
-            padding: 1rem;
-            justify-content: stretch;
-            flex-direction: column-reverse;
-            align-items: stretch;
-            background: #fff;
-        }
-
-        .qc-btn,
-        .qc-publish,
-        .qc-muted-btn,
-        .qc-upload-btn {
-            width: 100%;
-            min-width: 0;
-            min-height: 3rem;
-            padding: .82rem 1rem;
-            font-size: .95rem;
-        }
-
-        .qc-btn-primary,
-        .qc-publish,
-        .qc-upload-btn {
-            background: #111827;
-            color: #fff;
-            box-shadow: none;
-        }
-
-        .qc-btn-primary:hover,
-        .qc-publish:hover,
-        .qc-upload-btn:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
-        .qc-btn-secondary,
-        .qc-muted-btn {
-            background: #f8fafc;
-            color: #0f172a;
-            border: 1px solid var(--qc-border);
-        }
-
-        .qc-upload-zone,
-        .qc-warning,
-        .qc-summary,
-        .qc-info-box,
-        .qc-preview-panel,
-        .qc-seller-card,
-        .qc-strip {
-            border-radius: 1rem;
-        }
-
-        .qc-upload-zone {
-            min-height: 220px;
-            padding: 1.25rem 1rem;
-            background: #f8fafc;
-        }
-
-        .qc-upload-zone > * {
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .qc-upload-title,
-        .qc-ai-note h3 {
-            font-size: 1.35rem;
-            letter-spacing: -0.03em;
-        }
-
-        .qc-photo-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .qc-root-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            padding: 1rem;
-        }
-
-        .qc-root-item {
-            border: 1px solid var(--qc-border);
-            border-radius: .9rem;
-            padding: .85rem .6rem;
-            background: #fff;
-        }
-
-        .qc-root-item.is-selected {
-            background: #f8fafc;
-            border-color: #94a3b8;
-        }
-
-        .qc-root-icon {
-            background: #f8fafc;
-            color: #111827;
-        }
-
-        .qc-search input,
-        .qc-input,
-        .qc-select,
-        .qc-textarea {
-            background: #fff;
-            border-color: var(--qc-border);
-            border-radius: .85rem;
-            padding: .85rem .95rem;
-        }
-
-        .qc-summary {
-            border-top: 0;
-            margin-top: 1rem;
-            padding-top: 0;
-            border: 1px solid var(--qc-border);
-            background: #f8fafc;
-            padding: 1rem;
-            flex-direction: column;
-            gap: .6rem;
-        }
-
-        .qc-strip {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            background: #f8fafc;
-        }
-
-        .qc-dynamic-grid,
-        .qc-two-col,
-        .qc-preview-grid,
-        .qc-seller-actions {
-            grid-template-columns: 1fr;
-        }
-
-        .qc-preview-grid {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .qc-preview-panel,
-        .qc-seller-card {
-            background: #fff;
-        }
-
-        .qc-warning {
-            background: #f8fafc;
-            border-bottom: 1px solid var(--qc-border);
-        }
-
-        .qc-chip,
-        .qc-pill {
-            border-color: var(--qc-border);
-            background: #fff;
-            color: #111827;
-        }
-
-        .qc-avatar {
-            background: #f3f4f6;
-            color: #111827;
-        }
-
-        .qc-gallery {
-            grid-template-columns: 1fr;
-        }
-
-        .qc-gallery-item {
-            min-height: 220px;
-        }
-
-        .qc-feature-row {
-            grid-template-columns: 1fr;
-            gap: .2rem;
-        }
-
-        .qc-publish-wrap {
-            display: grid;
-            gap: .6rem;
-            margin-top: .9rem;
-        }
-
-        @media (min-width: 640px) {
-            .qc-title {
-                font-size: 2.35rem;
-            }
-
-            .qc-body,
-            .qc-footer {
-                padding: 1.25rem;
-            }
-
+        @media (max-width: 540px) {
+            .qc-category-grid,
             .qc-photo-grid,
-            .qc-strip {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-
-            .qc-gallery {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (min-width: 768px) {
-            .qc-hero {
-                grid-template-columns: minmax(0, 1fr) 220px;
-                align-items: center;
-                gap: 1.5rem;
-            }
-
-            .qc-head {
-                justify-items: end;
-                align-self: center;
-            }
-
-            .qc-footer {
-                flex-direction: row;
-                justify-content: flex-end;
-            }
-
-            .qc-btn,
-            .qc-publish,
-            .qc-muted-btn {
-                width: auto;
-                min-width: 160px;
-            }
-
-            .qc-root-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
-            .qc-dynamic-grid,
-            .qc-two-col {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .qc-preview-grid {
-                grid-template-columns: minmax(0, 1fr) 280px;
-            }
-
-            .qc-gallery {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
-            .qc-gallery-item {
-                min-height: 160px;
-            }
-
-            .qc-seller-actions {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .qc-body {
-                padding: 1.4rem;
-            }
-
-            .qc-preview-grid {
-                grid-template-columns: minmax(0, 1fr) 320px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .qc-hero {
-                gap: .7rem;
-                margin-bottom: .75rem;
-            }
-
-            .qc-eyebrow,
-            .qc-subtitle {
-                display: none;
-            }
-
-            .qc-title {
-                margin-top: 0;
-                font-size: 1.55rem;
-            }
-
-            .qc-step-label {
-                font-size: .82rem;
-            }
-
-            .qc-progress-wrap {
-                gap: .6rem;
-            }
-
-            .qc-card {
-                border-radius: .85rem;
-                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
-            }
-
-            .qc-body,
-            .qc-footer {
-                padding: .85rem;
-            }
-
-            .qc-upload-zone {
-                min-height: 176px;
-                padding: 1rem .85rem;
-                gap: .55rem;
-            }
-
-            .qc-upload-title,
-            .qc-ai-note h3,
-            .qc-photo-title {
-                font-size: 1.08rem;
-            }
-
-            .qc-upload-desc,
-            .qc-help,
-            .qc-ai-note p {
-                font-size: .9rem;
-            }
-
-            .qc-help {
-                margin-top: .65rem;
-            }
-
-            .qc-photo-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: .55rem;
-            }
-
-            .qc-root-grid {
+            .qc-photo-strip,
+            .qc-review-thumbs,
+            .qc-fields.two-col {
                 grid-template-columns: 1fr;
-                padding: .85rem;
             }
 
-            .qc-strip {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .qc-category-row {
+                grid-template-columns: 1fr auto;
+            }
+
+            .qc-category-check {
+                display: none;
             }
         }
     </style>
 
     <div class="qc-shell">
-        <div class="qc-hero">
-            <div class="qc-hero-copy">
-                <span class="qc-eyebrow">New listing</span>
-                <h1 class="qc-title">{{ $this->currentStepTitle }}</h1>
-                <p class="qc-subtitle">{{ $this->currentStepHint }}</p>
-            </div>
-            <div class="qc-head">
-                <div class="qc-step-label">Step {{ $currentStep }}/5</div>
-                <div class="qc-progress-wrap">
-                    <div class="qc-progress" aria-hidden="true">
-                        @for ($step = 1; $step <= 5; $step++)
-                            <span @class(['is-on' => $step <= $currentStep])></span>
-                        @endfor
-                    </div>
-                </div>
+        <div class="qc-header">
+            <span class="qc-step-chip">Step {{ $currentStep }} of 5</span>
+            <h1 class="qc-title">{{ $this->currentStepTitle }}</h1>
+            <div class="qc-progress" aria-hidden="true">
+                @for ($step = 1; $step <= 5; $step++)
+                    <span @class(['is-on' => $step <= $currentStep])></span>
+                @endfor
             </div>
         </div>
 
-        <div class="qc-stage">
         <div class="qc-card">
             @if ($currentStep === 1)
                 <div class="qc-body">
-                    <label class="qc-upload-zone" for="quick-listing-photo-input">
-                        <x-heroicon-o-photo class="h-10 w-10 text-gray-700" />
-                        <div class="qc-upload-title">Add photos</div>
-                        <div class="qc-upload-desc">Clear photos work best.</div>
-                        <span class="qc-upload-btn">Select photos</span>
-                    </label>
-
-                    <input
-                        id="quick-listing-photo-input"
-                        type="file"
-                        wire:model="photos"
-                        accept="image/jpeg,image/jpg,image/png"
-                        multiple
-                        class="hidden"
-                    />
-
-                    <p class="qc-help">1-{{ (int) config('quick-listing.max_photo_count', 20) }} photos. JPG or PNG.</p>
-
-                    @error('photos')
-                        <div class="qc-error">{{ $message }}</div>
-                    @enderror
-
-                    @error('photos.*')
-                        <div class="qc-error">{{ $message }}</div>
-                    @enderror
-
-                    @if (count($photos) > 0)
-                            <h3 class="qc-photo-title">Your photos</h3>
-                            <div class="qc-photo-sub">First photo is the cover</div>
-
-                        <div class="qc-photo-grid">
-                            @for ($index = 0; $index < (int) config('quick-listing.max_photo_count', 20); $index++)
-                                <div class="qc-photo-slot">
-                                    @if (isset($photos[$index]))
-                                        <img src="{{ $photos[$index]->temporaryUrl() }}" alt="Uploaded photo {{ $index + 1 }}">
-                                        <button type="button" class="qc-remove" wire:click="removePhoto({{ $index }})">×</button>
-                                        @if ($index === 0)
-                                            <div class="qc-cover">COVER</div>
-                                        @endif
-                                    @else
-                                        <x-heroicon-o-photo class="h-9 w-9 text-gray-400" />
-                                    @endif
-                                </div>
-                            @endfor
-                        </div>
-                    @else
-                        <div class="qc-ai-note">
-                            <x-heroicon-o-sparkles class="h-10 w-10 text-pink-500" />
-                            <h3>Add one photo</h3>
-                            <p>We suggest a category after the first upload.</p>
-                        </div>
-                    @endif
-
-                    <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                            <div>
-                                <h3 class="text-base font-semibold text-slate-900">Add videos</h3>
-                                <p class="text-sm text-slate-500">Optional. Supported browsers reduce the file before upload, then Laravel converts it to the mobile version in the queue.</p>
-                            </div>
-                            <label for="quick-listing-video-input" class="inline-flex min-h-11 items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white cursor-pointer">
-                                Select videos
-                            </label>
-                        </div>
+                    <div class="qc-stack">
+                        <label class="qc-upload-zone" for="quick-listing-photo-input">
+                            <span class="qc-upload-icon">
+                                <x-heroicon-o-photo class="h-7 w-7" />
+                            </span>
+                            <div class="qc-upload-title">Add photos</div>
+                            <p class="qc-copy">1 to {{ $maxPhotoCount }} photos.</p>
+                            <span class="qc-primary-pill">Select photos</span>
+                        </label>
 
                         <input
-                            id="quick-listing-video-input"
+                            id="quick-listing-photo-input"
                             type="file"
-                            wire:model="videos"
-                            accept="video/mp4,video/quicktime,video/webm,video/x-matroska,video/x-msvideo"
+                            wire:model="photos"
+                            accept="image/jpeg,image/jpg,image/png"
                             multiple
                             class="hidden"
-                            data-video-upload-optimizer="{{ config('video.client_side.enabled', true) ? 'true' : 'false' }}"
-                            data-video-optimize-width="{{ config('video.client_side.max_width', 854) }}"
-                            data-video-optimize-bitrate="{{ config('video.client_side.bitrate', 900000) }}"
-                            data-video-optimize-fps="{{ config('video.client_side.fps', 24) }}"
-                            data-video-optimize-min-bytes="{{ config('video.client_side.min_size_bytes', 1048576) }}"
-                        />
+                        >
 
-                        @error('videos')
+                        @error('photos')
                             <div class="qc-error">{{ $message }}</div>
                         @enderror
 
-                        @error('videos.*')
+                        @error('photos.*')
                             <div class="qc-error">{{ $message }}</div>
                         @enderror
 
-                        @if (count($videos) > 0)
-                            <div class="mt-4 space-y-3">
-                                @foreach ($videos as $index => $video)
-                                    @php
-                                        $videoName = method_exists($video, 'getClientOriginalName') ? $video->getClientOriginalName() : 'Video '.($index + 1);
-                                        $videoSize = method_exists($video, 'getSize') ? (int) $video->getSize() : 0;
-                                    @endphp
-                                    <div class="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
-                                        <div class="min-w-0">
-                                            <p class="truncate text-sm font-semibold text-slate-800">{{ $videoName }}</p>
-                                            <p class="text-xs text-slate-500">{{ $videoSize > 0 ? number_format($videoSize / 1048576, 1, ',', '.') : '-' }} MB</p>
-                                        </div>
-                                        <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white" wire:click="removeVideo({{ $index }})">
-                                            ×
-                                        </button>
+                        @if (count($photos) > 0)
+                            <div class="qc-panel">
+                                <div class="qc-panel-head">
+                                    <div>
+                                        <h2>Your photos</h2>
                                     </div>
-                                @endforeach
+                                    <span class="qc-count">{{ count($photos) }}/{{ $maxPhotoCount }}</span>
+                                </div>
+
+                                <div class="qc-photo-grid">
+                                    @for ($index = 0; $index < $maxPhotoCount; $index++)
+                                        <div class="qc-photo-slot">
+                                            @if (isset($photos[$index]))
+                                                <img src="{{ $photos[$index]->temporaryUrl() }}" alt="Uploaded photo {{ $index + 1 }}">
+                                                <button type="button" class="qc-remove" wire:click="removePhoto({{ $index }})">×</button>
+                                                @if ($index === 0)
+                                                    <div class="qc-cover">Cover</div>
+                                                @endif
+                                            @else
+                                                <x-heroicon-o-photo class="h-8 w-8 text-slate-400" />
+                                            @endif
+                                        </div>
+                                    @endfor
+                                </div>
                             </div>
                         @else
-                            <p class="mt-4 text-sm text-slate-500">
-                                Add up to {{ (int) config('video.max_listing_videos', 5) }} clips. Mobile MP4 will be generated automatically after upload.
-                            </p>
+                            <div class="qc-empty">Add one cover photo to continue.</div>
                         @endif
+
+                        <div class="qc-panel">
+                            <div class="qc-panel-row">
+                                <h2>Video</h2>
+                                <label for="quick-listing-video-input" class="qc-secondary-pill cursor-pointer">
+                                    Add video
+                                </label>
+                            </div>
+
+                            <input
+                                id="quick-listing-video-input"
+                                type="file"
+                                wire:model="videos"
+                                accept="video/mp4,video/quicktime,video/webm,video/x-matroska,video/x-msvideo"
+                                multiple
+                                class="hidden"
+                                data-video-upload-optimizer="{{ config('video.client_side.enabled', true) ? 'true' : 'false' }}"
+                                data-video-optimize-width="{{ config('video.client_side.max_width', 854) }}"
+                                data-video-optimize-bitrate="{{ config('video.client_side.bitrate', 900000) }}"
+                                data-video-optimize-fps="{{ config('video.client_side.fps', 24) }}"
+                                data-video-optimize-min-bytes="{{ config('video.client_side.min_size_bytes', 1048576) }}"
+                            />
+
+                            @error('videos')
+                                <div class="qc-error">{{ $message }}</div>
+                            @enderror
+
+                            @error('videos.*')
+                                <div class="qc-error">{{ $message }}</div>
+                            @enderror
+
+                            @if (count($videos) > 0)
+                                <div class="qc-video-list">
+                                    @foreach ($videos as $index => $video)
+                                        @php
+                                            $videoName = method_exists($video, 'getClientOriginalName') ? $video->getClientOriginalName() : 'Video '.($index + 1);
+                                            $videoSize = method_exists($video, 'getSize') ? (int) $video->getSize() : 0;
+                                        @endphp
+                                        <div class="qc-video-item">
+                                            <div class="qc-video-meta">
+                                                <div class="qc-video-name">{{ $videoName }}</div>
+                                                <div class="qc-video-size">{{ $videoSize > 0 ? number_format($videoSize / 1048576, 1, ',', '.') : '-' }} MB</div>
+                                            </div>
+                                            <button type="button" class="qc-icon-button h-11 w-11 p-0" wire:click="removeVideo({{ $index }})">×</button>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
 
-                <div class="qc-footer">
+                <div class="qc-footer is-single">
                     <button
                         type="button"
-                        class="qc-btn qc-btn-primary"
+                        class="qc-button"
                         wire:click="goToCategoryStep"
                         @disabled(count($photos) === 0 || $isDetecting)
                     >
@@ -1442,361 +963,355 @@
             @endif
 
             @if ($currentStep === 2)
-                @if ($isDetecting)
-                    <div class="qc-warning">
-                        <x-heroicon-o-arrow-path class="h-5 w-5 animate-spin text-gray-700" />
-                        <span>Finding the best category...</span>
-                    </div>
-                @elseif ($detectedCategoryId)
-                    <div class="qc-warning">
-                        <x-heroicon-o-sparkles class="h-5 w-5 text-pink-500" />
-                        <span>Suggested category: <strong>{{ $this->selectedCategoryName }}</strong></span>
-                    </div>
-                @else
-                    <div class="qc-warning">
-                        <x-heroicon-o-sparkles class="h-5 w-5 text-pink-500" />
-                        <span>
-                            Choose a category.
-                            @if ($detectedError)
-                                <span class="qc-warning-sub">{{ $detectedError }}</span>
-                            @endif
-                        </span>
-                    </div>
-                @endif
+                <div class="qc-body">
+                    <div class="qc-stack">
+                        @if ($isDetecting)
+                            <div class="qc-notice">Finding the best category...</div>
+                        @elseif ($detectedCategoryId)
+                            <div class="qc-notice">Suggested: <strong>{{ $this->selectedCategoryName }}</strong></div>
+                        @elseif ($detectedError)
+                            <div class="qc-notice">{{ $detectedError }}</div>
+                        @endif
 
-                @if ($detectedAlternatives !== [])
-                    <div class="qc-inline-actions">
-                        @foreach ($detectedAlternatives as $alternativeId)
-                            @php
-                                $alternativeCategory = collect($categories)->firstWhere('id', $alternativeId);
-                            @endphp
-                            @if ($alternativeCategory)
-                                <button type="button" class="qc-chip" wire:click="selectCategory({{ $alternativeId }})">
-                                    {{ $alternativeCategory['name'] }}
-                                </button>
-                            @endif
-                        @endforeach
-                    </div>
-                @endif
-
-                @if (is_null($activeParentCategoryId))
-                    <div class="qc-browser-header">
-                        <span></span>
-                        <strong>Choose a category</strong>
-                        <button type="button" class="qc-chip" wire:click="detectCategoryFromImage" @disabled($isDetecting || count($photos) === 0)>
-                            Refresh suggestion
-                        </button>
-                    </div>
-
-                    <div class="qc-root-grid">
-                        @foreach ($this->rootCategories as $category)
-                            <button
-                                type="button"
-                                class="qc-root-item {{ $selectedCategoryId === $category['id'] ? 'is-selected' : '' }}"
-                                wire:click="enterCategory({{ $category['id'] }})"
-                            >
-                                <span class="qc-root-icon">
-                                    <x-dynamic-component :component="$this->categoryIconComponent($category['icon'])" class="h-8 w-8" />
-                                </span>
-                                <div class="qc-root-name">{{ $category['name'] }}</div>
-                            </button>
-                        @endforeach
-                    </div>
-                @else
-                    <div class="qc-browser-header">
-                        <button type="button" class="qc-back-btn" wire:click="backToRootCategories">
-                            <x-heroicon-o-arrow-left class="h-5 w-5" />
-                            Back
-                        </button>
-                        <strong>{{ $this->currentParentName }}</strong>
-                        <span></span>
-                    </div>
-
-                    <div class="qc-search">
-                        <input type="text" placeholder="Search categories" wire:model.live.debounce.300ms="categorySearch">
-                    </div>
-
-                    <div class="qc-list">
-                        @forelse ($this->currentCategories as $category)
-                            <div class="qc-row">
-                                <button
-                                    type="button"
-                                    class="qc-row-main {{ $selectedCategoryId === $category['id'] ? 'is-selected' : '' }}"
-                                    wire:click="selectCategory({{ $category['id'] }})"
-                                >
-                                    {{ $category['name'] }}
-                                </button>
-
-                                @if ($category['has_children'] && $category['id'] !== $activeParentCategoryId)
-                                    <button type="button" class="qc-row-child" wire:click="enterCategory({{ $category['id'] }})">
-                                        <x-heroicon-o-chevron-right class="h-5 w-5" />
-                                    </button>
-                                @else
-                                    <span></span>
-                                @endif
-
-                                <span class="qc-row-check">
-                                    @if ($selectedCategoryId === $category['id'])
-                                        <x-heroicon-o-check-circle class="h-5 w-5" />
+                        @if ($detectedAlternatives !== [])
+                            <div class="qc-chip-row">
+                                @foreach ($detectedAlternatives as $alternativeId)
+                                    @php
+                                        $alternativeCategory = collect($categories)->firstWhere('id', $alternativeId);
+                                    @endphp
+                                    @if ($alternativeCategory)
+                                        <button type="button" class="qc-chip" wire:click="selectCategory({{ $alternativeId }})">
+                                            {{ $alternativeCategory['name'] }}
+                                        </button>
                                     @endif
-                                </span>
+                                @endforeach
                             </div>
-                        @empty
-                            <div class="qc-row">
-                                <span class="qc-row-main">No categories found.</span>
+                        @endif
+
+                        @if (is_null($activeParentCategoryId))
+                            <div class="qc-panel">
+                                <div class="qc-panel-head">
+                                    <div>
+                                        <h2>Choose a category</h2>
+                                    </div>
+                                    <button type="button" class="qc-text-link" wire:click="detectCategoryFromImage" @disabled($isDetecting || count($photos) === 0)>
+                                        Try again
+                                    </button>
+                                </div>
+
+                                <div class="qc-category-grid">
+                                    @foreach ($this->rootCategories as $category)
+                                        <button
+                                            type="button"
+                                            class="qc-category-card {{ $selectedCategoryId === $category['id'] ? 'is-selected' : '' }}"
+                                            wire:click="enterCategory({{ $category['id'] }})"
+                                        >
+                                            <span class="qc-category-icon">
+                                                <x-dynamic-component :component="$this->categoryIconComponent($category['icon'])" class="h-8 w-8" />
+                                            </span>
+                                            <div class="qc-category-name">{{ $category['name'] }}</div>
+                                        </button>
+                                    @endforeach
+                                </div>
                             </div>
-                        @endforelse
+                        @else
+                            <div class="qc-panel">
+                                <div class="qc-panel-head">
+                                    <button type="button" class="qc-back-link" wire:click="backToRootCategories">Back</button>
+                                    <div class="text-center">
+                                        <h2>{{ $this->currentParentName }}</h2>
+                                    </div>
+                                    <span class="qc-count">Pick</span>
+                                </div>
+
+                                <div class="qc-search-wrap">
+                                    <input type="text" class="qc-input" placeholder="Search categories" wire:model.live.debounce.300ms="categorySearch">
+
+                                    <div class="qc-category-list">
+                                        @forelse ($this->currentCategories as $category)
+                                            <div class="qc-category-row">
+                                                <button
+                                                    type="button"
+                                                    class="qc-category-main {{ $selectedCategoryId === $category['id'] ? 'is-selected' : '' }}"
+                                                    wire:click="selectCategory({{ $category['id'] }})"
+                                                >
+                                                    {{ $category['name'] }}
+                                                </button>
+
+                                                @if ($category['has_children'] && $category['id'] !== $activeParentCategoryId)
+                                                    <button type="button" class="qc-category-next" wire:click="enterCategory({{ $category['id'] }})">
+                                                        <x-heroicon-o-chevron-right class="h-5 w-5" />
+                                                    </button>
+                                                @else
+                                                    <span></span>
+                                                @endif
+
+                                                <span class="qc-category-check">
+                                                    @if ($selectedCategoryId === $category['id'])
+                                                        <x-heroicon-o-check-circle class="h-5 w-5" />
+                                                    @endif
+                                                </span>
+                                            </div>
+                                        @empty
+                                            <div class="qc-empty">No categories found.</div>
+                                        @endforelse
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
+                        @if ($errors->has('selectedCategoryId'))
+                            <div class="qc-error">{{ $errors->first('selectedCategoryId') }}</div>
+                        @endif
+
+                        @if ($this->selectedCategoryName)
+                            <div class="qc-summary-card">
+                                <div>
+                                    <span class="qc-summary-label">Selected</span>
+                                    <span class="qc-summary-value">{{ $this->selectedCategoryName }}</span>
+                                </div>
+                            </div>
+                        @endif
                     </div>
-                @endif
-
-                @if ($errors->has('selectedCategoryId'))
-                    <div class="qc-selection qc-error">{{ $errors->first('selectedCategoryId') }}</div>
-                @endif
-
-                @if ($this->selectedCategoryName)
-                    <div class="qc-selection">Selected: <strong>{{ $this->selectedCategoryName }}</strong></div>
-                @endif
+                </div>
 
                 <div class="qc-footer">
-                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(1)">Back</button>
+                    <button type="button" class="qc-button-secondary" wire:click="goToStep(1)">Back</button>
                     <button
                         type="button"
-                        class="qc-btn qc-btn-primary"
+                        class="qc-button"
                         wire:click="goToDetailsStep"
                         @disabled(! $selectedCategoryId)
                     >
-                        Continue
+                        Next
                     </button>
                 </div>
             @endif
 
             @if ($currentStep === 3)
                 <div class="qc-body">
-                    <div class="qc-strip">
-                        @foreach (array_slice($photos, 0, 7) as $index => $photo)
-                            <div class="qc-photo-slot">
-                                <img src="{{ $photo->temporaryUrl() }}" alt="Selected photo {{ $index + 1 }}">
-                                <button type="button" class="qc-remove" wire:click="removePhoto({{ $index }})">×</button>
-                                @if ($index === 0)
-                                    <div class="qc-cover">COVER</div>
-                                @endif
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <div class="qc-summary">
-                        <div>
-                            <h4>Category</h4>
-                            <p>{{ $this->selectedCategoryPath ?: '-' }}</p>
-                        </div>
-                        <button type="button" class="qc-link-btn" wire:click="goToStep(2)">Change</button>
-                    </div>
-
-                    <div class="qc-form-grid">
-                        <div class="qc-field">
-                            <label for="quick-title">Listing Title *</label>
-                            <input id="quick-title" type="text" class="qc-input" placeholder="Enter a title" wire:model.live.debounce.300ms="listingTitle" maxlength="70">
-                            <p class="qc-hint">Keep it short and clear.</p>
-                            <div class="qc-counter">{{ $this->titleCharacters }}/70</div>
-                            @error('listingTitle')<div class="qc-error">{{ $message }}</div>@enderror
-                        </div>
-
-                        <div class="qc-field">
-                            <label for="quick-price">Price *</label>
-                            <div class="qc-input-row">
-                                <input id="quick-price" type="number" step="0.01" class="qc-input" placeholder="Enter a price" wire:model.live.debounce.300ms="price">
-                                <span class="qc-input-suffix">{{ \Modules\Listing\Support\ListingPanelHelper::defaultCurrency() }}</span>
-                            </div>
-                            <p class="qc-hint">Use the final asking price.</p>
-                            @error('price')<div class="qc-error">{{ $message }}</div>@enderror
-                        </div>
-
-                        <div class="qc-field">
-                            <label for="quick-description">Description *</label>
-                            <textarea id="quick-description" class="qc-textarea" placeholder="Write a description" wire:model.live.debounce.300ms="description" maxlength="1450"></textarea>
-                            <p class="qc-hint">Condition, key details, and anything important.</p>
-                            <div class="qc-counter">{{ $this->descriptionCharacters }}/1450</div>
-                            @error('description')<div class="qc-error">{{ $message }}</div>@enderror
-                        </div>
-
-                        <div class="qc-field">
-                            <label>Location *</label>
-                            <div class="qc-two-col">
-                                <div>
-                                    <select class="qc-select" wire:model.live="selectedCountryId">
-                                        <option value="">Select a country</option>
-                                        @foreach ($countries as $country)
-                                            <option value="{{ $country['id'] }}">{{ $country['name'] }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('selectedCountryId')<div class="qc-error">{{ $message }}</div>@enderror
+                    <div class="qc-stack">
+                        <div class="qc-photo-strip">
+                            @foreach (array_slice($photos, 0, 4) as $index => $photo)
+                                <div class="qc-photo-slot">
+                                    <img src="{{ $photo->temporaryUrl() }}" alt="Selected photo {{ $index + 1 }}">
+                                    <button type="button" class="qc-remove" wire:click="removePhoto({{ $index }})">×</button>
+                                    @if ($index === 0)
+                                        <div class="qc-cover">Cover</div>
+                                    @endif
                                 </div>
-                                <div>
-                                    <select class="qc-select" wire:model.live="selectedCityId" @disabled(! $selectedCountryId)>
-                                        <option value="">Select a city</option>
-                                        @foreach ($this->availableCities as $city)
-                                            <option value="{{ $city['id'] }}">{{ $city['name'] }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('selectedCityId')<div class="qc-error">{{ $message }}</div>@enderror
+                            @endforeach
+                        </div>
+
+                        <div class="qc-summary-card">
+                            <div>
+                                <span class="qc-summary-label">Category</span>
+                                <span class="qc-summary-value">{{ $this->selectedCategoryPath ?: '-' }}</span>
+                            </div>
+                            <button type="button" class="qc-text-link" wire:click="goToStep(2)">Change</button>
+                        </div>
+
+                        <div class="qc-fields">
+                            <div class="qc-field">
+                                <label for="quick-title">Title</label>
+                                <input id="quick-title" type="text" class="qc-input" placeholder="Listing title" wire:model.live.debounce.300ms="listingTitle" maxlength="70">
+                                <div class="qc-counter">{{ $this->titleCharacters }}/70</div>
+                                @error('listingTitle')<div class="qc-error">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="qc-fields two-col">
+                                <div class="qc-field">
+                                    <label for="quick-price">Price</label>
+                                    <div class="qc-input-row">
+                                        <input id="quick-price" type="number" step="0.01" class="qc-input" placeholder="Price" wire:model.live.debounce.300ms="price">
+                                        <span class="qc-input-suffix">{{ $currency }}</span>
+                                    </div>
+                                    @error('price')<div class="qc-error">{{ $message }}</div>@enderror
                                 </div>
+
+                                <div class="qc-field">
+                                    <label>Location</label>
+                                    <div class="qc-fields two-col">
+                                        <div>
+                                            <select class="qc-select" wire:model.live="selectedCountryId">
+                                                <option value="">Country</option>
+                                                @foreach ($countries as $country)
+                                                    <option value="{{ $country['id'] }}">{{ $country['name'] }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('selectedCountryId')<div class="qc-error">{{ $message }}</div>@enderror
+                                        </div>
+                                        <div>
+                                            <select class="qc-select" wire:model.live="selectedCityId" @disabled(! $selectedCountryId)>
+                                                <option value="">City</option>
+                                                @foreach ($this->availableCities as $city)
+                                                    <option value="{{ $city['id'] }}">{{ $city['name'] }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('selectedCityId')<div class="qc-error">{{ $message }}</div>@enderror
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="qc-field">
+                                <label for="quick-description">Description</label>
+                                <textarea id="quick-description" class="qc-textarea" placeholder="Describe the item" wire:model.live.debounce.300ms="description" maxlength="1450"></textarea>
+                                <div class="qc-counter">{{ $this->descriptionCharacters }}/1450</div>
+                                @error('description')<div class="qc-error">{{ $message }}</div>@enderror
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="qc-footer">
-                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(2)">Back</button>
-                    <button type="button" class="qc-btn qc-btn-primary" wire:click="goToFeaturesStep">Continue</button>
+                    <button type="button" class="qc-button-secondary" wire:click="goToStep(2)">Back</button>
+                    <button type="button" class="qc-button" wire:click="goToFeaturesStep">Next</button>
                 </div>
             @endif
 
             @if ($currentStep === 4)
                 <div class="qc-body">
-                    <div class="qc-summary" style="margin-top: 0; border-top: 0; padding-top: 0;">
-                        <div>
-                            <h4>Category</h4>
-                            <p>{{ $this->selectedCategoryPath ?: '-' }}</p>
+                    <div class="qc-stack">
+                        <div class="qc-summary-card">
+                            <div>
+                                <span class="qc-summary-label">Category</span>
+                                <span class="qc-summary-value">{{ $this->selectedCategoryPath ?: '-' }}</span>
+                            </div>
+                            <button type="button" class="qc-text-link" wire:click="goToStep(2)">Change</button>
                         </div>
-                        <button type="button" class="qc-link-btn" wire:click="goToStep(2)">Change</button>
-                    </div>
 
-                    @if ($listingCustomFields === [])
-                        <div class="qc-info-box">
-                            No extra details needed for this category.
-                        </div>
-                    @else
-                        <div class="qc-dynamic-grid">
-                            @foreach ($listingCustomFields as $field)
-                                <div class="qc-field">
-                                    <label>
-                                        {{ $field['label'] }}
-                                        @if ($field['is_required'])
-                                            *
-                                        @endif
-                                    </label>
-
-                                    @if ($field['type'] === 'text')
-                                        <input
-                                            type="text"
-                                            class="qc-input"
-                                            wire:model.live="customFieldValues.{{ $field['name'] }}"
-                                            placeholder="{{ $field['placeholder'] ?: $field['label'] }}"
-                                        >
-                                    @elseif ($field['type'] === 'textarea')
-                                        <textarea
-                                            class="qc-textarea"
-                                            wire:model.live="customFieldValues.{{ $field['name'] }}"
-                                            placeholder="{{ $field['placeholder'] ?: $field['label'] }}"
-                                        ></textarea>
-                                    @elseif ($field['type'] === 'number')
-                                        <input
-                                            type="number"
-                                            step="0.01"
-                                            class="qc-input"
-                                            wire:model.live="customFieldValues.{{ $field['name'] }}"
-                                            placeholder="{{ $field['placeholder'] ?: $field['label'] }}"
-                                        >
-                                    @elseif ($field['type'] === 'select')
-                                        <select class="qc-select" wire:model.live="customFieldValues.{{ $field['name'] }}">
-                                            <option value="">Select an option</option>
-                                            @foreach ($field['options'] as $option)
-                                                <option value="{{ $option }}">{{ $option }}</option>
-                                            @endforeach
-                                        </select>
-                                    @elseif ($field['type'] === 'boolean')
-                                        <label class="qc-toggle-line">
-                                            <input type="checkbox" wire:model.live="customFieldValues.{{ $field['name'] }}">
-                                            <span>Yes</span>
+                        @if ($listingCustomFields === [])
+                            <div class="qc-empty">No extra details for this category.</div>
+                        @else
+                            <div class="qc-fields two-col">
+                                @foreach ($listingCustomFields as $field)
+                                    <div class="qc-field">
+                                        <label>
+                                            {{ $field['label'] }}
+                                            @if ($field['is_required'])
+                                                *
+                                            @endif
                                         </label>
-                                    @elseif ($field['type'] === 'date')
-                                        <input type="date" class="qc-input" wire:model.live="customFieldValues.{{ $field['name'] }}">
-                                    @endif
 
-                                    @if ($field['help_text'])
-                                        <p class="qc-hint">{{ $field['help_text'] }}</p>
-                                    @endif
+                                        @if ($field['type'] === 'text')
+                                            <input
+                                                type="text"
+                                                class="qc-input"
+                                                wire:model.live="customFieldValues.{{ $field['name'] }}"
+                                                placeholder="{{ $field['placeholder'] ?: $field['label'] }}"
+                                            >
+                                        @elseif ($field['type'] === 'textarea')
+                                            <textarea
+                                                class="qc-textarea"
+                                                wire:model.live="customFieldValues.{{ $field['name'] }}"
+                                                placeholder="{{ $field['placeholder'] ?: $field['label'] }}"
+                                            ></textarea>
+                                        @elseif ($field['type'] === 'number')
+                                            <input
+                                                type="number"
+                                                step="0.01"
+                                                class="qc-input"
+                                                wire:model.live="customFieldValues.{{ $field['name'] }}"
+                                                placeholder="{{ $field['placeholder'] ?: $field['label'] }}"
+                                            >
+                                        @elseif ($field['type'] === 'select')
+                                            <select class="qc-select" wire:model.live="customFieldValues.{{ $field['name'] }}">
+                                                <option value="">Select</option>
+                                                @foreach ($field['options'] as $option)
+                                                    <option value="{{ $option }}">{{ $option }}</option>
+                                                @endforeach
+                                            </select>
+                                        @elseif ($field['type'] === 'boolean')
+                                            <label class="qc-toggle">
+                                                <input type="checkbox" wire:model.live="customFieldValues.{{ $field['name'] }}">
+                                                <span>Yes</span>
+                                            </label>
+                                        @elseif ($field['type'] === 'date')
+                                            <input type="date" class="qc-input" wire:model.live="customFieldValues.{{ $field['name'] }}">
+                                        @endif
 
-                                    @error('customFieldValues.'.$field['name'])
-                                        <div class="qc-error">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            @endforeach
-                        </div>
-                    @endif
+                                        @if ($field['help_text'])
+                                            <p class="qc-meta-copy">{{ $field['help_text'] }}</p>
+                                        @endif
+
+                                        @error('customFieldValues.'.$field['name'])
+                                            <div class="qc-error">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="qc-footer">
-                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(3)">Back</button>
-                    <button type="button" class="qc-btn qc-btn-primary" wire:click="goToPreviewStep">Continue</button>
+                    <button type="button" class="qc-button-secondary" wire:click="goToStep(3)">Back</button>
+                    <button type="button" class="qc-button" wire:click="goToPreviewStep">Review</button>
                 </div>
             @endif
 
             @if ($currentStep === 5)
                 <div class="qc-body">
-                    <div class="qc-preview-breadcrumb">Home › {{ $this->selectedCategoryPath }}</div>
-
-                    <div class="qc-preview-grid">
-                        <div class="qc-preview-panel">
-                            <div class="qc-gallery">
-                                @foreach (array_slice($photos, 0, 3) as $photo)
-                                    <div class="qc-gallery-item">
-                                        <img src="{{ $photo->temporaryUrl() }}" alt="Preview photo">
-                                    </div>
-                                @endforeach
-                                @for ($empty = count(array_slice($photos, 0, 3)); $empty < 3; $empty++)
-                                    <div class="qc-gallery-item">
-                                        <x-heroicon-o-photo class="h-12 w-12 text-gray-500" />
-                                    </div>
-                                @endfor
-                            </div>
-
-                            @php
-                                $displayPrice = is_numeric($price) ? number_format((float) $price, 0, ',', '.') : $price;
-                            @endphp
-
-                            <div class="qc-main-meta">
-                                <div class="qc-main-price">{{ $displayPrice }} {{ \Modules\Listing\Support\ListingPanelHelper::defaultCurrency() }}</div>
-                                <div class="qc-main-location">
-                                    <x-heroicon-o-map-pin class="h-5 w-5" />
-                                    <span>{{ $this->selectedCityName ?: '-' }}, {{ $this->selectedCountryName ?: '-' }}</span>
-                                    <span style="margin-left: auto;">{{ now()->format('d.m.Y') }}</span>
+                    <div class="qc-review-grid">
+                        <div class="qc-stack">
+                            <div class="qc-review-gallery">
+                                <div class="qc-gallery-main">
+                                    @if (isset($photos[0]))
+                                        <img src="{{ $photos[0]->temporaryUrl() }}" alt="Preview cover photo">
+                                    @else
+                                        <x-heroicon-o-photo class="h-12 w-12 text-slate-400" />
+                                    @endif
                                 </div>
-                                <div class="qc-main-title">{{ $listingTitle }}</div>
-                                <p class="qc-main-desc">{{ $description }}</p>
-                            </div>
 
-                            @if (count($videos) > 0)
-                                <div class="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                    <h5 class="text-sm font-semibold text-slate-900">Videos</h5>
-                                    <div class="mt-3 space-y-2">
-                                        @foreach ($videos as $video)
-                                            <p class="text-sm text-slate-700">{{ method_exists($video, 'getClientOriginalName') ? $video->getClientOriginalName() : 'Video' }}</p>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            @endif
-
-                            <div class="qc-preview-features">
-                                <h5>Details</h5>
-                                @if ($this->previewCustomFields !== [])
-                                    @foreach ($this->previewCustomFields as $field)
-                                        <div class="qc-feature-row">
-                                            <div class="qc-feature-label">{{ $field['label'] }}</div>
-                                            <div class="qc-feature-value">{{ $field['value'] }}</div>
+                                <div class="qc-review-thumbs">
+                                    @foreach (array_slice($photos, 0, 4) as $photo)
+                                        <div class="qc-review-thumb">
+                                            <img src="{{ $photo->temporaryUrl() }}" alt="Preview photo">
                                         </div>
                                     @endforeach
-                                @else
-                                    <div class="qc-feature-row">
-                                        <div class="qc-feature-label">Details</div>
-                                        <div class="qc-feature-value">No extra details added</div>
+                                </div>
+                            </div>
+
+                            <div class="qc-panel qc-review-panel">
+                                <div class="qc-review-meta">
+                                    <div class="qc-review-price">{{ $displayPrice }} {{ $currency }}</div>
+                                    <div class="qc-review-location">
+                                        <div>{{ $this->selectedCityName ?: '-' }}, {{ $this->selectedCountryName ?: '-' }}</div>
+                                        <div>{{ now()->format('d.m.Y') }}</div>
                                     </div>
-                                @endif
+                                </div>
+
+                                <h2 class="qc-review-title">{{ $listingTitle ?: 'Untitled listing' }}</h2>
+                                <p class="qc-review-description">{{ $description ?: 'No description added.' }}</p>
+
+                                <div class="qc-feature-list">
+                                    <div class="qc-feature-row">
+                                        <div class="qc-feature-label">Category</div>
+                                        <div class="qc-feature-value">{{ $this->selectedCategoryPath ?: '-' }}</div>
+                                    </div>
+
+                                    @if ($this->previewCustomFields !== [])
+                                        @foreach ($this->previewCustomFields as $field)
+                                            <div class="qc-feature-row">
+                                                <div class="qc-feature-label">{{ $field['label'] }}</div>
+                                                <div class="qc-feature-value">{{ $field['value'] }}</div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+
+                                    @if (count($videos) > 0)
+                                        <div class="qc-feature-row">
+                                            <div class="qc-feature-label">Videos</div>
+                                            <div class="qc-feature-value">{{ count($videos) }} added</div>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
                         </div>
 
-                        <div>
-                            <div class="qc-seller-card">
+                        <div class="qc-side-stack">
+                            <div class="qc-panel qc-seller-card">
                                 <div class="qc-seller-head">
                                     <span class="qc-avatar">{{ $this->currentUserInitial }}</span>
                                     <div>
@@ -1804,29 +1319,25 @@
                                         <div class="qc-seller-email">{{ auth()->user()?->email }}</div>
                                     </div>
                                 </div>
-
-                                <div class="qc-seller-actions">
-                                    <div class="qc-pill">Map</div>
-                                    <div class="qc-pill">Profile</div>
-                                </div>
                             </div>
 
-                            <div class="qc-publish-wrap">
-                                <button
-                                    type="button"
-                                    class="qc-publish"
-                                    wire:click="publishListing"
-                                    @disabled($isPublishing)
-                                >
-                                    {{ $isPublishing ? 'Publishing...' : 'Publish Listing' }}
-                                </button>
-                                <button type="button" class="qc-muted-btn" wire:click="goToStep(4)">Back</button>
+                            <div class="qc-panel">
+                                <div class="qc-publish-stack">
+                                    <button
+                                        type="button"
+                                        class="qc-button"
+                                        wire:click="publishListing"
+                                        @disabled($isPublishing)
+                                    >
+                                        {{ $isPublishing ? 'Publishing...' : 'Publish listing' }}
+                                    </button>
+                                    <button type="button" class="qc-button-secondary" wire:click="goToStep(4)">Back</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             @endif
-        </div>
         </div>
     </div>
 </div>

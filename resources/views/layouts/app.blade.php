@@ -61,6 +61,7 @@
     $citiesRouteTemplate = \Illuminate\Support\Facades\Route::has('locations.cities')
         ? route('locations.cities', ['country' => '__COUNTRY__'], false)
         : '';
+    $simplePage = trim((string) $__env->yieldContent('simple_page')) === '1';
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ in_array(app()->getLocale(), ['ar']) ? 'rtl' : 'ltr' }}">
@@ -75,8 +76,33 @@
 <body @class([
     'min-h-screen font-sans antialiased',
     'bg-slate-50' => $demoLandingMode,
+    'bg-[#f5f5f7]' => $simplePage && ! $demoLandingMode,
 ])>
-    @unless($demoLandingMode)
+    @if(!$demoLandingMode && $simplePage)
+    <nav class="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-2xl">
+        <div class="mx-auto flex min-h-[76px] max-w-[1120px] items-center justify-between gap-4 px-4">
+            <a href="{{ route('home') }}" class="oc-brand">
+                @if($siteLogoUrl)
+                <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="oc-brand-image w-auto rounded-xl">
+                @else
+                <span class="brand-logo" aria-hidden="true"></span>
+                @endif
+                <span class="brand-text leading-none">{{ $siteName }}</span>
+            </a>
+
+            <div class="flex items-center gap-3">
+                @auth
+                <a href="{{ route('panel.listings.index') }}" class="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-900">
+                    My Listings
+                </a>
+                @endauth
+                <a href="{{ route('home') }}" class="inline-flex min-h-11 items-center justify-center rounded-full bg-slate-900 px-5 text-sm font-semibold text-white transition hover:bg-slate-700">
+                    Exit
+                </a>
+            </div>
+        </div>
+    </nav>
+    @elseif(!$demoLandingMode)
     <nav class="market-nav-surface sticky top-0 z-50">
         <div class="oc-nav-wrap">
             <div class="oc-nav-main">
@@ -314,7 +340,7 @@
             </div>
         </div>
     </nav>
-    @endunless
+    @endif
     @if(!$demoLandingMode && $demoRemainingLabel)
     <div class="sticky top-0 z-40 border-b border-amber-200 bg-amber-50/95 backdrop-blur-md">
         <div class="mx-auto flex min-h-12 max-w-[1320px] items-center justify-center px-4 py-2 text-center text-sm font-semibold text-amber-900">
@@ -338,7 +364,7 @@
         'site-main',
         'min-h-screen' => $demoLandingMode,
     ])>@yield('content')</main>
-    @unless($demoLandingMode)
+    @if(!$demoLandingMode && !$simplePage)
     <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200">
         <div class="max-w-[1320px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -390,7 +416,7 @@
             </div>
         </div>
     </footer>
-    @endunless
+    @endif
     @livewireScripts
     <script>
         (() => {
