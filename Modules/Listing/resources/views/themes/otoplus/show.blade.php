@@ -59,6 +59,7 @@
 
     $reportEmail = config('mail.from.address', 'support@example.com');
     $reportUrl = 'mailto:'.$reportEmail.'?subject='.rawurlencode('Report listing #'.$listing->getKey());
+    $shareUrl = route('listings.show', $listing);
 
     $overviewItems = collect([
         ['label' => 'Listing ID', 'value' => '#'.$listing->getKey()],
@@ -108,26 +109,41 @@
                             @endif
                         </div>
 
-                        @auth
-                            <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
-                                @csrf
-                                <button
-                                    type="submit"
-                                    class="lt-icon-btn {{ $isListingFavorited ? 'is-active' : '' }}"
-                                    aria-label="{{ $isListingFavorited ? 'Remove from saved listings' : 'Save listing' }}"
-                                >
+                        <div class="lt-gallery-utility">
+                            <button
+                                type="button"
+                                class="lt-icon-btn"
+                                data-listing-share
+                                data-share-url="{{ $shareUrl }}"
+                                data-share-title="{{ $displayTitle }}"
+                                aria-label="Share listing"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                                    <path d="M15 8a3 3 0 1 0-2.83-4H12a3 3 0 0 0 .17 1L8.91 6.94a3 3 0 0 0-1.91-.69 3 3 0 1 0 1.91 5.31l3.27 1.94A3 3 0 0 0 12 15a3 3 0 1 0 2.82 4H15a3 3 0 0 0-.17-1l-3.26-1.94a3 3 0 0 0 0-3.12L14.83 10A3 3 0 0 0 15 10h0a3 3 0 0 0 0-2Z"/>
+                                </svg>
+                            </button>
+
+                            @auth
+                                <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
+                                    @csrf
+                                    <button
+                                        type="submit"
+                                        class="lt-icon-btn {{ $isListingFavorited ? 'is-active' : '' }}"
+                                        aria-label="{{ $isListingFavorited ? 'Remove from saved listings' : 'Save listing' }}"
+                                    >
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                                            <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            @else
+                                <a href="{{ route('login') }}" class="lt-icon-btn" aria-label="Sign in to save this listing">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
                                         <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
                                     </svg>
-                                </button>
-                            </form>
-                        @else
-                            <a href="{{ route('login') }}" class="lt-icon-btn" aria-label="Sign in to save this listing">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                                    <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
-                                </svg>
-                            </a>
-                        @endauth
+                                </a>
+                            @endauth
+                        </div>
                     </div>
 
                     @if($initialGalleryImage)
@@ -171,13 +187,13 @@
             <section class="lt-card lt-summary-card">
                 <div class="lt-summary-copy">
                     <p class="lt-overline">{{ $listing->category?->name ?? 'Marketplace listing' }}</p>
-                    <h1 class="lt-title">{{ $displayTitle }}</h1>
                     <div class="lt-price">{{ $priceLabel }}</div>
-                    <p class="lt-subtitle">
-                        <span>{{ $locationLabel !== '' ? $locationLabel : 'Location not specified' }}</span>
-                        <span aria-hidden="true">·</span>
-                        <span>{{ $postedAgo }}</span>
-                    </p>
+                    <h1 class="lt-title">{{ $displayTitle }}</h1>
+                    <div class="lt-summary-meta-row">
+                        <span class="lt-summary-meta-item">{{ $locationLabel !== '' ? $locationLabel : 'Location not specified' }}</span>
+                        <span class="lt-summary-meta-item">{{ $publishedAt }}</span>
+                    </div>
+                    <p class="lt-subtitle">{{ $postedAgo }}</p>
                 </div>
 
                 <div class="lt-overview-grid">
@@ -348,6 +364,56 @@
         </aside>
     </div>
 
+    <div class="lt-mobile-actions">
+        <div class="lt-mobile-actions-shell">
+            <div class="lt-mobile-actions-row">
+                @if(! $listing->user)
+                    <button type="button" class="lt-btn" disabled>Unavailable</button>
+                @elseif($canContactSeller)
+                    @if($existingConversationId)
+                        <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="lt-btn">
+                            Message
+                        </a>
+                    @else
+                        <form method="POST" action="{{ route('conversations.start', $listing) }}" class="lt-action-form">
+                            @csrf
+                            <button type="submit" class="lt-btn">Message</button>
+                        </form>
+                    @endif
+                @elseif($isOwnListing)
+                    <button type="button" class="lt-btn" disabled>Your listing</button>
+                @else
+                    <a href="{{ route('login') }}" class="lt-btn">Message</a>
+                @endif
+
+                @if($primaryContactHref)
+                    <a href="{{ $primaryContactHref }}" class="lt-btn lt-btn-outline">{{ $primaryContactLabel }}</a>
+                @else
+                    <button type="button" class="lt-btn lt-btn-outline" disabled>No contact</button>
+                @endif
+            </div>
+
+            @if(! $listing->user)
+                <button type="button" class="lt-btn lt-btn-main" disabled>Unavailable</button>
+            @elseif($canContactSeller)
+                @if($existingConversationId)
+                    <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="lt-btn lt-btn-main">
+                        Make offer
+                    </a>
+                @else
+                    <form method="POST" action="{{ route('conversations.start', $listing) }}" class="lt-action-form">
+                        @csrf
+                        <button type="submit" class="lt-btn lt-btn-main">Make offer</button>
+                    </form>
+                @endif
+            @elseif($isOwnListing)
+                <button type="button" class="lt-btn lt-btn-main" disabled>Manage listing</button>
+            @else
+                <a href="{{ route('login') }}" class="lt-btn lt-btn-main">Make offer</a>
+            @endif
+        </div>
+    </div>
+
     @if(($relatedListings ?? collect())->isNotEmpty() || ($themePillCategories ?? collect())->isNotEmpty())
         <section class="lt-related">
             @if(($relatedListings ?? collect())->isNotEmpty())
@@ -483,6 +549,32 @@
 
             next?.addEventListener('click', () => {
                 track.scrollBy({ left: amount(), behavior: 'smooth' });
+            });
+        });
+
+        document.querySelectorAll('[data-listing-share]').forEach((button) => {
+            button.addEventListener('click', async () => {
+                const url = button.dataset.shareUrl || window.location.href;
+                const title = button.dataset.shareTitle || document.title;
+
+                if (navigator.share) {
+                    try {
+                        await navigator.share({ title, url });
+                        return;
+                    } catch (error) {
+                        if (error?.name === 'AbortError') {
+                            return;
+                        }
+                    }
+                }
+
+                try {
+                    await navigator.clipboard.writeText(url);
+                    button.classList.add('is-active');
+                    window.setTimeout(() => button.classList.remove('is-active'), 1200);
+                } catch (error) {
+                    window.prompt('Copy this link', url);
+                }
             });
         });
     })();
