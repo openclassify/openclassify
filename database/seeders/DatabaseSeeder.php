@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             HomeSliderSettingsSeeder::class,
             \Modules\Location\Database\Seeders\LocationSeeder::class,
             \Modules\Category\Database\Seeders\CategorySeeder::class,
+            \Modules\Listing\Database\Seeders\ListingCustomFieldSeeder::class,
             \Modules\Listing\Database\Seeders\ListingSeeder::class,
         ]);
     }

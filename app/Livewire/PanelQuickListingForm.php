@@ -255,11 +255,23 @@ class PanelQuickListingForm extends Component
     {
         return match ($this->currentStep) {
             1 => 'Photos',
-            2 => 'Category Selection',
-            3 => 'Listing Details',
-            4 => 'Attributes',
-            5 => 'Preview',
-            default => 'Create Listing',
+            2 => 'Category',
+            3 => 'Basics',
+            4 => 'Details',
+            5 => 'Review',
+            default => 'New Listing',
+        };
+    }
+
+    public function getCurrentStepHintProperty(): string
+    {
+        return match ($this->currentStep) {
+            1 => 'Add photos first.',
+            2 => 'Pick the right category.',
+            3 => 'Add the basics.',
+            4 => 'Add extra details if needed.',
+            5 => 'Check everything before publishing.',
+            default => 'Create a new listing.',
         };
     }
 

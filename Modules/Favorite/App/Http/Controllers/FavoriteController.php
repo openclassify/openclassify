@@ -8,7 +8,6 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Schema;
 use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
-use Modules\Conversation\App\Support\QuickMessageCatalog;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
@@ -26,11 +25,6 @@ class FavoriteController extends Controller
         $statusFilter = (string) $request->string('status', 'all');
         if (! in_array($statusFilter, ['all', 'active'], true)) {
             $statusFilter = 'all';
-        }
-
-        $messageFilter = (string) $request->string('message_filter', 'all');
-        if (! in_array($messageFilter, ['all', 'unread', 'important'], true)) {
-            $messageFilter = 'all';
         }
 
         $selectedCategoryId = $request->integer('category');
@@ -52,8 +46,6 @@ class FavoriteController extends Controller
         $favoriteListings = $this->emptyPaginator();
         $favoriteSearches = $this->emptyPaginator();
         $favoriteSellers = $this->emptyPaginator();
-        $conversations = collect();
-        $selectedConversation = null;
         $buyerConversationListingMap = [];
 
         if ($user && $activeTab === 'listings') {
@@ -69,34 +61,20 @@ class FavoriteController extends Controller
                         ->withQueryString();
                 }
 
-                if ($this->tableExists('conversations') && $this->tableExists('conversation_messages')) {
+                if (
+                    $favoriteListings->isNotEmpty()
+                    && $this->tableExists('conversations')
+                ) {
                     $userId = (int) $user->getKey();
-                    $conversations = Conversation::inboxForUser($userId, $messageFilter);
-                    $buyerConversationListingMap = $conversations
+                    $buyerConversationListingMap = Conversation::query()
                         ->where('buyer_id', $userId)
+                        ->whereIn('listing_id', $favoriteListings->pluck('id')->all())
                         ->pluck('id', 'listing_id')
                         ->map(fn ($conversationId) => (int) $conversationId)
                         ->all();
-
-                    $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
-
-                    if ($selectedConversation) {
-                        $selectedConversation->loadThread();
-                        $selectedConversation->markAsReadFor($userId);
-
-                        $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
-                            if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
-                                $conversation->unread_count = 0;
-                            }
-
-                            return $conversation;
-                        });
-                    }
                 }
             } catch (Throwable) {
                 $favoriteListings = $this->emptyPaginator();
-                $conversations = collect();
-                $selectedConversation = null;
                 $buyerConversationListingMap = [];
             }
         }
@@ -135,15 +113,11 @@ class FavoriteController extends Controller
             'activeTab' => $activeTab,
             'statusFilter' => $statusFilter,
             'selectedCategoryId' => $selectedCategoryId,
-            'messageFilter' => $messageFilter,
             'categories' => $categories,
             'favoriteListings' => $favoriteListings,
             'favoriteSearches' => $favoriteSearches,
             'favoriteSellers' => $favoriteSellers,
-            'conversations' => $conversations,
-            'selectedConversation' => $selectedConversation,
             'buyerConversationListingMap' => $buyerConversationListingMap,
-            'quickMessages' => QuickMessageCatalog::all(),
             'requiresLogin' => $requiresLogin,
         ]);
     }

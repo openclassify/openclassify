@@ -95,6 +95,16 @@ class Category extends Model
             ->get(['id', 'name', 'slug']);
     }
 
+    public static function seedableListingFieldCategories(): Collection
+    {
+        return static::query()
+            ->active()
+            ->with('parent:id,name,slug,parent_id')
+            ->ordered()
+            ->get()
+            ->values();
+    }
+
     public static function rootTreeWithActiveChildren(): Collection
     {
         return static::query()

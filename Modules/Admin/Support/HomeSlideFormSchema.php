@@ -57,7 +57,6 @@ final class HomeSlideFormSchema
             ->reorderableWithButtons()
             ->addActionLabel('Add Slide')
             ->itemLabel(fn (array $state): string => filled($state['title'] ?? null) ? (string) $state['title'] : 'New Slide')
-            ->afterStateHydrated(fn (Repeater $component, $state) => $component->state($normalizeSlides($state)))
             ->dehydrateStateUsing(fn ($state) => $normalizeSlides($state));
     }
 }

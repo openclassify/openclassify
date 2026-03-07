@@ -28,6 +28,11 @@
         'ja' => '日本語',
     ];
     $headerCategories = collect($headerNavCategories ?? [])->values();
+    $menuBrowseLinks = collect([
+        ['label' => 'Home', 'url' => route('home')],
+        ['label' => 'All Listings', 'url' => route('listings.index')],
+        ['label' => 'Categories', 'url' => route('categories.index')],
+    ]);
     $locationCountries = collect($headerLocationCountries ?? [])->values();
     $defaultCountryIso2 = strtoupper((string) config('app.default_country_iso2', 'TR'));
     $citiesRouteTemplate = \Illuminate\Support\Facades\Route::has('locations.cities')
@@ -48,16 +53,31 @@
     <nav class="market-nav-surface sticky top-0 z-50">
         <div class="oc-nav-wrap">
             <div class="oc-nav-main">
-                <a href="{{ route('home') }}" class="oc-brand">
-                    @if($siteLogoUrl)
-                    <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="h-9 w-auto rounded-xl">
-                    @else
-                    <span class="brand-logo" aria-hidden="true"></span>
-                    @endif
-                    <span class="brand-text leading-none">{{ $siteName }}</span>
-                </a>
+                <div class="oc-topbar">
+                    <a href="{{ route('home') }}" class="oc-brand">
+                        @if($siteLogoUrl)
+                        <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="h-9 w-auto rounded-xl">
+                        @else
+                        <span class="brand-logo" aria-hidden="true"></span>
+                        @endif
+                        <span class="brand-text leading-none">{{ $siteName }}</span>
+                    </a>
 
-                <form action="{{ route('listings.index') }}" method="GET" class="oc-search hidden lg:flex">
+                    <button
+                        type="button"
+                        class="header-utility oc-compact-menu-trigger"
+                        data-mobile-menu-open
+                        aria-label="Open navigation menu"
+                        aria-controls="oc-mobile-menu"
+                        aria-expanded="false"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M7 12h10M10 17h4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <form action="{{ route('listings.index') }}" method="GET" class="oc-search oc-search-main">
                     <svg class="w-5 h-5 oc-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
                     </svg>
@@ -74,13 +94,13 @@
                 </form>
 
                 <div class="oc-actions">
-                    <details class="relative hidden md:block" data-location-widget data-cities-url-template="{{ $citiesRouteTemplate }}">
-                        <summary class="oc-pill list-none cursor-pointer">
+                    <details class="relative oc-location" data-location-widget data-cities-url-template="{{ $citiesRouteTemplate }}">
+                        <summary class="oc-pill oc-location-trigger list-none cursor-pointer">
                             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
                                 <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
                             </svg>
-                            <span data-location-label class="max-w-40 truncate">Choose location</span>
+                            <span data-location-label class="oc-location-label">Choose location</span>
                             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
                             </svg>
@@ -118,18 +138,18 @@
                     </details>
 
                     @auth
-                    <a href="{{ $favoritesRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Favorites">
+                    <a href="{{ $favoritesRoute }}" class="header-utility oc-desktop-utility" aria-label="Favorites">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
                         </svg>
                     </a>
-                    <a href="{{ $inboxRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Inbox">
+                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility" aria-label="Inbox">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l9 6 9-6"/>
                         </svg>
                     </a>
-                    <a href="{{ $panelListingsRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Dashboard">
+                    <a href="{{ $panelListingsRoute }}" class="header-utility oc-desktop-utility" aria-label="Dashboard">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10h14V10"/>
                         </svg>
@@ -137,12 +157,12 @@
                     <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
                     </a>
-                    <form method="POST" action="{{ $logoutRoute }}" class="hidden xl:block">
+                    <form method="POST" action="{{ $logoutRoute }}" class="oc-logout">
                         @csrf
                         <button type="submit" class="oc-text-link">{{ __('messages.logout') }}</button>
                     </form>
                     @else
-                    <a href="{{ $loginRoute }}" class="oc-text-link hidden md:inline-flex">
+                    <a href="{{ $loginRoute }}" class="oc-text-link oc-auth-link">
                         {{ __('messages.login') }}
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
@@ -152,24 +172,94 @@
                 </div>
             </div>
 
-            <div class="oc-mobile-tools lg:hidden">
-                <form action="{{ route('listings.index') }}" method="GET" class="oc-search">
-                    <svg class="w-5 h-5 oc-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
-                    </svg>
-                    <input
-                        type="text"
-                        name="search"
-                        value="{{ request('search') }}"
-                        placeholder="{{ __('messages.search_placeholder') }}"
-                        class="oc-search-input"
-                    >
-                    <button type="submit" class="oc-search-submit">{{ __('messages.search') }}</button>
-                </form>
+            <div class="oc-mobile-menu-shell" id="oc-mobile-menu" data-mobile-menu>
+                <button type="button" class="oc-mobile-menu-backdrop" data-mobile-menu-close aria-label="Close navigation menu"></button>
 
-                <div class="oc-mobile-pills">
-                    <span class="oc-pill" data-location-label-mobile>Choose location</span>
-                    <a href="{{ $panelCreateRoute }}" class="oc-pill oc-pill-strong">Sell</a>
+                <div class="oc-mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+                    <div class="oc-mobile-menu-header">
+                        <h2 class="oc-mobile-menu-title">Menu</h2>
+                        <button type="button" class="header-utility oc-mobile-menu-close" data-mobile-menu-close aria-label="Close navigation menu">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 6l12 12M18 6L6 18"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="oc-mobile-menu-actions">
+                        <a href="{{ route('listings.index') }}" class="oc-mobile-menu-primary">Browse</a>
+                        <a href="{{ $panelCreateRoute }}" class="oc-mobile-menu-primary oc-mobile-menu-primary-strong">Sell</a>
+                    </div>
+
+                    <div class="oc-mobile-menu-section">
+                        <p class="oc-mobile-menu-label">Browse</p>
+                        <div class="oc-mobile-menu-list">
+                            @foreach($menuBrowseLinks as $menuBrowseLink)
+                            <a href="{{ $menuBrowseLink['url'] }}" class="oc-mobile-menu-link">
+                                <span>{{ $menuBrowseLink['label'] }}</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="oc-mobile-menu-section">
+                        <p class="oc-mobile-menu-label">Account</p>
+                        <div class="oc-mobile-menu-list">
+                            @auth
+                            <a href="{{ $panelListingsRoute }}" class="oc-mobile-menu-link">
+                                <span>Dashboard</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                            <a href="{{ $favoritesRoute }}" class="oc-mobile-menu-link">
+                                <span>Favorites</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                            <a href="{{ $inboxRoute }}" class="oc-mobile-menu-link">
+                                <span>Inbox</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                            @else
+                            <a href="{{ $loginRoute }}" class="oc-mobile-menu-link">
+                                <span>Login</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                            <a href="{{ $registerRoute }}" class="oc-mobile-menu-link">
+                                <span>Register</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                            @endauth
+                        </div>
+                    </div>
+
+                    <div class="oc-mobile-menu-section">
+                        <p class="oc-mobile-menu-label">Languages</p>
+                        <div class="oc-mobile-menu-languages">
+                            @foreach($availableLocales as $locale)
+                            <a href="{{ route('lang.switch', $locale) }}" class="oc-mobile-menu-language {{ app()->getLocale() === $locale ? 'is-active' : '' }}">
+                                {{ $localeLabels[$locale] ?? strtoupper($locale) }}
+                            </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    @auth
+                    <form method="POST" action="{{ $logoutRoute }}" class="oc-mobile-menu-logout">
+                        @csrf
+                        <button type="submit" class="oc-mobile-menu-logout-btn">Logout</button>
+                    </form>
+                    @endif
                 </div>
             </div>
 
@@ -259,10 +349,9 @@
     <script>
         (() => {
             const widgetRoots = Array.from(document.querySelectorAll('[data-location-widget]'));
-            const mobileLabels = Array.from(document.querySelectorAll('[data-location-label-mobile]'));
             const storageKey = 'oc2.header.location';
 
-            if (widgetRoots.length === 0 && mobileLabels.length === 0) {
+            if (widgetRoots.length === 0) {
                 return;
             }
 
@@ -316,9 +405,6 @@
                     if (target) {
                         target.textContent = label;
                     }
-                });
-                mobileLabels.forEach((target) => {
-                    target.textContent = label;
                 });
             };
 
@@ -693,6 +779,56 @@
                             }
                         }
                     });
+                }
+            });
+        })();
+
+        (() => {
+            const menu = document.querySelector('[data-mobile-menu]');
+            const openButtons = Array.from(document.querySelectorAll('[data-mobile-menu-open]'));
+            const closeButtons = Array.from(document.querySelectorAll('[data-mobile-menu-close]'));
+
+            if (!menu || openButtons.length === 0) {
+                return;
+            }
+
+            const setOpen = (shouldOpen) => {
+                menu.classList.toggle('is-open', shouldOpen);
+                document.documentElement.classList.toggle('oc-menu-open', shouldOpen);
+                document.body.style.overflow = shouldOpen ? 'hidden' : '';
+
+                openButtons.forEach((button) => {
+                    button.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+                });
+
+                if (shouldOpen) {
+                    document.querySelectorAll('[data-location-widget][open]').forEach((details) => {
+                        details.removeAttribute('open');
+                    });
+                }
+            };
+
+            openButtons.forEach((button) => {
+                button.addEventListener('click', () => setOpen(true));
+            });
+
+            closeButtons.forEach((button) => {
+                button.addEventListener('click', () => setOpen(false));
+            });
+
+            menu.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => setOpen(false));
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    setOpen(false);
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 1024) {
+                    setOpen(false);
                 }
             });
         })();

@@ -4,6 +4,7 @@ namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Category\Models\Category;
 
 class ListingCustomField extends Model
 {
@@ -80,5 +81,23 @@ class ListingCustomField extends Model
             ->all();
 
         return collect($options)->mapWithKeys(fn (string $option): array => [$option => $option])->all();
+    }
+
+    public static function upsertSeeded(Category $category, array $attributes): self
+    {
+        return static::query()->updateOrCreate(
+            ['name' => (string) ($attributes['name'] ?? '')],
+            [
+                'label' => (string) ($attributes['label'] ?? ''),
+                'type' => (string) ($attributes['type'] ?? self::TYPE_TEXT),
+                'category_id' => (int) $category->getKey(),
+                'placeholder' => $attributes['placeholder'] ?? null,
+                'help_text' => $attributes['help_text'] ?? null,
+                'options' => $attributes['options'] ?? null,
+                'is_required' => (bool) ($attributes['is_required'] ?? false),
+                'is_active' => (bool) ($attributes['is_active'] ?? true),
+                'sort_order' => (int) ($attributes['sort_order'] ?? 0),
+            ],
+        );
     }
 }

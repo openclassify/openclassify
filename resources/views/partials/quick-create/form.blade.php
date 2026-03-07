@@ -1221,17 +1221,88 @@
                 grid-template-columns: minmax(0, 1fr) 320px;
             }
         }
+
+        @media (max-width: 640px) {
+            .qc-hero {
+                gap: .7rem;
+                margin-bottom: .75rem;
+            }
+
+            .qc-eyebrow,
+            .qc-subtitle {
+                display: none;
+            }
+
+            .qc-title {
+                margin-top: 0;
+                font-size: 1.55rem;
+            }
+
+            .qc-step-label {
+                font-size: .82rem;
+            }
+
+            .qc-progress-wrap {
+                gap: .6rem;
+            }
+
+            .qc-card {
+                border-radius: .85rem;
+                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+            }
+
+            .qc-body,
+            .qc-footer {
+                padding: .85rem;
+            }
+
+            .qc-upload-zone {
+                min-height: 176px;
+                padding: 1rem .85rem;
+                gap: .55rem;
+            }
+
+            .qc-upload-title,
+            .qc-ai-note h3,
+            .qc-photo-title {
+                font-size: 1.08rem;
+            }
+
+            .qc-upload-desc,
+            .qc-help,
+            .qc-ai-note p {
+                font-size: .9rem;
+            }
+
+            .qc-help {
+                margin-top: .65rem;
+            }
+
+            .qc-photo-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: .55rem;
+            }
+
+            .qc-root-grid {
+                grid-template-columns: 1fr;
+                padding: .85rem;
+            }
+
+            .qc-strip {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
     </style>
 
     <div class="qc-shell">
         <div class="qc-hero">
             <div class="qc-hero-copy">
-                <span class="qc-eyebrow">Create listing</span>
+                <span class="qc-eyebrow">New listing</span>
                 <h1 class="qc-title">{{ $this->currentStepTitle }}</h1>
-                <p class="qc-subtitle">A clean, simple flow to publish faster.</p>
+                <p class="qc-subtitle">{{ $this->currentStepHint }}</p>
             </div>
             <div class="qc-head">
-                <div class="qc-step-label">Step {{ $currentStep }} of 5</div>
+                <div class="qc-step-label">Step {{ $currentStep }}/5</div>
                 <div class="qc-progress-wrap">
                     <div class="qc-progress" aria-hidden="true">
                         @for ($step = 1; $step <= 5; $step++)
@@ -1248,9 +1319,9 @@
                 <div class="qc-body">
                     <label class="qc-upload-zone" for="quick-listing-photo-input">
                         <x-heroicon-o-photo class="h-10 w-10 text-gray-700" />
-                        <div class="qc-upload-title">Start with photos</div>
-                        <div class="qc-upload-desc">Add clear images first.</div>
-                        <span class="qc-upload-btn">Choose Photos</span>
+                        <div class="qc-upload-title">Add photos</div>
+                        <div class="qc-upload-desc">Clear photos work best.</div>
+                        <span class="qc-upload-btn">Select photos</span>
                     </label>
 
                     <input
@@ -1262,7 +1333,7 @@
                         class="hidden"
                     />
 
-                    <p class="qc-help">1 to {{ (int) config('quick-listing.max_photo_count', 20) }} images. JPG and PNG only.</p>
+                    <p class="qc-help">1-{{ (int) config('quick-listing.max_photo_count', 20) }} photos. JPG or PNG.</p>
 
                     @error('photos')
                         <div class="qc-error">{{ $message }}</div>
@@ -1273,8 +1344,8 @@
                     @enderror
 
                     @if (count($photos) > 0)
-                            <h3 class="qc-photo-title">Selected photos</h3>
-                            <div class="qc-photo-sub">Drag to reorder</div>
+                            <h3 class="qc-photo-title">Your photos</h3>
+                            <div class="qc-photo-sub">First photo is the cover</div>
 
                         <div class="qc-photo-grid">
                             @for ($index = 0; $index < (int) config('quick-listing.max_photo_count', 20); $index++)
@@ -1294,8 +1365,8 @@
                     @else
                         <div class="qc-ai-note">
                             <x-heroicon-o-sparkles class="h-10 w-10 text-pink-500" />
-                            <h3>Add at least one photo</h3>
-                            <p>We can suggest a category after the first image.</p>
+                            <h3>Add one photo</h3>
+                            <p>We suggest a category after the first upload.</p>
                         </div>
                     @endif
                 </div>
@@ -1307,7 +1378,7 @@
                         wire:click="goToCategoryStep"
                         @disabled(count($photos) === 0 || $isDetecting)
                     >
-                        Continue
+                        Next
                     </button>
                 </div>
             @endif
