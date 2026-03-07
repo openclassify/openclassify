@@ -9,7 +9,7 @@ A modern classified ads platform built with Laravel 12, FilamentPHP v5, and Lara
 - 📍 **Locations** — Country and city management
 - 👤 **User Profiles** — Manage your listings and account
 - 🔐 **Admin Panel** — Full control via FilamentPHP v5 at `/admin`
-- 🤝 **Partner Panel** — Users manage their own listings at `/partner/{id}` (tenant isolation)
+- 🧭 **Frontend Panel** — Authenticated users manage listings, profile, videos, favorites, and inbox at `/panel`
 - 🧪 **Demo Mode** — Per-visitor PostgreSQL schema provisioning with seeded data and automatic cleanup
 - 🌍 **10 Languages** — English, Turkish, Arabic, German, French, Spanish, Portuguese, Russian, Chinese, Japanese
 - 🐳 **Docker Ready** — One-command production and development setup
@@ -51,17 +51,17 @@ docker compose up -d
 # The application will be available at http://localhost:8000
 ```
 
-### Demo Credentials (`DEMO=1` only)
+### Default Accounts
 
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | a@a.com | 236330 |
-| Partner | b@b.com | 36330 |
+| Member | b@b.com | 36330 |
 
-Demo preparation auto-logs the visitor into the schema-local admin account, so manual login is usually not required.
+These accounts are seeded by `Modules\User\Database\Seeders\AuthUserSeeder`. In demo mode, demo preparation still auto-logs the visitor into the schema-local admin account.
 
 **Admin Panel:** http://localhost:8000/admin
-**Partner Panel:** http://localhost:8000/partner
+**Frontend Panel:** http://localhost:8000/panel
 
 ---
 
@@ -184,9 +184,10 @@ Modules/
 │   ├── database/migrations/
 │   └── database/seeders/
 │
-└── Profile/            # User profile pages
-    ├── Models/Profile.php
-    ├── Http/Controllers/
+└── User/               # Users, auth, profile, and account flows
+    ├── App/Http/Controllers/
+    ├── App/Models/
+    ├── Database/Seeders/
     └── database/migrations/
 ```
 
@@ -202,9 +203,29 @@ Modules/
 | Role | Access |
 |------|--------|
 | `admin` | Full admin panel access |
-| `partner` | Partner panel only (manages own listings) |
 
 ---
+
+## Code Contributors
+
+<p align="center">
+  <a href="https://openclassify.com">
+    <img src="https://raw.githubusercontent.com/openclassify/openclassify/master/public/openclassify-logo.png" width="220" alt="OpenClassify Logo">
+  </a>
+</p>
+
+OpenClassify is a modular open source classified platform built with Laravel.
+
+- Website: [openclassify.com](https://openclassify.com)
+- Package: [openclassify/openclassify](https://packagist.org/packages/openclassify/openclassify)
+
+This project is maintained and improved by its contributors.
+
+<p align="center">
+  <a href="https://github.com/openclassify/openclassify/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=openclassify/openclassify" alt="OpenClassify Contributors">
+  </a>
+</p>
 
 ## Creating a New Module
 

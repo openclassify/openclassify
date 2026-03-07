@@ -3,11 +3,6 @@
 @section('title', 'Sign in')
 
 @section('content')
-<div class="user-auth-copy">
-    <p class="user-auth-kicker">Account</p>
-    <h1 class="user-auth-title">Sign in</h1>
-</div>
-
 @if (session('status'))
 <div class="user-auth-status is-success">{{ session('status') }}</div>
 @endif
@@ -74,7 +69,7 @@
     </div>
 
     <button type="submit" class="user-auth-primary">
-        Sign in with email
+        Sign in
     </button>
 </form>
 

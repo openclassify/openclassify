@@ -6,7 +6,6 @@
 <div class="user-auth-copy">
     <p class="user-auth-kicker">Account</p>
     <h1 class="user-auth-title">Create account</h1>
-    <p class="user-auth-subtitle">Open your account once and manage listings, messages, and saved items from one place.</p>
 </div>
 
 <form method="POST" action="{{ route('register') }}" class="user-auth-form">
