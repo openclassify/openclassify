@@ -94,7 +94,7 @@ class Video extends Model
 
     public static function createFromTemporaryUpload(Listing $listing, TemporaryUploadedFile $file, array $attributes = []): self
     {
-        $disk = (string) config('video.disk', MediaStorage::activeDisk());
+        $disk = (string) ($attributes['disk'] ?? config('video.disk', MediaStorage::activeDisk()));
         $path = $file->storeAs(
             trim((string) config('video.upload_directory', 'videos/uploads').'/'.$listing->getKey(), '/'),
             Str::ulid().'.'.($file->getClientOriginalExtension() ?: $file->guessExtension() ?: 'mp4'),
@@ -117,7 +117,7 @@ class Video extends Model
 
     public static function createFromUploadedFile(Listing $listing, UploadedFile $file, array $attributes = []): self
     {
-        $disk = (string) config('video.disk', MediaStorage::activeDisk());
+        $disk = (string) ($attributes['disk'] ?? config('video.disk', MediaStorage::activeDisk()));
         $path = $file->storeAs(
             trim((string) config('video.upload_directory', 'videos/uploads').'/'.$listing->getKey(), '/'),
             Str::ulid().'.'.($file->getClientOriginalExtension() ?: $file->extension() ?: 'mp4'),
