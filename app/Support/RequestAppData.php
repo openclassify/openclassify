@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 use Modules\Category\Models\Category;
 use Modules\Location\Models\Country;
 use Modules\S3\Support\MediaStorage;
+use Modules\User\App\Models\User;
 use Throwable;
 
 final class RequestAppData
@@ -22,6 +23,7 @@ final class RequestAppData
         View::share('generalSettings', $generalSettings);
         View::share('headerLocationCountries', $this->resolveHeaderLocationCountries());
         View::share('headerNavCategories', $this->resolveHeaderNavCategories());
+        View::share('headerAccountMeta', $this->resolveHeaderAccountMeta());
     }
 
     private function resolveGeneralSettings(): array
@@ -212,6 +214,24 @@ final class RequestAppData
         } catch (Throwable) {
             return [];
         }
+    }
+
+    private function resolveHeaderAccountMeta(): ?array
+    {
+        $user = auth()->user();
+
+        if (! $user instanceof User) {
+            return null;
+        }
+
+        $badgeCounts = $user->headerBadgeCounts();
+
+        return [
+            'name' => $user->getDisplayName(),
+            'messages' => max(0, (int) ($badgeCounts['messages'] ?? 0)),
+            'notifications' => max(0, (int) ($badgeCounts['notifications'] ?? 0)),
+            'favorites' => max(0, (int) ($badgeCounts['favorites'] ?? 0)),
+        ];
     }
 
     private function normalizeCurrencies(array $currencies): array

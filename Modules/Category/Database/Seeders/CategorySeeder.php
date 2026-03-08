@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Vehicles', 'slug' => 'vehicles', 'icon' => 'img/category/car.png', 'children' => ['Cars', 'Motorcycles', 'Trucks', 'Boats']],
             ['name' => 'Real Estate', 'slug' => 'real-estate', 'icon' => 'img/category/home_garden.png', 'children' => ['For Sale', 'For Rent', 'Commercial']],
             ['name' => 'Fashion', 'slug' => 'fashion', 'icon' => 'img/category/phone.png', 'children' => ['Men', 'Women', 'Kids', 'Shoes']],
-            ['name' => 'Home & Garden', 'slug' => 'home-garden', 'icon' => 'img/category/home_tools.png', 'children' => ['Furniture', 'Garden', 'Appliances']],
+            ['name' => 'Home', 'slug' => 'home-garden', 'icon' => 'img/category/home_tools.png', 'children' => ['Furniture', 'Garden', 'Appliances']],
             ['name' => 'Sports', 'slug' => 'sports', 'icon' => 'img/category/sports.png', 'children' => ['Outdoor', 'Fitness', 'Team Sports']],
             ['name' => 'Jobs', 'slug' => 'jobs', 'icon' => 'img/category/education.png', 'children' => ['Full Time', 'Part Time', 'Freelance']],
             ['name' => 'Services', 'slug' => 'services', 'icon' => 'img/category/home_tools.png', 'children' => ['Cleaning', 'Repair', 'Education']],

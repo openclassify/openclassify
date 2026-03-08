@@ -22,6 +22,7 @@ use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\ModelStates\HasStates;
 use Spatie\Permission\Traits\HasRoles;
+use Throwable;
 
 class User extends Authenticatable implements FilamentUser, HasAvatar
 {
@@ -185,5 +186,37 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         $this->favoriteSellers()->syncWithoutDetaching([$seller->getKey()]);
 
         return true;
+    }
+
+    public function unreadInboxCount(): int
+    {
+        return Conversation::unreadCountForUser((int) $this->getKey());
+    }
+
+    public function unreadNotificationCount(): int
+    {
+        try {
+            return (int) $this->unreadNotifications()->count();
+        } catch (Throwable) {
+            return 0;
+        }
+    }
+
+    public function savedListingsCount(): int
+    {
+        try {
+            return (int) $this->favoriteListings()->count();
+        } catch (Throwable) {
+            return 0;
+        }
+    }
+
+    public function headerBadgeCounts(): array
+    {
+        return [
+            'messages' => $this->unreadInboxCount(),
+            'notifications' => $this->unreadNotificationCount(),
+            'favorites' => $this->savedListingsCount(),
+        ];
     }
 }

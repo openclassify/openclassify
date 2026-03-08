@@ -48,7 +48,7 @@ final class HomeSlideDefaults
         $normalized = collect($source)
             ->filter(fn ($slide): bool => is_array($slide))
             ->values()
-            ->map(function (array $slide, int $index) use ($defaults): ?array {
+            ->map(function (array $slide, int $index) use ($defaults, $defaultDisk): ?array {
                 $fallback = $defaults[$index] ?? $defaults[array_key_last($defaults)];
                 $badge = trim((string) ($slide['badge'] ?? ''));
                 $title = trim((string) ($slide['title'] ?? ''));

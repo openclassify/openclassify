@@ -15,12 +15,7 @@ class DatabaseSeeder extends Seeder
             \Modules\Category\Database\Seeders\CategorySeeder::class,
             \Modules\Listing\Database\Seeders\ListingCustomFieldSeeder::class,
             \Modules\Listing\Database\Seeders\ListingSeeder::class,
+            \Modules\User\Database\Seeders\UserWorkspaceSeeder::class,
         ]);
-
-        if ((bool) config('demo.enabled') || (bool) config('demo.provisioning')) {
-            $this->call([
-                \Modules\Demo\Database\Seeders\DemoContentSeeder::class,
-            ]);
-        }
     }
 }

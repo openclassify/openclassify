@@ -9,10 +9,7 @@ class DemoContentSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            \Modules\User\Database\Seeders\AuthUserSeeder::class,
-            \Modules\Listing\Database\Seeders\ListingPanelDemoSeeder::class,
-            \Modules\Favorite\Database\Seeders\FavoriteDemoSeeder::class,
-            \Modules\Conversation\Database\Seeders\ConversationDemoSeeder::class,
+            \Modules\User\Database\Seeders\UserWorkspaceSeeder::class,
         ]);
     }
 }

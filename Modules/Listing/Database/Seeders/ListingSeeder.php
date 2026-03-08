@@ -14,16 +14,6 @@ use Modules\User\App\Models\User;
 
 class ListingSeeder extends Seeder
 {
-    private const SAMPLE_IMAGES = [
-        'sample_image/phone.jpeg',
-        'sample_image/macbook.jpg',
-        'sample_image/car.jpeg',
-        'sample_image/headphones.jpg',
-        'sample_image/laptop.jpg',
-        'sample_image/cup.jpg',
-        'sample_image/car2.jpeg',
-    ];
-
     private const TITLE_PREFIXES = [
         'Clean',
         'Lightly used',
@@ -132,7 +122,6 @@ class ListingSeeder extends Seeder
         Collection $turkeyCities
     ): array {
         $location = $this->resolveLocation($index, $countries, $turkeyCities);
-        $image = self::SAMPLE_IMAGES[$index % count(self::SAMPLE_IMAGES)];
 
         return [
             'title' => $this->buildTitle($category, $index),
@@ -140,7 +129,7 @@ class ListingSeeder extends Seeder
             'price' => $this->priceForIndex($index),
             'city' => $location['city'],
             'country' => $location['country'],
-            'image' => $image,
+            'image' => null,
         ];
     }
 
@@ -238,8 +227,14 @@ class ListingSeeder extends Seeder
         );
     }
 
-    private function syncListingImage(Listing $listing, string $imageRelativePath): void
+    private function syncListingImage(Listing $listing, ?string $imageRelativePath): void
     {
+        if (blank($imageRelativePath)) {
+            $listing->clearMediaCollection('listing-images');
+
+            return;
+        }
+
         $imageAbsolutePath = public_path($imageRelativePath);
 
         if (! is_file($imageAbsolutePath)) {

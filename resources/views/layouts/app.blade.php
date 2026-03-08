@@ -14,6 +14,8 @@
     $panelListingsRoute = auth()->check() ? route('panel.listings.index') : $loginRoute;
     $inboxRoute = auth()->check() ? route('panel.inbox.index') : $loginRoute;
     $favoritesRoute = auth()->check() ? route('favorites.index') : $loginRoute;
+    $profileRoute = auth()->check() ? route('panel.profile.edit') : $loginRoute;
+    $notificationsRoute = auth()->check() ? route('panel.listings.index') : $loginRoute;
     $demoEnabled = (bool) config('demo.enabled');
     $hasDemoSession = (bool) session('is_demo_session') || filled(session('demo_uuid'));
     $demoLandingMode = $demoEnabled && request()->routeIs('home') && !auth()->check() && !$hasDemoSession;
@@ -62,6 +64,11 @@
         ? route('locations.cities', ['country' => '__COUNTRY__'], false)
         : '';
     $simplePage = trim((string) $__env->yieldContent('simple_page')) === '1';
+    $headerAccount = is_array($headerAccountMeta ?? null) ? $headerAccountMeta : null;
+    $headerMessageCount = max(0, (int) ($headerAccount['messages'] ?? 0));
+    $headerNotificationCount = max(0, (int) ($headerAccount['notifications'] ?? 0));
+    $headerFavoritesCount = max(0, (int) ($headerAccount['favorites'] ?? 0));
+    $headerBadgeLabel = static fn (int $count): string => $count > 99 ? '99+' : (string) $count;
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ in_array(app()->getLocale(), ['ar']) ? 'rtl' : 'ltr' }}">
@@ -191,29 +198,53 @@
                     </details>
 
                     @auth
-                    <a href="{{ $favoritesRoute }}" class="header-utility oc-desktop-utility" aria-label="Favorites">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
-                        </svg>
-                    </a>
-                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility" aria-label="Inbox">
+                    <details class="oc-account-menu oc-desktop-utility">
+                        <summary class="oc-account-trigger list-none cursor-pointer">
+                            <span class="oc-account-name">{{ $headerAccount['name'] ?? auth()->user()->name }}</span>
+                            <svg class="oc-account-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </summary>
+                        <div class="oc-account-panel">
+                            <a href="{{ $panelListingsRoute }}" class="oc-account-link">My Listings</a>
+                            <a href="{{ $profileRoute }}" class="oc-account-link">My Profile</a>
+                            <a href="{{ $favoritesRoute }}" class="oc-account-link">Favorites</a>
+                            <a href="{{ $inboxRoute }}" class="oc-account-link">Inbox</a>
+                            <form method="POST" action="{{ $logoutRoute }}">
+                                @csrf
+                                <button type="submit" class="oc-account-link oc-account-link-button">Logout</button>
+                            </form>
+                        </div>
+                    </details>
+                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Inbox">
+                        @if($headerMessageCount > 0)
+                        <span class="oc-header-badge">{{ $headerBadgeLabel($headerMessageCount) }}</span>
+                        @endif
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l9 6 9-6"/>
                         </svg>
                     </a>
-                    <a href="{{ $panelListingsRoute }}" class="header-utility oc-desktop-utility" aria-label="Dashboard">
+                    <a href="{{ $notificationsRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Notifications">
+                        @if($headerNotificationCount > 0)
+                        <span class="oc-header-badge">{{ $headerBadgeLabel($headerNotificationCount) }}</span>
+                        @endif
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10h14V10"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 17a2 2 0 0 0 4 0"/>
+                        </svg>
+                    </a>
+                    <a href="{{ $favoritesRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Favorites">
+                        @if($headerFavoritesCount > 0)
+                        <span class="oc-header-badge is-neutral">{{ $headerBadgeLabel($headerFavoritesCount) }}</span>
+                        @endif
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m12 3 2.8 5.67 6.2.9-4.5 4.39 1.06 6.2L12 17.21 6.44 20.16 7.5 13.96 3 9.57l6.2-.9L12 3z"/>
                         </svg>
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
                     </a>
-                    <form method="POST" action="{{ $logoutRoute }}" class="oc-logout">
-                        @csrf
-                        <button type="submit" class="oc-text-link">{{ __('messages.logout') }}</button>
-                    </form>
                     @else
                     <a href="{{ $loginRoute }}" class="oc-text-link oc-auth-link">
                         {{ __('messages.login') }}

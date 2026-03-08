@@ -20,9 +20,9 @@ class FavoriteDemoSeeder extends Seeder
         }
 
         $admin = User::query()->where('email', 'a@a.com')->first();
-        $partner = User::query()->where('email', 'b@b.com')->first();
+        $member = User::query()->where('email', 'b@b.com')->first();
 
-        if (! $admin || ! $partner) {
+        if (! $admin || ! $member) {
             return;
         }
 
@@ -32,26 +32,33 @@ class FavoriteDemoSeeder extends Seeder
             ->orderBy('id')
             ->get();
 
-        if ($adminListings->isEmpty()) {
+        $memberListings = Listing::query()
+            ->where('user_id', $member->getKey())
+            ->orderByDesc('is_featured')
+            ->orderBy('id')
+            ->get();
+
+        if ($adminListings->isEmpty() || $memberListings->isEmpty()) {
             return;
         }
 
         $activeAdminListings = $adminListings->where('status', 'active')->values();
+        $activeMemberListings = $memberListings->where('status', 'active')->values();
 
         $this->seedFavoriteListings(
-            $partner,
+            $member,
             $activeAdminListings->take(6)
         );
 
         $this->seedFavoriteListings(
             $admin,
-            $adminListings->take(3)->values()
+            $activeMemberListings->take(4)
         );
 
-        $this->seedFavoriteSeller($partner, $admin, now()->subDays(2));
-        $this->seedFavoriteSeller($admin, $partner, now()->subDays(1));
+        $this->seedFavoriteSeller($member, $admin, now()->subDays(2));
+        $this->seedFavoriteSeller($admin, $member, now()->subDays(1));
 
-        $this->seedFavoriteSearches($partner, $this->partnerSearchPayloads());
+        $this->seedFavoriteSearches($member, $this->memberSearchPayloads());
         $this->seedFavoriteSearches($admin, $this->adminSearchPayloads());
     }
 
@@ -147,27 +154,31 @@ class FavoriteDemoSeeder extends Seeder
         }
     }
 
-    private function partnerSearchPayloads(): array
+    private function memberSearchPayloads(): array
     {
-        $electronicsId = Category::query()->where('name', 'Electronics')->value('id');
-        $vehiclesId = Category::query()->where('name', 'Vehicles')->value('id');
-        $realEstateId = Category::query()->where('name', 'Real Estate')->value('id');
+        $electronicsId = Category::query()->where('slug', 'electronics')->value('id');
+        $vehiclesId = Category::query()->where('slug', 'vehicles')->value('id');
+        $realEstateId = Category::query()->where('slug', 'real-estate')->value('id');
+        $servicesId = Category::query()->where('slug', 'services')->value('id');
 
         return [
             ['search' => 'iphone', 'category_id' => $electronicsId],
             ['search' => 'sedan', 'category_id' => $vehiclesId],
             ['search' => 'apartment', 'category_id' => $realEstateId],
+            ['search' => 'repair', 'category_id' => $servicesId],
         ];
     }
 
     private function adminSearchPayloads(): array
     {
-        $fashionId = Category::query()->where('name', 'Fashion')->value('id');
-        $homeGardenId = Category::query()->where('name', 'Home & Garden')->value('id');
+        $fashionId = Category::query()->where('slug', 'fashion')->value('id');
+        $homeGardenId = Category::query()->where('slug', 'home-garden')->value('id');
+        $sportsId = Category::query()->where('slug', 'sports')->value('id');
 
         return [
             ['search' => 'vintage', 'category_id' => $fashionId],
             ['search' => 'garden', 'category_id' => $homeGardenId],
+            ['search' => 'fitness', 'category_id' => $sportsId],
         ];
     }
 }

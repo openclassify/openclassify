@@ -165,4 +165,15 @@ class Conversation extends Model
 
         return is_null($value) ? null : (int) $value;
     }
+
+    public static function unreadCountForUser(int $userId): int
+    {
+        return (int) ConversationMessage::query()
+            ->whereHas('conversation', function (Builder $query) use ($userId): void {
+                $query->forUser($userId);
+            })
+            ->where('sender_id', '!=', $userId)
+            ->whereNull('read_at')
+            ->count();
+    }
 }
