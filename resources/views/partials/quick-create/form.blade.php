@@ -1,5 +1,6 @@
 @php
     $maxPhotoCount = (int) config('quick-listing.max_photo_count', 20);
+    $visiblePhotoSlotCount = min($maxPhotoCount, 8);
     $maxVideoCount = (int) config('video.max_listing_videos', 5);
     $currency = \Modules\Listing\Support\ListingPanelHelper::defaultCurrency();
     $displayPrice = is_numeric($price) ? number_format((float) $price, 0, ',', '.') : $price;
@@ -737,6 +738,8 @@
         .qc-publish-stack {
             display: grid;
             gap: 0.7rem;
+            position: relative;
+            z-index: 2;
         }
 
         .qc-button,
@@ -841,6 +844,14 @@
         </div>
 
         <div class="qc-card">
+            @if ($publishError)
+                <div class="px-4 pt-4">
+                    <div class="rounded-[18px] border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-700">
+                        {{ $publishError }}
+                    </div>
+                </div>
+            @endif
+
             @if ($currentStep === 1)
                 <div class="qc-body">
                     <div class="qc-stack">
@@ -880,7 +891,7 @@
                                 </div>
 
                                 <div class="qc-photo-grid">
-                                    @for ($index = 0; $index < $maxPhotoCount; $index++)
+                                    @for ($index = 0; $index < $visiblePhotoSlotCount; $index++)
                                         <div class="qc-photo-slot">
                                             @if (isset($photos[$index]))
                                                 <img src="{{ $photos[$index]->temporaryUrl() }}" alt="Uploaded photo {{ $index + 1 }}">
@@ -894,6 +905,10 @@
                                         </div>
                                     @endfor
                                 </div>
+
+                                @if (count($photos) > $visiblePhotoSlotCount)
+                                    <p class="qc-meta-copy mt-3">{{ count($photos) - $visiblePhotoSlotCount }} more photos added.</p>
+                                @endif
                             </div>
                         @else
                             <div class="qc-empty">Add one cover photo to continue.</div>
@@ -1322,10 +1337,11 @@
                             </div>
 
                             <div class="qc-panel">
-                                <form class="qc-publish-stack" wire:submit.prevent="publishListing">
+                                <div class="qc-publish-stack">
                                     <button
-                                        type="submit"
+                                        type="button"
                                         class="qc-button"
+                                        wire:click.prevent="publishListing"
                                         wire:loading.attr="disabled"
                                         wire:target="publishListing"
                                     >
@@ -1333,7 +1349,7 @@
                                         <span wire:loading wire:target="publishListing">Publishing...</span>
                                     </button>
                                     <button type="button" class="qc-button-secondary" wire:click="goToStep(4)" wire:loading.attr="disabled" wire:target="publishListing">Back</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>

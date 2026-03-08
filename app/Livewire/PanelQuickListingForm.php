@@ -29,6 +29,7 @@ class PanelQuickListingForm extends Component
 
     private const TOTAL_STEPS = 5;
     private const DRAFT_SESSION_KEY = 'panel_quick_listing_draft';
+    private const OTHER_CITY_ID = -1;
 
     public array $photos = [];
     public array $videos = [];
@@ -57,6 +58,7 @@ class PanelQuickListingForm extends Component
     public ?int $selectedCityId = null;
     public bool $isPublishing = false;
     public bool $shouldPersistDraft = true;
+    public ?string $publishError = null;
 
     public function mount(): void
     {
@@ -117,11 +119,13 @@ class PanelQuickListingForm extends Component
 
     public function goToStep(int $step): void
     {
+        $this->publishError = null;
         $this->currentStep = max(1, min(self::TOTAL_STEPS, $step));
     }
 
     public function goToCategoryStep(): void
     {
+        $this->publishError = null;
         $this->validatePhotos();
         $this->validateVideos();
         $this->currentStep = 2;
@@ -133,12 +137,14 @@ class PanelQuickListingForm extends Component
 
     public function goToDetailsStep(): void
     {
+        $this->publishError = null;
         $this->validateCategoryStep();
         $this->currentStep = 3;
     }
 
     public function goToFeaturesStep(): void
     {
+        $this->publishError = null;
         $this->validateCategoryStep();
         $this->validateDetailsStep();
         $this->currentStep = 4;
@@ -146,6 +152,7 @@ class PanelQuickListingForm extends Component
 
     public function goToPreviewStep(): void
     {
+        $this->publishError = null;
         $this->validateCategoryStep();
         $this->validateDetailsStep();
         $this->validateCustomFieldsStep();
@@ -199,6 +206,7 @@ class PanelQuickListingForm extends Component
             return;
         }
 
+        $this->publishError = null;
         $this->selectedCategoryId = $categoryId;
         $this->loadListingCustomFields();
     }
@@ -210,6 +218,8 @@ class PanelQuickListingForm extends Component
         }
 
         $this->isPublishing = true;
+        $this->publishError = null;
+        $this->resetErrorBag();
 
         try {
             $this->validatePhotos();
@@ -221,11 +231,13 @@ class PanelQuickListingForm extends Component
             $listing = $this->createListing();
         } catch (ValidationException $exception) {
             $this->isPublishing = false;
+            $this->handlePublishValidationFailure($exception);
 
-            throw $exception;
+            return;
         } catch (Throwable $exception) {
             report($exception);
             $this->isPublishing = false;
+            $this->publishError = 'The listing could not be created. Please try again.';
             session()->flash('error', 'The listing could not be created. Please try again.');
 
             return;
@@ -361,10 +373,20 @@ class PanelQuickListingForm extends Component
             return [];
         }
 
-        return collect($this->cities)
+        $cities = collect($this->cities)
             ->where('country_id', $this->selectedCountryId)
             ->values()
             ->all();
+
+        if ($cities !== []) {
+            return $cities;
+        }
+
+        return [[
+            'id' => self::OTHER_CITY_ID,
+            'name' => 'Other',
+            'country_id' => $this->selectedCountryId,
+        ]];
     }
 
     public function getSelectedCountryNameProperty(): ?string
@@ -382,6 +404,10 @@ class PanelQuickListingForm extends Component
     {
         if (! $this->selectedCityId) {
             return null;
+        }
+
+        if ((int) $this->selectedCityId === self::OTHER_CITY_ID) {
+            return 'Other';
         }
 
         $city = collect($this->cities)->firstWhere('id', $this->selectedCityId);
@@ -770,6 +796,49 @@ class PanelQuickListingForm extends Component
     private function frontendMediaDisk(): string
     {
         return (string) config('media_storage.local_disk', MediaStorage::diskFromDriver(MediaStorage::DRIVER_LOCAL));
+    }
+
+    private function handlePublishValidationFailure(ValidationException $exception): void
+    {
+        $errors = $exception->errors();
+
+        foreach ($errors as $key => $messages) {
+            foreach ($messages as $message) {
+                $this->addError($key, $message);
+            }
+        }
+
+        $this->currentStep = $this->stepForValidationErrors(array_keys($errors));
+        $this->publishError = collect($errors)->flatten()->filter()->first() ?: 'Please fix the highlighted fields before publishing.';
+    }
+
+    private function stepForValidationErrors(array $keys): int
+    {
+        $normalizedKeys = collect($keys)->map(fn ($key) => (string) $key)->values();
+
+        if ($normalizedKeys->contains(fn ($key) => str_starts_with($key, 'photos') || str_starts_with($key, 'videos'))) {
+            return 1;
+        }
+
+        if ($normalizedKeys->contains('selectedCategoryId')) {
+            return 2;
+        }
+
+        if ($normalizedKeys->contains(fn ($key) => in_array($key, [
+            'listingTitle',
+            'price',
+            'description',
+            'selectedCountryId',
+            'selectedCityId',
+        ], true))) {
+            return 3;
+        }
+
+        if ($normalizedKeys->contains(fn ($key) => str_starts_with($key, 'customFieldValues.'))) {
+            return 4;
+        }
+
+        return 5;
     }
 
     private function restoreDraft(): void
