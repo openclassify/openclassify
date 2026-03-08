@@ -121,7 +121,7 @@ class Conversation extends Model
     {
         $this->load([
             'listing:id,title,price,currency,user_id',
-            'messages' => fn (Builder $query) => $query->with('sender:id,name')->orderBy('created_at'),
+            'messages' => fn ($query) => $query->with('sender:id,name')->orderBy('created_at'),
         ]);
     }
 
