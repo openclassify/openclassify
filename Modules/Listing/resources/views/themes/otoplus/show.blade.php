@@ -22,10 +22,10 @@
     $publishedAt = $listing->created_at?->format('M j, Y') ?? 'Recently';
     $postedAgo = $listing->created_at?->diffForHumans() ?? 'Listed recently';
     $galleryImages = collect($gallery ?? [])
-        ->filter(fn ($value) => is_string($value) && trim($value) !== '')
+        ->filter(fn ($value) => is_array($value) && is_array($value['gallery'] ?? null))
         ->values()
         ->all();
-    $initialGalleryImage = $galleryImages[0] ?? null;
+    $initialGalleryImage = $galleryImages[0]['gallery'] ?? null;
     $galleryCount = count($galleryImages);
 
     $description = trim((string) ($listing->description ?? ''));
@@ -143,7 +143,23 @@
                 </div>
 
                 @if($initialGalleryImage)
-                    <img src="{{ $initialGalleryImage }}" alt="{{ $displayTitle }}" data-gallery-main>
+                    <picture data-gallery-picture>
+                        <source
+                            data-gallery-source-mobile
+                            media="(max-width: 767px)"
+                            srcset="{{ $initialGalleryImage['mobile'] ?? ($initialGalleryImage['fallback'] ?? '') }}"
+                        >
+                        <source
+                            data-gallery-source-desktop
+                            media="(min-width: 768px)"
+                            srcset="{{ $initialGalleryImage['desktop'] ?? ($initialGalleryImage['fallback'] ?? '') }}"
+                        >
+                        <img
+                            src="{{ $initialGalleryImage['fallback'] ?? ($initialGalleryImage['desktop'] ?? ($initialGalleryImage['mobile'] ?? '')) }}"
+                            alt="{{ $displayTitle }}"
+                            data-gallery-main
+                        >
+                    </picture>
                 @else
                     <div class="lt-gallery-main-empty">No photos uploaded yet.</div>
                 @endif
@@ -171,15 +187,25 @@
             @if($galleryImages !== [])
                 <div class="lt-thumbs" data-gallery-thumbs>
                     @foreach($galleryImages as $index => $image)
+                        @php
+                            $galleryImage = $image['gallery'] ?? null;
+                            $thumbImage = $image['thumb'] ?? $galleryImage;
+                        @endphp
                         <button
                             type="button"
                             class="lt-thumb {{ $index === 0 ? 'is-active' : '' }}"
                             data-gallery-thumb
                             data-gallery-index="{{ $index }}"
-                            data-gallery-src="{{ $image }}"
+                            data-gallery-mobile-src="{{ $galleryImage['mobile'] ?? ($galleryImage['fallback'] ?? '') }}"
+                            data-gallery-desktop-src="{{ $galleryImage['desktop'] ?? ($galleryImage['fallback'] ?? '') }}"
+                            data-gallery-fallback-src="{{ $galleryImage['fallback'] ?? '' }}"
                             aria-label="Open photo {{ $index + 1 }}"
                         >
-                            <img src="{{ $image }}" alt="{{ $displayTitle }} {{ $index + 1 }}">
+                            @include('listing::partials.responsive-image', [
+                                'image' => $thumbImage,
+                                'alt' => $displayTitle.' '.($index + 1),
+                                'class' => 'w-full h-full object-cover',
+                            ])
                         </button>
                     @endforeach
                 </div>
@@ -439,11 +465,7 @@
                     <div class="lt-scroll-track" data-theme-scroll-track>
                         @foreach(($relatedListings ?? collect()) as $related)
                             @php
-                                $relatedImage = $related->getFirstMediaUrl('listing-images');
-                                if (! $relatedImage && is_array($related->images ?? null)) {
-                                    $relatedImage = collect($related->images)->first();
-                                }
-
+                                $relatedImage = $related->primaryImageData('card');
                                 $relatedPrice = 'Price on request';
                                 if (! is_null($related->price)) {
                                     $relatedPriceValue = (float) $related->price;
@@ -458,7 +480,11 @@
                             <a href="{{ route('listings.show', $related) }}" class="lt-rel-card">
                                 <div class="lt-rel-photo">
                                     @if($relatedImage)
-                                        <img src="{{ $relatedImage }}" alt="{{ $related->title }}">
+                                        @include('listing::partials.responsive-image', [
+                                            'image' => $relatedImage,
+                                            'alt' => $related->title,
+                                            'class' => 'w-full h-full object-cover',
+                                        ])
                                     @endif
                                 </div>
                                 <div class="lt-rel-body">
@@ -496,6 +522,8 @@
     (() => {
         document.querySelectorAll('[data-gallery]').forEach((galleryRoot) => {
             const mainImage = galleryRoot.querySelector('[data-gallery-main]');
+            const mainMobileSource = galleryRoot.querySelector('[data-gallery-source-mobile]');
+            const mainDesktopSource = galleryRoot.querySelector('[data-gallery-source-desktop]');
             const thumbButtons = Array.from(galleryRoot.querySelectorAll('[data-gallery-thumb]'));
             const prevButton = galleryRoot.querySelector('[data-gallery-prev]');
             const nextButton = galleryRoot.querySelector('[data-gallery-next]');
@@ -517,9 +545,20 @@
                 }
 
                 activeIndex = index;
-                const src = thumbButtons[index].dataset.gallerySrc;
-                if (src) {
-                    mainImage.src = src;
+                const mobileSrc = thumbButtons[index].dataset.galleryMobileSrc || '';
+                const desktopSrc = thumbButtons[index].dataset.galleryDesktopSrc || '';
+                const fallbackSrc = thumbButtons[index].dataset.galleryFallbackSrc || desktopSrc || mobileSrc;
+
+                if (mainMobileSource && mobileSrc) {
+                    mainMobileSource.srcset = mobileSrc;
+                }
+
+                if (mainDesktopSource && desktopSrc) {
+                    mainDesktopSource.srcset = desktopSrc;
+                }
+
+                if (fallbackSrc) {
+                    mainImage.src = fallbackSrc;
                 }
 
                 if (currentCounter) {

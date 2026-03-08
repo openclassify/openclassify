@@ -10,13 +10,16 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
+use Modules\Listing\Support\ListingImageViewData;
 use Modules\Listing\States\ListingStatus;
 use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Video\Models\Video;
+use Spatie\Image\Enums\Fit;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\ModelStates\HasStates;
 use Throwable;
 
@@ -183,20 +186,54 @@ class Listing extends Model implements HasMedia
 
     public function themeGallery(): array
     {
-        $mediaUrls = $this->getMedia('listing-images')
-            ->map(fn ($media): string => $media->getUrl())
-            ->filter(fn (string $url): bool => $url !== '')
+        return collect($this->galleryImageData())
+            ->map(fn (array $image): ?string => ListingImageViewData::pickUrl($image['gallery'] ?? null))
+            ->filter(fn (?string $url): bool => is_string($url) && $url !== '')
             ->values()
             ->all();
+    }
 
-        if ($mediaUrls !== []) {
-            return $mediaUrls;
+    public function galleryImageData(): array
+    {
+        $mediaItems = $this->getMedia('listing-images');
+
+        if ($mediaItems->isNotEmpty()) {
+            return $mediaItems
+                ->map(fn (Media $media): array => [
+                    'gallery' => ListingImageViewData::fromMedia($media, 'gallery'),
+                    'thumb' => ListingImageViewData::fromMedia($media, 'thumb'),
+                ])
+                ->values()
+                ->all();
         }
 
         return collect($this->images ?? [])
             ->filter(fn ($value): bool => is_string($value) && trim($value) !== '')
+            ->map(fn (string $url): array => [
+                'gallery' => ListingImageViewData::fromUrl($url),
+                'thumb' => ListingImageViewData::fromUrl($url),
+            ])
             ->values()
             ->all();
+    }
+
+    public function primaryImageData(string $context = 'card'): ?array
+    {
+        $media = $this->getFirstMedia('listing-images');
+
+        if ($media instanceof Media) {
+            return ListingImageViewData::fromMedia($media, $context);
+        }
+
+        $fallback = collect($this->images ?? [])
+            ->first(fn ($value): bool => is_string($value) && trim($value) !== '');
+
+        return ListingImageViewData::fromUrl(is_string($fallback) ? $fallback : null);
+    }
+
+    public function primaryImageUrl(string $context = 'card', string $viewport = 'desktop'): ?string
+    {
+        return ListingImageViewData::pickUrl($this->primaryImageData($context), $viewport);
     }
 
     public function relatedSuggestions(int $limit = 8): Collection
@@ -254,9 +291,7 @@ class Listing extends Model implements HasMedia
 
     public function panelPrimaryImageUrl(): ?string
     {
-        $url = trim((string) $this->getFirstMediaUrl('listing-images'));
-
-        return $url !== '' ? $url : null;
+        return $this->primaryImageUrl('card', 'desktop');
     }
 
     public function panelPriceLabel(): string
@@ -444,7 +479,73 @@ class Listing extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('listing-images');
+        $this->addMediaCollection('listing-images')->useDisk('public');
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        if ($this->shouldSkipConversionsForSeeder()) {
+            return;
+        }
+
+        $this
+            ->addMediaConversion('gallery-mobile')
+            ->fit(Fit::Max, 960, 960)
+            ->format('webp')
+            ->quality(78)
+            ->performOnCollections('listing-images')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('gallery-desktop')
+            ->fit(Fit::Max, 1680, 1680)
+            ->format('webp')
+            ->quality(82)
+            ->performOnCollections('listing-images')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('card-mobile')
+            ->fit(Fit::Crop, 720, 540)
+            ->format('webp')
+            ->quality(76)
+            ->performOnCollections('listing-images')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('card-desktop')
+            ->fit(Fit::Crop, 1080, 810)
+            ->format('webp')
+            ->quality(80)
+            ->performOnCollections('listing-images')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('thumb-mobile')
+            ->fit(Fit::Crop, 220, 220)
+            ->format('webp')
+            ->quality(74)
+            ->performOnCollections('listing-images')
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('thumb-desktop')
+            ->fit(Fit::Crop, 320, 320)
+            ->format('webp')
+            ->quality(78)
+            ->performOnCollections('listing-images')
+            ->nonQueued();
+    }
+
+    private function shouldSkipConversionsForSeeder(): bool
+    {
+        if (! app()->runningInConsole()) {
+            return false;
+        }
+
+        $argv = implode(' ', (array) ($_SERVER['argv'] ?? []));
+
+        return str_contains($argv, 'db:seed') || str_contains($argv, '--seed');
     }
 
     protected function location(): Attribute

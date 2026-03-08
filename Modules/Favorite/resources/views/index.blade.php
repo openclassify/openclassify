@@ -64,7 +64,7 @@
                     <tbody>
                         @forelse($favoriteListings as $listing)
                         @php
-                            $listingImage = $listing->getFirstMediaUrl('listing-images');
+                            $listingImage = $listing->primaryImageData('card');
                             $priceLabel = $listing->price ? number_format((float) $listing->price, 0).' '.$listing->currency : 'Free';
                             $meta = collect([
                                 $listing->category?->name,
@@ -80,7 +80,11 @@
                                 <div class="flex gap-3">
                                     <a href="{{ route('listings.show', $listing) }}" class="w-36 h-24 shrink-0 bg-slate-100 border border-slate-200 overflow-hidden">
                                         @if($listingImage)
-                                        <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
+                                        @include('listing::partials.responsive-image', [
+                                            'image' => $listingImage,
+                                            'alt' => $listing->title,
+                                            'class' => 'w-full h-full object-cover',
+                                        ])
                                         @else
                                         <div class="w-full h-full grid place-items-center text-slate-400">No image</div>
                                         @endif

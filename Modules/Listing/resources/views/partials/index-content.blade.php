@@ -231,7 +231,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3.5">
                     @foreach($listings as $listing)
                         @php
-                            $listingImage = $listing->getFirstMediaUrl('listing-images');
+                            $listingImage = $listing->primaryImageData('card');
                             $isFavorited = in_array($listing->id, $favoriteListingIds ?? [], true);
                             $priceValue = ! is_null($listing->price) ? (float) $listing->price : null;
                             $locationParts = array_filter([
@@ -244,7 +244,11 @@
                             <div class="relative h-52 bg-slate-200">
                                 @if($listingImage)
                                     <a href="{{ route('listings.show', $listing) }}" class="block w-full h-full">
-                                        <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
+                                        @include('listing::partials.responsive-image', [
+                                            'image' => $listingImage,
+                                            'alt' => $listing->title,
+                                            'class' => 'w-full h-full object-cover',
+                                        ])
                                     </a>
                                 @else
                                     <a href="{{ route('listings.show', $listing) }}" class="w-full h-full grid place-items-center text-slate-400">

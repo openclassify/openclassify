@@ -131,7 +131,7 @@
                 @forelse ($listings as $listing)
                     @php
                         $statusMeta = $listing->panelStatusMeta();
-                        $listingImage = $listing->panelPrimaryImageUrl();
+                        $listingImage = $listing->primaryImageData('card');
                         $priceLabel = $listing->panelPriceLabel();
                         $favoriteCount = (int) ($listing->favorited_by_users_count ?? 0);
                         $viewCount = (int) ($listing->view_count ?? 0);
@@ -147,7 +147,11 @@
                     <article class="listings-dashboard-card">
                         <a href="{{ route('listings.show', $listing) }}" class="listings-dashboard-media" aria-label="{{ $listing->title }}">
                             @if ($listingImage)
-                                <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="h-full w-full object-cover">
+                                @include('listing::partials.responsive-image', [
+                                    'image' => $listingImage,
+                                    'alt' => $listing->title,
+                                    'class' => 'h-full w-full object-cover',
+                                ])
                             @else
                                 <div class="listings-dashboard-placeholder">
                                     <span>No image</span>

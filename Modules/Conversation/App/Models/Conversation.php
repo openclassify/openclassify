@@ -187,7 +187,7 @@ class Conversation extends Model
     {
         $this->loadMissing('listing');
 
-        $url = $this->listing?->getFirstMediaUrl('listing-images');
+        $url = $this->listing?->primaryImageUrl('thumb', 'desktop');
 
         return is_string($url) && trim($url) !== '' ? $url : null;
     }

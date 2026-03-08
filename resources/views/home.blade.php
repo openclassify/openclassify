@@ -3,7 +3,7 @@
 @php
     $menuCategories = $categories->take(8);
     $heroListing = $featuredListings->first() ?? $recentListings->first();
-    $heroImage = $heroListing?->getFirstMediaUrl('listing-images');
+    $heroImage = $heroListing?->primaryImageData('gallery');
     $listingCards = $recentListings->take(6);
     $demoEnabled = (bool) config('demo.enabled');
     $prepareDemoRoute = $demoEnabled ? route('demo.prepare') : null;
@@ -180,7 +180,13 @@
                         @if($slide['image_url'])
                         <img src="{{ $slide['image_url'] }}" alt="{{ $slide['title'] }}" class="w-full h-full object-cover rounded-2xl">
                         @elseif($heroImage)
-                        <img src="{{ $heroImage }}" alt="{{ $heroListing?->title }}" class="w-full h-full object-cover rounded-2xl">
+                        @include('listing::partials.responsive-image', [
+                            'image' => $heroImage,
+                            'alt' => $heroListing?->title,
+                            'class' => 'w-full h-full object-cover rounded-2xl',
+                            'loading' => 'eager',
+                            'fetchpriority' => 'high',
+                        ])
                         @else
                         <div class="w-full h-full rounded-2xl bg-white/90 text-slate-800 flex flex-col justify-center items-center gap-3">
                             <span class="text-6xl">◌</span>
@@ -274,7 +280,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
             @forelse($listingCards as $listing)
             @php
-                $listingImage = $listing->getFirstMediaUrl('listing-images');
+                $listingImage = $listing->primaryImageData('card');
                 $priceLabel = $listing->price ? number_format((float) $listing->price, 0).' '.$listing->currency : __('messages.free');
                 $locationLabel = trim(collect([$listing->city, $listing->country])->filter()->join(', '));
                 $isFavorited = in_array($listing->id, $favoriteListingIds ?? [], true);
@@ -283,7 +289,11 @@
                 <div class="relative h-44 sm:h-64 md:h-[290px] bg-slate-100">
                     <a href="{{ route('listings.show', $listing) }}" class="block h-full w-full" aria-label="{{ $listing->title }}">
                         @if($listingImage)
-                        <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
+                        @include('listing::partials.responsive-image', [
+                            'image' => $listingImage,
+                            'alt' => $listing->title,
+                            'class' => 'w-full h-full object-cover',
+                        ])
                         @else
                         <div class="w-full h-full grid place-items-center text-slate-400">
                             <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -178,7 +178,7 @@ class ListingController extends Controller
             $listing->category_id ? (int) $listing->category_id : null,
             $listing->custom_fields ?? [],
         );
-        $gallery = $listing->themeGallery();
+        $gallery = $listing->galleryImageData();
         $listingVideos = $listing->getRelation('videos');
         $relatedListings = $listing->relatedSuggestions(12);
         $themePillCategories = Category::themePills(10);

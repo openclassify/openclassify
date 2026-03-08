@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
-use Modules\Listing\Support\DemoListingImageFactory;
+use Modules\Listing\Support\SampleListingImageCatalog;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
 use Modules\User\App\Models\User;
@@ -143,7 +143,6 @@ class ListingSeeder extends Seeder
         $location = $this->resolveLocation($index, $countries, $turkeyCities);
         $title = $this->buildTitle($category, $index, $user);
         $slug = 'demo-'.Str::slug($user->email).'-'.$category->slug;
-        $familyName = trim((string) ($category->parent?->name ?? $category->name));
 
         return [
             'slug' => $slug,
@@ -156,13 +155,7 @@ class ListingSeeder extends Seeder
             'is_featured' => $index % 7 === 0,
             'expires_at' => now()->addDays(21 + ($index % 9)),
             'created_at' => now()->subHours(6 + $index),
-            'image_path' => DemoListingImageFactory::ensure(
-                $slug,
-                $title,
-                $familyName,
-                $user->name,
-                $index
-            ),
+            'image_path' => SampleListingImageCatalog::pathFor($category, $index),
         ];
     }
 
@@ -216,7 +209,7 @@ class ListingSeeder extends Seeder
         $location = trim(collect([$city, $country])->filter()->join(', '));
 
         return sprintf(
-            '%s listed by %s. Clean demo condition, unique seeded media, and ready for browsing, favorites, inbox, and panel testing. Pickup area: %s.',
+            '%s listed by %s. Clean demo condition, sample product photo assigned from the provided catalog, and ready for browsing, favorites, inbox, and panel testing. Pickup area: %s.',
             $categoryName !== '' ? $categoryName : 'Item',
             trim((string) $user->name) !== '' ? trim((string) $user->name) : 'a marketplace user',
             $location !== '' ? $location : 'Turkey'
@@ -272,8 +265,15 @@ class ListingSeeder extends Seeder
         return $listing;
     }
 
-    private function syncListingImage(Listing $listing, string $imageAbsolutePath): void
+    private function syncListingImage(Listing $listing, ?string $imageAbsolutePath): void
     {
-        $listing->replacePublicImage($imageAbsolutePath, $listing->slug.'.svg');
+        if (! is_string($imageAbsolutePath) || ! is_file($imageAbsolutePath)) {
+            return;
+        }
+
+        $listing->replacePublicImage(
+            $imageAbsolutePath,
+            SampleListingImageCatalog::fileNameFor($imageAbsolutePath, $listing->slug)
+        );
     }
 }

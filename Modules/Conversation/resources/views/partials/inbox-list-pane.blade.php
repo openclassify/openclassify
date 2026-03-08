@@ -19,14 +19,18 @@
             $conversationListing = $conversation->listing;
             $partner = (int) $conversation->buyer_id === (int) auth()->id() ? $conversation->seller : $conversation->buyer;
             $isSelected = $selectedConversation && (int) $selectedConversation->id === (int) $conversation->id;
-            $conversationImage = $conversationListing?->getFirstMediaUrl('listing-images');
+            $conversationImage = $conversationListing?->primaryImageData('thumb');
             $lastMessage = trim((string) ($conversation->lastMessage?->body ?? ''));
         @endphp
         <a href="{{ route('panel.inbox.index', ['message_filter' => $messageFilter, 'conversation' => $conversation->id]) }}" class="block px-6 py-4 transition {{ $isSelected ? 'bg-rose-50' : 'hover:bg-slate-50' }}">
             <div class="flex gap-3">
                 <div class="w-14 h-14 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
                     @if($conversationImage)
-                    <img src="{{ $conversationImage }}" alt="{{ $conversationListing?->title }}" class="w-full h-full object-cover">
+                    @include('listing::partials.responsive-image', [
+                        'image' => $conversationImage,
+                        'alt' => $conversationListing?->title,
+                        'class' => 'w-full h-full object-cover',
+                    ])
                     @else
                     <div class="w-full h-full grid place-items-center text-slate-400 text-xs">Listing</div>
                     @endif
