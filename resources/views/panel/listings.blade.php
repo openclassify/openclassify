@@ -1,96 +1,76 @@
 @extends('app::layouts.app')
 
-@section('title', 'İlanlarım')
+@section('title', 'My Listings')
 
 @section('content')
 @php
     $statusTabs = [
         [
             'key' => 'all',
-            'label' => 'Tüm İlanlar',
+            'label' => 'All Listings',
             'count' => (int) ($counts['all'] ?? 0),
-            'description' => 'Hesabındaki tüm ilanlar',
+            'description' => 'All listings in your account',
         ],
         [
             'key' => 'sold',
-            'label' => 'Satıldı',
+            'label' => 'Sold',
             'count' => (int) ($counts['sold'] ?? 0),
-            'description' => 'Kapanan satışlar',
+            'description' => 'Closed sales',
         ],
         [
             'key' => 'expired',
-            'label' => 'Süresi Doldu',
+            'label' => 'Expired',
             'count' => (int) ($counts['expired'] ?? 0),
-            'description' => 'Yeniden yayın bekleyenler',
+            'description' => 'Waiting to be republished',
         ],
     ];
     $overviewCards = [
         [
-            'label' => 'Toplam İlan',
+            'label' => 'Total Listings',
             'value' => (int) ($counts['all'] ?? 0),
-            'hint' => 'Panelindeki tüm kayıtlar',
+            'hint' => 'Every listing in your panel',
         ],
         [
-            'label' => 'Yayında',
+            'label' => 'Live',
             'value' => (int) ($counts['active'] ?? 0),
-            'hint' => 'Şu anda ziyaretçilere açık',
+            'hint' => 'Visible to visitors right now',
         ],
         [
-            'label' => 'Satıldı',
+            'label' => 'Sold',
             'value' => (int) ($counts['sold'] ?? 0),
-            'hint' => 'Satışla kapanan ilanlar',
+            'hint' => 'Listings closed by sale',
         ],
         [
-            'label' => 'Süresi Doldu',
+            'label' => 'Expired',
             'value' => (int) ($counts['expired'] ?? 0),
-            'hint' => 'Yeniden yayın bekleyen ilanlar',
+            'hint' => 'Listings waiting to be republished',
         ],
     ];
     $hasFilters = $search !== '' || $status !== 'all';
-    $pendingCount = (int) ($counts['pending'] ?? 0);
 @endphp
 
 <div class="listings-dashboard-page mx-auto max-w-[1320px] px-4 py-6 md:py-8">
     <div class="grid gap-6 xl:grid-cols-[300px,minmax(0,1fr)]">
         <aside class="listings-dashboard-sidebar space-y-6">
             @include('panel.partials.sidebar', ['activeMenu' => 'listings'])
-
-            <div class="overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.08)] backdrop-blur">
-                <p class="account-section-kicker">Kontrol Merkezi</p>
-                <h2 class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">İlanlarını tek bakışta yönet</h2>
-                <p class="mt-3 text-sm leading-6 text-slate-500">
-                    Yayındaki, satılan ve süresi dolan ilanlarını daha hızlı filtrele. Arama alanı sadece gerekli yerde, aksiyonlar ise her kartta doğrudan görünür.
-                </p>
-
-                <div class="mt-5 rounded-[24px] bg-slate-950 px-5 py-4 text-white shadow-[0_18px_38px_rgba(15,23,42,0.18)]">
-                    <p class="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-slate-300">Bugün</p>
-                    <p class="mt-2 text-sm leading-6 text-slate-200">
-                        @if ($pendingCount > 0)
-                            {{ $pendingCount }} ilan moderasyon incelemesinde. Onaylanınca burada yayında olarak görünecek.
-                        @else
-                            Bu ekranda ilanlarının durumu, etkileşimi ve yayın süresi birlikte özetlenir.
-                        @endif
-                    </p>
-                </div>
-            </div>
         </aside>
 
         <section class="space-y-6">
             <div class="listings-dashboard-hero">
                 <div class="min-w-0">
                     <p class="account-section-kicker">Panel</p>
-                    <h1 class="mt-2 text-[2.3rem] font-semibold leading-tight tracking-[-0.04em] text-slate-950">İlanlarım</h1>
+                    <h1 class="mt-2 text-[2.3rem] font-semibold leading-tight tracking-[-0.04em] text-slate-950">My Listings</h1>
                     <p class="mt-3 max-w-3xl text-sm leading-6 text-slate-500">
-                        Tüm ilanlarını tek ekranda takip et. Tarih, durum ve etkileşim bilgileri artık daha net; arama ve filtre alanı ise daha kompakt.
+                        Track all your listings from one screen. Dates, status, and engagement are clearer, while search and filters stay compact.
                     </p>
                 </div>
 
                 <div class="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
                     @if ($hasFilters)
-                        <a href="{{ route('panel.listings.index') }}" class="account-secondary-button">Filtreleri Temizle</a>
+                        <a href="{{ route('panel.listings.index') }}" class="account-secondary-button">Clear Filters</a>
                     @endif
 
-                    <a href="{{ route('panel.listings.create') }}" class="account-primary-button">Yeni İlan Ver</a>
+                    <a href="{{ route('panel.listings.create') }}" class="account-primary-button">New Listing</a>
                 </div>
             </div>
 
@@ -107,10 +87,10 @@
             <div class="listings-dashboard-filter-shell">
                 <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                     <div>
-                        <p class="account-section-kicker">Filtrele</p>
-                        <h2 class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">Arama ve durum</h2>
+                        <p class="account-section-kicker">Filter</p>
+                        <h2 class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">Search and status</h2>
                         <p class="mt-2 text-sm leading-6 text-slate-500">
-                            {{ number_format($listings->total()) }} sonuç içinde başlığa göre ara veya görünümü hızlıca daralt.
+                            Search by title or narrow the view within {{ number_format($listings->total()) }} results.
                         </p>
                     </div>
 
@@ -122,11 +102,11 @@
                             type="text"
                             name="search"
                             value="{{ $search }}"
-                            placeholder="İlan başlığına göre ara"
+                            placeholder="Search by listing title"
                             class="listings-dashboard-search-input"
                         >
                         <input type="hidden" name="status" value="{{ $status }}">
-                        <button type="submit" class="listings-dashboard-search-button">Ara</button>
+                        <button type="submit" class="listings-dashboard-search-button">Search</button>
                     </form>
                 </div>
 
@@ -157,7 +137,7 @@
                         $viewCount = (int) ($listing->view_count ?? 0);
                         $publishedAt = $listing->panelPublishedAt();
                         $publishedLabel = $publishedAt?->format('d.m.Y') ?? '-';
-                        $expiresLabel = $listing->expires_at?->format('d.m.Y') ?? 'Süresiz';
+                        $expiresLabel = $listing->expires_at?->format('M j, Y') ?? 'No expiry';
                         $videoCount = (int) ($listing->videos_count ?? 0);
                         $readyVideoCount = (int) ($listing->ready_videos_count ?? 0);
                         $pendingVideoCount = (int) ($listing->pending_videos_count ?? 0);
@@ -170,7 +150,7 @@
                                 <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="h-full w-full object-cover">
                             @else
                                 <div class="listings-dashboard-placeholder">
-                                    <span>Görsel Yok</span>
+                                    <span>No image</span>
                                 </div>
                             @endif
                         </a>
@@ -198,21 +178,21 @@
 
                                 <div class="grid gap-3 md:grid-cols-3">
                                     <div class="listings-dashboard-info-card">
-                                        <span class="listings-dashboard-info-label">Yayına alındı</span>
+                                        <span class="listings-dashboard-info-label">Published</span>
                                         <strong>{{ $publishedLabel }}</strong>
-                                        <span>İlk görünür olduğu kayıt tarihi</span>
+                                        <span>First visible date</span>
                                     </div>
 
                                     <div class="listings-dashboard-info-card">
-                                        <span class="listings-dashboard-info-label">{{ $listing->expires_at ? 'Bitiş tarihi' : 'Yayın süresi' }}</span>
+                                        <span class="listings-dashboard-info-label">{{ $listing->expires_at ? 'End date' : 'Listing duration' }}</span>
                                         <strong>{{ $expiresLabel }}</strong>
                                         <span>{{ $listing->panelExpirySummary() }}</span>
                                     </div>
 
                                     <div class="listings-dashboard-info-card">
-                                        <span class="listings-dashboard-info-label">Etkileşim</span>
-                                        <strong>{{ number_format($viewCount) }} görüntülenme</strong>
-                                        <span>{{ number_format($favoriteCount) }} favori</span>
+                                        <span class="listings-dashboard-info-label">Engagement</span>
+                                        <strong>{{ number_format($viewCount) }} views</strong>
+                                        <span>{{ number_format($favoriteCount) }} saved</span>
                                     </div>
                                 </div>
                             </div>
@@ -226,18 +206,18 @@
 
                             @if ($listing->statusValue() === 'expired')
                                 <div class="listings-dashboard-alert is-danger">
-                                    Bu ilanın süresi doldu. Satıldıysa kapatabilir, devam edecekse yeniden yayına alabilirsin.
+                                    This listing has expired. If it is sold you can keep it closed, otherwise republish it.
                                 </div>
                             @elseif ($listing->statusValue() === 'pending')
                                 <div class="listings-dashboard-alert is-warning">
-                                    İlan şu anda moderasyon kontrolünde. Onaylandığında otomatik olarak yayında görünür.
+                                    This listing is in moderation review. It will go live automatically once approved.
                                 </div>
                             @endif
 
                             <div class="flex flex-col gap-4 border-t border-slate-200/80 pt-5 xl:flex-row xl:items-center xl:justify-between">
                                 <div class="flex flex-wrap gap-3">
-                                    <a href="{{ route('listings.show', $listing) }}" class="account-secondary-button">İlanı Gör</a>
-                                    <a href="{{ route('panel.listings.edit', $listing) }}" class="account-primary-button">Düzenle</a>
+                                    <a href="{{ route('listings.show', $listing) }}" class="account-secondary-button">View Listing</a>
+                                    <a href="{{ route('panel.listings.edit', $listing) }}" class="account-primary-button">Edit</a>
                                 </div>
 
                                 <div class="flex flex-wrap gap-3">
@@ -245,14 +225,14 @@
                                         <form method="POST" action="{{ route('panel.listings.republish', $listing) }}">
                                             @csrf
                                             <button type="submit" class="listings-dashboard-text-button">
-                                                Yeniden Yayınla
+                                                Republish
                                             </button>
                                         </form>
                                     @elseif ($listing->statusValue() !== 'sold')
                                         <form method="POST" action="{{ route('panel.listings.mark-sold', $listing) }}">
                                             @csrf
                                             <button type="submit" class="listings-dashboard-text-button">
-                                                Satıldı İşaretle
+                                                Mark as Sold
                                             </button>
                                         </form>
                                     @endif
@@ -260,7 +240,7 @@
                                     <form method="POST" action="{{ route('panel.listings.destroy', $listing) }}">
                                         @csrf
                                         <button type="submit" class="listings-dashboard-text-button is-danger">
-                                            İlanı Kaldır
+                                            Remove Listing
                                         </button>
                                     </form>
                                 </div>
@@ -274,17 +254,17 @@
                     </article>
                 @empty
                     <div class="listings-dashboard-empty">
-                        <p class="account-section-kicker">Boş durum</p>
-                        <h2 class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">Bu filtreye uygun ilan bulunamadı</h2>
+                        <p class="account-section-kicker">Empty State</p>
+                        <h2 class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">No listings match this filter</h2>
                         <p class="mt-3 max-w-xl text-sm leading-6 text-slate-500">
-                            Arama terimini temizleyebilir, farklı bir durum seçebilir veya yeni ilan oluşturarak bu alanı doldurabilirsin.
+                            Clear the search term, pick another status, or create a new listing to fill this space.
                         </p>
                         <div class="mt-6 flex flex-col gap-3 sm:flex-row">
                             @if ($hasFilters)
-                                <a href="{{ route('panel.listings.index') }}" class="account-secondary-button">Filtreleri Temizle</a>
+                                <a href="{{ route('panel.listings.index') }}" class="account-secondary-button">Clear Filters</a>
                             @endif
 
-                            <a href="{{ route('panel.listings.create') }}" class="account-primary-button">Yeni İlan Ver</a>
+                            <a href="{{ route('panel.listings.create') }}" class="account-primary-button">New Listing</a>
                         </div>
                     </div>
                 @endforelse

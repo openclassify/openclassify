@@ -49,12 +49,6 @@
 @endphp
 
 <aside class="panel-side-nav rounded-[28px] border border-slate-200/80 bg-white/90 p-3 shadow-[0_20px_48px_rgba(15,23,42,0.08)] backdrop-blur">
-    <div class="px-3 pb-3 pt-2">
-        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-slate-400">Workspace</p>
-        <p class="mt-2 text-lg font-semibold text-slate-900">Manage your account</p>
-        <p class="mt-1 text-sm leading-6 text-slate-500">Listings, saved items, inbox, and profile settings live here.</p>
-    </div>
-
     <nav class="space-y-1.5">
         @foreach ($primaryItems as $item)
             <a

@@ -1,44 +1,44 @@
 @extends('app::layouts.app')
 
-@section('title', 'Gelen Kutusu')
+@section('title', 'Inbox')
 
 @section('content')
 <div class="max-w-[1320px] mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-[220px,1fr] gap-4">
         @include('panel.partials.sidebar', ['activeMenu' => 'inbox'])
 
-        <section class="bg-white border border-slate-200 rounded-xl p-0 overflow-hidden">
+        <section class="space-y-4">
+            @include('panel.partials.page-header', [
+                'title' => 'Inbox',
+                'description' => 'Read and reply to buyer messages from the same panel shell used across the site.',
+                'actions' => $requiresLogin ?? false
+                    ? new \Illuminate\Support\HtmlString('<a href="' . e(route('login', ['redirect' => request()->fullUrl()])) . '" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Log in</a>')
+                    : null,
+            ])
+
+            <div class="panel-surface overflow-hidden p-0">
             @if($requiresLogin ?? false)
-            <div class="border-b border-slate-200 px-5 py-4 bg-slate-50 flex flex-wrap items-center justify-between gap-3">
+            <div class="border-b border-slate-200 px-5 py-4 bg-slate-50">
                 <div>
                     <h1 class="text-xl font-semibold text-slate-900">Inbox</h1>
-                    <p class="text-sm text-slate-500 mt-1">Stay on this page and log in when you want to access your conversations.</p>
+                    <p class="mt-1 text-sm text-slate-500">Stay on this page and log in when you want to access your conversations.</p>
                 </div>
-                <a href="{{ route('login', ['redirect' => request()->fullUrl()]) }}" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 transition">
-                    Log in
-                </a>
             </div>
             @endif
 
             <div class="grid grid-cols-1 xl:grid-cols-[420px,1fr] min-h-[620px]">
                 <div class="border-b xl:border-b-0 xl:border-r border-slate-200">
-                    <div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between gap-3">
-                        <h1 class="text-3xl font-bold text-slate-900">Gelen Kutusu</h1>
-                        <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
-                        </svg>
-                    </div>
                     <div class="px-6 py-4 border-b border-slate-200">
-                        <p class="text-sm font-semibold text-slate-600 mb-2">Hızlı Filtreler</p>
+                        <p class="mb-2 text-sm font-semibold text-slate-600">Filters</p>
                         <div class="flex flex-wrap items-center gap-2">
                             <a href="{{ route('panel.inbox.index', ['message_filter' => 'all']) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold border {{ $messageFilter === 'all' ? 'border-rose-400 bg-rose-50 text-rose-600' : 'border-slate-300 text-slate-600 hover:bg-slate-100' }}">
-                                Hepsi
+                                All
                             </a>
                             <a href="{{ route('panel.inbox.index', ['message_filter' => 'unread']) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold border {{ $messageFilter === 'unread' ? 'border-rose-400 bg-rose-50 text-rose-600' : 'border-slate-300 text-slate-600 hover:bg-slate-100' }}">
-                                Okunmamış
+                                Unread
                             </a>
                             <a href="{{ route('panel.inbox.index', ['message_filter' => 'important']) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold border {{ $messageFilter === 'important' ? 'border-rose-400 bg-rose-50 text-rose-600' : 'border-slate-300 text-slate-600 hover:bg-slate-100' }}">
-                                Önemli
+                                Important
                             </a>
                         </div>
                     </div>
@@ -57,17 +57,17 @@
                                     @if($conversationImage)
                                     <img src="{{ $conversationImage }}" alt="{{ $conversationListing?->title }}" class="w-full h-full object-cover">
                                     @else
-                                    <div class="w-full h-full grid place-items-center text-slate-400 text-xs">İlan</div>
+                                    <div class="w-full h-full grid place-items-center text-slate-400 text-xs">Listing</div>
                                     @endif
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <div class="flex items-start gap-2">
-                                        <p class="font-semibold text-2xl text-slate-900 truncate">{{ $partner?->name ?? 'Kullanıcı' }}</p>
+                                        <p class="font-semibold text-2xl text-slate-900 truncate">{{ $partner?->name ?? 'User' }}</p>
                                         <p class="text-xs text-slate-500 whitespace-nowrap ml-auto">{{ $conversation->last_message_at?->format('d.m.Y') }}</p>
                                     </div>
-                                    <p class="text-sm text-slate-500 truncate mt-1">{{ $conversationListing?->title ?? 'İlan silinmiş' }}</p>
+                                    <p class="text-sm text-slate-500 truncate mt-1">{{ $conversationListing?->title ?? 'Listing removed' }}</p>
                                     <p class="text-sm {{ $conversation->unread_count > 0 ? 'text-slate-900 font-semibold' : 'text-slate-500' }} truncate mt-1">
-                                        {{ $lastMessage !== '' ? $lastMessage : 'Henüz mesaj yok' }}
+                                        {{ $lastMessage !== '' ? $lastMessage : 'No messages yet' }}
                                     </p>
                                 </div>
                                 @if($conversation->unread_count > 0)
@@ -79,7 +79,7 @@
                         </a>
                         @empty
                         <div class="px-6 py-16 text-center text-slate-500">
-                            Henüz bir sohbetin yok.
+                            No conversations yet.
                         </div>
                         @endforelse
                     </div>
@@ -101,8 +101,8 @@
                             {{ strtoupper(substr((string) ($activePartner?->name ?? 'K'), 0, 1)) }}
                         </div>
                         <div class="min-w-0">
-                            <p class="text-3xl font-bold text-slate-900 truncate">{{ $activePartner?->name ?? 'Kullanıcı' }}</p>
-                            <p class="text-sm text-slate-500 truncate">{{ $activeListing?->title ?? 'İlan silinmiş' }}</p>
+                            <p class="text-3xl font-bold text-slate-900 truncate">{{ $activePartner?->name ?? 'User' }}</p>
+                            <p class="text-sm text-slate-500 truncate">{{ $activeListing?->title ?? 'Listing removed' }}</p>
                         </div>
                         @if($activePriceLabel)
                         <div class="ml-auto text-3xl font-semibold text-slate-800 whitespace-nowrap">{{ $activePriceLabel }}</div>
@@ -125,8 +125,8 @@
                         @empty
                         <div class="h-full grid place-items-center text-slate-500 text-center px-8">
                             <div>
-                                <p class="font-semibold text-slate-700">Henüz mesaj yok.</p>
-                                <p class="text-sm mt-1">Aşağıdaki hazır metinlerden birini seçebilir veya yeni mesaj yazabilirsin.</p>
+                                <p class="font-semibold text-slate-700">No messages yet.</p>
+                                <p class="mt-1 text-sm">Use a quick reply or send the first message below.</p>
                             </div>
                         </div>
                         @endforelse
@@ -148,8 +148,8 @@
                         <form method="POST" action="{{ route('conversations.messages.send', $selectedConversation) }}" class="flex items-center gap-2 border-t border-slate-200 pt-3 mt-1">
                             @csrf
                             <input type="hidden" name="message_filter" value="{{ $messageFilter }}">
-                            <input type="text" name="message" value="{{ old('message') }}" placeholder="Bir mesaj yaz" maxlength="2000" class="h-12 flex-1 rounded-full border border-slate-300 px-5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-300" required>
-                            <button type="submit" class="h-12 w-12 rounded-full bg-black text-white grid place-items-center hover:bg-slate-800 transition" aria-label="Gönder">
+                            <input type="text" name="message" value="{{ old('message') }}" placeholder="Write a message" maxlength="2000" class="h-12 flex-1 rounded-full border border-slate-300 px-5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-300" required>
+                            <button type="submit" class="h-12 w-12 rounded-full bg-black text-white grid place-items-center hover:bg-slate-800 transition" aria-label="Send">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h13m0 0l-5-5m5 5l-5 5"/>
                                 </svg>
@@ -162,12 +162,13 @@
                     @else
                     <div class="h-full min-h-[620px] grid place-items-center px-8 text-center text-slate-500">
                         <div>
-                            <p class="text-2xl font-semibold text-slate-700">Mesajlaşma için bir sohbet seç.</p>
-                            <p class="mt-2 text-sm">İlan detayından veya ilan kartlarından yeni sohbet başlatabilirsin.</p>
+                            <p class="text-2xl font-semibold text-slate-700">Choose a conversation to start messaging.</p>
+                            <p class="mt-2 text-sm">Start a new chat from a listing detail page or continue an existing thread here.</p>
                         </div>
                     </div>
                     @endif
                 </div>
+            </div>
             </div>
         </section>
     </div>

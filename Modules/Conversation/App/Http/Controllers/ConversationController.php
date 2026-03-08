@@ -3,11 +3,13 @@
 namespace Modules\Conversation\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 use Modules\Conversation\App\Models\Conversation;
+use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Conversation\App\Support\QuickMessageCatalog;
 use Modules\Listing\Models\Listing;
 use Throwable;
@@ -56,28 +58,45 @@ class ConversationController extends Controller
         ]);
     }
 
-    public function start(Request $request, Listing $listing): RedirectResponse
+    public function start(Request $request, Listing $listing): RedirectResponse | JsonResponse
     {
         if (! $this->messagingTablesReady()) {
-            return back()->with('error', 'Mesajlaşma altyapısı henüz hazır değil.');
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'Messaging is not available yet.'], 503);
+            }
+
+            return back()->with('error', 'Messaging is not available yet.');
         }
 
         $user = $request->user();
 
         if (! $listing->user_id) {
-            return back()->with('error', 'Bu ilan için mesajlaşma açılamadı.');
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'A conversation cannot be started for this listing.'], 422);
+            }
+
+            return back()->with('error', 'A conversation cannot be started for this listing.');
         }
 
         if ((int) $listing->user_id === (int) $user->getKey()) {
-            return back()->with('error', 'Kendi ilanına mesaj gönderemezsin.');
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'You cannot message your own listing.'], 422);
+            }
+
+            return back()->with('error', 'You cannot message your own listing.');
+        }
+
+        $messageBody = trim((string) $request->string('message'));
+
+        if ($request->expectsJson() && $messageBody === '') {
+            return response()->json(['message' => 'Message cannot be empty.'], 422);
         }
 
         $conversation = Conversation::openForListingBuyer($listing, (int) $user->getKey());
 
         $user->favoriteListings()->syncWithoutDetaching([$listing->getKey()]);
 
-        $messageBody = trim((string) $request->string('message'));
-
+        $message = null;
         if ($messageBody !== '') {
             $message = $conversation->messages()->create([
                 'sender_id' => $user->getKey(),
@@ -87,15 +106,23 @@ class ConversationController extends Controller
             $conversation->forceFill(['last_message_at' => $message->created_at])->save();
         }
 
+        if ($request->expectsJson()) {
+            return $this->conversationJsonResponse($conversation, $message, (int) $user->getKey());
+        }
+
         return redirect()
             ->route('panel.inbox.index', array_merge($this->inboxFilters($request), ['conversation' => $conversation->getKey()]))
-            ->with('success', $messageBody !== '' ? 'Mesaj gönderildi.' : 'Sohbet açıldı.');
+            ->with('success', $messageBody !== '' ? 'Message sent.' : 'Conversation started.');
     }
 
-    public function send(Request $request, Conversation $conversation): RedirectResponse
+    public function send(Request $request, Conversation $conversation): RedirectResponse | JsonResponse
     {
         if (! $this->messagingTablesReady()) {
-            return back()->with('error', 'Mesajlaşma altyapısı henüz hazır değil.');
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'Messaging is not available yet.'], 503);
+            }
+
+            return back()->with('error', 'Messaging is not available yet.');
         }
 
         $user = $request->user();
@@ -112,7 +139,11 @@ class ConversationController extends Controller
         $messageBody = trim($payload['message']);
 
         if ($messageBody === '') {
-            return back()->with('error', 'Mesaj boş olamaz.');
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'Message cannot be empty.'], 422);
+            }
+
+            return back()->with('error', 'Message cannot be empty.');
         }
 
         $message = $conversation->messages()->create([
@@ -122,9 +153,32 @@ class ConversationController extends Controller
 
         $conversation->forceFill(['last_message_at' => $message->created_at])->save();
 
+        if ($request->expectsJson()) {
+            return $this->conversationJsonResponse($conversation, $message, $userId);
+        }
+
         return redirect()
             ->route('panel.inbox.index', array_merge($this->inboxFilters($request), ['conversation' => $conversation->getKey()]))
-            ->with('success', 'Mesaj gönderildi.');
+            ->with('success', 'Message sent.');
+    }
+
+    private function conversationJsonResponse(Conversation $conversation, ?ConversationMessage $message, int $userId): JsonResponse
+    {
+        return response()->json([
+            'conversation_id' => (int) $conversation->getKey(),
+            'send_url' => route('conversations.messages.send', $conversation),
+            'message' => $message ? $this->messagePayload($message, $userId) : null,
+        ]);
+    }
+
+    private function messagePayload(ConversationMessage $message, int $userId): array
+    {
+        return [
+            'id' => (int) $message->getKey(),
+            'body' => (string) $message->body,
+            'time' => $message->created_at?->format('H:i') ?? now()->format('H:i'),
+            'is_mine' => (int) $message->sender_id === $userId,
+        ];
     }
 
     private function inboxFilters(Request $request): array

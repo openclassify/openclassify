@@ -97,29 +97,29 @@ class ManageGeneralSettings extends SettingsPage
         return $schema
             ->components([
                 TextInput::make('site_name')
-                    ->label('Site Adı')
+                    ->label('Site Name')
                     ->default($defaults['site_name'])
                     ->required()
                     ->maxLength(255),
                 Textarea::make('site_description')
-                    ->label('Site Açıklaması')
+                    ->label('Site Description')
                     ->default($defaults['site_description'])
                     ->rows(3)
                     ->maxLength(500),
                 Select::make('media_disk')
-                    ->label('Medya Depolama')
+                    ->label('Media Storage')
                     ->options(MediaStorage::options())
                     ->default($defaults['media_disk'])
                     ->required()
                     ->native(false)
-                    ->helperText('İlan resimleri, videolar, logo ve slide görselleri için kullanılacak depolama sürücüsü.'),
+                    ->helperText('Storage driver used for listing images, videos, the site logo, and home slide visuals.'),
                 HomeSlideFormSchema::make(
                     $defaults['home_slides'],
                     fn ($state): array => $this->normalizeHomeSlides($state, MediaStorage::activeDisk()),
                 ),
                 Hidden::make('site_logo_disk'),
                 FileUpload::make('site_logo')
-                    ->label('Site Logosu')
+                    ->label('Site Logo')
                     ->image()
                     ->disk(fn (Get $get): string => MediaStorage::storedDisk($get('site_logo_disk'), $get('media_disk')))
                     ->directory('settings')
@@ -133,32 +133,32 @@ class ManageGeneralSettings extends SettingsPage
                         );
                     }),
                 TextInput::make('sender_name')
-                    ->label('Gönderici Adı')
+                    ->label('Sender Name')
                     ->default($defaults['sender_name'])
                     ->required()
                     ->maxLength(120),
                 TextInput::make('sender_email')
-                    ->label('Gönderici E-postası')
+                    ->label('Sender Email')
                     ->email()
                     ->default($defaults['sender_email'])
                     ->required()
                     ->maxLength(255),
                 Select::make('default_language')
-                    ->label('Varsayılan Dil')
+                    ->label('Default Language')
                     ->options($this->localeOptions())
                     ->default($defaults['default_language'])
                     ->required()
                     ->searchable(),
                 CountryCodeSelect::make('default_country_code')
-                    ->label('Varsayılan Ülke')
+                    ->label('Default Country')
                     ->default($defaults['default_country_code'])
                     ->required()
-                    ->helperText('Panel formlarında varsayılan ülke olarak kullanılır.'),
+                    ->helperText('Used as the default country in panel forms.'),
                 TagsInput::make('currencies')
-                    ->label('Para Birimleri')
+                    ->label('Currencies')
                     ->placeholder('TRY')
                     ->default($defaults['currencies'])
-                    ->helperText('TRY, USD, EUR gibi 3 harfli para birimi kodları ekleyin.')
+                    ->helperText('Add 3-letter currency codes such as TRY, USD, or EUR.')
                     ->required()
                     ->rules(['array', 'min:1'])
                     ->afterStateHydrated(fn (TagsInput $component, $state) => $component->state($this->normalizeCurrencies($state)))
@@ -181,19 +181,19 @@ class ManageGeneralSettings extends SettingsPage
                     ->default($defaults['whatsapp'])
                     ->nullable()
                     ->formatAsYouType()
-                    ->helperText('Uluslararası format kullanın. Örnek: +905551112233'),
+                    ->helperText('Use international format. Example: +905551112233'),
                 Toggle::make('enable_google_maps')
-                    ->label('Google Maps Aktif')
+                    ->label('Google Maps Enabled')
                     ->default($defaults['enable_google_maps']),
                 TextInput::make('google_maps_api_key')
-                    ->label('Google Maps API Anahtarı')
+                    ->label('Google Maps API Key')
                     ->password()
                     ->revealable()
                     ->nullable()
                     ->maxLength(255)
-                    ->helperText('İlan formlarındaki harita alanlarını açmak için gereklidir.'),
+                    ->helperText('Required to enable map fields in listing forms.'),
                 Toggle::make('enable_google_login')
-                    ->label('Google ile Giriş Aktif')
+                    ->label('Google Login Enabled')
                     ->default($defaults['enable_google_login']),
                 TextInput::make('google_client_id')
                     ->label('Google Client ID')
@@ -206,7 +206,7 @@ class ManageGeneralSettings extends SettingsPage
                     ->nullable()
                     ->maxLength(255),
                 Toggle::make('enable_facebook_login')
-                    ->label('Facebook ile Giriş Aktif')
+                    ->label('Facebook Login Enabled')
                     ->default($defaults['enable_facebook_login']),
                 TextInput::make('facebook_client_id')
                     ->label('Facebook Client ID')
@@ -219,7 +219,7 @@ class ManageGeneralSettings extends SettingsPage
                     ->nullable()
                     ->maxLength(255),
                 Toggle::make('enable_apple_login')
-                    ->label('Apple ile Giriş Aktif')
+                    ->label('Apple Login Enabled')
                     ->default($defaults['enable_apple_login']),
                 TextInput::make('apple_client_id')
                     ->label('Apple Client ID')
@@ -241,13 +241,13 @@ class ManageGeneralSettings extends SettingsPage
 
         return [
             'site_name' => $siteName,
-            'site_description' => 'Alim satim icin hizli ve guvenli ilan platformu.',
+            'site_description' => 'A fast and secure marketplace for buying and selling.',
             'media_disk' => MediaStorage::defaultDriver(),
             'home_slides' => $this->defaultHomeSlides(),
             'site_logo_disk' => null,
             'sender_name' => $siteName,
             'sender_email' => (string) config('mail.from.address', 'info@' . $siteHost),
-            'default_language' => in_array(config('app.locale'), array_keys($this->localeOptions()), true) ? (string) config('app.locale') : 'tr',
+            'default_language' => in_array(config('app.locale'), array_keys($this->localeOptions()), true) ? (string) config('app.locale') : 'en',
             'default_country_code' => CountryCodeManager::normalizeCountryCode(config('app.default_country_code', '+90')),
             'currencies' => $this->normalizeCurrencies(config('app.currencies', ['TRY'])),
             'linkedin_url' => 'https://www.linkedin.com/company/openclassify',
@@ -264,7 +264,7 @@ class ManageGeneralSettings extends SettingsPage
     {
         $labels = [
             'en' => 'English',
-            'tr' => 'Türkçe',
+            'tr' => 'Turkish',
         ];
 
         return collect(config('app.available_locales', ['en']))

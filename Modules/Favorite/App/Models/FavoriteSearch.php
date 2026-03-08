@@ -51,6 +51,6 @@ class FavoriteSearch extends Model
             $labelParts[] = $categoryName;
         }
 
-        return $labelParts !== [] ? implode(' · ', $labelParts) : 'Filtreli arama';
+        return $labelParts !== [] ? implode(' · ', $labelParts) : 'Filtered search';
     }
 }

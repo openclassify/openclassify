@@ -146,6 +146,7 @@ class Listing extends Model implements HasMedia
         $search = trim((string) ($filters['search'] ?? ''));
         $country = isset($filters['country']) ? trim((string) $filters['country']) : null;
         $city = isset($filters['city']) ? trim((string) $filters['city']) : null;
+        $userId = isset($filters['user_id']) && is_numeric($filters['user_id']) ? (int) $filters['user_id'] : null;
         $minPrice = is_numeric($filters['min_price'] ?? null) ? max((float) $filters['min_price'], 0) : null;
         $maxPrice = is_numeric($filters['max_price'] ?? null) ? max((float) $filters['max_price'], 0) : null;
         $dateFilter = (string) ($filters['date_filter'] ?? 'all');
@@ -154,6 +155,7 @@ class Listing extends Model implements HasMedia
         $query
             ->searchTerm($search)
             ->forCategoryIds(is_array($categoryIds) ? $categoryIds : null)
+            ->when(! is_null($userId) && $userId > 0, fn (Builder $builder) => $builder->where('user_id', $userId))
             ->when($country !== null && $country !== '', fn (Builder $builder) => $builder->where('country', $country))
             ->when($city !== null && $city !== '', fn (Builder $builder) => $builder->where('city', $city))
             ->when(! is_null($minPrice), fn (Builder $builder) => $builder->whereNotNull('price')->where('price', '>=', $minPrice))
@@ -259,7 +261,7 @@ class Listing extends Model implements HasMedia
     public function panelPriceLabel(): string
     {
         if (is_null($this->price)) {
-            return 'Ücretsiz';
+            return 'Free';
         }
 
         return number_format((float) $this->price, 2, ',', '.').' '.($this->currency ?? 'TL');
@@ -269,24 +271,24 @@ class Listing extends Model implements HasMedia
     {
         return match ($this->statusValue()) {
             'sold' => [
-                'label' => 'Satıldı',
+                'label' => 'Sold',
                 'badge_class' => 'is-success',
-                'hint' => 'İlan satıldı olarak işaretlendi.',
+                'hint' => 'This listing is marked as sold.',
             ],
             'expired' => [
-                'label' => 'Süresi doldu',
+                'label' => 'Expired',
                 'badge_class' => 'is-danger',
-                'hint' => 'Yeniden yayına alınmayı bekliyor.',
+                'hint' => 'This listing is waiting to be republished.',
             ],
             'pending' => [
-                'label' => 'İncelemede',
+                'label' => 'Pending review',
                 'badge_class' => 'is-warning',
-                'hint' => 'Moderasyon onayı bekleniyor.',
+                'hint' => 'Waiting for moderation approval.',
             ],
             default => [
-                'label' => 'Yayında',
+                'label' => 'Live',
                 'badge_class' => 'is-primary',
-                'hint' => 'Şu anda ziyaretçilere görünüyor.',
+                'hint' => 'Visible to visitors right now.',
             ],
         };
     }
@@ -298,7 +300,7 @@ class Listing extends Model implements HasMedia
             trim((string) $this->country),
         ])->filter()->values();
 
-        return $parts->isNotEmpty() ? $parts->implode(', ') : 'Konum belirtilmedi';
+        return $parts->isNotEmpty() ? $parts->implode(', ') : 'Location not specified';
     }
 
     public function panelPublishedAt(): ?Carbon
@@ -320,16 +322,16 @@ class Listing extends Model implements HasMedia
     public function panelExpirySummary(): string
     {
         if (! $this->expires_at) {
-            return 'Süre sınırı yok';
+            return 'No expiry limit';
         }
 
         $expiresAt = $this->expires_at->copy()->startOfDay();
         $days = Carbon::today()->diffInDays($expiresAt, false);
 
         return match (true) {
-            $days > 0 => $days.' gün kaldı',
-            $days === 0 => 'Bugün sona eriyor',
-            default => abs($days).' gün önce sona erdi',
+            $days > 0 => $days.' days left',
+            $days === 0 => 'Ends today',
+            default => 'Expired '.abs($days).' days ago',
         };
     }
 
@@ -340,8 +342,8 @@ class Listing extends Model implements HasMedia
         }
 
         return [
-            'label' => $total.' video',
-            'detail' => $ready.' hazır'.($pending > 0 ? ', '.$pending.' işleniyor' : ''),
+            'label' => $total.' videos',
+            'detail' => $ready.' ready'.($pending > 0 ? ', '.$pending.' processing' : ''),
         ];
     }
 

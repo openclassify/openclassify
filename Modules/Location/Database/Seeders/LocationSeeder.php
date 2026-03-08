@@ -57,12 +57,12 @@ class LocationSeeder extends Seeder
             if ($value === 'us_ca') {
                 $countries['US'] = [
                     'code' => 'US',
-                    'name' => 'Amerika Birleşik Devletleri',
+                    'name' => 'United States',
                     'phone_code' => $phoneCode,
                 ];
                 $countries['CA'] = [
                     'code' => 'CA',
-                    'name' => 'Kanada',
+                    'name' => 'Canada',
                     'phone_code' => $phoneCode,
                 ];
 
@@ -72,12 +72,12 @@ class LocationSeeder extends Seeder
             if ($value === 'ru_kz') {
                 $countries['RU'] = [
                     'code' => 'RU',
-                    'name' => 'Rusya',
+                    'name' => 'Russia',
                     'phone_code' => $phoneCode,
                 ];
                 $countries['KZ'] = [
                     'code' => 'KZ',
-                    'name' => 'Kazakistan',
+                    'name' => 'Kazakhstan',
                     'phone_code' => $phoneCode,
                 ];
 
@@ -85,12 +85,9 @@ class LocationSeeder extends Seeder
             }
 
             $key = 'filament-country-code-field::countries.' . $value;
-            $labelTr = trim((string) trans($key, [], 'tr'));
             $labelEn = trim((string) trans($key, [], 'en'));
 
-            $name = $labelTr !== '' && $labelTr !== $key
-                ? $labelTr
-                : ($labelEn !== '' && $labelEn !== $key ? $labelEn : strtoupper($value));
+            $name = $labelEn !== '' && $labelEn !== $key ? $labelEn : strtoupper($value);
 
             $iso2 = strtoupper(explode('_', $value)[0] ?? $value);
 
@@ -122,67 +119,67 @@ class LocationSeeder extends Seeder
     {
         return [
             'Adana',
-            'Adıyaman',
+            'Adiyaman',
             'Afyonkarahisar',
-            'Ağrı',
+            'Agri',
             'Aksaray',
             'Amasya',
             'Ankara',
             'Antalya',
             'Ardahan',
             'Artvin',
-            'Aydın',
-            'Balıkesir',
-            'Bartın',
+            'Aydin',
+            'Balikesir',
+            'Bartin',
             'Batman',
             'Bayburt',
             'Bilecik',
-            'Bingöl',
+            'Bingol',
             'Bitlis',
             'Bolu',
             'Burdur',
             'Bursa',
-            'Çanakkale',
-            'Çankırı',
-            'Çorum',
+            'Canakkale',
+            'Cankiri',
+            'Corum',
             'Denizli',
-            'Diyarbakır',
-            'Düzce',
+            'Diyarbakir',
+            'Duzce',
             'Edirne',
-            'Elazığ',
+            'Elazig',
             'Erzincan',
             'Erzurum',
-            'Eskişehir',
+            'Eskisehir',
             'Gaziantep',
             'Giresun',
-            'Gümüşhane',
+            'Gumushane',
             'Hakkari',
             'Hatay',
-            'Iğdır',
+            'Igdir',
             'Isparta',
-            'İstanbul',
-            'İzmir',
-            'Kahramanmaraş',
-            'Karabük',
+            'Istanbul',
+            'Izmir',
+            'Kahramanmaras',
+            'Karabuk',
             'Karaman',
             'Kars',
             'Kastamonu',
             'Kayseri',
             'Kilis',
-            'Kırıkkale',
-            'Kırklareli',
-            'Kırşehir',
+            'Kirikkale',
+            'Kirklareli',
+            'Kirsehir',
             'Kocaeli',
             'Konya',
-            'Kütahya',
+            'Kutahya',
             'Malatya',
             'Manisa',
             'Mardin',
             'Mersin',
-            'Muğla',
-            'Muş',
-            'Nevşehir',
-            'Niğde',
+            'Mugla',
+            'Mus',
+            'Nevsehir',
+            'Nigde',
             'Ordu',
             'Osmaniye',
             'Rize',
@@ -191,13 +188,13 @@ class LocationSeeder extends Seeder
             'Siirt',
             'Sinop',
             'Sivas',
-            'Şanlıurfa',
-            'Şırnak',
-            'Tekirdağ',
+            'Sanliurfa',
+            'Sirnak',
+            'Tekirdag',
             'Tokat',
             'Trabzon',
             'Tunceli',
-            'Uşak',
+            'Usak',
             'Van',
             'Yalova',
             'Yozgat',

@@ -25,13 +25,13 @@ class ListingSeeder extends Seeder
     ];
 
     private const TITLE_PREFIXES = [
-        'Temiz kullanılmış',
-        'Az kullanılmış',
-        'Fırsat ürün',
-        'Uygun fiyatlı',
-        'Sahibinden',
-        'Kaçırılmayacak',
-        'Bakımlı',
+        'Clean',
+        'Lightly used',
+        'Special offer',
+        'Well priced',
+        'Owner listed',
+        'Must-see',
+        'Well kept',
     ];
 
     public function run(): void
@@ -100,7 +100,7 @@ class ListingSeeder extends Seeder
     private function resolveTurkeyCities(): Collection
     {
         if (! class_exists(City::class) || ! Schema::hasTable('cities') || ! Schema::hasTable('countries')) {
-            return collect(['İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Antalya']);
+            return collect(['Istanbul', 'Ankara', 'Izmir', 'Bursa', 'Antalya']);
         }
 
         $turkey = Country::query()
@@ -108,7 +108,7 @@ class ListingSeeder extends Seeder
             ->first(['id']);
 
         if (! $turkey) {
-            return collect(['İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Antalya']);
+            return collect(['Istanbul', 'Ankara', 'Izmir', 'Bursa', 'Antalya']);
         }
 
         $cities = City::query()
@@ -122,7 +122,7 @@ class ListingSeeder extends Seeder
 
         return $cities->isNotEmpty()
             ? $cities
-            : collect(['İstanbul', 'Ankara', 'İzmir', 'Bursa', 'Antalya']);
+            : collect(['Istanbul', 'Ankara', 'Izmir', 'Bursa', 'Antalya']);
     }
 
     private function buildListingData(
@@ -147,7 +147,7 @@ class ListingSeeder extends Seeder
     private function resolveLocation(int $index, Collection $countries, Collection $turkeyCities): array
     {
         $turkeyCountry = $countries->first(fn ($country): bool => strtoupper((string) $country->code) === 'TR');
-        $turkeyName = trim((string) ($turkeyCountry->name ?? 'Türkiye')) ?: 'Türkiye';
+        $turkeyName = trim((string) ($turkeyCountry->name ?? 'Turkey')) ?: 'Turkey';
 
         $useForeignCountry = $countries->count() > 1 && $index % 4 === 0;
 
@@ -161,8 +161,8 @@ class ListingSeeder extends Seeder
                 $countryName = trim((string) ($selected->name ?? ''));
 
                 return [
-                    'country' => $countryName !== '' ? $countryName : 'Türkiye',
-                    'city' => $countryName !== '' ? $countryName : 'İstanbul',
+                    'country' => $countryName !== '' ? $countryName : 'Turkey',
+                    'city' => $countryName !== '' ? $countryName : 'Istanbul',
                 ];
             }
         }
@@ -171,7 +171,7 @@ class ListingSeeder extends Seeder
 
         return [
             'country' => $turkeyName,
-            'city' => $city !== '' ? $city : 'İstanbul',
+            'city' => $city !== '' ? $city : 'Istanbul',
         ];
     }
 
@@ -180,7 +180,7 @@ class ListingSeeder extends Seeder
         $prefix = self::TITLE_PREFIXES[$index % count(self::TITLE_PREFIXES)];
         $categoryName = trim((string) $category->name);
 
-        return sprintf('%s %s ilanı', $prefix, $categoryName !== '' ? $categoryName : 'ürün');
+        return sprintf('%s %s listing', $prefix, $categoryName !== '' ? $categoryName : 'item');
     }
 
     private function buildDescription(Category $category, string $city, string $country): string
@@ -189,9 +189,9 @@ class ListingSeeder extends Seeder
         $location = trim(collect([$city, $country])->filter()->join(', '));
 
         return sprintf(
-            '%s kategorisinde, durum olarak sorunsuz ve kullanıma hazırdır. Teslimat noktası: %s. Detaylar için mesaj atabilirsiniz.',
-            $categoryName !== '' ? $categoryName : 'Ürün',
-            $location !== '' ? $location : 'Türkiye'
+            'Listed in %s, in clean condition and ready to use. Pickup area: %s. Message for more details.',
+            $categoryName !== '' ? $categoryName : 'Item',
+            $location !== '' ? $location : 'Turkey'
         );
     }
 
@@ -244,7 +244,7 @@ class ListingSeeder extends Seeder
 
         if (! is_file($imageAbsolutePath)) {
             if ($this->command) {
-                $this->command->warn("Gorsel bulunamadi: {$imageRelativePath}");
+                $this->command->warn("Image not found: {$imageRelativePath}");
             }
 
             return;

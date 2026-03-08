@@ -40,6 +40,12 @@
     $referenceCode = '#'.str_pad((string) $listing->getKey(), 8, '0', STR_PAD_LEFT);
     $canContactSeller = $listing->user && (! auth()->check() || (int) auth()->id() !== (int) $listing->user_id);
     $isOwnListing = auth()->check() && (int) auth()->id() === (int) $listing->user_id;
+    $canStartConversation = auth()->check() && $listing->user && ! $isOwnListing;
+    $loginRedirectRoute = route('login', ['redirect' => request()->fullUrl()]);
+    $chatConversation = $detailConversation ?? null;
+    $chatMessages = $chatConversation?->messages ?? collect();
+    $chatSendUrl = $chatConversation ? route('conversations.messages.send', $chatConversation) : '';
+    $chatStartUrl = route('conversations.start', $listing);
 
     $primaryContactHref = null;
     $primaryContactLabel = 'Call';
@@ -50,13 +56,6 @@
         $primaryContactHref = 'mailto:'.$listing->contact_email;
         $primaryContactLabel = 'Email';
     }
-
-    $mapQuery = filled($listing->latitude) && filled($listing->longitude)
-        ? trim((string) $listing->latitude).','.trim((string) $listing->longitude)
-        : str_replace(' / ', ', ', $locationLabel);
-    $mapUrl = $mapQuery !== ''
-        ? 'https://www.google.com/maps/search/?api=1&query='.urlencode($mapQuery)
-        : null;
 
     $reportEmail = config('mail.from.address', 'support@example.com');
     $reportUrl = 'mailto:'.$reportEmail.'?subject='.rawurlencode('Report listing '.$referenceCode);
@@ -358,21 +357,12 @@
                     <div class="lt-row-2">
                         @if(! $listing->user)
                             <button type="button" class="lt-btn" disabled>Unavailable</button>
-                        @elseif($canContactSeller)
-                            @if($existingConversationId)
-                                <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="lt-btn">
-                                    Message
-                                </a>
-                            @else
-                                <form method="POST" action="{{ route('conversations.start', $listing) }}" class="lt-action-form">
-                                    @csrf
-                                    <button type="submit" class="lt-btn">Message</button>
-                                </form>
-                            @endif
+                        @elseif($canStartConversation)
+                            <button type="button" class="lt-btn" data-inline-chat-open>Message</button>
                         @elseif($isOwnListing)
                             <button type="button" class="lt-btn" disabled>Your listing</button>
                         @else
-                            <a href="{{ route('login') }}" class="lt-btn">Message</a>
+                            <a href="{{ $loginRedirectRoute }}" class="lt-btn">Message</a>
                         @endif
 
                         @if($primaryContactHref)
@@ -382,49 +372,21 @@
                         @endif
                     </div>
 
-                    @if(! $listing->user)
-                        <button type="button" class="lt-btn lt-btn-main" disabled>Unavailable</button>
-                    @elseif($canContactSeller)
-                        @if($existingConversationId)
-                            <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="lt-btn lt-btn-main">
-                                Make offer
-                            </a>
-                        @else
-                            <form method="POST" action="{{ route('conversations.start', $listing) }}" class="lt-action-form">
+                    @if($listing->user && ! $isOwnListing)
+                        @auth
+                            <form method="POST" action="{{ route('favorites.sellers.toggle', $listing->user) }}" class="lt-action-form">
                                 @csrf
-                                <button type="submit" class="lt-btn lt-btn-main">Make offer</button>
+                                <input type="hidden" name="redirect_to" value="{{ request()->fullUrl() }}">
+                                <button type="submit" class="lt-btn lt-btn-outline">
+                                    {{ $isSellerFavorited ? 'Saved seller' : 'Save seller' }}
+                                </button>
                             </form>
-                        @endif
+                        @else
+                            <a href="{{ $loginRedirectRoute }}" class="lt-btn lt-btn-outline">Save seller</a>
+                        @endauth
                     @elseif($isOwnListing)
-                        <button type="button" class="lt-btn lt-btn-main" disabled>Manage listing</button>
-                    @else
-                        <a href="{{ route('login') }}" class="lt-btn lt-btn-main">Make offer</a>
+                        <button type="button" class="lt-btn lt-btn-outline" disabled>Your account</button>
                     @endif
-
-                    <div class="lt-row-2">
-                        @if($mapUrl)
-                            <a href="{{ $mapUrl }}" target="_blank" rel="noreferrer" class="lt-btn lt-btn-outline">
-                                View map
-                            </a>
-                        @else
-                            <button type="button" class="lt-btn lt-btn-outline" disabled>View map</button>
-                        @endif
-
-                        @if($listing->user && ! $isOwnListing)
-                            @auth
-                                <form method="POST" action="{{ route('favorites.sellers.toggle', $listing->user) }}" class="lt-action-form">
-                                    @csrf
-                                    <button type="submit" class="lt-btn lt-btn-outline">
-                                        {{ $isSellerFavorited ? 'Saved seller' : 'Save seller' }}
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ route('login') }}" class="lt-btn lt-btn-outline">Save seller</a>
-                            @endauth
-                        @else
-                            <button type="button" class="lt-btn lt-btn-outline" disabled>{{ $isOwnListing ? 'Your account' : 'Save seller' }}</button>
-                        @endif
-                    </div>
                 </div>
             </section>
 
@@ -441,21 +403,12 @@
             <div class="lt-mobile-actions-row">
                 @if(! $listing->user)
                     <button type="button" class="lt-btn" disabled>Unavailable</button>
-                @elseif($canContactSeller)
-                    @if($existingConversationId)
-                        <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="lt-btn">
-                            Message
-                        </a>
-                    @else
-                        <form method="POST" action="{{ route('conversations.start', $listing) }}" class="lt-action-form">
-                            @csrf
-                            <button type="submit" class="lt-btn">Message</button>
-                        </form>
-                    @endif
+                @elseif($canStartConversation)
+                    <button type="button" class="lt-btn" data-inline-chat-open>Message</button>
                 @elseif($isOwnListing)
                     <button type="button" class="lt-btn" disabled>Your listing</button>
                 @else
-                    <a href="{{ route('login') }}" class="lt-btn">Message</a>
+                    <a href="{{ $loginRedirectRoute }}" class="lt-btn">Message</a>
                 @endif
 
                 @if($primaryContactHref)
@@ -465,26 +418,75 @@
                 @endif
             </div>
 
-            @if(! $listing->user)
-                <button type="button" class="lt-btn lt-btn-main" disabled>Unavailable</button>
-            @elseif($canContactSeller)
-                @if($existingConversationId)
-                    <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="lt-btn lt-btn-main">
-                        Make offer
-                    </a>
-                @else
-                    <form method="POST" action="{{ route('conversations.start', $listing) }}" class="lt-action-form">
+            @if($listing->user && ! $isOwnListing)
+                @auth
+                    <form method="POST" action="{{ route('favorites.sellers.toggle', $listing->user) }}" class="lt-action-form">
                         @csrf
-                        <button type="submit" class="lt-btn lt-btn-main">Make offer</button>
+                        <input type="hidden" name="redirect_to" value="{{ request()->fullUrl() }}">
+                        <button type="submit" class="lt-btn lt-btn-outline">
+                            {{ $isSellerFavorited ? 'Saved seller' : 'Save seller' }}
+                        </button>
                     </form>
-                @endif
+                @else
+                    <a href="{{ $loginRedirectRoute }}" class="lt-btn lt-btn-outline">Save seller</a>
+                @endauth
             @elseif($isOwnListing)
-                <button type="button" class="lt-btn lt-btn-main" disabled>Manage listing</button>
-            @else
-                <a href="{{ route('login') }}" class="lt-btn lt-btn-main">Make offer</a>
+                <button type="button" class="lt-btn lt-btn-outline" disabled>Your account</button>
             @endif
         </div>
     </div>
+
+    @if($canStartConversation)
+        <div class="lt-chat-widget" data-inline-chat data-start-url="{{ $chatStartUrl }}" data-send-url="{{ $chatSendUrl }}">
+            <section class="lt-chat-panel" data-inline-chat-panel hidden>
+                <div class="lt-chat-head">
+                    <div>
+                        <p class="lt-chat-kicker">Chat</p>
+                        <p class="lt-chat-name">{{ $sellerName }}</p>
+                        <p class="lt-chat-meta">{{ $displayTitle }}</p>
+                    </div>
+                    <button type="button" class="lt-chat-close" data-inline-chat-close aria-label="Close chat">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                            <path d="M6 6 18 18M18 6 6 18"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="lt-chat-thread" data-inline-chat-thread>
+                    @foreach($chatMessages as $message)
+                        <div class="lt-chat-item {{ (int) $message->sender_id === (int) auth()->id() ? 'is-mine' : '' }}">
+                            <div class="lt-chat-bubble">{{ $message->body }}</div>
+                            <span class="lt-chat-time">{{ $message->created_at?->format('H:i') }}</span>
+                        </div>
+                    @endforeach
+
+                    <div class="lt-chat-empty {{ $chatMessages->isNotEmpty() ? 'is-hidden' : '' }}" data-inline-chat-empty>
+                        Send the first message without leaving this page.
+                    </div>
+                </div>
+
+                <form class="lt-chat-form" data-inline-chat-form>
+                    <input
+                        type="text"
+                        name="message"
+                        class="lt-chat-input"
+                        data-inline-chat-input
+                        maxlength="2000"
+                        placeholder="Write a message"
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="lt-chat-send" data-inline-chat-submit aria-label="Send message">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h13m0 0-5-5m5 5-5 5"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <p class="lt-chat-error is-hidden" data-inline-chat-error></p>
+            </section>
+        </div>
+    @endif
 
     @if(($relatedListings ?? collect())->isNotEmpty() || ($themePillCategories ?? collect())->isNotEmpty())
         <section class="lt-related">
@@ -677,6 +679,138 @@
                 button.addEventListener('click', () => activate(button.dataset.tab || 'details'));
             });
         });
+
+        const chatRoot = document.querySelector('[data-inline-chat]');
+        if (chatRoot) {
+            const panel = chatRoot.querySelector('[data-inline-chat-panel]');
+            const thread = chatRoot.querySelector('[data-inline-chat-thread]');
+            const emptyState = chatRoot.querySelector('[data-inline-chat-empty]');
+            const form = chatRoot.querySelector('[data-inline-chat-form]');
+            const input = chatRoot.querySelector('[data-inline-chat-input]');
+            const error = chatRoot.querySelector('[data-inline-chat-error]');
+            const submitButton = chatRoot.querySelector('[data-inline-chat-submit]');
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+
+            const togglePanel = (open) => {
+                if (!panel) {
+                    return;
+                }
+
+                panel.hidden = !open;
+                chatRoot.classList.toggle('is-open', open);
+
+                if (open) {
+                    window.requestAnimationFrame(() => input?.focus());
+                }
+            };
+
+            const showError = (message) => {
+                if (!error) {
+                    return;
+                }
+
+                if (!message) {
+                    error.textContent = '';
+                    error.classList.add('is-hidden');
+                    return;
+                }
+
+                error.textContent = message;
+                error.classList.remove('is-hidden');
+            };
+
+            const appendMessage = (message) => {
+                if (!thread || !message?.body) {
+                    return;
+                }
+
+                const item = document.createElement('div');
+                item.className = 'lt-chat-item' + (message.is_mine ? ' is-mine' : '');
+
+                const bubble = document.createElement('div');
+                bubble.className = 'lt-chat-bubble';
+                bubble.textContent = message.body;
+
+                const time = document.createElement('span');
+                time.className = 'lt-chat-time';
+                time.textContent = message.time || '';
+
+                item.appendChild(bubble);
+                item.appendChild(time);
+                thread.appendChild(item);
+                thread.scrollTop = thread.scrollHeight;
+                emptyState?.classList.add('is-hidden');
+            };
+
+            document.querySelectorAll('[data-inline-chat-open]').forEach((button) => {
+                button.addEventListener('click', () => {
+                    showError('');
+                    togglePanel(true);
+                });
+            });
+
+            chatRoot.querySelector('[data-inline-chat-close]')?.addEventListener('click', () => {
+                togglePanel(false);
+            });
+
+            form?.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                if (!input || !submitButton) {
+                    return;
+                }
+
+                const message = input.value.trim();
+                if (message === '') {
+                    showError('Message cannot be empty.');
+                    input.focus();
+                    return;
+                }
+
+                const targetUrl = chatRoot.dataset.sendUrl || chatRoot.dataset.startUrl;
+                if (!targetUrl) {
+                    showError('Messaging is not available right now.');
+                    return;
+                }
+
+                showError('');
+                submitButton.disabled = true;
+
+                try {
+                    const response = await fetch(targetUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                            'X-CSRF-TOKEN': csrfToken,
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        body: new URLSearchParams({ message }).toString(),
+                    });
+
+                    const payload = await response.json().catch(() => ({}));
+                    if (!response.ok) {
+                        const responseMessage = payload?.message || payload?.errors?.message?.[0] || 'Message could not be sent.';
+                        throw new Error(responseMessage);
+                    }
+
+                    if (payload.send_url) {
+                        chatRoot.dataset.sendUrl = payload.send_url;
+                    }
+
+                    if (payload.message) {
+                        appendMessage(payload.message);
+                    }
+
+                    input.value = '';
+                    input.focus();
+                } catch (requestError) {
+                    showError(requestError instanceof Error ? requestError.message : 'Message could not be sent.');
+                } finally {
+                    submitButton.disabled = false;
+                }
+            });
+        }
     })();
 </script>
 @endsection

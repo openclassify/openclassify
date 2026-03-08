@@ -33,6 +33,9 @@ class ListingController extends Controller
         $cityId = request()->integer('city');
         $cityId = $cityId > 0 ? $cityId : null;
 
+        $sellerUserId = request()->integer('user');
+        $sellerUserId = $sellerUserId > 0 ? $sellerUserId : null;
+
         $minPriceInput = trim((string) request('min_price', ''));
         $maxPriceInput = trim((string) request('max_price', ''));
         $minPrice = is_numeric($minPriceInput) ? max((float) $minPriceInput, 0) : null;
@@ -70,6 +73,7 @@ class ListingController extends Controller
             'search' => $search,
             'country' => $selectedCountryName,
             'city' => $selectedCityName,
+            'user_id' => $sellerUserId,
             'min_price' => $minPrice,
             'max_price' => $maxPrice,
             'date_filter' => $dateFilter,
@@ -136,6 +140,7 @@ class ListingController extends Controller
             'categoryId',
             'countryId',
             'cityId',
+            'sellerUserId',
             'minPriceInput',
             'maxPriceInput',
             'dateFilter',
@@ -184,6 +189,7 @@ class ListingController extends Controller
         $isListingFavorited = false;
         $isSellerFavorited = false;
         $existingConversationId = null;
+        $detailConversation = null;
 
         if (auth()->check()) {
             $userId = (int) auth()->id();
@@ -205,6 +211,17 @@ class ListingController extends Controller
                     (int) $listing->getKey(),
                     $userId,
                 );
+
+                if ($existingConversationId) {
+                    $detailConversation = Conversation::query()
+                        ->forUser($userId)
+                        ->find($existingConversationId);
+
+                    if ($detailConversation) {
+                        $detailConversation->loadThread();
+                        $detailConversation->markAsReadFor($userId);
+                    }
+                }
             }
         }
 
@@ -214,6 +231,7 @@ class ListingController extends Controller
             'isSellerFavorited',
             'presentableCustomFields',
             'existingConversationId',
+            'detailConversation',
             'gallery',
             'listingVideos',
             'relatedListings',
@@ -239,7 +257,7 @@ class ListingController extends Controller
 
         return redirect()
             ->route('panel.listings.create')
-            ->with('success', 'İlan oluşturma ekranına yönlendirildin.');
+            ->with('success', 'You were redirected to the listing creation screen.');
     }
 
     private function resolveLocationFilters(

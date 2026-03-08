@@ -11,10 +11,15 @@ use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
+use Modules\User\App\Support\AuthRedirector;
 use Throwable;
 
 class FavoriteController extends Controller
 {
+    public function __construct(private AuthRedirector $redirector)
+    {
+    }
+
     public function index(Request $request)
     {
         $activeTab = (string) $request->string('tab', 'listings');
@@ -126,7 +131,7 @@ class FavoriteController extends Controller
     {
         $isNowFavorite = $request->user()->toggleFavoriteListing($listing);
 
-        return back()->with('success', $isNowFavorite ? 'İlan favorilere eklendi.' : 'İlan favorilerden kaldırıldı.');
+        return $this->redirectBack($request)->with('success', $isNowFavorite ? 'Listing added to favorites.' : 'Listing removed from favorites.');
     }
 
     public function toggleSeller(Request $request, User $seller)
@@ -134,12 +139,12 @@ class FavoriteController extends Controller
         $user = $request->user();
 
         if ((int) $user->getKey() === (int) $seller->getKey()) {
-            return back()->with('error', 'Kendi hesabını favorilere ekleyemezsin.');
+            return $this->redirectBack($request)->with('error', 'You cannot favorite your own account.');
         }
 
         $isNowFavorite = $user->toggleFavoriteSeller($seller);
 
-        return back()->with('success', $isNowFavorite ? 'Satıcı favorilere eklendi.' : 'Satıcı favorilerden kaldırıldı.');
+        return $this->redirectBack($request)->with('success', $isNowFavorite ? 'Seller added to favorites.' : 'Seller removed from favorites.');
     }
 
     public function storeSearch(Request $request)
@@ -155,7 +160,7 @@ class FavoriteController extends Controller
         ]);
 
         if ($filters === []) {
-            return back()->with('error', 'Favoriye eklemek için en az bir filtre seçmelisin.');
+            return back()->with('error', 'Select at least one filter before saving a search.');
         }
 
         $signature = FavoriteSearch::signatureFor($filters);
@@ -178,10 +183,10 @@ class FavoriteController extends Controller
         );
 
         if (! $favoriteSearch->wasRecentlyCreated) {
-            return back()->with('success', 'Bu arama zaten favorilerinde.');
+            return back()->with('success', 'This search is already in your favorites.');
         }
 
-        return back()->with('success', 'Arama favorilere eklendi.');
+        return back()->with('success', 'Search added to favorites.');
     }
 
     public function destroySearch(Request $request, FavoriteSearch $favoriteSearch)
@@ -192,7 +197,7 @@ class FavoriteController extends Controller
 
         $favoriteSearch->delete();
 
-        return back()->with('success', 'Favori arama silindi.');
+        return back()->with('success', 'Saved search deleted.');
     }
 
     private function tableExists(string $table): bool
@@ -210,5 +215,16 @@ class FavoriteController extends Controller
             'path' => request()->url(),
             'query' => request()->query(),
         ]);
+    }
+
+    private function redirectBack(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        $target = $this->redirector->sanitize((string) $request->input('redirect_to', ''));
+
+        if ($target !== null) {
+            return redirect()->to($target);
+        }
+
+        return back();
     }
 }

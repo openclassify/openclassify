@@ -40,15 +40,15 @@
     $availableLocales = config('app.available_locales', ['en']);
     $localeLabels = [
         'en' => 'English',
-        'tr' => 'Türkçe',
-        'ar' => 'العربية',
-        'zh' => '中文',
+        'tr' => 'Turkish',
+        'ar' => 'Arabic',
+        'zh' => 'Chinese',
         'es' => 'Español',
-        'fr' => 'Français',
-        'de' => 'Deutsch',
-        'pt' => 'Português',
-        'ru' => 'Русский',
-        'ja' => '日本語',
+        'fr' => 'French',
+        'de' => 'German',
+        'pt' => 'Portuguese',
+        'ru' => 'Russian',
+        'ja' => 'Japanese',
     ];
     $headerCategories = collect($headerNavCategories ?? [])->values();
     $menuBrowseLinks = collect([

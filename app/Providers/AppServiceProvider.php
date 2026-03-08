@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $availableLocales = config('app.available_locales', ['en']);
         $localeLabels = [
             'en' => 'English',
-            'tr' => 'Türkçe',
+            'tr' => 'Turkish',
         ];
 
         LanguageSwitch::configureUsing(function (LanguageSwitch $switch) use ($availableLocales, $localeLabels): void {

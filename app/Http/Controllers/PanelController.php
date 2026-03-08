@@ -207,7 +207,7 @@ class PanelController extends Controller
         $this->guardListingOwner($request, $listing);
         $listing->delete();
 
-        return back()->with('success', 'İlan kaldırıldı.');
+        return back()->with('success', 'Listing removed.');
     }
 
     public function markListingAsSold(Request $request, Listing $listing): RedirectResponse
@@ -217,7 +217,7 @@ class PanelController extends Controller
             'status' => 'sold',
         ])->save();
 
-        return back()->with('success', 'İlan satıldı olarak işaretlendi.');
+        return back()->with('success', 'Listing marked as sold.');
     }
 
     public function republishListing(Request $request, Listing $listing): RedirectResponse
@@ -228,7 +228,7 @@ class PanelController extends Controller
             'expires_at' => now()->addDays(30),
         ])->save();
 
-        return back()->with('success', 'İlan yeniden yayına alındı.');
+        return back()->with('success', 'Listing republished.');
     }
 
     private function guardListingOwner(Request $request, Listing $listing): void

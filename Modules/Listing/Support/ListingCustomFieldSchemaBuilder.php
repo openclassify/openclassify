@@ -66,12 +66,12 @@ class ListingCustomFieldSchemaBuilder
             $label = $field?->label ?: Str::headline((string) $key);
 
             if (is_bool($value)) {
-                $displayValue = $value ? 'Evet' : 'Hayır';
+                $displayValue = $value ? 'Yes' : 'No';
             } elseif (is_array($value)) {
                 $displayValue = implode(', ', array_map(fn ($item): string => (string) $item, $value));
             } elseif ($field?->type === ListingCustomField::TYPE_DATE) {
                 try {
-                    $displayValue = Carbon::parse((string) $value)->format('d.m.Y');
+                    $displayValue = Carbon::parse((string) $value)->format('M j, Y');
                 } catch (\Throwable) {
                     $displayValue = (string) $value;
                 }

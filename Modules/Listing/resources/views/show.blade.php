@@ -42,32 +42,32 @@
                     <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
                         @csrf
                         <button type="submit" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition {{ $isListingFavorited ? 'bg-rose-100 text-rose-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' }}">
-                            {{ $isListingFavorited ? '♥ Favorilerde' : '♡ Favoriye Ekle' }}
+                            {{ $isListingFavorited ? '♥ Saved' : '♡ Save listing' }}
                         </button>
                     </form>
                     @if($listing->user && (int) $listing->user->id !== (int) auth()->id())
                     <form method="POST" action="{{ route('favorites.sellers.toggle', $listing->user) }}">
                         @csrf
                         <button type="submit" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition {{ $isSellerFavorited ? 'bg-blue-100 text-blue-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200' }}">
-                            {{ $isSellerFavorited ? 'Satıcı Favorilerde' : 'Satıcıyı Takip Et' }}
+                            {{ $isSellerFavorited ? 'Seller saved' : 'Save seller' }}
                         </button>
                     </form>
                         @if($existingConversationId)
                         <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-rose-100 text-rose-700 hover:bg-rose-200 transition">
-                            Sohbete Git
+                            Open chat
                         </a>
                         @else
                         <form method="POST" action="{{ route('conversations.start', $listing) }}">
                             @csrf
                             <button type="submit" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-rose-500 text-white hover:bg-rose-600 transition">
-                                Satıcıya Mesaj Gönder
+                                Message seller
                             </button>
                         </form>
                         @endif
                     @endif
                     @else
                     <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-                        Giriş yap ve favorile
+                        Log in to save
                     </a>
                     @endauth
                 </div>
@@ -79,7 +79,7 @@
                 </div>
                 @if(($presentableCustomFields ?? []) !== [])
                 <div class="mt-6 border-t pt-4">
-                    <h2 class="font-semibold text-lg mb-3">İlan Özellikleri</h2>
+                    <h2 class="font-semibold text-lg mb-3">Listing details</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         @foreach($presentableCustomFields as $field)
                         <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">

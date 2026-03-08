@@ -24,7 +24,7 @@ class AuthUserSeeder extends Seeder
             ['email' => 'b@b.com'],
             [
                 'name' => 'Member',
-                'password' => '36330',
+                'password' => '236330',
                 'status' => 'active',
             ],
         );

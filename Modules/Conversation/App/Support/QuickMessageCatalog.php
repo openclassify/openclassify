@@ -7,10 +7,10 @@ class QuickMessageCatalog
     public static function all(): array
     {
         return [
-            'Merhaba',
-            'İlan hâlâ satışta mı?',
-            'Son fiyat nedir?',
-            'Teşekkürler',
+            'Hi',
+            'Is this listing still available?',
+            'What is your best price?',
+            'Thanks',
         ];
     }
 }

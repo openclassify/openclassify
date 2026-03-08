@@ -1,6 +1,6 @@
 @extends('app::layouts.app')
 
-@section('title', 'Favoriler')
+@section('title', 'Favorites')
 
 @section('content')
 <div class="max-w-[1320px] mx-auto px-4 py-8">
@@ -29,25 +29,25 @@
                 ], fn ($value) => !is_null($value) && $value !== '');
             @endphp
             <div class="border-b-2 border-blue-900 px-4 py-3 flex flex-wrap items-center gap-3">
-                <h1 class="text-3xl font-bold text-slate-800 mr-auto">Favori Listem</h1>
+                <h1 class="text-3xl font-bold text-slate-800 mr-auto">Saved Listings</h1>
                 <div class="inline-flex border border-slate-300 overflow-hidden">
                     <a href="{{ route('favorites.index', array_merge($listingTabQuery, ['status' => 'all'])) }}" class="px-5 py-2 text-sm font-semibold {{ $statusFilter === 'all' ? 'bg-slate-700 text-white' : 'bg-white text-slate-700 hover:bg-slate-100' }}">
-                        Tümü
+                        All
                     </a>
                     <a href="{{ route('favorites.index', array_merge($listingTabQuery, ['status' => 'active'])) }}" class="px-5 py-2 text-sm font-semibold border-l border-slate-300 {{ $statusFilter === 'active' ? 'bg-slate-700 text-white' : 'bg-white text-slate-700 hover:bg-slate-100' }}">
-                        Yayında
+                        Live
                     </a>
                 </div>
                 <form method="GET" action="{{ route('favorites.index') }}" class="flex items-center gap-2">
                     <input type="hidden" name="tab" value="listings">
                     <input type="hidden" name="status" value="{{ $statusFilter }}">
                     <select name="category" class="h-10 min-w-44 border border-slate-300 px-3 text-sm text-slate-700">
-                        <option value="">Kategori</option>
+                        <option value="">Category</option>
                         @foreach($categories as $category)
                         <option value="{{ $category->id }}" @selected((int) $selectedCategoryId === (int) $category->id)>{{ $category->name }}</option>
                         @endforeach
                     </select>
-                    <button type="submit" class="h-10 px-4 bg-slate-700 text-white text-sm font-semibold hover:bg-slate-800 transition">Filtrele</button>
+                    <button type="submit" class="h-10 px-4 bg-slate-700 text-white text-sm font-semibold hover:bg-slate-800 transition">Filter</button>
                 </form>
             </div>
 
@@ -55,9 +55,9 @@
                 <table class="w-full min-w-[860px]">
                     <thead>
                         <tr class="bg-slate-50 text-slate-700 text-sm">
-                            <th class="text-left px-4 py-3 w-[58%]">İlan Başlığı</th>
-                            <th class="text-left px-4 py-3 w-[16%]">Fiyat</th>
-                            <th class="text-left px-4 py-3 w-[14%]">Mesajlaşma</th>
+                            <th class="text-left px-4 py-3 w-[58%]">Listing</th>
+                            <th class="text-left px-4 py-3 w-[16%]">Price</th>
+                            <th class="text-left px-4 py-3 w-[14%]">Messaging</th>
                             <th class="text-right px-4 py-3 w-[12%]"></th>
                         </tr>
                     </thead>
@@ -65,7 +65,7 @@
                         @forelse($favoriteListings as $listing)
                         @php
                             $listingImage = $listing->getFirstMediaUrl('listing-images');
-                            $priceLabel = $listing->price ? number_format((float) $listing->price, 0).' '.$listing->currency : 'Ücretsiz';
+                            $priceLabel = $listing->price ? number_format((float) $listing->price, 0).' '.$listing->currency : 'Free';
                             $meta = collect([
                                 $listing->category?->name,
                                 $listing->city,
@@ -82,15 +82,15 @@
                                         @if($listingImage)
                                         <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
                                         @else
-                                        <div class="w-full h-full grid place-items-center text-slate-400">Görsel yok</div>
+                                        <div class="w-full h-full grid place-items-center text-slate-400">No image</div>
                                         @endif
                                     </a>
                                     <div>
                                         <a href="{{ route('listings.show', $listing) }}" class="font-semibold text-2xl text-slate-800 hover:text-blue-700 transition leading-6">
                                             {{ $listing->title }}
                                         </a>
-                                        <p class="text-sm text-slate-500 mt-2">{{ $meta !== '' ? $meta : 'Kategori / konum bilgisi yok' }}</p>
-                                        <p class="text-xs text-slate-400 mt-1">Favoriye eklenme: {{ $listing->pivot->created_at?->format('d.m.Y') }}</p>
+                                        <p class="text-sm text-slate-500 mt-2">{{ $meta !== '' ? $meta : 'No category or location data' }}</p>
+                                        <p class="text-xs text-slate-400 mt-1">Saved on: {{ $listing->pivot->created_at?->format('M j, Y') }}</p>
                                     </div>
                                 </div>
                             </td>
@@ -99,31 +99,31 @@
                                 @if($canMessageListing)
                                     @if($conversationId)
                                     <a href="{{ route('panel.inbox.index', ['conversation' => $conversationId]) }}" class="inline-flex items-center h-10 px-4 border border-rose-300 text-rose-600 text-sm font-semibold rounded-full hover:bg-rose-50 transition">
-                                        Sohbete Git
+                                        Open chat
                                     </a>
                                     @else
                                     <form method="POST" action="{{ route('conversations.start', $listing) }}">
                                         @csrf
                                         <button type="submit" class="inline-flex items-center h-10 px-4 bg-rose-500 text-white text-sm font-semibold rounded-full hover:bg-rose-600 transition">
-                                            Mesaj Gönder
+                                            Send message
                                         </button>
                                     </form>
                                     @endif
                                 @else
-                                <span class="text-xs text-slate-400">{{ $isOwnListing ? 'Kendi ilanın' : 'Satıcı bilgisi yok' }}</span>
+                                <span class="text-xs text-slate-400">{{ $isOwnListing ? 'Your own listing' : 'Seller unavailable' }}</span>
                                 @endif
                             </td>
                             <td class="px-4 py-4 text-right">
                                 <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
                                     @csrf
-                                    <button type="submit" class="text-sm font-semibold text-rose-500 hover:text-rose-600 transition">Kaldır</button>
+                                    <button type="submit" class="text-sm font-semibold text-rose-500 hover:text-rose-600 transition">Remove</button>
                                 </form>
                             </td>
                         </tr>
                         @empty
                         <tr class="border-t border-slate-200">
                             <td colspan="4" class="px-4 py-10 text-center text-slate-500">
-                                Henüz favori ilan bulunmuyor.
+                                No saved listings yet.
                             </td>
                         </tr>
                         @endforelse
@@ -132,7 +132,7 @@
             </div>
 
             <div class="px-4 py-4 border-t border-slate-200 text-sm text-slate-500">
-                * Son 1 yıl içinde favoriye eklediğiniz ilanlar listelenmektedir.
+                * Listings saved within the last year are shown here.
             </div>
 
             @if($favoriteListings?->hasPages())
@@ -142,8 +142,8 @@
 
             @if($activeTab === 'searches')
             <div class="px-4 py-4 border-b border-slate-200">
-                <h1 class="text-3xl font-bold text-slate-800">Favori Aramalar</h1>
-                <p class="text-sm text-slate-500 mt-1">Kayıtlı aramalarına tek tıkla geri dön.</p>
+                <h1 class="text-3xl font-bold text-slate-800">Saved Searches</h1>
+                <p class="text-sm text-slate-500 mt-1">Return to your saved searches with one click.</p>
             </div>
             <div class="divide-y divide-slate-200">
                 @forelse($favoriteSearches as $favoriteSearch)
@@ -155,29 +155,29 @@
                 @endphp
                 <article class="px-4 py-4 flex flex-col md:flex-row md:items-center gap-3">
                     <div class="flex-1">
-                        <h2 class="font-semibold text-slate-800">{{ $favoriteSearch->label ?: 'Kayıtlı arama' }}</h2>
+                        <h2 class="font-semibold text-slate-800">{{ $favoriteSearch->label ?: 'Saved search' }}</h2>
                         <p class="text-sm text-slate-500 mt-1">
-                            @if($favoriteSearch->search_term) Arama: "{{ $favoriteSearch->search_term }}" · @endif
-                            @if($favoriteSearch->category) Kategori: {{ $favoriteSearch->category->name }} · @endif
-                            Kaydedilme: {{ $favoriteSearch->created_at?->format('d.m.Y H:i') }}
+                            @if($favoriteSearch->search_term) Search: "{{ $favoriteSearch->search_term }}" · @endif
+                            @if($favoriteSearch->category) Category: {{ $favoriteSearch->category->name }} · @endif
+                            Saved: {{ $favoriteSearch->created_at?->format('M j, Y H:i') }}
                         </p>
                     </div>
                     <div class="flex items-center gap-3">
                         <a href="{{ $searchUrl }}" class="inline-flex items-center h-10 px-4 bg-blue-600 text-white text-sm font-semibold rounded hover:bg-blue-700 transition">
-                            Aramayı Aç
+                            Open search
                         </a>
                         <form method="POST" action="{{ route('favorites.searches.destroy', $favoriteSearch) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="inline-flex items-center h-10 px-4 border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition">
-                                Sil
+                                Delete
                             </button>
                         </form>
                     </div>
                 </article>
                 @empty
                 <div class="px-4 py-10 text-center text-slate-500">
-                    Henüz favori arama eklenmedi.
+                    No saved searches yet.
                 </div>
                 @endforelse
             </div>
@@ -188,32 +188,32 @@
 
             @if($activeTab === 'sellers')
             <div class="px-4 py-4 border-b border-slate-200">
-                <h1 class="text-3xl font-bold text-slate-800">Favori Satıcılar</h1>
-                <p class="text-sm text-slate-500 mt-1">Takip etmek istediğin satıcıları burada yönetebilirsin.</p>
+                <h1 class="text-3xl font-bold text-slate-800">Saved Sellers</h1>
+                <p class="text-sm text-slate-500 mt-1">Manage the sellers you want to follow here.</p>
             </div>
             <div class="divide-y divide-slate-200">
                 @forelse($favoriteSellers as $seller)
                 <article class="px-4 py-4 flex flex-col md:flex-row md:items-center gap-3">
-                    <div class="flex items-center gap-3 flex-1">
+                    <a href="{{ route('listings.index', ['user' => $seller->id]) }}" class="flex items-center gap-3 flex-1 hover:opacity-90 transition">
                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 font-bold grid place-items-center">
                             {{ strtoupper(substr((string) $seller->name, 0, 1)) }}
                         </div>
                         <div>
                             <h2 class="font-semibold text-slate-800">{{ $seller->name }}</h2>
                             <p class="text-sm text-slate-500">{{ $seller->email }}</p>
-                            <p class="text-xs text-slate-400 mt-1">Aktif ilan: {{ (int) $seller->active_listings_count }}</p>
+                            <p class="text-xs text-slate-400 mt-1">Active listings: {{ (int) $seller->active_listings_count }}</p>
                         </div>
-                    </div>
+                    </a>
                     <form method="POST" action="{{ route('favorites.sellers.toggle', $seller) }}">
                         @csrf
                         <button type="submit" class="inline-flex items-center h-10 px-4 border border-rose-200 text-sm font-semibold text-rose-600 hover:bg-rose-50 transition">
-                            Favoriden Kaldır
+                            Remove seller
                         </button>
                     </form>
                 </article>
                 @empty
                 <div class="px-4 py-10 text-center text-slate-500">
-                    Henüz favori satıcı eklenmedi.
+                    No saved sellers yet.
                 </div>
                 @endforelse
             </div>

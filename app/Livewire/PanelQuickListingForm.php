@@ -514,13 +514,10 @@ class PanelQuickListingForm extends Component
                 $fieldRules[] = $isRequired ? 'required' : 'nullable';
             }
 
-            $fieldRules[] = match ($type) {
-                ListingCustomField::TYPE_TEXT => 'string|max:255',
-                ListingCustomField::TYPE_TEXTAREA => 'string|max:2000',
-                ListingCustomField::TYPE_NUMBER => 'numeric',
-                ListingCustomField::TYPE_DATE => 'date',
-                default => 'sometimes',
-            };
+            $fieldRules = [
+                ...$fieldRules,
+                ...$this->customFieldTypeRules($type),
+            ];
 
             if ($type === ListingCustomField::TYPE_SELECT) {
                 $options = collect($field['options'] ?? [])->map(fn ($option): string => (string) $option)->all();
@@ -533,6 +530,17 @@ class PanelQuickListingForm extends Component
         if ($rules !== []) {
             $this->validate($rules);
         }
+    }
+
+    private function customFieldTypeRules(string $type): array
+    {
+        return match ($type) {
+            ListingCustomField::TYPE_TEXT => ['string', 'max:255'],
+            ListingCustomField::TYPE_TEXTAREA => ['string', 'max:2000'],
+            ListingCustomField::TYPE_NUMBER => ['numeric'],
+            ListingCustomField::TYPE_DATE => ['date'],
+            default => ['sometimes'],
+        };
     }
 
     private function createListing(): Listing

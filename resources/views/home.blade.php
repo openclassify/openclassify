@@ -138,7 +138,7 @@
                         type="button"
                         data-home-slide-prev
                         class="w-8 h-8 rounded-full border border-white/45 text-white grid place-items-center hover:bg-white/15 transition"
-                        aria-label="Önceki slide"
+                        aria-label="Previous slide"
                     >
                         <span aria-hidden="true">‹</span>
                     </button>
@@ -158,7 +158,7 @@
                         type="button"
                         data-home-slide-next
                         class="w-8 h-8 rounded-full border border-white/45 text-white grid place-items-center hover:bg-white/15 transition"
-                        aria-label="Sonraki slide"
+                        aria-label="Next slide"
                     >
                         <span aria-hidden="true">›</span>
                     </button>
@@ -216,9 +216,9 @@
 
     <section>
         <div class="flex items-center justify-between mb-3">
-            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Trend Kategoriler</h2>
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Trending Categories</h2>
             <a href="{{ route('categories.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-rose-500 hover:text-rose-600 transition">
-                Tümünü Gör
+                View all
             </a>
         </div>
         <div class="relative">
@@ -226,7 +226,7 @@
                 type="button"
                 data-trend-prev
                 class="hidden lg:inline-flex absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 items-center justify-center shadow-sm hover:bg-slate-50 transition"
-                aria-label="Önceki trend kategori"
+                aria-label="Previous trending category"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 18-6-6 6-6"/>
@@ -296,7 +296,7 @@
                 type="button"
                 data-trend-next
                 class="hidden lg:inline-flex absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 items-center justify-center shadow-sm hover:bg-slate-50 transition"
-                aria-label="Sonraki trend kategori"
+                aria-label="Next trending category"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"/>
@@ -307,7 +307,7 @@
 
     <section>
         <div class="flex items-center justify-between mb-4">
-            <h2 class="text-2xl font-bold text-slate-900">Popüler İkinci El İlanlar</h2>
+            <h2 class="text-2xl font-bold text-slate-900">Popular Listings</h2>
             <div class="hidden sm:flex items-center gap-2 text-sm text-slate-500">
                 <span class="w-8 h-8 rounded-full border border-slate-300 grid place-items-center">‹</span>
                 <span class="w-8 h-8 rounded-full border border-slate-300 grid place-items-center">›</span>
@@ -336,9 +336,9 @@
                     </a>
                     <div class="absolute top-3 left-3 flex items-center gap-2">
                         @if($listing->is_featured)
-                        <span class="bg-amber-300 text-amber-950 text-xs font-bold px-2.5 py-1 rounded-full">Öne Çıkan</span>
+                        <span class="bg-amber-300 text-amber-950 text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
                         @endif
-                        <span class="bg-sky-500 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Büyük İlan</span>
+                        <span class="bg-sky-500 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Spotlight</span>
                     </div>
                     <div class="absolute top-3 right-3">
                         @auth
@@ -357,17 +357,17 @@
                             <p class="text-3xl font-extrabold tracking-tight text-slate-900">{{ $priceLabel }}</p>
                             <h3 class="text-xl font-semibold text-slate-800 mt-1 truncate">{{ $listing->title }}</h3>
                         </div>
-                        <span class="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full font-semibold">12 taksit</span>
+                        <span class="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full font-semibold">12 installments</span>
                     </div>
                     <div class="mt-5 flex items-center justify-between text-sm text-slate-500">
-                        <span class="truncate">{{ $locationLabel !== '' ? $locationLabel : 'Konum belirtilmedi' }}</span>
+                        <span class="truncate">{{ $locationLabel !== '' ? $locationLabel : 'Location not specified' }}</span>
                         <span>{{ $listing->created_at->diffForHumans() }}</span>
                     </div>
                 </div>
             </article>
             @empty
             <div class="col-span-2 border border-dashed border-slate-300 bg-white rounded-2xl py-20 text-center text-slate-500">
-                Henüz ilan bulunmuyor.
+                No listings yet.
             </div>
             @endforelse
         </div>
@@ -377,15 +377,15 @@
         <div class="grid md:grid-cols-[1fr,auto] gap-6 items-center">
             <div>
                 <h2 class="text-3xl md:text-4xl font-extrabold">{{ __('messages.sell_something') }}</h2>
-                <p class="text-slate-300 mt-3">Dakikalar içinde ücretsiz ilan oluştur, binlerce alıcıya ulaş.</p>
+                <p class="text-slate-300 mt-3">Create a free listing in minutes and reach thousands of buyers.</p>
             </div>
             @auth
             <a href="{{ route('panel.listings.create') }}" class="inline-flex items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 px-8 py-3 font-semibold transition whitespace-nowrap">
-                Hemen İlan Ver
+                Post listing
             </a>
             @else
             <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 font-semibold transition whitespace-nowrap">
-                Ücretsiz Başla
+                Start free
             </a>
             @endauth
         </div>
