@@ -80,7 +80,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body @class([
+<body
+    data-auth-user-id="{{ auth()->id() ?? '' }}"
+    data-inbox-channel="{{ auth()->check() ? 'users.'.auth()->id().'.inbox' : '' }}"
+    @class([
     'min-h-screen font-sans antialiased',
     'bg-slate-50' => $demoLandingMode,
     'bg-[#f5f5f7]' => $simplePage && ! $demoLandingMode,
@@ -216,10 +219,8 @@
                             </form>
                         </div>
                     </details>
-                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Inbox">
-                        @if($headerMessageCount > 0)
-                        <span class="oc-header-badge">{{ $headerBadgeLabel($headerMessageCount) }}</span>
-                        @endif
+                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Inbox" data-header-inbox-link>
+                        <span class="oc-header-badge {{ $headerMessageCount > 0 ? '' : 'hidden' }}" data-header-inbox-badge>{{ $headerBadgeLabel($headerMessageCount) }}</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l9 6 9-6"/>

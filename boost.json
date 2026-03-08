@@ -4,15 +4,17 @@
         "gemini",
         "copilot"
     ],
+    "guidelines": true,
     "herd_mcp": false,
     "mcp": true,
     "nightwatch_mcp": false,
     "packages": [
         "filament/filament",
-        "spatie/laravel-permission"
+        "laravel/ai"
     ],
     "sail": false,
     "skills": [
-        "laravel-permission-development"
+        "tailwindcss-development",
+        "developing-with-ai-sdk"
     ]
 }

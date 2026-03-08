@@ -8,6 +8,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
+use Modules\Conversation\App\Events\ConversationReadUpdated;
+use Modules\Conversation\App\Events\InboxMessageCreated;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Conversation\App\Support\QuickMessageCatalog;
@@ -28,20 +30,22 @@ class ConversationController extends Controller
 
         if ($userId && $this->messagingTablesReady()) {
             try {
-                $conversations = Conversation::inboxForUser($userId, $messageFilter);
-                $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
+                [
+                    'conversations' => $conversations,
+                    'selectedConversation' => $selectedConversation,
+                    'markedRead' => $markedRead,
+                ] = $this->resolveInboxState(
+                    $userId,
+                    $messageFilter,
+                    $request->integer('conversation'),
+                    true,
+                );
 
-                if ($selectedConversation) {
-                    $selectedConversation->loadThread();
-                    $selectedConversation->markAsReadFor($userId);
-
-                    $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
-                        if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
-                            $conversation->unread_count = 0;
-                        }
-
-                        return $conversation;
-                    });
+                if ($selectedConversation && $markedRead) {
+                    broadcast(new ConversationReadUpdated(
+                        $userId,
+                        $selectedConversation->readPayloadFor($userId),
+                    ));
                 }
             } catch (Throwable) {
                 $conversations = collect();
@@ -55,6 +59,33 @@ class ConversationController extends Controller
             'messageFilter' => $messageFilter,
             'quickMessages' => QuickMessageCatalog::all(),
             'requiresLogin' => $requiresLogin,
+        ]);
+    }
+
+    public function state(Request $request): JsonResponse
+    {
+        abort_unless($this->messagingTablesReady(), 503, 'Messaging is not available yet.');
+
+        $userId = (int) $request->user()->getKey();
+        $messageFilter = $this->resolveMessageFilter($request);
+
+        [
+            'conversations' => $conversations,
+            'selectedConversation' => $selectedConversation,
+        ] = $this->resolveInboxState(
+            $userId,
+            $messageFilter,
+            $request->integer('conversation'),
+            false,
+        );
+
+        return response()->json([
+            'list_html' => $this->renderInboxList($conversations, $messageFilter, $selectedConversation),
+            'thread_html' => $this->renderInboxThread($selectedConversation, $messageFilter),
+            'selected_conversation_id' => $selectedConversation ? (int) $selectedConversation->getKey() : null,
+            'counts' => [
+                'unread_messages_total' => Conversation::unreadCountForUser($userId),
+            ],
         ]);
     }
 
@@ -98,12 +129,8 @@ class ConversationController extends Controller
 
         $message = null;
         if ($messageBody !== '') {
-            $message = $conversation->messages()->create([
-                'sender_id' => $user->getKey(),
-                'body' => $messageBody,
-            ]);
-
-            $conversation->forceFill(['last_message_at' => $message->created_at])->save();
+            $message = $conversation->createMessageFor((int) $user->getKey(), $messageBody);
+            $this->broadcastMessageCreated($conversation, $message, (int) $user->getKey());
         }
 
         if ($request->expectsJson()) {
@@ -146,12 +173,8 @@ class ConversationController extends Controller
             return back()->with('error', 'Message cannot be empty.');
         }
 
-        $message = $conversation->messages()->create([
-            'sender_id' => $userId,
-            'body' => $messageBody,
-        ]);
-
-        $conversation->forceFill(['last_message_at' => $message->created_at])->save();
+        $message = $conversation->createMessageFor($userId, $messageBody);
+        $this->broadcastMessageCreated($conversation, $message, $userId);
 
         if ($request->expectsJson()) {
             return $this->conversationJsonResponse($conversation, $message, $userId);
@@ -162,23 +185,43 @@ class ConversationController extends Controller
             ->with('success', 'Message sent.');
     }
 
+    public function read(Request $request, Conversation $conversation): JsonResponse
+    {
+        abort_unless($this->messagingTablesReady(), 503, 'Messaging is not available yet.');
+
+        $userId = (int) $request->user()->getKey();
+        abort_unless($conversation->hasParticipant($userId), 403);
+
+        $updated = $conversation->markAsReadFor($userId);
+        $payload = $conversation->readPayloadFor($userId);
+
+        if ($updated > 0) {
+            broadcast(new ConversationReadUpdated($userId, $payload))->toOthers();
+        }
+
+        return response()->json($payload);
+    }
+
     private function conversationJsonResponse(Conversation $conversation, ?ConversationMessage $message, int $userId): JsonResponse
     {
         return response()->json([
             'conversation_id' => (int) $conversation->getKey(),
             'send_url' => route('conversations.messages.send', $conversation),
+            'read_url' => route('conversations.read', $conversation),
+            'conversation' => [
+                'id' => (int) $conversation->getKey(),
+                'unread_count' => $conversation->unreadCountForParticipant($userId),
+            ],
+            'counts' => [
+                'unread_messages_total' => Conversation::unreadCountForUser($userId),
+            ],
             'message' => $message ? $this->messagePayload($message, $userId) : null,
         ]);
     }
 
     private function messagePayload(ConversationMessage $message, int $userId): array
     {
-        return [
-            'id' => (int) $message->getKey(),
-            'body' => (string) $message->body,
-            'time' => $message->created_at?->format('H:i') ?? now()->format('H:i'),
-            'is_mine' => (int) $message->sender_id === $userId,
-        ];
+        return $message->toRealtimePayloadFor($userId);
     }
 
     private function inboxFilters(Request $request): array
@@ -193,6 +236,78 @@ class ConversationController extends Controller
         $messageFilter = (string) $request->string('message_filter', 'all');
 
         return in_array($messageFilter, ['all', 'unread', 'important'], true) ? $messageFilter : 'all';
+    }
+
+    private function resolveInboxState(
+        int $userId,
+        string $messageFilter,
+        ?int $conversationId,
+        bool $markSelectedRead,
+    ): array {
+        $conversations = Conversation::inboxForUser($userId, $messageFilter);
+        $selectedConversation = Conversation::resolveSelected($conversations, $conversationId);
+        $markedRead = false;
+
+        if ($selectedConversation) {
+            $selectedConversation->loadThread();
+
+            if ($markSelectedRead) {
+                $markedRead = $selectedConversation->markAsReadFor($userId) > 0;
+                $selectedConversation->unread_count = 0;
+
+                $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
+                    if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
+                        $conversation->unread_count = 0;
+                    }
+
+                    return $conversation;
+                });
+            }
+        }
+
+        return [
+            'conversations' => $conversations,
+            'selectedConversation' => $selectedConversation,
+            'markedRead' => $markedRead,
+        ];
+    }
+
+    private function renderInboxList($conversations, string $messageFilter, ?Conversation $selectedConversation): string
+    {
+        return view('conversation::partials.inbox-list-pane', [
+            'conversations' => $conversations,
+            'messageFilter' => $messageFilter,
+            'selectedConversation' => $selectedConversation,
+        ])->render();
+    }
+
+    private function renderInboxThread(?Conversation $selectedConversation, string $messageFilter): string
+    {
+        return view('conversation::partials.inbox-thread-pane', [
+            'selectedConversation' => $selectedConversation,
+            'messageFilter' => $messageFilter,
+            'quickMessages' => QuickMessageCatalog::all(),
+        ])->render();
+    }
+
+    private function broadcastMessageCreated(
+        Conversation $conversation,
+        ConversationMessage $message,
+        int $senderId,
+    ): void {
+        foreach ($conversation->participantIds() as $participantId) {
+            $event = new InboxMessageCreated(
+                $participantId,
+                $conversation->realtimePayloadFor($participantId, $message),
+            );
+
+            if ($participantId === $senderId) {
+                broadcast($event)->toOthers();
+                continue;
+            }
+
+            broadcast($event);
+        }
     }
 
     private function messagingTablesReady(): bool

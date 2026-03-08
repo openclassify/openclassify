@@ -121,13 +121,59 @@ class Conversation extends Model
     {
         $this->load([
             'listing:id,title,price,currency,user_id',
-            'messages' => fn ($query) => $query->with('sender:id,name')->orderBy('created_at'),
+            'messages' => fn ($query) => $query->with('sender:id,name')->ordered(),
         ]);
     }
 
-    public function markAsReadFor(int $userId): void
+    public function hasParticipant(int $userId): bool
     {
-        ConversationMessage::query()
+        return (int) $this->buyer_id === $userId || (int) $this->seller_id === $userId;
+    }
+
+    public function participantIds(): array
+    {
+        return collect([$this->buyer_id, $this->seller_id])
+            ->filter()
+            ->map(fn ($id): int => (int) $id)
+            ->unique()
+            ->values()
+            ->all();
+    }
+
+    public function partnerFor(int $userId): ?User
+    {
+        $this->loadMissing([
+            'buyer:id,name,email',
+            'seller:id,name,email',
+        ]);
+
+        return (int) $this->buyer_id === $userId ? $this->seller : $this->buyer;
+    }
+
+    public function createMessageFor(int $senderId, string $body): ConversationMessage
+    {
+        $message = $this->messages()->create([
+            'sender_id' => $senderId,
+            'body' => $body,
+        ]);
+
+        $this->forceFill(['last_message_at' => $message->created_at])->save();
+
+        return $message->loadMissing('sender:id,name');
+    }
+
+    public function unreadCountForParticipant(int $userId): int
+    {
+        return (int) ConversationMessage::query()
+            ->where('conversation_id', $this->getKey())
+            ->where('sender_id', '!=', $userId)
+            ->whereNull('read_at')
+            ->count();
+    }
+
+    public function markAsReadFor(int $userId): int
+    {
+        return ConversationMessage::query()
             ->where('conversation_id', $this->getKey())
             ->where('sender_id', '!=', $userId)
             ->whereNull('read_at')
@@ -135,6 +181,78 @@ class Conversation extends Model
                 'read_at' => now(),
                 'updated_at' => now(),
             ]);
+    }
+
+    public function listingImageUrl(): ?string
+    {
+        $this->loadMissing('listing');
+
+        $url = $this->listing?->getFirstMediaUrl('listing-images');
+
+        return is_string($url) && trim($url) !== '' ? $url : null;
+    }
+
+    public function summaryPayloadFor(int $viewerId): array
+    {
+        $this->loadMissing([
+            'listing:id,title,price,currency,user_id',
+            'buyer:id,name,email',
+            'seller:id,name,email',
+            'lastMessage',
+            'lastMessage.sender:id,name',
+        ]);
+
+        $lastMessage = $this->lastMessage;
+        $partner = $this->partnerFor($viewerId);
+
+        return [
+            'id' => (int) $this->getKey(),
+            'unread_count' => $this->unread_count ?? $this->unreadCountForParticipant($viewerId),
+            'listing' => [
+                'id' => (int) ($this->listing?->getKey() ?? 0),
+                'title' => (string) ($this->listing?->title ?? 'Listing removed'),
+                'image_url' => $this->listingImageUrl(),
+            ],
+            'partner' => [
+                'id' => (int) ($partner?->getKey() ?? 0),
+                'name' => (string) ($partner?->name ?? 'User'),
+            ],
+            'last_message' => $lastMessage
+                ? $lastMessage->toRealtimePayloadFor($viewerId)
+                : null,
+            'last_message_at' => $this->last_message_at?->toIso8601String(),
+        ];
+    }
+
+    public function realtimePayloadFor(int $viewerId, ConversationMessage $message): array
+    {
+        $summary = $this->summaryPayloadFor($viewerId);
+
+        return [
+            'conversation' => [
+                'id' => (int) $this->getKey(),
+                'unread_count' => $this->unreadCountForParticipant($viewerId),
+            ],
+            'listing' => $summary['listing'],
+            'partner' => $summary['partner'],
+            'message' => $message->toRealtimePayloadFor($viewerId),
+            'counts' => [
+                'unread_messages_total' => static::unreadCountForUser($viewerId),
+            ],
+        ];
+    }
+
+    public function readPayloadFor(int $viewerId): array
+    {
+        return [
+            'conversation' => [
+                'id' => (int) $this->getKey(),
+                'unread_count' => $this->unreadCountForParticipant($viewerId),
+            ],
+            'counts' => [
+                'unread_messages_total' => static::unreadCountForUser($viewerId),
+            ],
+        ];
     }
 
     public static function openForListingBuyer(Listing $listing, int $buyerId): self

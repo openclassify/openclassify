@@ -1473,6 +1473,77 @@ summary::-webkit-details-marker {
     right: 22px;
     bottom: 22px;
     z-index: 55;
+    display: grid;
+    justify-items: end;
+    gap: 12px;
+}
+
+.lt-chat-launcher {
+    min-width: 176px;
+    max-width: min(260px, calc(100vw - 28px));
+    min-height: 62px;
+    padding: 12px 16px;
+    border: 1px solid rgba(29, 29, 31, 0.08);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    backdrop-filter: saturate(180%) blur(18px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.lt-chat-launcher:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.18);
+}
+
+.lt-chat-launcher-copy {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+    text-align: left;
+}
+
+.lt-chat-launcher-kicker {
+    color: var(--oc-primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.lt-chat-launcher-name {
+    color: var(--oc-text);
+    font-size: 0.94rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lt-chat-launcher-badge {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #1581eb 0%, #0071e3 100%);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 24px rgba(0, 113, 227, 0.24);
+}
+
+.lt-chat-widget.is-open .lt-chat-launcher {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
 }
 
 .lt-chat-panel {
@@ -1647,6 +1718,11 @@ summary::-webkit-details-marker {
 }
 
 .lt-chat-send:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+
+.lt-chat-widget.is-sending .lt-chat-send {
     opacity: 0.55;
     cursor: wait;
 }
@@ -2478,11 +2554,17 @@ summary::-webkit-details-marker {
         right: 10px;
         bottom: calc(104px + env(safe-area-inset-bottom, 0px));
         left: 10px;
+        justify-items: stretch;
     }
 
     .lt-chat-panel {
         width: 100%;
         border-radius: 22px;
+    }
+
+    .lt-chat-launcher {
+        max-width: 100%;
+        width: auto;
     }
 
     .lt-chat-thread {

@@ -188,7 +188,6 @@ class ListingController extends Controller
 
         $isListingFavorited = false;
         $isSellerFavorited = false;
-        $existingConversationId = null;
         $detailConversation = null;
 
         if (auth()->check()) {
@@ -219,7 +218,11 @@ class ListingController extends Controller
 
                     if ($detailConversation) {
                         $detailConversation->loadThread();
-                        $detailConversation->markAsReadFor($userId);
+                        $detailConversation->loadCount([
+                            'messages as unread_count' => fn ($query) => $query
+                                ->where('sender_id', '!=', $userId)
+                                ->whereNull('read_at'),
+                        ]);
                     }
                 }
             }
@@ -230,7 +233,6 @@ class ListingController extends Controller
             'isListingFavorited',
             'isSellerFavorited',
             'presentableCustomFields',
-            'existingConversationId',
             'detailConversation',
             'gallery',
             'listingVideos',

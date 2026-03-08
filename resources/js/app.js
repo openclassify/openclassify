@@ -1,4 +1,5 @@
 import './bootstrap';
+import '../../Modules/Conversation/resources/assets/js/conversation';
 import { animate, createTimeline, stagger } from 'animejs';
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
