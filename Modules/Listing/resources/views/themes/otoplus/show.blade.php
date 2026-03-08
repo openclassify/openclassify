@@ -292,7 +292,7 @@
                     @if(! $listing->user)
                         <button type="button" class="lt-btn" disabled>Unavailable</button>
                     @elseif($canStartConversation)
-                        <button type="button" class="lt-btn" data-inline-chat-open>Message</button>
+                        <button type="button" class="lt-btn" data-inline-chat-trigger>Message</button>
                     @elseif($isOwnListing)
                         <button type="button" class="lt-btn" disabled>Your listing</button>
                     @else
@@ -369,7 +369,7 @@
                 @if(! $listing->user)
                     <button type="button" class="lt-btn" disabled>Unavailable</button>
                 @elseif($canStartConversation)
-                    <button type="button" class="lt-btn" data-inline-chat-open>Message</button>
+                    <button type="button" class="lt-btn" data-inline-chat-trigger>Message</button>
                 @elseif($isOwnListing)
                     <button type="button" class="lt-btn" disabled>Your listing</button>
                 @else
@@ -412,7 +412,7 @@
             data-read-url="{{ $chatReadUrl }}"
             data-read-url-template="{{ route('conversations.read', ['conversation' => '__CONVERSATION__']) }}"
         >
-            <button type="button" class="lt-chat-launcher" data-inline-chat-open aria-label="Open chat">
+            <button type="button" class="lt-chat-launcher" data-inline-chat-launcher aria-label="Open chat">
                 <span class="lt-chat-launcher-copy">
                     <span class="lt-chat-launcher-kicker">Chat</span>
                     <span class="lt-chat-launcher-name">{{ $sellerName }}</span>

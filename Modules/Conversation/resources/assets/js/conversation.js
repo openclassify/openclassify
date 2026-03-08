@@ -114,10 +114,13 @@ const appendInlineChatMessage = (thread, emptyState, message) => {
 const initInlineListingChat = () => {
     const root = document.querySelector('[data-inline-chat]');
 
-    if (!root) {
+    if (!root || root.dataset.chatBound === '1') {
         return;
     }
 
+    root.dataset.chatBound = '1';
+
+    const launcher = root.querySelector('[data-inline-chat-launcher]');
     const panel = root.querySelector('[data-inline-chat-panel]');
     const thread = root.querySelector('[data-inline-chat-thread]');
     const emptyState = root.querySelector('[data-inline-chat-empty]');
@@ -148,9 +151,8 @@ const initInlineListingChat = () => {
         root.classList.toggle('is-collapsed', state === 'collapsed');
         root.classList.toggle('is-sending', state === 'sending');
 
-        if (panel) {
-            panel.hidden = !isOpen;
-        }
+        launcher?.toggleAttribute('hidden', isOpen);
+        panel?.toggleAttribute('hidden', !isOpen);
 
         if (isOpen) {
             window.requestAnimationFrame(() => {
@@ -201,22 +203,47 @@ const initInlineListingChat = () => {
         updateHeaderInboxBadge(payload?.counts?.unread_messages_total ?? 0);
     };
 
-    document.querySelectorAll('[data-inline-chat-open]').forEach((button) => {
-        button.addEventListener('click', async () => {
-            showError('');
-            setState('open');
-            await markConversationRead();
-        });
+    const openChat = async (event) => {
+        event?.preventDefault();
+        event?.stopPropagation();
+
+        if (root.dataset.state === 'open' || root.dataset.state === 'sending') {
+            return;
+        }
+
+        showError('');
+        setState('open');
+        await markConversationRead();
+    };
+
+    document.querySelectorAll('[data-inline-chat-trigger]').forEach((button) => {
+        button.addEventListener('click', openChat);
     });
 
-    root.querySelector('[data-inline-chat-close]')?.addEventListener('click', () => {
+    launcher?.addEventListener('click', openChat);
+
+    root.querySelector('[data-inline-chat-close]')?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (root.dataset.state === 'collapsed') {
+            return;
+        }
+
+        showError('');
         setState('collapsed');
+    });
+
+    root.addEventListener('click', (event) => {
+        if (event.target.closest('[data-inline-chat-panel]')) {
+            event.stopPropagation();
+        }
     });
 
     form?.addEventListener('submit', async (event) => {
         event.preventDefault();
+        event.stopPropagation();
 
-        if (!input || !submitButton) {
+        if (!input || !submitButton || root.dataset.state === 'sending') {
             return;
         }
 

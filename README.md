@@ -15,13 +15,6 @@ A modern classified ads platform built with Laravel 12, FilamentPHP v5, and Lara
 - 🐳 **Docker Ready** — One-command production and development setup
 - ☁️ **GitHub Codespaces** — Zero-config cloud development
 
-## AI Custom Instructions
-
-Project-level custom instruction set files are available at:
-
-- `.chatgpt/CUSTOM_INSTRUCTIONS.md` (ChatGPT)
-- `.codex/CUSTOM_INSTRUCTIONS.md` (Codex)
-- `.gemini/CUSTOM_INSTRUCTIONS.md` (Google Gemini / Antigravity)
 
 ## Tech Stack
 
@@ -32,7 +25,7 @@ Project-level custom instruction set files are available at:
 | Modules | nWidart/laravel-modules v11 |
 | Auth/Roles | Spatie Laravel Permission |
 | Frontend | Blade + TailwindCSS + Vite |
-| Database | PostgreSQL (required for demo mode), SQLite for minimal local dev |
+| Database | PostgreSQL (required for demo mode) |
 | Cache/Queue | Database or Redis |
 
 ## Quick Start (Docker)
@@ -147,50 +140,6 @@ php artisan demo:prepare
 php artisan demo:cleanup
 ```
 
-### Notes
-
-- `php artisan db:seed` only injects demo-heavy listings, favorites, inbox threads, and demo users when demo mode is enabled.
-- Public infrastructure tables such as sessions, cache, jobs, and failed jobs remain on the public schema even while visitor requests are switched into demo schemas.
-
----
-
-## Architecture
-
-### Module Structure
-
-```
-Modules/
-├── Admin/              # FilamentPHP Admin Panel
-│   ├── Filament/
-│   │   └── Resources/  # CRUD resources (User, Category, Listing, Location)
-│   └── Providers/
-│       ├── AdminServiceProvider.php
-│       └── AdminPanelProvider.php
-│
-├── Category/           # Category management
-│   ├── Models/Category.php
-│   ├── Http/Controllers/
-│   ├── database/migrations/
-│   └── database/seeders/
-│
-├── Listing/            # Listing management
-│   ├── Models/Listing.php
-│   ├── Http/Controllers/
-│   ├── database/migrations/
-│   └── database/seeders/
-│
-├── Location/           # Countries & Cities
-│   ├── Models/{Country,City,District}.php
-│   ├── database/migrations/
-│   └── database/seeders/
-│
-└── User/               # Users, auth, profile, and account flows
-    ├── App/Http/Controllers/
-    ├── App/Models/
-    ├── Database/Seeders/
-    └── database/migrations/
-```
-
 ### Panels
 
 | Panel | URL | Access |
@@ -298,19 +247,3 @@ php artisan route:cache
 php artisan view:cache
 php artisan storage:link
 ```
-
----
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add your feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.

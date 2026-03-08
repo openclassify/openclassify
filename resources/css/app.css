@@ -1478,6 +1478,11 @@ summary::-webkit-details-marker {
     gap: 12px;
 }
 
+.lt-chat-launcher[hidden],
+.lt-chat-panel[hidden] {
+    display: none !important;
+}
+
 .lt-chat-launcher {
     min-width: 176px;
     max-width: min(260px, calc(100vw - 28px));
