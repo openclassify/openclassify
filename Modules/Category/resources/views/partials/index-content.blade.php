@@ -21,17 +21,7 @@
                     ->filter()
                     ->implode(' · ');
                 $extraChildCount = max($category->children->count() - 3, 0);
-                $icon = match (trim((string) ($category->icon ?? ''))) {
-                    'laptop' => 'heroicon-o-computer-desktop',
-                    'car' => 'heroicon-o-truck',
-                    'home' => 'heroicon-o-home',
-                    'shirt' => 'heroicon-o-shopping-bag',
-                    'sofa' => 'heroicon-o-home-modern',
-                    'football' => 'heroicon-o-trophy',
-                    'briefcase' => 'heroicon-o-briefcase',
-                    'wrench' => 'heroicon-o-wrench-screwdriver',
-                    default => null,
-                };
+                $iconUrl = $category->iconUrl();
                 $iconLabel = strtoupper(\Illuminate\Support\Str::substr($category->name, 0, 1));
             @endphp
             <a
@@ -39,11 +29,11 @@
                 class="group flex h-full flex-col rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg"
             >
                 <div class="flex items-start justify-between gap-4">
-                    <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 shadow-sm">
-                        @if($icon)
-                        <x-dynamic-component :component="$icon" class="h-7 w-7" />
+                    <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 shadow-sm">
+                        @if($iconUrl)
+                        <img src="{{ $iconUrl }}" alt="{{ $category->name }}" class="h-11 w-11 object-contain">
                         @else
-                        <span class="text-2xl font-semibold">{{ $iconLabel }}</span>
+                        <span class="text-3xl font-semibold">{{ $iconLabel }}</span>
                         @endif
                     </span>
                     <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">

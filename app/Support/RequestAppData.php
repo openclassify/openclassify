@@ -201,10 +201,11 @@ final class RequestAppData
                 ->orderBy('sort_order')
                 ->orderBy('name')
                 ->limit(8)
-                ->get(['id', 'name'])
+                ->get(['id', 'name', 'icon'])
                 ->map(fn (Category $category): array => [
                     'id' => (int) $category->id,
                     'name' => (string) $category->name,
+                    'icon_url' => $category->iconUrl(),
                 ])
                 ->values()
                 ->all();

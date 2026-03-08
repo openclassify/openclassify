@@ -14,6 +14,23 @@ class Category extends Model
 {
     use LogsActivity;
 
+    private const ICON_PATHS = [
+        'car' => 'img/category/car.png',
+        'education' => 'img/category/education.png',
+        'electronics' => 'img/category/electronics.png',
+        'football' => 'img/category/sports.png',
+        'home' => 'img/category/home_garden.png',
+        'home-garden' => 'img/category/home_garden.png',
+        'home_garden' => 'img/category/home_garden.png',
+        'home-tools' => 'img/category/home_tools.png',
+        'home_tools' => 'img/category/home_tools.png',
+        'laptop' => 'img/category/laptop.png',
+        'mobile' => 'img/category/phone.png',
+        'pet' => 'img/category/pet.png',
+        'phone' => 'img/category/phone.png',
+        'sports' => 'img/category/sports.png',
+    ];
+
     protected $fillable = ['name', 'slug', 'description', 'icon', 'parent_id', 'level', 'sort_order', 'is_active'];
     protected $casts = ['is_active' => 'boolean'];
 
@@ -217,6 +234,32 @@ class Category extends Model
     public function activeListings(): HasMany
     {
         return $this->hasMany(\Modules\Listing\Models\Listing::class)->where('status', 'active');
+    }
+
+    public function resolvedIconPath(): ?string
+    {
+        $icon = trim((string) $this->icon);
+
+        if ($icon === '') {
+            return null;
+        }
+
+        if (isset(self::ICON_PATHS[$icon])) {
+            return self::ICON_PATHS[$icon];
+        }
+
+        if (preg_match('/\.(png|jpg|jpeg|webp|svg)$/i', $icon) === 1) {
+            return ltrim($icon, '/');
+        }
+
+        return null;
+    }
+
+    public function iconUrl(): ?string
+    {
+        $path = $this->resolvedIconPath();
+
+        return $path ? asset($path) : null;
     }
 
     private static function buildListingDirectoryTree(Collection $categories, Collection $activeListingCounts, ?int $parentId = null): Collection

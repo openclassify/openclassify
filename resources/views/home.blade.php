@@ -58,26 +58,6 @@
         ]);
     }
 
-    $trendSkins = [
-        ['gradient' => 'from-emerald-800 via-emerald-700 to-emerald-600', 'glow' => 'bg-emerald-200/45'],
-        ['gradient' => 'from-rose-700 via-rose-600 to-pink-500', 'glow' => 'bg-rose-200/40'],
-        ['gradient' => 'from-rose-700 via-pink-600 to-fuchsia-500', 'glow' => 'bg-pink-200/40'],
-        ['gradient' => 'from-rose-700 via-rose-600 to-orange-500', 'glow' => 'bg-orange-200/40'],
-        ['gradient' => 'from-rose-700 via-pink-600 to-red-500', 'glow' => 'bg-rose-200/40'],
-        ['gradient' => 'from-fuchsia-700 via-pink-600 to-rose-500', 'glow' => 'bg-fuchsia-200/40'],
-        ['gradient' => 'from-rose-700 via-rose-600 to-pink-500', 'glow' => 'bg-rose-200/40'],
-        ['gradient' => 'from-red-700 via-rose-600 to-pink-500', 'glow' => 'bg-red-200/40'],
-    ];
-    $trendIcons = [
-        'gift',
-        'computer',
-        'bike',
-        'sparkles',
-        'coffee',
-        'laptop',
-        'fitness',
-        'game',
-    ];
 @endphp
 
 @if($demoLandingMode && $prepareDemoRoute)
@@ -99,11 +79,11 @@
 </div>
 @else
 <div class="max-w-[1320px] mx-auto px-4 py-5 md:py-7 space-y-7">
-    <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-xl">
+    <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-xl" data-home-hero>
         <div class="absolute -top-20 -left-24 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl"></div>
         <div class="absolute -bottom-24 right-10 w-80 h-80 rounded-full bg-cyan-300/20 blur-3xl"></div>
         <div class="relative grid lg:grid-cols-[1fr,1.1fr] gap-6 items-center px-8 md:px-12 py-12 md:py-14">
-            <div data-home-slider>
+            <div data-home-slider data-home-hero-copy>
                 <div class="relative min-h-[250px]">
                     @foreach($homeSlides as $index => $slide)
                     <div
@@ -169,7 +149,7 @@
                 </div>
                 @endif
             </div>
-            <div class="relative h-[310px] md:h-[360px]">
+            <div class="relative h-[310px] md:h-[360px]" data-home-hero-visual>
                 <div class="absolute left-6 md:left-10 bottom-0 w-32 md:w-40 h-[250px] md:h-[300px] bg-slate-950 rounded-[32px] shadow-2xl p-2 rotate-[-8deg]">
                     <div class="w-full h-full rounded-[24px] bg-white overflow-hidden">
                         <div class="px-3 py-2 border-b border-slate-100">
@@ -214,7 +194,7 @@
         </div>
     </section>
 
-    <section>
+    <section data-home-section>
         <div class="flex items-center justify-between mb-3">
             <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Trending Categories</h2>
             <a href="{{ route('categories.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-rose-500 hover:text-rose-600 transition">
@@ -235,59 +215,19 @@
             <div data-trend-track class="flex items-stretch gap-2 overflow-x-auto pb-2 pr-1 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             @foreach($menuCategories as $index => $category)
             @php
-                $trendSkin = $trendSkins[$index % count($trendSkins)];
-                $trendIcon = $trendIcons[$index % count($trendIcons)];
+                $categoryIconUrl = $category->iconUrl();
+                $fallbackLabel = strtoupper(\Illuminate\Support\Str::substr($category->name, 0, 1));
             @endphp
-            <a href="{{ route('listings.index', ['category' => $category->id]) }}" class="group shrink-0 w-[170px] rounded-xl overflow-hidden border border-slate-300/80 bg-white hover:shadow-md transition snap-start">
-                <div class="h-[68px] bg-gradient-to-r {{ $trendSkin['gradient'] }} relative overflow-hidden">
-                    <span class="absolute -left-5 top-2 w-20 h-20 rounded-full {{ $trendSkin['glow'] }} blur-2xl"></span>
-                    <span class="absolute left-5 bottom-2 h-2.5 w-24 rounded-full bg-black/20"></span>
-                    <span class="absolute right-3 bottom-2 w-11 h-11 rounded-lg border border-white/35 bg-white/10 backdrop-blur-sm text-white grid place-items-center shadow-sm">
-                        @switch($trendIcon)
-                            @case('gift')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8m16 0H4m16 0V8a1 1 0 0 0-1-1h-3.5M4 12V8a1 1 0 0 1 1-1h3.5m0 0a2 2 0 1 1 0-4c2.5 0 3.5 4 3.5 4m-3.5 0h7m0 0a2 2 0 1 0 0-4c-2.5 0-3.5 4-3.5 4"/>
-                                </svg>
-                                @break
-                            @case('computer')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm4 16h10m-8 0 1.5-3m4 3L13 18"/>
-                                </svg>
-                                @break
-                            @case('bike')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.5 17.5A3.5 3.5 0 1 0 5.5 10a3.5 3.5 0 0 0 0 7.5Zm13 0A3.5 3.5 0 1 0 18.5 10a3.5 3.5 0 0 0 0 7.5ZM8.5 14l3-5h3l2 5m-5-5L9 6h3"/>
-                                </svg>
-                                @break
-                            @case('sparkles')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m9 5 1.4 2.6L13 9l-2.6 1.4L9 13l-1.4-2.6L5 9l2.6-1.4L9 5Zm8 4 1 1.9L20 12l-2 1.1-1 1.9-1-1.9-2-1.1 2-1.1L17 9ZM7 16l1.5 2.8L11.5 20 8.5 21.2 7 24l-1.5-2.8L2.5 20l3-1.2L7 16Z"/>
-                                </svg>
-                                @break
-                            @case('coffee')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 8v7a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3V8H7Zm10 2h1a2 2 0 1 1 0 4h-1M8 4v2m4-2v2m4-2v2M6 21h12"/>
-                                </svg>
-                                @break
-                            @case('laptop')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8H4V6Zm-1 10h18l-1.2 3H4.2L3 16Z"/>
-                                </svg>
-                                @break
-                            @case('fitness')
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 10h2v4H3v-4Zm16 0h2v4h-2v-4ZM7 8h2v8H7V8Zm8 0h2v8h-2V8Zm-4 2h2v4h-2v-4Z"/>
-                                </svg>
-                                @break
-                            @default
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 6h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3m-6 0H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3m3 4h.01m-1 8h2a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2Z"/>
-                                </svg>
-                        @endswitch
-                    </span>
+            <a href="{{ route('listings.index', ['category' => $category->id]) }}" class="group shrink-0 w-[170px] rounded-[22px] overflow-hidden border border-slate-200/80 bg-white/95 p-4 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(15,23,42,0.08)] transition snap-start" data-home-category-card>
+                <div class="flex items-center justify-center h-[92px] rounded-[20px] bg-[linear-gradient(180deg,#f8fbff_0%,#eef5ff_100%)]">
+                    @if($categoryIconUrl)
+                        <img src="{{ $categoryIconUrl }}" alt="{{ $category->name }}" class="h-14 w-14 object-contain">
+                    @else
+                        <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-xl font-semibold text-slate-700 shadow-sm">{{ $fallbackLabel }}</span>
+                    @endif
                 </div>
-                <div class="px-3 py-2.5">
-                    <p class="text-[12px] sm:text-[13px] font-semibold text-slate-900 leading-tight truncate">{{ $category->name }}</p>
+                <div class="pt-4">
+                    <p class="text-[13px] sm:text-[14px] font-semibold text-slate-900 leading-tight">{{ $category->name }}</p>
                 </div>
             </a>
             @endforeach
@@ -305,7 +245,7 @@
         </div>
     </section>
 
-    <section>
+    <section data-home-section>
         <div class="flex items-center justify-between mb-4">
             <h2 class="text-2xl font-bold text-slate-900">Popular Listings</h2>
             <div class="hidden sm:flex items-center gap-2 text-sm text-slate-500">
@@ -321,7 +261,7 @@
                 $locationLabel = trim(collect([$listing->city, $listing->country])->filter()->join(', '));
                 $isFavorited = in_array($listing->id, $favoriteListingIds ?? [], true);
             @endphp
-            <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+            <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition" data-home-listing-card>
                 <div class="relative h-64 md:h-[290px] bg-slate-100">
                     <a href="{{ route('listings.show', $listing) }}" class="block h-full w-full" aria-label="{{ $listing->title }}">
                         @if($listingImage)
@@ -373,7 +313,7 @@
         </div>
     </section>
 
-    <section class="rounded-3xl bg-slate-900 text-white px-8 py-10 md:p-12">
+    <section class="rounded-3xl bg-slate-900 text-white px-8 py-10 md:p-12" data-home-section>
         <div class="grid md:grid-cols-[1fr,auto] gap-6 items-center">
             <div>
                 <h2 class="text-3xl md:text-4xl font-extrabold">{{ __('messages.sell_something') }}</h2>

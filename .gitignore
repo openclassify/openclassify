@@ -28,3 +28,4 @@ Thumbs.db
 composer.lock
 .codex/config.toml
 /public/vendor/
+package-lock.json

@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
@@ -27,6 +28,7 @@ class PanelQuickListingForm extends Component
     use WithFileUploads;
 
     private const TOTAL_STEPS = 5;
+    private const DRAFT_SESSION_KEY = 'panel_quick_listing_draft';
 
     public array $photos = [];
     public array $videos = [];
@@ -54,17 +56,28 @@ class PanelQuickListingForm extends Component
     public ?int $selectedCountryId = null;
     public ?int $selectedCityId = null;
     public bool $isPublishing = false;
+    public bool $shouldPersistDraft = true;
 
     public function mount(): void
     {
         $this->loadCategories();
         $this->loadLocations();
         $this->hydrateLocationDefaultsFromProfile();
+        $this->restoreDraft();
     }
 
     public function render()
     {
         return view('panel.quick-create');
+    }
+
+    public function dehydrate(): void
+    {
+        if (! $this->shouldPersistDraft) {
+            return;
+        }
+
+        $this->persistDraft();
     }
 
     public function updatedPhotos(): void
@@ -198,14 +211,18 @@ class PanelQuickListingForm extends Component
 
         $this->isPublishing = true;
 
-        $this->validatePhotos();
-        $this->validateVideos();
-        $this->validateCategoryStep();
-        $this->validateDetailsStep();
-        $this->validateCustomFieldsStep();
-
         try {
+            $this->validatePhotos();
+            $this->validateVideos();
+            $this->validateCategoryStep();
+            $this->validateDetailsStep();
+            $this->validateCustomFieldsStep();
+
             $listing = $this->createListing();
+        } catch (ValidationException $exception) {
+            $this->isPublishing = false;
+
+            throw $exception;
         } catch (Throwable $exception) {
             report($exception);
             $this->isPublishing = false;
@@ -216,9 +233,10 @@ class PanelQuickListingForm extends Component
 
         $this->isPublishing = false;
         session()->flash('success', 'Your listing has been created successfully.');
+        $this->clearDraft();
 
         if (Route::has('panel.listings.edit')) {
-            $this->redirect(route('panel.listings.edit', $listing), navigate: true);
+            $this->redirectRoute('panel.listings.edit', ['listing' => $listing->getKey()]);
 
             return;
         }
@@ -752,6 +770,69 @@ class PanelQuickListingForm extends Component
     private function frontendMediaDisk(): string
     {
         return (string) config('media_storage.local_disk', MediaStorage::diskFromDriver(MediaStorage::DRIVER_LOCAL));
+    }
+
+    private function restoreDraft(): void
+    {
+        $draft = session()->get($this->draftSessionKey(), []);
+
+        if (! is_array($draft) || $draft === []) {
+            return;
+        }
+
+        $this->currentStep = max(1, min(self::TOTAL_STEPS, (int) ($draft['currentStep'] ?? 1)));
+        $this->categorySearch = (string) ($draft['categorySearch'] ?? '');
+        $this->selectedCategoryId = isset($draft['selectedCategoryId']) ? (int) $draft['selectedCategoryId'] : null;
+        $this->activeParentCategoryId = isset($draft['activeParentCategoryId']) ? (int) $draft['activeParentCategoryId'] : null;
+        $this->detectedCategoryId = isset($draft['detectedCategoryId']) ? (int) $draft['detectedCategoryId'] : null;
+        $this->detectedConfidence = isset($draft['detectedConfidence']) ? (float) $draft['detectedConfidence'] : null;
+        $this->detectedReason = isset($draft['detectedReason']) ? (string) $draft['detectedReason'] : null;
+        $this->detectedError = isset($draft['detectedError']) ? (string) $draft['detectedError'] : null;
+        $this->detectedAlternatives = collect($draft['detectedAlternatives'] ?? [])->filter(fn ($id) => is_numeric($id))->map(fn ($id) => (int) $id)->values()->all();
+        $this->listingTitle = (string) ($draft['listingTitle'] ?? '');
+        $this->price = (string) ($draft['price'] ?? '');
+        $this->description = (string) ($draft['description'] ?? '');
+        $this->selectedCountryId = isset($draft['selectedCountryId']) ? (int) $draft['selectedCountryId'] : $this->selectedCountryId;
+        $this->selectedCityId = isset($draft['selectedCityId']) ? (int) $draft['selectedCityId'] : null;
+        $this->customFieldValues = is_array($draft['customFieldValues'] ?? null) ? $draft['customFieldValues'] : [];
+
+        if ($this->selectedCategoryId) {
+            $this->loadListingCustomFields();
+        }
+    }
+
+    private function persistDraft(): void
+    {
+        session()->put($this->draftSessionKey(), [
+            'currentStep' => $this->currentStep,
+            'categorySearch' => $this->categorySearch,
+            'selectedCategoryId' => $this->selectedCategoryId,
+            'activeParentCategoryId' => $this->activeParentCategoryId,
+            'detectedCategoryId' => $this->detectedCategoryId,
+            'detectedConfidence' => $this->detectedConfidence,
+            'detectedReason' => $this->detectedReason,
+            'detectedError' => $this->detectedError,
+            'detectedAlternatives' => $this->detectedAlternatives,
+            'listingTitle' => $this->listingTitle,
+            'price' => $this->price,
+            'description' => $this->description,
+            'selectedCountryId' => $this->selectedCountryId,
+            'selectedCityId' => $this->selectedCityId,
+            'customFieldValues' => $this->customFieldValues,
+        ]);
+    }
+
+    private function clearDraft(): void
+    {
+        $this->shouldPersistDraft = false;
+        session()->forget($this->draftSessionKey());
+    }
+
+    private function draftSessionKey(): string
+    {
+        $userId = auth()->id() ?: 'guest';
+
+        return self::DRAFT_SESSION_KEY.'.'.$userId;
     }
 
     private function categoryPathParts(int $categoryId): array

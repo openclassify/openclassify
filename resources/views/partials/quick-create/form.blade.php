@@ -1322,17 +1322,18 @@
                             </div>
 
                             <div class="qc-panel">
-                                <div class="qc-publish-stack">
+                                <form class="qc-publish-stack" wire:submit.prevent="publishListing">
                                     <button
-                                        type="button"
+                                        type="submit"
                                         class="qc-button"
-                                        wire:click="publishListing"
-                                        @disabled($isPublishing)
+                                        wire:loading.attr="disabled"
+                                        wire:target="publishListing"
                                     >
-                                        {{ $isPublishing ? 'Publishing...' : 'Publish listing' }}
+                                        <span wire:loading.remove wire:target="publishListing">Publish listing</span>
+                                        <span wire:loading wire:target="publishListing">Publishing...</span>
                                     </button>
-                                    <button type="button" class="qc-button-secondary" wire:click="goToStep(4)">Back</button>
-                                </div>
+                                    <button type="button" class="qc-button-secondary" wire:click="goToStep(4)" wire:loading.attr="disabled" wire:target="publishListing">Back</button>
+                                </form>
                             </div>
                         </div>
                     </div>

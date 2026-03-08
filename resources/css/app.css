@@ -86,12 +86,14 @@ h6 {
     background: rgba(251, 251, 253, 0.88);
     backdrop-filter: saturate(180%) blur(18px);
     border-bottom: 1px solid var(--oc-border);
+    overflow-x: clip;
 }
 
 .oc-nav-wrap {
     max-width: 1320px;
     margin: 0 auto;
     padding: 10px 16px 12px;
+    overflow-x: clip;
 }
 
 .oc-nav-main {
@@ -454,6 +456,7 @@ h6 {
 .oc-category-link {
     display: inline-flex;
     align-items: center;
+    gap: 10px;
     min-height: 46px;
     padding: 0 18px;
     border-radius: 999px;
@@ -462,6 +465,21 @@ h6 {
     font-weight: 500;
     white-space: nowrap;
     transition: background 0.2s ease, color 0.2s ease;
+}
+
+.oc-category-link-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.oc-category-link-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .oc-category-link:hover,

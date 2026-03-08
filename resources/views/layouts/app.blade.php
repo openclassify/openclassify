@@ -103,7 +103,7 @@
         </div>
     </nav>
     @else
-    <nav class="market-nav-surface sticky top-0 z-50">
+    <nav class="market-nav-surface sticky top-0 z-50" data-anim-nav>
         <div class="oc-nav-wrap">
             <div class="oc-nav-main">
                 <div class="oc-topbar">
@@ -316,7 +316,7 @@
                 </div>
             </div>
 
-            <div class="oc-category-row">
+            <div class="oc-category-row" data-anim-header-row>
                 <div class="oc-category-track">
                     <a href="{{ route('categories.index') }}" class="oc-category-pill">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -326,6 +326,11 @@
                     </a>
                     @forelse($headerCategories as $headerCategory)
                     <a href="{{ route('listings.index', ['category' => $headerCategory['id']]) }}" class="oc-category-link">
+                        @if(! empty($headerCategory['icon_url']))
+                        <span class="oc-category-link-icon">
+                            <img src="{{ $headerCategory['icon_url'] }}" alt="{{ $headerCategory['name'] }}">
+                        </span>
+                        @endif
                         {{ $headerCategory['name'] }}
                     </a>
                     @empty
@@ -359,14 +364,14 @@
         'min-h-screen' => $demoLandingMode,
     ])>@yield('content')</main>
     @if(!$simplePage)
-    <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200">
+    <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200" data-anim-footer>
         <div class="max-w-[1320px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
+                <div data-anim-footer-item>
                     <h3 class="text-slate-900 font-semibold text-lg mb-3">{{ $siteName }}</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">{{ $siteDescription }}</p>
                 </div>
-                <div>
+                <div data-anim-footer-item>
                     <h4 class="text-slate-900 font-medium mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ route('home') }}" class="hover:text-slate-900 transition">Home</a></li>
@@ -374,14 +379,14 @@
                         <li><a href="{{ route('listings.index') }}" class="hover:text-slate-900 transition">All Listings</a></li>
                     </ul>
                 </div>
-                <div>
+                <div data-anim-footer-item>
                     <h4 class="text-slate-900 font-medium mb-4">Account</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ $loginRoute }}" class="hover:text-slate-900 transition">{{ __('messages.login') }}</a></li>
                         <li><a href="{{ $registerRoute }}" class="hover:text-slate-900 transition">{{ __('messages.register') }}</a></li>
                     </ul>
                 </div>
-                <div>
+                <div data-anim-footer-item>
                     <h4 class="text-slate-900 font-medium mb-4">Links</h4>
                     <ul class="space-y-2 text-sm mb-4">
                         @if($linkedinUrl)
