@@ -105,31 +105,33 @@
             </div>
         </div>
 
-        <div class="ld-header-actions">
-            <button
-                type="button"
-                class="ld-header-action"
-                data-listing-share
-                data-share-url="{{ $shareUrl }}"
-                data-share-title="{{ $displayTitle }}"
-            >
-                Share
-            </button>
+        <div class="ld-header-side">
+            <div class="ld-header-actions" aria-label="Listing actions">
+                <button
+                    type="button"
+                    class="ld-header-action"
+                    data-listing-share
+                    data-share-url="{{ $shareUrl }}"
+                    data-share-title="{{ $displayTitle }}"
+                >
+                    Share
+                </button>
 
-            @auth
-                <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}" class="ld-inline-form">
-                    @csrf
-                    <button type="submit" class="ld-header-action {{ $isListingFavorited ? 'is-active' : '' }}">
-                        {{ $isListingFavorited ? 'Saved' : 'Save listing' }}
-                    </button>
-                </form>
-            @else
-                <a href="{{ route('login') }}" class="ld-header-action">Save listing</a>
-            @endauth
+                @auth
+                    <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}" class="ld-inline-form">
+                        @csrf
+                        <button type="submit" class="ld-header-action {{ $isListingFavorited ? 'is-active' : '' }}">
+                            {{ $isListingFavorited ? 'Saved' : 'Save listing' }}
+                        </button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="ld-header-action">Save listing</a>
+                @endauth
 
-            <button type="button" class="ld-header-action" onclick="window.print()">
-                Print
-            </button>
+                <button type="button" class="ld-header-action" onclick="window.print()">
+                    Print
+                </button>
+            </div>
         </div>
     </section>
 
@@ -138,42 +140,6 @@
             <div class="lt-gallery-main">
                 <div class="lt-gallery-top">
                     <div class="ld-gallery-chip">Photo gallery</div>
-
-                    <div class="lt-gallery-utility">
-                        <button
-                            type="button"
-                            class="lt-icon-btn"
-                            data-listing-share
-                            data-share-url="{{ $shareUrl }}"
-                            data-share-title="{{ $displayTitle }}"
-                            aria-label="Share listing"
-                        >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                                <path d="M15 8a3 3 0 1 0-2.83-4H12a3 3 0 0 0 .17 1L8.91 6.94a3 3 0 0 0-1.91-.69 3 3 0 1 0 1.91 5.31l3.27 1.94A3 3 0 0 0 12 15a3 3 0 1 0 2.82 4H15a3 3 0 0 0-.17-1l-3.26-1.94a3 3 0 0 0 0-3.12L14.83 10A3 3 0 0 0 15 10h0a3 3 0 0 0 0-2Z"/>
-                            </svg>
-                        </button>
-
-                        @auth
-                            <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
-                                @csrf
-                                <button
-                                    type="submit"
-                                    class="lt-icon-btn {{ $isListingFavorited ? 'is-active' : '' }}"
-                                    aria-label="{{ $isListingFavorited ? 'Remove from saved listings' : 'Save listing' }}"
-                                >
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                                        <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
-                                    </svg>
-                                </button>
-                            </form>
-                        @else
-                            <a href="{{ route('login') }}" class="lt-icon-btn" aria-label="Sign in to save this listing">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                                    <path d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
-                                </svg>
-                            </a>
-                        @endauth
-                    </div>
                 </div>
 
                 @if($initialGalleryImage)
@@ -382,22 +348,6 @@
                     <button type="button" class="lt-btn lt-btn-outline" disabled>No contact</button>
                 @endif
             </div>
-
-            @if($listing->user && ! $isOwnListing)
-                @auth
-                    <form method="POST" action="{{ route('favorites.sellers.toggle', $listing->user) }}" class="lt-action-form">
-                        @csrf
-                        <input type="hidden" name="redirect_to" value="{{ request()->fullUrl() }}">
-                        <button type="submit" class="lt-btn lt-btn-outline">
-                            {{ $isSellerFavorited ? 'Saved seller' : 'Save seller' }}
-                        </button>
-                    </form>
-                @else
-                    <a href="{{ $loginRedirectRoute }}" class="lt-btn lt-btn-outline">Save seller</a>
-                @endauth
-            @elseif($isOwnListing)
-                <button type="button" class="lt-btn lt-btn-outline" disabled>Your account</button>
-            @endif
         </div>
     </div>
 

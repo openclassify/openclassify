@@ -1893,9 +1893,10 @@ summary::-webkit-details-marker {
 
 .ld-header-card {
     display: grid;
-    gap: 18px;
-    padding: 18px 16px;
+    gap: 24px;
+    padding: 22px 20px;
     margin-bottom: 16px;
+    align-items: start;
 }
 
 .ld-header-ref {
@@ -1930,6 +1931,13 @@ summary::-webkit-details-marker {
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.ld-header-side {
+    display: grid;
+    align-content: start;
+    justify-items: start;
 }
 
 .ld-inline-form {
@@ -2117,6 +2125,18 @@ summary::-webkit-details-marker {
 }
 
 @media (min-width: 721px) {
+    .ld-header-card {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .ld-header-side {
+        justify-items: end;
+    }
+
+    .ld-header-actions {
+        justify-content: flex-end;
+    }
+
     .lt-wrap {
         padding: 22px 16px 56px;
     }
@@ -2256,6 +2276,10 @@ summary::-webkit-details-marker {
 }
 
 @media (min-width: 900px) {
+    .ld-header-card {
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    }
+
     .ld-stage {
         grid-template-columns: minmax(0, 1fr) 360px;
         grid-template-areas:
@@ -2396,80 +2420,83 @@ summary::-webkit-details-marker {
 
 @media (max-width: 720px) {
     .lt-wrap {
-        padding: 18px 12px calc(130px + env(safe-area-inset-bottom, 0px));
+        padding: 14px 10px calc(94px + env(safe-area-inset-bottom, 0px));
     }
 
     .lt-card {
-        border-radius: 24px;
+        border-radius: 22px;
     }
 
-    .lt-media-card,
-    .lt-summary-card,
-    .lt-detail-card {
-        padding: 14px;
+    .ld-header-card {
+        gap: 14px;
+        padding: 16px 14px;
+        margin-bottom: 12px;
     }
 
-    .lt-media-card {
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-        box-shadow: none;
-        backdrop-filter: none;
+    .ld-header-title {
+        font-size: 1.28rem;
+        line-height: 1.14;
+        letter-spacing: -0.04em;
     }
 
-    .lt-gallery-main,
-    .lt-gallery-main img,
-    .lt-gallery-main-empty {
-        min-height: 420px;
+    .ld-header-ref {
+        margin-bottom: 6px;
+        font-size: 0.72rem;
     }
 
-    .lt-gallery-main {
-        border-radius: 0;
-        background: #2b2d31;
-        box-shadow: none;
+    .ld-header-meta {
+        gap: 6px 10px;
+        margin-top: 10px;
+        font-size: 0.82rem;
     }
 
-    .lt-gallery-main::after {
-        display: none;
+    .ld-header-actions {
+        gap: 8px;
     }
 
-    .lt-gallery-main img {
-        padding: 0;
+    .ld-header-action {
+        min-height: 36px;
+        padding: 0 12px;
+        font-size: 0.82rem;
+    }
+
+    .ld-gallery-card,
+    .ld-summary-card,
+    .ld-seller-card,
+    .ld-tab-card {
+        padding: 12px;
+    }
+
+    .ld-stage {
+        gap: 12px;
+    }
+
+    .ld-gallery-card .lt-gallery-main,
+    .ld-gallery-card .lt-gallery-main img,
+    .ld-gallery-card .lt-gallery-main-empty {
+        min-height: 286px;
+    }
+
+    .ld-gallery-card .lt-gallery-main {
+        border-radius: 18px;
+        background: linear-gradient(180deg, #edf2f7 0%, #dbe3ee 100%);
+    }
+
+    .ld-gallery-card .lt-gallery-main img {
+        padding: 18px;
         object-fit: contain;
     }
 
-    .lt-title {
-        max-width: none;
-        font-size: 1.18rem;
-        line-height: 1.45;
-        letter-spacing: -0.02em;
-    }
-
-    .lt-price {
-        margin-top: 0;
-        font-size: 1.95rem;
-    }
-
-    .lt-overline,
-    .lt-overview-grid,
-    .lt-gallery-pills,
-    .lt-side-card,
-    .lt-contact-strip,
-    .lt-report,
-    .lt-policy {
-        display: none;
+    .ld-gallery-chip {
+        min-height: 30px;
+        padding: 0 10px;
+        font-size: 0.68rem;
     }
 
     .lt-gallery-top {
         align-items: flex-start;
     }
 
-    .lt-gallery-utility {
-        margin-left: auto;
-    }
-
-    .lt-icon-btn,
     .lt-gallery-nav {
         border-color: rgba(255, 255, 255, 0.14);
         background: rgba(29, 29, 31, 0.52);
@@ -2478,37 +2505,89 @@ summary::-webkit-details-marker {
         backdrop-filter: blur(12px);
     }
 
-    .lt-summary-card {
-        position: relative;
-        z-index: 3;
-        margin-top: -22px;
-        border-radius: 22px 22px 0 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        background: rgba(255, 255, 255, 0.98);
+    .ld-summary-card {
+        gap: 14px;
     }
 
-    .lt-summary-card + .lt-detail-card {
-        margin-top: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        box-shadow: 0 18px 36px rgba(15, 23, 42, 0.06);
+    .ld-summary-head {
+        gap: 8px 14px;
+        align-items: flex-start;
     }
 
-    .lt-summary-meta-row {
-        margin-top: 14px;
-        padding-top: 14px;
+    .ld-summary-price {
+        font-size: clamp(1.95rem, 10vw, 2.5rem);
     }
 
-    .lt-summary-meta-item {
+    .ld-summary-date {
+        font-size: 0.82rem;
+    }
+
+    .ld-summary-location {
+        font-size: 0.92rem;
+        line-height: 1.4;
+    }
+
+    .lt-spec-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .lt-spec-row span {
         font-size: 0.84rem;
     }
 
-    .lt-overview-grid,
-    .lt-feature-grid,
-    .lt-video-grid,
-    .lt-row-2 {
-        grid-template-columns: 1fr;
+    .lt-spec-row strong {
+        font-size: 0.86rem;
+    }
+
+    .ld-seller-card {
+        gap: 12px;
+    }
+
+    .ld-seller-card .lt-actions {
+        display: none;
+    }
+
+    .ld-seller-links {
+        gap: 8px 12px;
+    }
+
+    .ld-seller-link {
+        font-size: 0.86rem;
+    }
+
+    .lt-contact-panel {
+        gap: 6px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .lt-contact-primary {
+        font-size: 1rem;
+    }
+
+    .lt-contact-secondary {
+        font-size: 0.82rem;
+    }
+
+    .ld-tab-card {
+        margin-top: 14px;
+    }
+
+    .lt-tab-list {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .lt-tab-button {
+        min-height: 38px;
+        font-size: 0.82rem;
+    }
+
+    .lt-description {
+        font-size: 0.9rem;
+        line-height: 1.7;
     }
 
     .lt-related-head {
@@ -2517,12 +2596,44 @@ summary::-webkit-details-marker {
     }
 
     .lt-rel-card {
-        min-width: 220px;
-        width: 220px;
+        min-width: 176px;
+        width: 176px;
+        border-radius: 20px;
     }
 
     .lt-rel-photo {
-        height: 156px;
+        height: 132px;
+    }
+
+    .lt-rel-body {
+        padding: 12px;
+    }
+
+    .lt-rel-price {
+        font-size: 0.98rem;
+    }
+
+    .lt-rel-title {
+        font-size: 0.86rem;
+        min-height: 2.7em;
+    }
+
+    .lt-rel-city {
+        margin-top: 8px;
+        font-size: 0.78rem;
+    }
+
+    .lt-pill-wrap {
+        margin-top: 18px;
+    }
+
+    .lt-pill-title {
+        font-size: 1rem;
+    }
+
+    .lt-pill {
+        padding: 8px 12px;
+        font-size: 0.82rem;
     }
 
     .lt-mobile-actions {
@@ -2532,19 +2643,18 @@ summary::-webkit-details-marker {
         bottom: 0;
         left: 0;
         z-index: 45;
-        padding: 10px 10px calc(10px + env(safe-area-inset-bottom, 0px));
+        padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
         background: linear-gradient(180deg, rgba(245, 245, 247, 0) 0%, rgba(245, 245, 247, 0.88) 28%, rgba(245, 245, 247, 0.98) 100%);
         backdrop-filter: blur(14px);
     }
 
     .lt-mobile-actions-shell {
-        display: grid;
-        gap: 10px;
+        display: block;
         max-width: 28rem;
         margin: 0 auto;
-        padding: 10px;
+        padding: 8px;
         border: 1px solid rgba(29, 29, 31, 0.08);
-        border-radius: 22px;
+        border-radius: 20px;
         background: rgba(255, 255, 255, 0.96);
         box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
     }
@@ -2552,29 +2662,88 @@ summary::-webkit-details-marker {
     .lt-mobile-actions-row {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        gap: 8px;
     }
 
     .lt-chat-widget {
-        right: 10px;
-        bottom: calc(104px + env(safe-area-inset-bottom, 0px));
-        left: 10px;
-        justify-items: stretch;
+        right: 12px;
+        bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+        left: auto;
+        justify-items: end;
     }
 
     .lt-chat-panel {
-        width: 100%;
-        border-radius: 22px;
+        width: min(360px, calc(100vw - 20px));
+        border-radius: 20px;
     }
 
     .lt-chat-launcher {
-        max-width: 100%;
+        min-width: 88px;
+        max-width: none;
+        min-height: 48px;
+        padding: 0 14px;
+        border-radius: 18px;
         width: auto;
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
+    }
+
+    .lt-chat-launcher-copy {
+        gap: 0;
+    }
+
+    .lt-chat-launcher-kicker {
+        color: var(--oc-text);
+        font-size: 0.82rem;
+        letter-spacing: 0.03em;
+    }
+
+    .lt-chat-launcher-name {
+        display: none;
+    }
+
+    .lt-chat-launcher-badge {
+        min-width: 22px;
+        height: 22px;
+        padding: 0 6px;
+        font-size: 0.72rem;
     }
 
     .lt-chat-thread {
-        min-height: 220px;
-        max-height: 44vh;
+        min-height: 180px;
+        max-height: 34vh;
+    }
+
+    .lt-chat-head {
+        padding: 12px 14px 10px;
+    }
+
+    .lt-chat-name {
+        font-size: 0.95rem;
+    }
+
+    .lt-chat-meta {
+        font-size: 0.74rem;
+    }
+
+    .lt-chat-close {
+        width: 34px;
+        height: 34px;
+    }
+
+    .lt-chat-form {
+        grid-template-columns: minmax(0, 1fr) 42px;
+        gap: 8px;
+        padding: 10px 12px 12px;
+    }
+
+    .lt-chat-input {
+        min-height: 42px;
+        font-size: 0.88rem;
+    }
+
+    .lt-chat-send {
+        width: 42px;
+        height: 42px;
     }
 }
 
