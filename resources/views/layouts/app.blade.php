@@ -396,9 +396,9 @@
         'min-h-screen' => $demoLandingMode,
     ])>@yield('content')</main>
     @if(!$simplePage)
-    <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200" data-anim-footer>
-        <div class="max-w-[1320px] mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="mt-10 md:mt-14 bg-slate-100 text-slate-600 border-t border-slate-200" data-anim-footer>
+        <div class="max-w-[1320px] mx-auto px-4 py-8 md:py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                 <div data-anim-footer-item>
                     <h3 class="text-slate-900 font-semibold text-lg mb-3">{{ $siteName }}</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">{{ $siteDescription }}</p>
@@ -420,7 +420,7 @@
                 </div>
                 <div data-anim-footer-item>
                     <h4 class="text-slate-900 font-medium mb-4">Links</h4>
-                    <ul class="space-y-2 text-sm mb-4">
+                    <ul class="space-y-2 text-sm mb-3 md:mb-4">
                         @if($linkedinUrl)
                         <li><a href="{{ $linkedinUrl }}" target="_blank" rel="noopener" class="hover:text-slate-900 transition">LinkedIn</a></li>
                         @endif
@@ -442,7 +442,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-slate-300 mt-8 pt-8 text-center text-sm text-slate-500">
+            <div class="border-t border-slate-300 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-sm text-slate-500">
                 <p>© {{ date('Y') }} {{ $siteName }}. All rights reserved.</p>
             </div>
         </div>

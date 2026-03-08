@@ -78,32 +78,32 @@
     </form>
 </div>
 @else
-<div class="max-w-[1320px] mx-auto px-4 py-5 md:py-7 space-y-7">
-    <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-xl" data-home-hero>
+<div class="max-w-[1320px] mx-auto px-3 py-4 md:px-4 md:py-7 space-y-5 md:space-y-7">
+    <section class="relative overflow-hidden rounded-[24px] md:rounded-[28px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-xl" data-home-hero>
         <div class="absolute -top-20 -left-24 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl"></div>
         <div class="absolute -bottom-24 right-10 w-80 h-80 rounded-full bg-cyan-300/20 blur-3xl"></div>
-        <div class="relative grid lg:grid-cols-[1fr,1.1fr] gap-6 items-center px-8 md:px-12 py-12 md:py-14">
+        <div class="relative grid lg:grid-cols-[1fr,1.1fr] gap-4 md:gap-6 items-center px-5 md:px-12 py-6 md:py-14">
             <div data-home-slider data-home-hero-copy>
-                <div class="relative min-h-[250px]">
+                <div class="relative min-h-[210px] md:min-h-[250px]">
                     @foreach($homeSlides as $index => $slide)
                     <div
                         data-home-slide
                         @class(['transition-opacity duration-300', 'hidden' => $index !== 0])
                         aria-hidden="{{ $index === 0 ? 'false' : 'true' }}"
                     >
-                        <p class="text-sm uppercase tracking-[0.22em] text-blue-200 font-semibold mb-4">{{ $slide['badge'] }}</p>
-                        <h1 class="text-4xl md:text-5xl leading-tight font-extrabold max-w-xl">{{ $slide['title'] }}</h1>
-                        <p class="mt-4 text-blue-100 text-base md:text-lg max-w-xl">{{ $slide['subtitle'] }}</p>
-                        <div class="mt-8 flex flex-wrap items-center gap-3">
-                            <a href="{{ route('listings.index') }}" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+                        <p class="text-[10px] md:text-sm uppercase tracking-[0.22em] text-blue-200 font-semibold mb-3 md:mb-4">{{ $slide['badge'] }}</p>
+                        <h1 class="text-[1.85rem] md:text-5xl leading-[1.1] font-extrabold max-w-xl">{{ $slide['title'] }}</h1>
+                        <p class="mt-3 md:mt-4 text-blue-100 text-[13px] md:text-lg max-w-xl leading-6 md:leading-8">{{ $slide['subtitle'] }}</p>
+                        <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-2 md:gap-3">
+                            <a href="{{ route('listings.index') }}" class="bg-white text-blue-900 px-5 md:px-8 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-blue-50 transition">
                                 {{ $slide['primary_button_text'] }}
                             </a>
                             @auth
-                            <a href="{{ route('panel.listings.create') }}" class="border border-blue-200/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                            <a href="{{ route('panel.listings.create') }}" class="border border-blue-200/60 px-5 md:px-8 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-white/10 transition">
                                 {{ $slide['secondary_button_text'] }}
                             </a>
                             @else
-                            <a href="{{ route('login') }}" class="border border-blue-200/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                            <a href="{{ route('login') }}" class="border border-blue-200/60 px-5 md:px-8 py-2.5 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-white/10 transition">
                                 {{ $slide['secondary_button_text'] }}
                             </a>
                             @endauth
@@ -113,11 +113,11 @@
                 </div>
 
                 @if($homeSlides->count() > 1)
-                <div class="mt-8 flex items-center gap-2">
+                <div class="mt-5 md:mt-8 flex items-center gap-2">
                     <button
                         type="button"
                         data-home-slide-prev
-                        class="w-8 h-8 rounded-full border border-white/45 text-white grid place-items-center hover:bg-white/15 transition"
+                        class="w-7 h-7 md:w-8 md:h-8 rounded-full border border-white/45 text-white grid place-items-center hover:bg-white/15 transition"
                         aria-label="Previous slide"
                     >
                         <span aria-hidden="true">‹</span>
@@ -137,7 +137,7 @@
                     <button
                         type="button"
                         data-home-slide-next
-                        class="w-8 h-8 rounded-full border border-white/45 text-white grid place-items-center hover:bg-white/15 transition"
+                        class="w-7 h-7 md:w-8 md:h-8 rounded-full border border-white/45 text-white grid place-items-center hover:bg-white/15 transition"
                         aria-label="Next slide"
                     >
                         <span aria-hidden="true">›</span>
@@ -149,8 +149,8 @@
                 </div>
                 @endif
             </div>
-            <div class="relative h-[310px] md:h-[360px]" data-home-hero-visual>
-                <div class="absolute left-6 md:left-10 bottom-0 w-32 md:w-40 h-[250px] md:h-[300px] bg-slate-950 rounded-[32px] shadow-2xl p-2 rotate-[-8deg]">
+            <div class="hidden lg:block relative h-[360px]" data-home-hero-visual>
+                <div class="absolute left-3 md:left-10 bottom-0 w-24 md:w-40 h-[170px] md:h-[300px] bg-slate-950 rounded-[24px] md:rounded-[32px] shadow-2xl p-2 rotate-[-8deg]">
                     <div class="w-full h-full rounded-[24px] bg-white overflow-hidden">
                         <div class="px-3 py-2 border-b border-slate-100">
                             <p class="text-rose-500 text-sm font-bold">OpenClassify</p>
@@ -170,11 +170,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="absolute right-0 bottom-0 w-[78%] h-[88%] rounded-[28px] bg-gradient-to-br from-white/20 to-blue-500/40 border border-white/20 shadow-2xl flex items-end justify-center p-4 overflow-hidden">
+                <div class="absolute right-0 bottom-0 w-[82%] md:w-[78%] h-[86%] md:h-[88%] rounded-[24px] md:rounded-[28px] bg-gradient-to-br from-white/20 to-blue-500/40 border border-white/20 shadow-2xl flex items-end justify-center p-3 md:p-4 overflow-hidden">
                     @foreach($homeSlides as $index => $slide)
                     <div
                         data-home-slide-visual
-                        @class(['absolute inset-4 transition-opacity duration-300', 'hidden' => $index !== 0])
+                        @class(['absolute inset-3 md:inset-4 transition-opacity duration-300', 'hidden' => $index !== 0])
                         aria-hidden="{{ $index === 0 ? 'false' : 'true' }}"
                     >
                         @if($slide['image_url'])
@@ -196,12 +196,30 @@
 
     <section data-home-section>
         <div class="flex items-center justify-between mb-3">
-            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Trending Categories</h2>
-            <a href="{{ route('categories.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-rose-500 hover:text-rose-600 transition">
+            <h2 class="text-[1.35rem] md:text-3xl font-extrabold tracking-tight text-slate-900">Trending Categories</h2>
+            <a href="{{ route('categories.index') }}" class="inline-flex text-sm font-semibold text-rose-500 hover:text-rose-600 transition">
                 View all
             </a>
         </div>
-        <div class="relative">
+        <div class="grid grid-cols-4 gap-3 sm:hidden">
+            @foreach($menuCategories as $category)
+            @php
+                $categoryIconUrl = $category->iconUrl();
+                $fallbackLabel = strtoupper(\Illuminate\Support\Str::substr($category->name, 0, 1));
+            @endphp
+            <a href="{{ route('listings.index', ['category' => $category->id]) }}" class="flex flex-col items-center gap-2 text-center">
+                <span class="flex h-16 w-16 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm">
+                    @if($categoryIconUrl)
+                        <img src="{{ $categoryIconUrl }}" alt="{{ $category->name }}" class="h-9 w-9 object-contain">
+                    @else
+                        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700">{{ $fallbackLabel }}</span>
+                    @endif
+                </span>
+                <span class="text-[11px] leading-4 font-semibold text-slate-800">{{ $category->name }}</span>
+            </a>
+            @endforeach
+        </div>
+        <div class="relative hidden sm:block">
             <button
                 type="button"
                 data-trend-prev
@@ -247,13 +265,13 @@
 
     <section data-home-section>
         <div class="flex items-center justify-between mb-4">
-            <h2 class="text-2xl font-bold text-slate-900">Popular Listings</h2>
+            <h2 class="text-[1.35rem] md:text-2xl font-bold text-slate-900">Popular Listings</h2>
             <div class="hidden sm:flex items-center gap-2 text-sm text-slate-500">
                 <span class="w-8 h-8 rounded-full border border-slate-300 grid place-items-center">‹</span>
                 <span class="w-8 h-8 rounded-full border border-slate-300 grid place-items-center">›</span>
             </div>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
             @forelse($listingCards as $listing)
             @php
                 $listingImage = $listing->getFirstMediaUrl('listing-images');
@@ -261,8 +279,8 @@
                 $locationLabel = trim(collect([$listing->city, $listing->country])->filter()->join(', '));
                 $isFavorited = in_array($listing->id, $favoriteListingIds ?? [], true);
             @endphp
-            <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition" data-home-listing-card>
-                <div class="relative h-64 md:h-[290px] bg-slate-100">
+            <article class="rounded-[22px] border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition" data-home-listing-card>
+                <div class="relative h-44 sm:h-64 md:h-[290px] bg-slate-100">
                     <a href="{{ route('listings.show', $listing) }}" class="block h-full w-full" aria-label="{{ $listing->title }}">
                         @if($listingImage)
                         <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
@@ -276,9 +294,9 @@
                     </a>
                     <div class="absolute top-3 left-3 flex items-center gap-2">
                         @if($listing->is_featured)
-                        <span class="bg-amber-300 text-amber-950 text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
+                        <span class="bg-amber-300 text-amber-950 text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">Featured</span>
                         @endif
-                        <span class="bg-sky-500 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Spotlight</span>
+                        <span class="bg-sky-500 text-white text-[10px] md:text-xs font-semibold px-2 py-1 rounded-full">Spotlight</span>
                     </div>
                     <div class="absolute top-3 right-3">
                         @auth
@@ -291,17 +309,17 @@
                         @endauth
                     </div>
                 </div>
-                <div class="p-4">
+                <div class="p-3.5 md:p-4">
                     <div class="flex items-start justify-between gap-3">
                         <div>
-                            <p class="text-3xl font-extrabold tracking-tight text-slate-900">{{ $priceLabel }}</p>
-                            <h3 class="text-xl font-semibold text-slate-800 mt-1 truncate">{{ $listing->title }}</h3>
+                            <p class="text-[1.7rem] md:text-3xl font-extrabold tracking-tight text-slate-900">{{ $priceLabel }}</p>
+                            <h3 class="text-[15px] md:text-xl font-semibold text-slate-800 mt-1 truncate">{{ $listing->title }}</h3>
                         </div>
-                        <span class="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full font-semibold">12 installments</span>
+                        <span class="hidden sm:inline-flex text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full font-semibold">12 installments</span>
                     </div>
-                    <div class="mt-5 flex items-center justify-between text-sm text-slate-500">
+                    <div class="mt-3 md:mt-5 flex items-center justify-between gap-3 text-xs md:text-sm text-slate-500">
                         <span class="truncate">{{ $locationLabel !== '' ? $locationLabel : 'Location not specified' }}</span>
-                        <span>{{ $listing->created_at->diffForHumans() }}</span>
+                        <span class="shrink-0">{{ $listing->created_at->diffForHumans() }}</span>
                     </div>
                 </div>
             </article>
@@ -313,18 +331,18 @@
         </div>
     </section>
 
-    <section class="rounded-3xl bg-slate-900 text-white px-8 py-10 md:p-12" data-home-section>
+    <section class="rounded-[24px] md:rounded-3xl bg-slate-900 text-white px-5 py-6 md:px-8 md:py-10 md:p-12" data-home-section>
         <div class="grid md:grid-cols-[1fr,auto] gap-6 items-center">
             <div>
-                <h2 class="text-3xl md:text-4xl font-extrabold">{{ __('messages.sell_something') }}</h2>
-                <p class="text-slate-300 mt-3">Create a free listing in minutes and reach thousands of buyers.</p>
+                <h2 class="text-[1.45rem] md:text-4xl font-extrabold">{{ __('messages.sell_something') }}</h2>
+                <p class="text-slate-300 mt-2 md:mt-3 text-sm md:text-base">Create a free listing in minutes and reach thousands of buyers.</p>
             </div>
             @auth
-            <a href="{{ route('panel.listings.create') }}" class="inline-flex items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 px-8 py-3 font-semibold transition whitespace-nowrap">
+            <a href="{{ route('panel.listings.create') }}" class="inline-flex items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 px-6 md:px-8 py-3 font-semibold transition whitespace-nowrap">
                 Post listing
             </a>
             @else
-            <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-slate-100 px-8 py-3 font-semibold transition whitespace-nowrap">
+            <a href="{{ route('register') }}" class="inline-flex items-center justify-center rounded-full bg-white text-slate-900 hover:bg-slate-100 px-6 md:px-8 py-3 font-semibold transition whitespace-nowrap">
                 Start free
             </a>
             @endauth
