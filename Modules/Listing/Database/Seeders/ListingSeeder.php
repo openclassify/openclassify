@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
+use Modules\Listing\Support\DemoListingImageFactory;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
 use Modules\User\App\Models\User;
+use Modules\User\App\Support\DemoUserCatalog;
 
 class ListingSeeder extends Seeder
 {
@@ -26,31 +28,45 @@ class ListingSeeder extends Seeder
 
     public function run(): void
     {
-        $user = $this->resolveSeederUser();
+        $users = $this->resolveSeederUsers();
         $categories = $this->resolveSeedableCategories();
 
-        if (! $user || $categories->isEmpty()) {
+        if ($users->isEmpty() || $categories->isEmpty()) {
             return;
         }
 
         $countries = $this->resolveCountries();
         $turkeyCities = $this->resolveTurkeyCities();
+        $plannedSlugs = [];
 
-        foreach ($categories as $index => $category) {
-            $listingData = $this->buildListingData($category, $index, $countries, $turkeyCities);
-            $listing = $this->upsertListing($index, $listingData, $category, $user);
-            $this->syncListingImage($listing, $listingData['image']);
+        foreach ($users as $userIndex => $user) {
+            foreach ($categories as $categoryIndex => $category) {
+                $listingIndex = ($userIndex * max(1, $categories->count())) + $categoryIndex;
+                $listingData = $this->buildListingData($category, $listingIndex, $countries, $turkeyCities, $user);
+                $listing = $this->upsertListing($listingData, $category, $user);
+                $plannedSlugs[] = $listing->slug;
+                $this->syncListingImage($listing, $listingData['image_path']);
+            }
         }
+
+        Listing::query()
+            ->whereIn('user_id', $users->pluck('id'))
+            ->where('slug', 'like', 'demo-%')
+            ->whereNotIn('slug', $plannedSlugs)
+            ->get()
+            ->each(function (Listing $listing): void {
+                $listing->clearMediaCollection('listing-images');
+                $listing->delete();
+            });
     }
 
-    private function resolveSeederUser(): ?User
+    private function resolveSeederUsers(): Collection
     {
-        return User::query()->where('email', 'a@a.com')->first()
-            ?? User::query()->where('email', 'admin@openclassify.com')->first()
-            ?? User::query()
-                ->whereHas('roles', fn ($query) => $query->where('name', 'admin'))
-                ->first()
-            ?? User::query()->first();
+        return User::query()
+            ->whereIn('email', DemoUserCatalog::emails())
+            ->orderBy('email')
+            ->get()
+            ->values();
     }
 
     private function resolveSeedableCategories(): Collection
@@ -58,6 +74,7 @@ class ListingSeeder extends Seeder
         $leafCategories = Category::query()
             ->where('is_active', true)
             ->whereDoesntHave('children')
+            ->with('parent:id,name')
             ->orderBy('sort_order')
             ->orderBy('name')
             ->get();
@@ -68,6 +85,7 @@ class ListingSeeder extends Seeder
 
         return Category::query()
             ->where('is_active', true)
+            ->with('parent:id,name')
             ->orderBy('sort_order')
             ->orderBy('name')
             ->get()
@@ -119,17 +137,32 @@ class ListingSeeder extends Seeder
         Category $category,
         int $index,
         Collection $countries,
-        Collection $turkeyCities
+        Collection $turkeyCities,
+        User $user
     ): array {
         $location = $this->resolveLocation($index, $countries, $turkeyCities);
+        $title = $this->buildTitle($category, $index, $user);
+        $slug = 'demo-'.Str::slug($user->email).'-'.$category->slug;
+        $familyName = trim((string) ($category->parent?->name ?? $category->name));
 
         return [
-            'title' => $this->buildTitle($category, $index),
-            'description' => $this->buildDescription($category, $location['city'], $location['country']),
+            'slug' => $slug,
+            'title' => $title,
+            'description' => $this->buildDescription($category, $location['city'], $location['country'], $user),
             'price' => $this->priceForIndex($index),
             'city' => $location['city'],
             'country' => $location['country'],
-            'image' => null,
+            'contact_phone' => DemoUserCatalog::phoneFor($user->email),
+            'is_featured' => $index % 7 === 0,
+            'expires_at' => now()->addDays(21 + ($index % 9)),
+            'created_at' => now()->subHours(6 + $index),
+            'image_path' => DemoListingImageFactory::ensure(
+                $slug,
+                $title,
+                $familyName,
+                $user->name,
+                $index
+            ),
         ];
     }
 
@@ -137,7 +170,6 @@ class ListingSeeder extends Seeder
     {
         $turkeyCountry = $countries->first(fn ($country): bool => strtoupper((string) $country->code) === 'TR');
         $turkeyName = trim((string) ($turkeyCountry->name ?? 'Turkey')) ?: 'Turkey';
-
         $useForeignCountry = $countries->count() > 1 && $index % 4 === 0;
 
         if ($useForeignCountry) {
@@ -164,22 +196,29 @@ class ListingSeeder extends Seeder
         ];
     }
 
-    private function buildTitle(Category $category, int $index): string
+    private function buildTitle(Category $category, int $index, User $user): string
     {
         $prefix = self::TITLE_PREFIXES[$index % count(self::TITLE_PREFIXES)];
         $categoryName = trim((string) $category->name);
+        $ownerFragment = trim(Str::before($user->name, ' '));
 
-        return sprintf('%s %s listing', $prefix, $categoryName !== '' ? $categoryName : 'item');
+        return sprintf(
+            '%s %s for %s',
+            $prefix,
+            $categoryName !== '' ? $categoryName : 'item',
+            $ownerFragment !== '' ? $ownerFragment : 'demo'
+        );
     }
 
-    private function buildDescription(Category $category, string $city, string $country): string
+    private function buildDescription(Category $category, string $city, string $country, User $user): string
     {
         $categoryName = trim((string) $category->name);
         $location = trim(collect([$city, $country])->filter()->join(', '));
 
         return sprintf(
-            'Listed in %s, in clean condition and ready to use. Pickup area: %s. Message for more details.',
+            '%s listed by %s. Clean demo condition, unique seeded media, and ready for browsing, favorites, inbox, and panel testing. Pickup area: %s.',
             $categoryName !== '' ? $categoryName : 'Item',
+            trim((string) $user->name) !== '' ? trim((string) $user->name) : 'a marketplace user',
             $location !== '' ? $location : 'Turkey'
         );
     }
@@ -203,14 +242,12 @@ class ListingSeeder extends Seeder
         return $base + $step;
     }
 
-    private function upsertListing(int $index, array $data, Category $category, User $user): Listing
+    private function upsertListing(array $data, Category $category, User $user): Listing
     {
-        $slug = Str::slug($category->slug.'-'.$data['title']).'-'.($index + 1);
-
-        return Listing::updateOrCreate(
-            ['slug' => $slug],
+        $listing = Listing::updateOrCreate(
+            ['slug' => $data['slug']],
             [
-                'slug' => $slug,
+                'slug' => $data['slug'],
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'price' => $data['price'],
@@ -221,63 +258,22 @@ class ListingSeeder extends Seeder
                 'user_id' => $user->id,
                 'status' => 'active',
                 'contact_email' => $user->email,
-                'contact_phone' => '+905551112233',
-                'is_featured' => $index < 8,
+                'contact_phone' => $data['contact_phone'],
+                'is_featured' => $data['is_featured'],
+                'expires_at' => $data['expires_at'],
             ]
         );
+
+        $listing->forceFill([
+            'created_at' => $data['created_at'],
+            'updated_at' => $data['created_at'],
+        ])->saveQuietly();
+
+        return $listing;
     }
 
-    private function syncListingImage(Listing $listing, ?string $imageRelativePath): void
+    private function syncListingImage(Listing $listing, string $imageAbsolutePath): void
     {
-        if (blank($imageRelativePath)) {
-            $listing->clearMediaCollection('listing-images');
-
-            return;
-        }
-
-        $imageAbsolutePath = public_path($imageRelativePath);
-
-        if (! is_file($imageAbsolutePath)) {
-            if ($this->command) {
-                $this->command->warn("Image not found: {$imageRelativePath}");
-            }
-
-            return;
-        }
-
-        $targetFileName = basename($imageAbsolutePath);
-        $mediaItems = $listing->getMedia('listing-images');
-
-        if (! $this->hasSingleHealthyTargetMedia($mediaItems, $targetFileName)) {
-            $listing->clearMediaCollection('listing-images');
-
-            $listing
-                ->addMedia($imageAbsolutePath)
-                ->preservingOriginal()
-                ->toMediaCollection('listing-images', 'public');
-        }
-    }
-
-    private function hasSingleHealthyTargetMedia(Collection $mediaItems, string $targetFileName): bool
-    {
-        if ($mediaItems->count() !== 1) {
-            return false;
-        }
-
-        $media = $mediaItems->first();
-
-        if (
-            ! $media
-            || (string) $media->file_name !== $targetFileName
-            || (string) $media->disk !== 'public'
-        ) {
-            return false;
-        }
-
-        try {
-            return is_file($media->getPath());
-        } catch (\Throwable) {
-            return false;
-        }
+        $listing->replacePublicImage($imageAbsolutePath, $listing->slug.'.svg');
     }
 }

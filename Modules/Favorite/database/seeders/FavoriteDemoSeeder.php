@@ -10,6 +10,7 @@ use Modules\Category\Models\Category;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
+use Modules\User\App\Support\DemoUserCatalog;
 
 class FavoriteDemoSeeder extends Seeder
 {
@@ -19,47 +20,40 @@ class FavoriteDemoSeeder extends Seeder
             return;
         }
 
-        $admin = User::query()->where('email', 'a@a.com')->first();
-        $member = User::query()->where('email', 'b@b.com')->first();
+        $users = User::query()
+            ->whereIn('email', DemoUserCatalog::emails())
+            ->orderBy('email')
+            ->get()
+            ->values();
 
-        if (! $admin || ! $member) {
+        if ($users->count() < 2) {
             return;
         }
 
-        $adminListings = Listing::query()
-            ->where('user_id', $admin->getKey())
-            ->orderByDesc('is_featured')
-            ->orderBy('id')
-            ->get();
+        DB::table('favorite_listings')->whereIn('user_id', $users->pluck('id'))->delete();
+        DB::table('favorite_sellers')->whereIn('user_id', $users->pluck('id'))->delete();
+        FavoriteSearch::query()->whereIn('user_id', $users->pluck('id'))->delete();
 
-        $memberListings = Listing::query()
-            ->where('user_id', $member->getKey())
-            ->orderByDesc('is_featured')
-            ->orderBy('id')
-            ->get();
+        foreach ($users as $index => $user) {
+            $favoriteSeller = $users->get(($index + 1) % $users->count());
+            $secondarySeller = $users->get(($index + 2) % $users->count());
 
-        if ($adminListings->isEmpty() || $memberListings->isEmpty()) {
-            return;
+            if (! $favoriteSeller instanceof User || ! $secondarySeller instanceof User) {
+                continue;
+            }
+
+            $favoriteListings = Listing::query()
+                ->whereIn('user_id', [$favoriteSeller->getKey(), $secondarySeller->getKey()])
+                ->where('status', 'active')
+                ->orderByDesc('is_featured')
+                ->orderBy('id')
+                ->take(4)
+                ->get();
+
+            $this->seedFavoriteListings($user, $favoriteListings);
+            $this->seedFavoriteSeller($user, $favoriteSeller, now()->subDays($index + 1));
+            $this->seedFavoriteSearches($user, $this->searchPayloadsForUser($index));
         }
-
-        $activeAdminListings = $adminListings->where('status', 'active')->values();
-        $activeMemberListings = $memberListings->where('status', 'active')->values();
-
-        $this->seedFavoriteListings(
-            $member,
-            $activeAdminListings->take(6)
-        );
-
-        $this->seedFavoriteListings(
-            $admin,
-            $activeMemberListings->take(4)
-        );
-
-        $this->seedFavoriteSeller($member, $admin, now()->subDays(2));
-        $this->seedFavoriteSeller($admin, $member, now()->subDays(1));
-
-        $this->seedFavoriteSearches($member, $this->memberSearchPayloads());
-        $this->seedFavoriteSearches($admin, $this->adminSearchPayloads());
     }
 
     private function favoriteTablesExist(): bool
@@ -74,7 +68,7 @@ class FavoriteDemoSeeder extends Seeder
         $rows = $listings
             ->values()
             ->map(function (Listing $listing, int $index) use ($user): array {
-                $timestamp = now()->subHours(12 + ($index * 5));
+                $timestamp = now()->subHours(8 + ($index * 3));
 
                 return [
                     'user_id' => $user->getKey(),
@@ -154,31 +148,28 @@ class FavoriteDemoSeeder extends Seeder
         }
     }
 
-    private function memberSearchPayloads(): array
+    private function searchPayloadsForUser(int $index): array
     {
-        $electronicsId = Category::query()->where('slug', 'electronics')->value('id');
-        $vehiclesId = Category::query()->where('slug', 'vehicles')->value('id');
-        $realEstateId = Category::query()->where('slug', 'real-estate')->value('id');
-        $servicesId = Category::query()->where('slug', 'services')->value('id');
-
-        return [
-            ['search' => 'iphone', 'category_id' => $electronicsId],
-            ['search' => 'sedan', 'category_id' => $vehiclesId],
-            ['search' => 'apartment', 'category_id' => $realEstateId],
-            ['search' => 'repair', 'category_id' => $servicesId],
+        $blueprints = [
+            ['search' => 'phone', 'slug' => 'electronics'],
+            ['search' => 'car', 'slug' => 'vehicles'],
+            ['search' => 'apartment', 'slug' => 'real-estate'],
+            ['search' => 'style', 'slug' => 'fashion'],
+            ['search' => 'furniture', 'slug' => 'home-garden'],
+            ['search' => 'fitness', 'slug' => 'sports'],
+            ['search' => 'remote', 'slug' => 'jobs'],
+            ['search' => 'cleaning', 'slug' => 'services'],
         ];
-    }
 
-    private function adminSearchPayloads(): array
-    {
-        $fashionId = Category::query()->where('slug', 'fashion')->value('id');
-        $homeGardenId = Category::query()->where('slug', 'home-garden')->value('id');
-        $sportsId = Category::query()->where('slug', 'sports')->value('id');
+        return collect(range(0, 2))
+            ->map(function (int $offset) use ($blueprints, $index): array {
+                $blueprint = $blueprints[($index + $offset) % count($blueprints)];
 
-        return [
-            ['search' => 'vintage', 'category_id' => $fashionId],
-            ['search' => 'garden', 'category_id' => $homeGardenId],
-            ['search' => 'fitness', 'category_id' => $sportsId],
-        ];
+                return [
+                    'search' => $blueprint['search'],
+                    'category_id' => Category::query()->where('slug', $blueprint['slug'])->value('id'),
+                ];
+            })
+            ->all();
     }
 }

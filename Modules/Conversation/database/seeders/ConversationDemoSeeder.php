@@ -3,12 +3,12 @@
 namespace Modules\Conversation\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
+use Modules\User\App\Support\DemoUserCatalog;
 
 class ConversationDemoSeeder extends Seeder
 {
@@ -18,72 +18,59 @@ class ConversationDemoSeeder extends Seeder
             return;
         }
 
-        $admin = User::query()->where('email', 'a@a.com')->first();
-        $member = User::query()->where('email', 'b@b.com')->first();
+        $users = User::query()
+            ->whereIn('email', DemoUserCatalog::emails())
+            ->orderBy('email')
+            ->get()
+            ->values();
 
-        if (! $admin || ! $member) {
+        if ($users->count() < 2) {
             return;
         }
 
-        $adminListings = Listing::query()
-            ->where('user_id', $admin->getKey())
-            ->where('status', 'active')
-            ->orderBy('id')
-            ->take(2)
-            ->get();
+        ConversationMessage::query()
+            ->whereHas('conversation', fn ($query) => $query->whereIn('buyer_id', $users->pluck('id'))->orWhereIn('seller_id', $users->pluck('id')))
+            ->delete();
 
-        $memberListings = Listing::query()
-            ->where('user_id', $member->getKey())
-            ->where('status', 'active')
-            ->orderBy('id')
-            ->take(2)
-            ->get();
+        Conversation::query()
+            ->whereIn('buyer_id', $users->pluck('id'))
+            ->orWhereIn('seller_id', $users->pluck('id'))
+            ->delete();
 
-        if ($adminListings->count() < 2 || $memberListings->count() < 2) {
-            return;
+        foreach ($users as $index => $buyer) {
+            $primarySeller = $users->get(($index + 1) % $users->count());
+            $secondarySeller = $users->get(($index + 2) % $users->count());
+
+            if (! $primarySeller instanceof User || ! $secondarySeller instanceof User) {
+                continue;
+            }
+
+            $primaryListing = Listing::query()
+                ->where('user_id', $primarySeller->getKey())
+                ->where('status', 'active')
+                ->orderBy('id')
+                ->first();
+
+            $secondaryListing = Listing::query()
+                ->where('user_id', $secondarySeller->getKey())
+                ->where('status', 'active')
+                ->orderBy('id')
+                ->first();
+
+            $this->seedConversationThread(
+                $primarySeller,
+                $buyer,
+                $primaryListing,
+                $this->messagePayloads($index, false)
+            );
+
+            $this->seedConversationThread(
+                $secondarySeller,
+                $buyer,
+                $secondaryListing,
+                $this->messagePayloads($index, true)
+            );
         }
-
-        $this->seedConversationThread(
-            $admin,
-            $member,
-            $adminListings->get(0),
-            [
-                ['sender' => 'buyer', 'body' => 'Hi, is this still available?', 'hours_ago' => 30, 'read_after_minutes' => 4],
-                ['sender' => 'seller', 'body' => 'Yes, it is. I can share more photos.', 'hours_ago' => 29, 'read_after_minutes' => 7],
-                ['sender' => 'buyer', 'body' => 'Perfect. Can we meet tomorrow afternoon?', 'hours_ago' => 4, 'read_after_minutes' => null],
-            ]
-        );
-
-        $this->seedConversationThread(
-            $admin,
-            $member,
-            $adminListings->get(1),
-            [
-                ['sender' => 'buyer', 'body' => 'Can you confirm the final price?', 'hours_ago' => 20, 'read_after_minutes' => 8],
-                ['sender' => 'seller', 'body' => 'I can do a small discount if you pick it up today.', 'hours_ago' => 18, 'read_after_minutes' => null],
-            ]
-        );
-
-        $this->seedConversationThread(
-            $member,
-            $admin,
-            $memberListings->get(0),
-            [
-                ['sender' => 'buyer', 'body' => 'Hello, does this listing include the original accessories?', 'hours_ago' => 14, 'read_after_minutes' => 6],
-                ['sender' => 'seller', 'body' => 'Yes, box and accessories are included.', 'hours_ago' => 13, 'read_after_minutes' => 9],
-                ['sender' => 'buyer', 'body' => 'Great. I can pick it up tonight.', 'hours_ago' => 2, 'read_after_minutes' => null],
-            ]
-        );
-
-        $this->seedConversationThread(
-            $member,
-            $admin,
-            $memberListings->get(1),
-            [
-                ['sender' => 'buyer', 'body' => 'Would you accept a bank transfer?', 'hours_ago' => 11, 'read_after_minutes' => 5],
-                ['sender' => 'seller', 'body' => 'Yes, that works for me.', 'hours_ago' => 10, 'read_after_minutes' => null],
-            ]
-        );
     }
 
     private function conversationTablesExist(): bool
@@ -97,7 +84,7 @@ class ConversationDemoSeeder extends Seeder
         ?Listing $listing,
         array $messages
     ): void {
-        if (! $listing) {
+        if (! $listing || (int) $seller->getKey() === (int) $buyer->getKey()) {
             return;
         }
 
@@ -111,10 +98,6 @@ class ConversationDemoSeeder extends Seeder
                 'last_message_at' => now(),
             ]
         );
-
-        ConversationMessage::query()
-            ->where('conversation_id', $conversation->getKey())
-            ->delete();
 
         $lastMessageAt = null;
 
@@ -137,10 +120,47 @@ class ConversationDemoSeeder extends Seeder
             $lastMessageAt = $createdAt;
         }
 
-        $conversation->forceFill([
-            'seller_id' => $seller->getKey(),
-            'last_message_at' => $lastMessageAt,
-            'updated_at' => $lastMessageAt,
-        ])->saveQuietly();
+        if ($lastMessageAt) {
+            $conversation->forceFill([
+                'seller_id' => $seller->getKey(),
+                'last_message_at' => $lastMessageAt,
+                'updated_at' => $lastMessageAt,
+            ])->saveQuietly();
+        }
+    }
+
+    private function messagePayloads(int $index, bool $secondary): array
+    {
+        $openingMessages = [
+            'Is this listing still available?',
+            'Can you share the best price?',
+            'Would pickup this evening work for you?',
+            'Can you confirm the condition details?',
+            'Do you have any more photos?',
+        ];
+
+        $sellerReplies = [
+            'Yes, it is available.',
+            'I can offer a small discount.',
+            'This evening works for me.',
+            'Everything is in clean condition.',
+            'I can send more photos in a minute.',
+        ];
+
+        $closingMessages = [
+            'Great, I will message again before I leave.',
+            'Perfect. I can arrange pickup.',
+            'Thanks. That sounds good to me.',
+            'Understood. I am interested.',
+            'Nice. I will keep this saved.',
+        ];
+
+        $offset = ($index + ($secondary ? 2 : 0)) % count($openingMessages);
+
+        return [
+            ['sender' => 'buyer', 'body' => $openingMessages[$offset], 'hours_ago' => 30 - $index, 'read_after_minutes' => 5],
+            ['sender' => 'seller', 'body' => $sellerReplies[$offset], 'hours_ago' => 28 - $index, 'read_after_minutes' => 8],
+            ['sender' => 'buyer', 'body' => $closingMessages[$offset], 'hours_ago' => 4 + $index, 'read_after_minutes' => $secondary ? 6 : null],
+        ];
     }
 }

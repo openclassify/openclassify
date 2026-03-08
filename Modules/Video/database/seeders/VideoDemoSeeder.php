@@ -6,72 +6,34 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
+use Modules\User\App\Support\DemoUserCatalog;
 use Modules\Video\Enums\VideoStatus;
 use Modules\Video\Models\Video;
 
 class VideoDemoSeeder extends Seeder
 {
-    private const VIDEO_BLUEPRINTS = [
-        'a@a.com' => [
-            [
-                'title' => 'Workspace walkaround',
-                'description' => 'Pending demo video for upload and processing states.',
-                'status' => VideoStatus::Pending,
-                'is_active' => true,
-                'processing_error' => null,
-            ],
-            [
-                'title' => 'Packaging close-up',
-                'description' => 'Failed demo video to test retry and edit flows.',
-                'status' => VideoStatus::Failed,
-                'is_active' => false,
-                'processing_error' => 'Demo processing was skipped intentionally.',
-            ],
-        ],
-        'b@b.com' => [
-            [
-                'title' => 'Short product overview',
-                'description' => 'Pending demo video for the member workspace.',
-                'status' => VideoStatus::Pending,
-                'is_active' => true,
-                'processing_error' => null,
-            ],
-            [
-                'title' => 'Condition details clip',
-                'description' => 'Failed demo video to show a second panel state.',
-                'status' => VideoStatus::Failed,
-                'is_active' => false,
-                'processing_error' => 'Demo processing was skipped intentionally.',
-            ],
-        ],
-    ];
-
     public function run(): void
     {
         if (! Schema::hasTable('videos') || ! Schema::hasTable('listings')) {
             return;
         }
 
-        foreach (self::VIDEO_BLUEPRINTS as $email => $blueprints) {
-            $user = User::query()->where('email', $email)->first();
+        $users = User::query()
+            ->whereIn('email', DemoUserCatalog::emails())
+            ->orderBy('email')
+            ->get()
+            ->values();
 
-            if (! $user) {
-                continue;
-            }
-
+        foreach ($users as $userIndex => $user) {
             $listings = Listing::query()
                 ->where('user_id', $user->getKey())
                 ->where('status', 'active')
                 ->orderBy('id')
-                ->take(count($blueprints))
+                ->take(2)
                 ->get();
 
-            foreach ($blueprints as $index => $blueprint) {
-                $listing = $listings->get($index);
-
-                if (! $listing) {
-                    continue;
-                }
+            foreach ($listings as $listingIndex => $listing) {
+                $blueprint = $this->blueprintFor($userIndex, $listingIndex);
 
                 $video = Video::query()->firstOrNew([
                     'listing_id' => $listing->getKey(),
@@ -91,12 +53,33 @@ class VideoDemoSeeder extends Seeder
                     'upload_path' => null,
                     'mime_type' => 'video/mp4',
                     'size' => null,
-                    'sort_order' => $index + 1,
+                    'sort_order' => $listingIndex + 1,
                     'is_active' => $blueprint['is_active'],
                     'processing_error' => $blueprint['processing_error'],
                     'processed_at' => null,
                 ])->saveQuietly();
             }
         }
+    }
+
+    private function blueprintFor(int $userIndex, int $listingIndex): array
+    {
+        if ($listingIndex === 0) {
+            return [
+                'title' => 'Quick walkthrough '.($userIndex + 1),
+                'description' => 'Pending demo video for uploader and panel testing.',
+                'status' => VideoStatus::Pending,
+                'is_active' => true,
+                'processing_error' => null,
+            ];
+        }
+
+        return [
+            'title' => 'Condition details '.($userIndex + 1),
+            'description' => 'Failed demo video for status handling and retry UI testing.',
+            'status' => VideoStatus::Failed,
+            'is_active' => false,
+            'processing_error' => 'Demo processing was skipped intentionally.',
+        ];
     }
 }

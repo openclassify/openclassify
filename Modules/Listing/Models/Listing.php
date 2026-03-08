@@ -18,6 +18,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\ModelStates\HasStates;
+use Throwable;
 
 class Listing extends Model implements HasMedia
 {
@@ -345,6 +346,41 @@ class Listing extends Model implements HasMedia
             'label' => $total.' videos',
             'detail' => $ready.' ready'.($pending > 0 ? ', '.$pending.' processing' : ''),
         ];
+    }
+
+    public function replacePublicImage(string $absolutePath, ?string $fileName = null): void
+    {
+        if (! is_file($absolutePath)) {
+            return;
+        }
+
+        $targetFileName = trim((string) ($fileName ?: basename($absolutePath)));
+        $existingMediaItems = $this->getMedia('listing-images');
+
+        if ($existingMediaItems->count() === 1) {
+            $existingMedia = $existingMediaItems->first();
+
+            if (
+                $existingMedia
+                && (string) $existingMedia->file_name === $targetFileName
+                && (string) $existingMedia->disk === 'public'
+            ) {
+                try {
+                    if (is_file($existingMedia->getPath())) {
+                        return;
+                    }
+                } catch (Throwable) {
+                }
+            }
+        }
+
+        $this->clearMediaCollection('listing-images');
+
+        $this
+            ->addMedia($absolutePath)
+            ->usingFileName($targetFileName)
+            ->preservingOriginal()
+            ->toMediaCollection('listing-images', 'public');
     }
 
     public function statusValue(): string
