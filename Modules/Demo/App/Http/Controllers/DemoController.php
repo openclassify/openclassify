@@ -8,17 +8,45 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Modules\Demo\App\Support\DemoSchemaManager;
+use Modules\Demo\App\Support\TurnstileVerifier;
 use Throwable;
 
 class DemoController extends Controller
 {
-    public function prepare(Request $request, DemoSchemaManager $demoSchemaManager): RedirectResponse
+    public function prepare(
+        Request $request,
+        DemoSchemaManager $demoSchemaManager,
+        TurnstileVerifier $turnstileVerifier,
+    ): RedirectResponse
     {
         abort_unless(config('demo.enabled'), 404);
 
         $cookieName = (string) config('demo.cookie_name', 'oc2_demo');
         $redirectTo = $this->sanitizeRedirectTarget($request->input('redirect_to'))
             ?? route('home');
+
+        if ($turnstileVerifier->enabled() && ! $turnstileVerifier->configured()) {
+            return redirect()
+                ->to($redirectTo)
+                ->with('error', 'Security verification is unavailable right now. Please contact support.');
+        }
+
+        if (! $turnstileVerifier->verify(
+            $request->input('cf-turnstile-response'),
+            $request->ip(),
+        )) {
+            return redirect()
+                ->to($redirectTo)
+                ->with('error', 'Security verification failed. Please complete the check and try again.');
+        }
+
+        if (function_exists('set_time_limit')) {
+            @set_time_limit(300);
+        }
+
+        if (function_exists('ignore_user_abort')) {
+            @ignore_user_abort(true);
+        }
 
         try {
             $instance = $demoSchemaManager->prepare($request->cookie($cookieName));

@@ -30,22 +30,35 @@ class ListingSeeder extends Seeder
     {
         $users = $this->resolveSeederUsers();
         $categories = $this->resolveSeedableCategories();
+        $imagePool = SampleListingImageCatalog::uniquePaths();
 
-        if ($users->isEmpty() || $categories->isEmpty()) {
+        if ($users->isEmpty() || $categories->isEmpty() || $imagePool->isEmpty()) {
             return;
         }
 
         $countries = $this->resolveCountries();
         $turkeyCities = $this->resolveTurkeyCities();
         $plannedSlugs = [];
+        $assignedImageIndex = 0;
 
-        foreach ($users as $userIndex => $user) {
-            foreach ($categories as $categoryIndex => $category) {
-                $listingIndex = ($userIndex * max(1, $categories->count())) + $categoryIndex;
-                $listingData = $this->buildListingData($category, $listingIndex, $countries, $turkeyCities, $user);
+        foreach ($categories as $category) {
+            foreach ($users as $user) {
+                if ($assignedImageIndex >= $imagePool->count()) {
+                    continue;
+                }
+
+                $listingData = $this->buildListingData(
+                    $category,
+                    $assignedImageIndex,
+                    $countries,
+                    $turkeyCities,
+                    $user,
+                    $imagePool->get($assignedImageIndex)
+                );
                 $listing = $this->upsertListing($listingData, $category, $user);
                 $plannedSlugs[] = $listing->slug;
                 $this->syncListingImage($listing, $listingData['image_path']);
+                $assignedImageIndex++;
             }
         }
 
@@ -138,7 +151,8 @@ class ListingSeeder extends Seeder
         int $index,
         Collection $countries,
         Collection $turkeyCities,
-        User $user
+        User $user,
+        ?string $imagePath
     ): array {
         $location = $this->resolveLocation($index, $countries, $turkeyCities);
         $title = $this->buildTitle($category, $index, $user);
@@ -155,7 +169,7 @@ class ListingSeeder extends Seeder
             'is_featured' => $index % 7 === 0,
             'expires_at' => now()->addDays(21 + ($index % 9)),
             'created_at' => now()->subHours(6 + $index),
-            'image_path' => SampleListingImageCatalog::pathFor($category, $index),
+            'image_path' => $imagePath,
         ];
     }
 

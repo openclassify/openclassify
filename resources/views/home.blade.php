@@ -10,6 +10,10 @@
     $prepareDemoRedirect = url()->full();
     $hasDemoSession = (bool) session('is_demo_session') || filled(session('demo_uuid'));
     $demoLandingMode = $demoEnabled && !auth()->check() && !$hasDemoSession;
+    $demoTurnstileProtectionEnabled = (bool) config('demo.turnstile.enabled', false);
+    $demoTurnstileSiteKey = trim((string) config('demo.turnstile.site_key', ''));
+    $prepareDemoTurnstileRequired = $demoLandingMode && $demoTurnstileProtectionEnabled;
+    $prepareDemoTurnstileRenderable = $prepareDemoTurnstileRequired && $demoTurnstileSiteKey !== '';
     $demoTtlMinutes = (int) config('demo.ttl_minutes', 360);
     $demoTtlHours = intdiv($demoTtlMinutes, 60);
     $demoTtlRemainderMinutes = $demoTtlMinutes % 60;
@@ -62,7 +66,7 @@
 
 @if($demoLandingMode && $prepareDemoRoute)
 <div class="min-h-screen flex items-center justify-center px-5 py-10">
-    <form method="POST" action="{{ $prepareDemoRoute }}" class="w-full max-w-xl rounded-[32px] border border-slate-200 bg-white p-8 md:p-10 shadow-xl">
+    <form method="POST" action="{{ $prepareDemoRoute }}" data-demo-prepare-form data-turnstile-required="{{ $prepareDemoTurnstileRequired ? '1' : '0' }}" class="w-full max-w-xl rounded-[32px] border border-slate-200 bg-white p-8 md:p-10 shadow-xl">
         @csrf
         <input type="hidden" name="redirect_to" value="{{ $prepareDemoRedirect }}">
         <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-950">Prepare Demo</h1>
@@ -72,8 +76,28 @@
         <p class="mt-4 text-base text-slate-500">
             This demo is deleted automatically after {{ $demoTtlLabel }}.
         </p>
-        <button type="submit" class="mt-8 inline-flex min-h-16 w-full items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-blue-700">
-            Prepare Demo
+        @if($prepareDemoTurnstileRenderable)
+        <div class="mt-6 space-y-2">
+            <div class="cf-turnstile" data-sitekey="{{ $demoTurnstileSiteKey }}"></div>
+            <p class="text-xs text-slate-500">Complete the security check before starting your private demo.</p>
+        </div>
+        @elseif($prepareDemoTurnstileRequired)
+        <p class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-medium leading-6 text-amber-700">
+            Security check is enabled but the widget is not configured. Contact the administrator.
+        </p>
+        @endif
+        <p data-demo-prepare-status data-turnstile-message="Please complete the security verification first." data-loading-message="Preparing your private demo. This can take longer because a dedicated seeded environment is being provisioned for your browser." aria-live="polite" class="mt-4 hidden rounded-2xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-medium leading-6 text-blue-800">
+            Preparing your private demo. This can take longer because a dedicated seeded environment is being provisioned for your browser.
+        </p>
+        <button type="submit" data-demo-prepare-button @if($prepareDemoTurnstileRequired) disabled @endif class="mt-8 inline-flex min-h-16 w-full items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-500">
+            <span data-demo-prepare-idle>Prepare Demo</span>
+            <span data-demo-prepare-loading class="hidden items-center gap-2">
+                <svg class="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+                    <path class="opacity-90" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v3a5 5 0 0 0-5 5H4z"></path>
+                </svg>
+                Preparing Demo...
+            </span>
         </button>
     </form>
 </div>
@@ -362,6 +386,107 @@
 @endif
 <script>
     (() => {
+        const setupPrepareDemoForm = () => {
+            const form = document.querySelector('[data-demo-prepare-form]');
+
+            if (!form) {
+                return;
+            }
+
+            const button = form.querySelector('[data-demo-prepare-button]');
+            const idleLabel = form.querySelector('[data-demo-prepare-idle]');
+            const loadingLabel = form.querySelector('[data-demo-prepare-loading]');
+            const status = form.querySelector('[data-demo-prepare-status]');
+            const turnstileRequired = form.dataset.turnstileRequired === '1';
+
+            const resolveTurnstileToken = () => {
+                const tokenField = form.querySelector('input[name="cf-turnstile-response"]');
+
+                if (!tokenField) {
+                    return '';
+                }
+
+                return tokenField.value.trim();
+            };
+
+            const applyReadyState = () => {
+                if (!button) {
+                    return;
+                }
+
+                if (!turnstileRequired) {
+                    button.removeAttribute('disabled');
+
+                    return;
+                }
+
+                const token = resolveTurnstileToken();
+
+                if (token === '') {
+                    button.setAttribute('disabled', 'disabled');
+
+                    return;
+                }
+
+                button.removeAttribute('disabled');
+            };
+
+            if (turnstileRequired) {
+                const tokenObserver = window.setInterval(() => {
+                    applyReadyState();
+                }, 250);
+
+                form.addEventListener('submit', () => {
+                    window.clearInterval(tokenObserver);
+                });
+            } else {
+                applyReadyState();
+            }
+
+            form.addEventListener('submit', (event) => {
+                if (form.dataset.submitting === '1') {
+                    event.preventDefault();
+
+                    return;
+                }
+
+                if (turnstileRequired && resolveTurnstileToken() === '') {
+                    event.preventDefault();
+
+                    if (status) {
+                        status.textContent = status.dataset.turnstileMessage ?? 'Please complete the security verification first.';
+                        status.classList.remove('hidden');
+                    }
+
+                    applyReadyState();
+
+                    return;
+                }
+
+                form.dataset.submitting = '1';
+
+                if (button) {
+                    button.setAttribute('disabled', 'disabled');
+                }
+
+                if (idleLabel) {
+                    idleLabel.classList.add('hidden');
+                }
+
+                if (loadingLabel) {
+                    loadingLabel.classList.remove('hidden');
+                    loadingLabel.classList.add('inline-flex');
+                }
+
+                if (status) {
+                    status.textContent = status.dataset.loadingMessage ?? status.textContent;
+                    status.classList.remove('hidden');
+                }
+            });
+        };
+
+        setupPrepareDemoForm();
+
         const setupTrendCategories = () => {
             const track = document.querySelector('[data-trend-track]');
             const previousButton = document.querySelector('[data-trend-prev]');
@@ -471,4 +596,7 @@
         setupTrendCategories();
     })();
 </script>
+@if($prepareDemoTurnstileRenderable)
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+@endif
 @endsection

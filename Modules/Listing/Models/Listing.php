@@ -539,6 +539,10 @@ class Listing extends Model implements HasMedia
 
     private function shouldSkipConversionsForSeeder(): bool
     {
+        if ((bool) config('demo.provisioning', false)) {
+            return true;
+        }
+
         if (! app()->runningInConsole()) {
             return false;
         }

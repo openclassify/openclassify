@@ -176,26 +176,26 @@ final class SampleListingImageCatalog
         ],
     ];
 
+    public static function uniquePaths(): Collection
+    {
+        return self::allPaths()
+            ->sortBy(fn (string $path): string => strtolower((string) basename($path)))
+            ->values();
+    }
+
     public static function pathFor(Category $category, int $seed): ?string
     {
-        $categorySlug = trim((string) $category->slug);
-        $familySlug = trim((string) ($category->parent?->slug ?? $category->slug));
-
-        $paths = self::resolvePathsForSlug($categorySlug);
-
-        if ($paths->isEmpty()) {
-            $paths = self::resolvePathsForSlug($familySlug);
-        }
-
-        if ($paths->isEmpty()) {
-            $paths = self::allPaths();
-        }
+        $paths = self::uniquePaths();
 
         if ($paths->isEmpty()) {
             return null;
         }
 
-        return $paths->values()->get($seed % $paths->count());
+        if ($seed < 0 || $seed >= $paths->count()) {
+            return null;
+        }
+
+        return $paths->get($seed);
     }
 
     public static function fileNameFor(string $absolutePath, string $slug): string

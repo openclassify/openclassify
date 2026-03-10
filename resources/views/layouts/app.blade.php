@@ -22,6 +22,7 @@
     $demoExpiresAt = session('demo_expires_at');
     $demoExpiresAt = filled($demoExpiresAt) ? \Illuminate\Support\Carbon::parse($demoExpiresAt) : null;
     $demoRemainingLabel = null;
+    $demoRemainingCompactLabel = null;
 
     if ($demoExpiresAt?->isFuture()) {
         $remainingMinutes = now()->diffInMinutes($demoExpiresAt, false);
@@ -38,6 +39,11 @@
         }
 
         $demoRemainingLabel = $remainingParts !== [] ? implode(' ', $remainingParts) : 'less than a minute';
+        $demoRemainingCompactLabel = trim(
+            ($remainingHours > 0 ? $remainingHours.'h ' : '')
+            .($remainingRemainderMinutes > 0 ? $remainingRemainderMinutes.'m' : '')
+        );
+        $demoRemainingCompactLabel = $demoRemainingCompactLabel !== '' ? $demoRemainingCompactLabel : '<1m';
     }
     $availableLocales = config('app.available_locales', ['en']);
     $localeLabels = [
@@ -88,6 +94,7 @@
     'bg-slate-50' => $demoLandingMode,
     'bg-[#f5f5f7]' => $simplePage && ! $demoLandingMode,
 ])>
+    @if(! $demoLandingMode)
     @if($simplePage)
     <nav class="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-2xl">
         <div class="mx-auto flex min-h-[76px] max-w-[1120px] items-center justify-between gap-4 px-4">
@@ -374,10 +381,11 @@
         </div>
     </nav>
     @endif
+    @endif
     @if($demoRemainingLabel)
-    <div class="sticky top-0 z-40 border-b border-amber-200 bg-amber-50/95 backdrop-blur-md">
-        <div class="mx-auto flex min-h-12 max-w-[1320px] items-center justify-center px-4 py-2 text-center text-sm font-semibold text-amber-900">
-            Demo auto deletes in {{ $demoRemainingLabel }}
+    <div class="pointer-events-none fixed bottom-4 right-4 z-40">
+        <div class="rounded-full border border-amber-200 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-amber-900 shadow-lg backdrop-blur">
+            Demo: {{ $demoRemainingCompactLabel }} left
         </div>
     </div>
     @endif
@@ -395,7 +403,7 @@
         'site-main',
         'min-h-screen' => $demoLandingMode,
     ])>@yield('content')</main>
-    @if(!$simplePage)
+    @if(!$simplePage && ! $demoLandingMode)
     <footer class="mt-10 md:mt-14 bg-slate-100 text-slate-600 border-t border-slate-200" data-anim-footer>
         <div class="max-w-[1320px] mx-auto px-4 py-8 md:py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">

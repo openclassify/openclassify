@@ -155,6 +155,82 @@ php artisan demo:cleanup
 
 ---
 
+## Realtime Chat (Laravel Reverb)
+
+This project already uses Laravel Reverb + Echo for inbox and listing chat realtime updates.
+
+### 1. Environment
+
+Set these values in `.env`:
+
+```env
+BROADCAST_CONNECTION=reverb
+
+REVERB_APP_ID=480227
+REVERB_APP_KEY=your_key
+REVERB_APP_SECRET=your_secret
+REVERB_HOST=localhost
+REVERB_PORT=8080
+REVERB_SCHEME=http
+REVERB_SERVER_HOST=0.0.0.0
+REVERB_SERVER_PORT=8080
+
+VITE_REVERB_APP_KEY="${REVERB_APP_KEY}"
+VITE_REVERB_HOST="${REVERB_HOST}"
+VITE_REVERB_PORT="${REVERB_PORT}"
+VITE_REVERB_SCHEME="${REVERB_SCHEME}"
+```
+
+### 2. Start Services
+
+Use one command:
+
+```bash
+composer run dev
+```
+
+Or run separately:
+
+```bash
+php artisan serve
+php artisan reverb:start --host=0.0.0.0 --port=8080
+php artisan queue:listen --tries=1 --timeout=0
+npm run dev
+```
+
+### 3. How It Works in This Codebase
+
+- Private channel: `users.{id}.inbox`
+- Channel authorization: `Modules/Conversation/App/Providers/ConversationServiceProvider.php`
+- Broadcast events:
+  - `InboxMessageCreated` (`.inbox.message.created`)
+  - `ConversationReadUpdated` (`.inbox.read.updated`)
+- Frontend subscriptions: `Modules/Conversation/resources/assets/js/conversation.js`
+- Echo bootstrap: `resources/js/echo.js`
+
+### 4. Quick Verification
+
+1. Open two different authenticated sessions (for example `a@a.com` and `b@b.com`).
+2. Go to `/panel/inbox` in both sessions.
+3. Send a message from one session.
+4. Confirm in the other session:
+   - thread updates instantly,
+   - inbox ordering/unread state updates,
+   - header inbox badge updates.
+
+### 5. Troubleshooting
+
+- No realtime updates:
+  - check `php artisan reverb:start` is running,
+  - check Vite is running (`npm run dev`) and assets are rebuilt.
+- Private channel auth fails (`403`):
+  - verify user is authenticated in the same browser/session.
+- WebSocket connection fails:
+  - verify `REVERB_HOST/PORT/SCHEME` and matching `VITE_REVERB_*` values,
+  - run `php artisan optimize:clear` after env changes.
+
+---
+
 ## Code Contributors
 
 <p align="center">
