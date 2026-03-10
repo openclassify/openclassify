@@ -3,12 +3,10 @@
 namespace Modules\Admin\Filament\Resources;
 
 use BackedEnum;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -16,6 +14,7 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\ListingCustomFieldResource\Pages;
+use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\ListingCustomField;
 use UnitEnum;
@@ -23,8 +22,11 @@ use UnitEnum;
 class ListingCustomFieldResource extends Resource
 {
     protected static ?string $model = ListingCustomField::class;
-    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-adjustments-horizontal';
-    protected static string | UnitEnum | null $navigationGroup = 'Catalog';
+
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-adjustments-horizontal';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Catalog';
+
     protected static ?int $navigationSort = 30;
 
     public static function form(Schema $schema): Schema
@@ -63,11 +65,7 @@ class ListingCustomFieldResource extends Resource
                 ->live(),
             Select::make('category_id')
                 ->label('Category')
-                ->options(fn (): array => Category::query()
-                    ->where('is_active', true)
-                    ->orderBy('name')
-                    ->pluck('name', 'id')
-                    ->all())
+                ->options(fn (): array => Category::activeIdNameOptions())
                 ->searchable()
                 ->preload()
                 ->nullable()
@@ -106,10 +104,7 @@ class ListingCustomFieldResource extends Resource
                 TextColumn::make('sort_order')->sortable(),
             ])
             ->defaultSort('id', 'desc')
-            ->actions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ]);
+            ->actions(ResourceTableActions::editDelete());
     }
 
     public static function getPages(): array

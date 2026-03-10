@@ -1,4 +1,5 @@
 <?php
+
 namespace Modules\Admin\Filament\Resources;
 
 use A909M\FilamentStateFusion\Forms\Components\StateFusionSelect;
@@ -7,9 +8,6 @@ use A909M\FilamentStateFusion\Tables\Filters\StateFusionSelectFilter;
 use App\Support\CountryCodeManager;
 use BackedEnum;
 use Cheesegrits\FilamentGoogleMaps\Fields\Map;
-use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -30,6 +28,7 @@ use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Admin\Filament\Resources\ListingResource\Pages;
+use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
@@ -43,13 +42,15 @@ use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 class ListingResource extends Resource
 {
     protected static ?string $model = Listing::class;
-    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-clipboard-document-list';
-    protected static string | UnitEnum | null $navigationGroup = 'Catalog';
+
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-list';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Catalog';
 
     public static function form(Schema $schema): Schema
     {
         return $schema->schema([
-            TextInput::make('title')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', \Illuminate\Support\Str::slug($state) . '-' . \Illuminate\Support\Str::random(4))),
+            TextInput::make('title')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', \Illuminate\Support\Str::slug($state).'-'.\Illuminate\Support\Str::random(4))),
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             Textarea::make('description')->rows(4),
             TextInput::make('price')
@@ -61,7 +62,7 @@ class ListingResource extends Resource
                 ->required(),
             Select::make('category_id')
                 ->label('Category')
-                ->options(fn () => Category::where('is_active', true)->pluck('name', 'id'))
+                ->options(fn (): array => Category::activeIdNameOptions())
                 ->searchable()
                 ->live()
                 ->afterStateUpdated(fn ($state, $set) => $set('custom_fields', []))
@@ -83,10 +84,7 @@ class ListingResource extends Resource
             Toggle::make('is_featured')->default(false),
             Select::make('country')
                 ->label('Country')
-                ->options(fn (): array => Country::query()
-                    ->orderBy('name')
-                    ->pluck('name', 'name')
-                    ->all())
+                ->options(fn (): array => Country::nameOptions())
                 ->searchable()
                 ->preload()
                 ->live()
@@ -94,16 +92,7 @@ class ListingResource extends Resource
                 ->nullable(),
             Select::make('city')
                 ->label('City')
-                ->options(function (Get $get): array {
-                    $country = $get('country');
-
-                    return City::query()
-                        ->where('is_active', true)
-                        ->when($country, fn (Builder $query, string $country): Builder => $query->whereHas('country', fn (Builder $countryQuery): Builder => $countryQuery->where('name', $country)))
-                        ->orderBy('name')
-                        ->pluck('name', 'name')
-                        ->all();
-                })
+                ->options(fn (Get $get): array => City::nameOptions($get('country')))
                 ->searchable()
                 ->preload()
                 ->nullable(),
@@ -161,16 +150,10 @@ class ListingResource extends Resource
                 ->searchable()
                 ->preload(),
             SelectFilter::make('country')
-                ->options(fn (): array => Country::query()
-                    ->orderBy('name')
-                    ->pluck('name', 'name')
-                    ->all())
+                ->options(fn (): array => Country::nameOptions())
                 ->searchable(),
             SelectFilter::make('city')
-                ->options(fn (): array => City::query()
-                    ->orderBy('name')
-                    ->pluck('name', 'name')
-                    ->all())
+                ->options(fn (): array => City::nameOptions(null, false))
                 ->searchable(),
             TernaryFilter::make('is_featured')->label('Featured'),
             Filter::make('created_at')
@@ -197,13 +180,7 @@ class ListingResource extends Resource
             ->filtersFormWidth('7xl')
             ->persistFiltersInSession()
             ->defaultSort('id', 'desc')
-            ->actions([
-            EditAction::make(),
-            Action::make('activities')
-                ->icon('heroicon-o-clock')
-                ->url(fn (Listing $record): string => static::getUrl('activities', ['record' => $record])),
-            DeleteAction::make(),
-            ]);
+            ->actions(ResourceTableActions::editActivityDelete(static::class));
     }
 
     public static function getPages(): array

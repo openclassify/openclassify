@@ -9,7 +9,7 @@ class ConversationServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->loadMigrationsFrom(module_path('Conversation', 'database/migrations'));
+        $this->loadMigrationsFrom(module_path('Conversation', 'Database/migrations'));
         $this->loadRoutesFrom(module_path('Conversation', 'routes/web.php'));
         $this->loadViewsFrom(module_path('Conversation', 'resources/views'), 'conversation');
 
@@ -18,7 +18,5 @@ class ConversationServiceProvider extends ServiceProvider
         });
     }
 
-    public function register(): void
-    {
-    }
+    public function register(): void {}
 }

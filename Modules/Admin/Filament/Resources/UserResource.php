@@ -1,18 +1,18 @@
 <?php
+
 namespace Modules\Admin\Filament\Resources;
 
 use A909M\FilamentStateFusion\Tables\Columns\StateFusionSelectColumn;
 use A909M\FilamentStateFusion\Tables\Filters\StateFusionSelectFilter;
-use Modules\User\App\Models\User;
 use BackedEnum;
-use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\UserResource\Pages;
+use Modules\Admin\Support\Filament\ResourceTableActions;
+use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\User\App\Models\User;
 use Modules\User\App\Support\Filament\UserFormFields;
 use STS\FilamentImpersonate\Actions\Impersonate;
 use UnitEnum;
@@ -20,8 +20,10 @@ use UnitEnum;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
-    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-users';
-    protected static string | UnitEnum | null $navigationGroup = 'User Management';
+
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-users';
+
+    protected static string|UnitEnum|null $navigationGroup = 'User Management';
 
     public static function form(Schema $schema): Schema
     {
@@ -37,7 +39,7 @@ class UserResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('id')->sortable(),
+            ResourceTableColumns::id(),
             TextColumn::make('name')->searchable()->sortable(),
             TextColumn::make('email')->searchable()->sortable(),
             TextColumn::make('roles.name')->badge()->label('Roles'),
@@ -45,14 +47,9 @@ class UserResource extends Resource
             TextColumn::make('created_at')->dateTime()->sortable(),
         ])->defaultSort('id', 'desc')->filters([
             StateFusionSelectFilter::make('status'),
-        ])->actions([
-            EditAction::make(),
-            Action::make('activities')
-                ->icon('heroicon-o-clock')
-                ->url(fn (User $record): string => static::getUrl('activities', ['record' => $record])),
+        ])->actions(ResourceTableActions::editActivityDelete(static::class, [
             Impersonate::make(),
-            DeleteAction::make(),
-        ]);
+        ]));
     }
 
     public static function getPages(): array

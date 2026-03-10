@@ -1,4 +1,5 @@
 <?php
+
 namespace Modules\Category\Models;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -32,6 +33,7 @@ class Category extends Model
     ];
 
     protected $fillable = ['name', 'slug', 'description', 'icon', 'parent_id', 'level', 'sort_order', 'is_active'];
+
     protected $casts = ['is_active' => 'boolean'];
 
     public function getActivitylogOptions(): LogOptions
@@ -101,6 +103,25 @@ class Category extends Model
             ->active()
             ->ordered()
             ->get(['id', 'name']);
+    }
+
+    public static function activeIdNameOptions(): array
+    {
+        return static::query()
+            ->active()
+            ->ordered()
+            ->pluck('name', 'id')
+            ->all();
+    }
+
+    public static function rootIdNameOptions(): array
+    {
+        return static::query()
+            ->active()
+            ->whereNull('parent_id')
+            ->ordered()
+            ->pluck('name', 'id')
+            ->all();
     }
 
     public static function themePills(int $limit = 8): Collection

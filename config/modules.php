@@ -146,10 +146,10 @@ return [
             // config/
             'config' => ['path' => 'config', 'generate' => true],
 
-            // database/
-            'factory' => ['path' => 'database/factories', 'generate' => true],
-            'migration' => ['path' => 'database/migrations', 'generate' => true],
-            'seeder' => ['path' => 'database/seeders', 'generate' => true],
+            // Database/
+            'factory' => ['path' => 'Database/Factories', 'generate' => true],
+            'migration' => ['path' => 'Database/migrations', 'generate' => true],
+            'seeder' => ['path' => 'Database/Seeders', 'generate' => true],
 
             // lang/
             'lang' => ['path' => 'lang', 'generate' => false],

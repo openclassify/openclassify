@@ -1,27 +1,29 @@
 <?php
+
 namespace Modules\Admin\Filament\Resources;
 
 use BackedEnum;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\CategoryResource\Pages;
+use Modules\Admin\Support\Filament\ResourceTableActions;
+use Modules\Admin\Support\Filament\ResourceTableColumns;
 use Modules\Category\Models\Category;
 use UnitEnum;
 
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-tag';
-    protected static string | UnitEnum | null $navigationGroup = 'Catalog';
+
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-tag';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Catalog';
 
     public static function form(Schema $schema): Schema
     {
@@ -30,7 +32,7 @@ class CategoryResource extends Resource
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             TextInput::make('description')->maxLength(500),
             TextInput::make('icon')->maxLength(100),
-            Select::make('parent_id')->label('Parent Category')->options(fn () => Category::whereNull('parent_id')->pluck('name', 'id'))->nullable()->searchable(),
+            Select::make('parent_id')->label('Parent Category')->options(fn (): array => Category::rootIdNameOptions())->nullable()->searchable(),
             TextInput::make('sort_order')->numeric()->default(0),
             Toggle::make('is_active')->default(true),
         ]);
@@ -39,15 +41,15 @@ class CategoryResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('id')->sortable(),
+            ResourceTableColumns::id(),
             TextColumn::make('name')
                 ->searchable()
-                ->formatStateUsing(fn (string $state, Category $record): string => $record->parent_id === null ? $state : '↳ ' . $state)
+                ->formatStateUsing(fn (string $state, Category $record): string => $record->parent_id === null ? $state : '↳ '.$state)
                 ->weight(fn (Category $record): string => $record->parent_id === null ? 'semi-bold' : 'normal'),
             TextColumn::make('parent.name')->label('Parent')->default('-'),
             TextColumn::make('children_count')->label('Subcategories'),
             TextColumn::make('listings_count')->label('Listings'),
-            IconColumn::make('is_active')->boolean(),
+            ResourceTableColumns::activeIcon(),
             TextColumn::make('sort_order')->sortable(),
         ])->actions([
             Action::make('toggleChildren')
@@ -55,11 +57,7 @@ class CategoryResource extends Resource
                 ->icon(fn (Category $record, Pages\ListCategories $livewire): string => $livewire->hasExpandedChildren($record) ? 'heroicon-o-chevron-down' : 'heroicon-o-chevron-right')
                 ->action(fn (Category $record, Pages\ListCategories $livewire) => $livewire->toggleChildren($record))
                 ->visible(fn (Category $record): bool => $record->parent_id === null && $record->children_count > 0),
-            EditAction::make(),
-            Action::make('activities')
-                ->icon('heroicon-o-clock')
-                ->url(fn (Category $record): string => static::getUrl('activities', ['record' => $record])),
-            DeleteAction::make(),
+            ...ResourceTableActions::editActivityDelete(static::class),
         ]);
     }
 

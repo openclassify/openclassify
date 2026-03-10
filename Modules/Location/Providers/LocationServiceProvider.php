@@ -1,4 +1,5 @@
 <?php
+
 namespace Modules\Location\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -9,7 +10,7 @@ class LocationServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+        $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/migrations'));
         $this->loadRoutesFrom(module_path($this->moduleName, 'routes/web.php'));
     }
 
