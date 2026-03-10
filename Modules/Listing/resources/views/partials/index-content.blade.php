@@ -21,55 +21,70 @@
         'search' => $search !== '' ? $search : null,
         'user' => $sellerUserId ?? null,
     ], $normalizeQuery);
+    $activeFilterCount = collect([
+        $categoryId,
+        $countryId,
+        $cityId,
+        $sellerUserId,
+        $minPriceInput !== '' ? $minPriceInput : null,
+        $maxPriceInput !== '' ? $maxPriceInput : null,
+        $dateFilter !== 'all' ? $dateFilter : null,
+    ])->filter($normalizeQuery)->count();
 @endphp
 
-<div class="max-w-[1320px] mx-auto px-4 py-7 lg:py-8">
+<div class="listing-index-shell max-w-[1320px] mx-auto px-4 py-7 lg:py-8">
     <h1 class="sr-only">{{ $seoHeading }}</h1>
 
     <div class="grid grid-cols-1 lg:grid-cols-[260px,1fr] gap-4 lg:gap-5">
-        <aside class="space-y-4">
-            <section class="listing-filter-card p-4">
-                <div class="flex items-center justify-between gap-3 mb-3">
-                    <h2 class="text-2xl font-bold text-slate-900 leading-none">Categories</h2>
+        <aside class="listing-sidebar" data-listing-filter-drawer aria-hidden="false">
+            <button type="button" class="listing-sidebar-backdrop lg:hidden" data-listing-filter-close aria-label="Close filters"></button>
+            <div class="listing-sidebar-shell space-y-4">
+                <div class="listing-sidebar-head lg:hidden">
+                    <h2>Filters</h2>
+                    <button type="button" class="listing-sidebar-close" data-listing-filter-close aria-label="Close filters">×</button>
                 </div>
+                <section class="listing-filter-card p-4">
+                    <div class="flex items-center justify-between gap-3 mb-3">
+                        <h2 class="text-2xl font-bold text-slate-900 leading-none">Categories</h2>
+                    </div>
 
-                <div class="space-y-1 max-h-[330px] overflow-y-auto pr-1">
-                    @php
-                        $allCategoriesLink = route('listings.index', $baseCategoryQuery);
-                    @endphp
-                    <a href="{{ $allCategoriesLink }}" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-sm font-semibold {{ is_null($categoryId) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">
-                        <span>All Listings</span>
-                        <span>{{ number_format($allListingsCount) }}</span>
-                    </a>
-
-                    @foreach($categories as $category)
+                    <div class="space-y-1 max-h-[330px] overflow-y-auto pr-1">
                         @php
-                            $categoryCount = (int) $category->active_listing_total;
-                            $isSelectedParent = (int) $categoryId === (int) $category->id;
-                            $categoryUrl = route('listings.index', array_filter(array_merge($baseCategoryQuery, [
-                                'category' => $category->id,
-                            ]), $normalizeQuery));
+                            $allCategoriesLink = route('listings.index', $baseCategoryQuery);
                         @endphp
-                        <a href="{{ $categoryUrl }}" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-sm font-semibold {{ $isSelectedParent ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">
-                            <span>{{ $category->name }}</span>
-                            <span>{{ number_format($categoryCount) }}</span>
+                        <a href="{{ $allCategoriesLink }}" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-sm font-semibold {{ is_null($categoryId) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">
+                            <span>All Listings</span>
+                            <span>{{ number_format($allListingsCount) }}</span>
                         </a>
 
-                        @foreach($category->children as $childCategory)
+                        @foreach($categories as $category)
                             @php
-                                $isSelectedChild = (int) $categoryId === (int) $childCategory->id;
-                                $childUrl = route('listings.index', array_filter(array_merge($baseCategoryQuery, [
-                                    'category' => $childCategory->id,
+                                $categoryCount = (int) $category->active_listing_total;
+                                $isSelectedParent = (int) $categoryId === (int) $category->id;
+                                $categoryUrl = route('listings.index', array_filter(array_merge($baseCategoryQuery, [
+                                    'category' => $category->id,
                                 ]), $normalizeQuery));
                             @endphp
-                            <a href="{{ $childUrl }}" class="ml-2 flex items-center justify-between rounded-lg px-2 py-1.5 text-[13px] font-medium {{ $isSelectedChild ? 'bg-rose-50 text-rose-600' : 'text-slate-600 hover:bg-slate-100' }}">
-                                <span>{{ $childCategory->name }}</span>
-                                <span>{{ number_format((int) $childCategory->active_listing_total) }}</span>
+                            <a href="{{ $categoryUrl }}" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-sm font-semibold {{ $isSelectedParent ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">
+                                <span>{{ $category->name }}</span>
+                                <span>{{ number_format($categoryCount) }}</span>
                             </a>
+
+                            @foreach($category->children as $childCategory)
+                                @php
+                                    $isSelectedChild = (int) $categoryId === (int) $childCategory->id;
+                                    $childUrl = route('listings.index', array_filter(array_merge($baseCategoryQuery, [
+                                        'category' => $childCategory->id,
+                                    ]), $normalizeQuery));
+                                @endphp
+                                <a href="{{ $childUrl }}" class="ml-2 flex items-center justify-between rounded-lg px-2 py-1.5 text-[13px] font-medium {{ $isSelectedChild ? 'bg-rose-50 text-rose-600' : 'text-slate-600 hover:bg-slate-100' }}">
+                                    <span>{{ $childCategory->name }}</span>
+                                    <span>{{ number_format((int) $childCategory->active_listing_total) }}</span>
+                                </a>
+                            @endforeach
                         @endforeach
-                    @endforeach
-                </div>
-            </section>
+                    </div>
+                </section>
 
             <form method="GET" action="{{ route('listings.index') }}" class="listing-filter-card p-4 space-y-5">
                 @if($search !== '')
@@ -159,10 +174,62 @@
                     </button>
                 </div>
             </form>
+            </div>
         </aside>
 
         <section class="space-y-4">
-            <div class="listing-filter-card px-4 py-3 flex flex-col xl:flex-row xl:items-center gap-3">
+            <div class="listing-mobile-toolbar lg:hidden">
+                <div class="listing-mobile-toolbar-row">
+                    <button type="button" class="listing-mobile-filter-button" data-listing-filter-open>
+                        Filters
+                        @if($activeFilterCount > 0)
+                            <span class="listing-mobile-filter-badge">{{ $activeFilterCount }}</span>
+                        @endif
+                    </button>
+                    <form method="GET" action="{{ route('listings.index') }}" class="listing-mobile-sort-form">
+                        @if($search !== '')
+                            <input type="hidden" name="search" value="{{ $search }}">
+                        @endif
+                        @if($categoryId)
+                            <input type="hidden" name="category" value="{{ $categoryId }}">
+                        @endif
+                        @if(! empty($sellerUserId))
+                            <input type="hidden" name="user" value="{{ $sellerUserId }}">
+                        @endif
+                        @if($countryId)
+                            <input type="hidden" name="country" value="{{ $countryId }}">
+                        @endif
+                        @if($cityId)
+                            <input type="hidden" name="city" value="{{ $cityId }}">
+                        @endif
+                        @if($minPriceInput !== '')
+                            <input type="hidden" name="min_price" value="{{ $minPriceInput }}">
+                        @endif
+                        @if($maxPriceInput !== '')
+                            <input type="hidden" name="max_price" value="{{ $maxPriceInput }}">
+                        @endif
+                        @if($dateFilter !== 'all')
+                            <input type="hidden" name="date_filter" value="{{ $dateFilter }}">
+                        @endif
+                        <label class="listing-mobile-sort-label">
+                            <span>Sort</span>
+                            <select name="sort" class="listing-mobile-sort-select" onchange="this.form.submit()">
+                                <option value="smart" @selected($sort === 'smart')>Recommended</option>
+                                <option value="newest" @selected($sort === 'newest')>Newest</option>
+                                <option value="oldest" @selected($sort === 'oldest')>Oldest</option>
+                                <option value="price_asc" @selected($sort === 'price_asc')>Price ↑</option>
+                                <option value="price_desc" @selected($sort === 'price_desc')>Price ↓</option>
+                            </select>
+                        </label>
+                    </form>
+                </div>
+                <p class="listing-mobile-toolbar-meta">
+                    <strong>{{ number_format($resultListingsCount) }}</strong>
+                    {{ $activeCategoryName !== '' ? ' listings in '.$activeCategoryName : ' listings found' }}
+                </p>
+            </div>
+
+            <div class="listing-filter-card px-4 py-3 hidden lg:flex flex-col xl:flex-row xl:items-center gap-3">
                 <p class="text-sm text-slate-700 mr-auto">
                     <strong>{{ number_format($resultListingsCount) }}</strong>
                     {{ $activeCategoryName !== '' ? ' listings found in '.$activeCategoryName : ' listings found' }}
@@ -228,7 +295,7 @@
                     No listings match this filter.
                 </div>
             @else
-                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3.5">
+                <div class="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">
                     @foreach($listings as $listing)
                         @php
                             $listingImage = $listing->primaryImageData('card');
@@ -241,7 +308,7 @@
                             $locationText = implode(', ', $locationParts);
                         @endphp
                         <article class="listing-card">
-                            <div class="relative h-52 bg-slate-200">
+                            <div class="relative h-40 sm:h-48 lg:h-52 bg-slate-200">
                                 @if($listingImage)
                                     <a href="{{ route('listings.show', $listing) }}" class="block w-full h-full">
                                         @include('listing::partials.responsive-image', [
@@ -282,7 +349,7 @@
 
                             <div class="px-3.5 py-3">
                                 <a href="{{ route('listings.show', $listing) }}" class="block">
-                                    <p class="text-3xl leading-none font-bold text-slate-900">
+                                    <p class="text-xl sm:text-2xl lg:text-3xl leading-none font-bold text-slate-900">
                                         @if(!is_null($priceValue) && $priceValue > 0)
                                             {{ number_format($priceValue, 0) }} {{ $listing->currency }}
                                         @else
@@ -320,8 +387,60 @@
         const countrySelect = document.querySelector('[data-listing-country]');
         const citySelect = document.querySelector('[data-listing-city]');
         const currentLocationButton = document.querySelector('[data-use-current-location]');
+        const filterDrawer = document.querySelector('[data-listing-filter-drawer]');
+        const filterOpenButtons = Array.from(document.querySelectorAll('[data-listing-filter-open]'));
+        const filterCloseButtons = Array.from(document.querySelectorAll('[data-listing-filter-close]'));
         const citiesTemplate = countrySelect?.dataset.citiesUrlTemplate ?? '';
         const locationStorageKey = 'oc2.header.location';
+        const drawerMediaQuery = window.matchMedia('(max-width: 1023px)');
+
+        const setDrawerExpanded = (expanded) => {
+            filterOpenButtons.forEach((button) => button.setAttribute('aria-expanded', expanded ? 'true' : 'false'));
+        };
+
+        const closeFilterDrawer = () => {
+            if (!filterDrawer) {
+                return;
+            }
+
+            filterDrawer.classList.remove('is-open');
+            filterDrawer.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('listing-filters-open');
+            setDrawerExpanded(false);
+        };
+
+        const openFilterDrawer = () => {
+            if (!filterDrawer || !drawerMediaQuery.matches) {
+                return;
+            }
+
+            filterDrawer.classList.add('is-open');
+            filterDrawer.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('listing-filters-open');
+            setDrawerExpanded(true);
+        };
+
+        filterOpenButtons.forEach((button) => button.addEventListener('click', openFilterDrawer));
+        filterCloseButtons.forEach((button) => button.addEventListener('click', closeFilterDrawer));
+
+        window.addEventListener('resize', () => {
+            if (!drawerMediaQuery.matches) {
+                closeFilterDrawer();
+            }
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeFilterDrawer();
+            }
+        });
+
+        if (drawerMediaQuery.matches) {
+            closeFilterDrawer();
+        } else if (filterDrawer) {
+            filterDrawer.setAttribute('aria-hidden', 'false');
+            setDrawerExpanded(false);
+        }
 
         if (!countrySelect || !citySelect || citiesTemplate === '') {
             return;

@@ -180,6 +180,12 @@ final class SampleListingImageCatalog
     {
         return self::allPaths()
             ->sortBy(fn (string $path): string => strtolower((string) basename($path)))
+            ->map(fn (string $path): array => [
+                'path' => $path,
+                'hash' => md5_file($path) ?: strtolower((string) basename($path)),
+            ])
+            ->unique('hash')
+            ->pluck('path')
             ->values();
     }
 
@@ -201,8 +207,12 @@ final class SampleListingImageCatalog
     public static function fileNameFor(string $absolutePath, string $slug): string
     {
         $extension = strtolower((string) pathinfo($absolutePath, PATHINFO_EXTENSION));
+        $hash = md5_file($absolutePath);
+        $hashSuffix = is_string($hash) && $hash !== ''
+            ? '-'.substr($hash, 0, 8)
+            : '';
 
-        return $slug.($extension !== '' ? '.'.$extension : '');
+        return $slug.$hashSuffix.($extension !== '' ? '.'.$extension : '');
     }
 
     private static function resolvePathsForSlug(string $slug): Collection
