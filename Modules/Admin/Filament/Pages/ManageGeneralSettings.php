@@ -2,23 +2,23 @@
 
 namespace Modules\Admin\Filament\Pages;
 
-use App\Settings\GeneralSettings;
-use App\Support\CountryCodeManager;
-use App\Support\HomeSlideDefaults;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Modules\Admin\Support\HomeSlideFormSchema;
+use Modules\Location\Support\CountryCodeManager;
 use Modules\S3\Support\MediaStorage;
+use Modules\Site\App\Settings\GeneralSettings;
+use Modules\Site\App\Support\HomeSlideDefaults;
 use Tapp\FilamentCountryCodeField\Forms\Components\CountryCodeSelect;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
@@ -31,9 +31,9 @@ class ManageGeneralSettings extends SettingsPage
 
     protected static ?string $navigationLabel = 'Genel Ayarlar';
 
-    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-cog-6-tooth';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-cog-6-tooth';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Ayarlar';
+    protected static string|UnitEnum|null $navigationGroup = 'Ayarlar';
 
     protected static ?int $navigationSort = 1;
 
@@ -246,7 +246,7 @@ class ManageGeneralSettings extends SettingsPage
             'home_slides' => $this->defaultHomeSlides(),
             'site_logo_disk' => null,
             'sender_name' => $siteName,
-            'sender_email' => (string) config('mail.from.address', 'info@' . $siteHost),
+            'sender_email' => (string) config('mail.from.address', 'info@'.$siteHost),
             'default_language' => in_array(config('app.locale'), array_keys($this->localeOptions()), true) ? (string) config('app.locale') : 'en',
             'default_country_code' => CountryCodeManager::normalizeCountryCode(config('app.default_country_code', '+90')),
             'currencies' => $this->normalizeCurrencies(config('app.currencies', ['TRY'])),
@@ -272,7 +272,7 @@ class ManageGeneralSettings extends SettingsPage
             ->all();
     }
 
-    private function normalizeCurrencies(null | array | string $state): array
+    private function normalizeCurrencies(null|array|string $state): array
     {
         $source = is_array($state) ? $state : (filled($state) ? [$state] : []);
 

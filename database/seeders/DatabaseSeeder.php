@@ -10,7 +10,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             \Modules\User\Database\Seeders\AuthUserSeeder::class,
-            HomeSliderSettingsSeeder::class,
             \Modules\Location\Database\Seeders\LocationSeeder::class,
             \Modules\Category\Database\Seeders\CategorySeeder::class,
             \Modules\Listing\Database\Seeders\ListingCustomFieldSeeder::class,

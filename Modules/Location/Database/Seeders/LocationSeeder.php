@@ -43,9 +43,6 @@ class LocationSeeder extends Seeder
             ->delete();
     }
 
-    /**
-     * @return array<int, array{code: string, name: string, phone_code: string}>
-     */
     private function countries(): array
     {
         $countries = [];
@@ -84,7 +81,7 @@ class LocationSeeder extends Seeder
                 continue;
             }
 
-            $key = 'filament-country-code-field::countries.' . $value;
+            $key = 'filament-country-code-field::countries.'.$value;
             $labelEn = trim((string) trans($key, [], 'en'));
 
             $name = $labelEn !== '' && $labelEn !== $key ? $labelEn : strtoupper($value);
@@ -112,9 +109,6 @@ class LocationSeeder extends Seeder
         return substr($normalized, 0, 10);
     }
 
-    /**
-     * @return array<int, string>
-     */
     private function turkeyCities(): array
     {
         return [

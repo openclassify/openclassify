@@ -1,4 +1,5 @@
 <?php
+
 namespace Modules\Admin\Filament\Widgets;
 
 use Filament\Widgets\ChartWidget;
@@ -7,6 +8,8 @@ use Modules\Listing\Models\Listing;
 class ListingsTrendChart extends ChartWidget
 {
     protected static ?int $sort = 2;
+
+    protected int|string|array $columnSpan = 'full';
 
     protected ?string $heading = 'Listing Creation Trend';
 

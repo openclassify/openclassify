@@ -26,4 +26,18 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function detailsForUser(User $user): ?self
+    {
+        return static::query()
+            ->where('user_id', $user->getKey())
+            ->first();
+    }
+
+    public static function phoneForUser(User $user): ?string
+    {
+        return static::query()
+            ->where('user_id', $user->getKey())
+            ->value('phone');
+    }
 }

@@ -2,9 +2,9 @@
 
 namespace Modules\S3\Support;
 
-use App\Settings\GeneralSettings;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
+use Modules\Site\App\Settings\GeneralSettings;
 use Throwable;
 
 final class MediaStorage
@@ -24,8 +24,6 @@ final class MediaStorage
     public static function defaultDriver(): string
     {
         return self::coerceDriver(config('media_storage.default_driver'))
-            ?? self::coerceDriver(env('MEDIA_DISK'))
-            ?? self::coerceDriver(env('FILESYSTEM_DISK'))
             ?? self::DRIVER_S3;
     }
 
@@ -104,7 +102,7 @@ final class MediaStorage
 
         config([
             'filesystems.default' => $disk,
-            'filemanager.disk' => env('FILEMANAGER_DISK', $disk),
+            'filemanager.disk' => $disk,
             'filament.default_filesystem_disk' => $disk,
             'media-library.disk_name' => $disk,
             'video.disk' => $disk,

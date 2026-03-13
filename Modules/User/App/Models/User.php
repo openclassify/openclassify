@@ -5,6 +5,7 @@ namespace Modules\User\App\Models;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,9 +30,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use HasApiTokens;
     use HasFactory;
     use HasRoles;
+    use HasStates;
     use LogsActivity;
     use Notifiable;
-    use HasStates;
     use TwoFactorAuthenticatable;
 
     protected $fillable = ['name', 'email', 'password', 'avatar_url', 'status'];
@@ -218,5 +219,35 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
             'notifications' => $this->unreadNotificationCount(),
             'favorites' => $this->savedListingsCount(),
         ];
+    }
+
+    public static function totalCount(): int
+    {
+        return (int) static::query()->count();
+    }
+
+    public function homeFavoriteListingIds(): array
+    {
+        return $this->favoriteListings()
+            ->pluck('listings.id')
+            ->map(fn ($id): int => (int) $id)
+            ->all();
+    }
+
+    public function panelListingOptions(): Collection
+    {
+        return $this->listings()
+            ->latest('id')
+            ->get(['id', 'title', 'status']);
+    }
+
+    public function loadPanelProfile(): self
+    {
+        return $this->loadCount([
+            'listings',
+            'favoriteListings',
+            'favoriteSearches',
+            'favoriteSellers',
+        ]);
     }
 }

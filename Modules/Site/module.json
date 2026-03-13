@@ -1,0 +1,11 @@
+{
+    "name": "Site",
+    "alias": "site",
+    "description": "Site shell, locale, and landing experience",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Site\\App\\Providers\\SiteServiceProvider"
+    ],
+    "files": []
+}

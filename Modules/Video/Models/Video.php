@@ -75,7 +75,7 @@ class Video extends Model
         return $query->orderBy('sort_order')->orderBy('id');
     }
 
-    public function scopeOwnedByUser(Builder $query, int | string | null $userId): Builder
+    public function scopeOwnedByUser(Builder $query, int|string|null $userId): Builder
     {
         return $query->where('user_id', $userId);
     }
@@ -141,6 +141,19 @@ class Video extends Model
     public static function nextSortOrderForListing(Listing $listing): int
     {
         return ((int) $listing->videos()->max('sort_order')) + 1;
+    }
+
+    public static function panelIndexDataForUser(User $user): array
+    {
+        return [
+            'videos' => static::query()
+                ->ownedByUser($user->getKey())
+                ->with('listing:id,title,user_id')
+                ->latest('id')
+                ->paginate(10)
+                ->withQueryString(),
+            'listingOptions' => $user->panelListingOptions(),
+        ];
     }
 
     public function markAsProcessing(): void
@@ -300,6 +313,11 @@ class Video extends Model
         $value = $size / (1024 ** $power);
 
         return number_format($value, $power === 0 ? 0 : 1).' '.$units[$power];
+    }
+
+    public function assertOwnedBy(User $user): void
+    {
+        abort_unless((int) $this->user_id === (int) $user->getKey(), 403);
     }
 
     public function updateFromPanel(array $attributes): void

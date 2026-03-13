@@ -229,12 +229,12 @@
                 </p>
             </div>
 
-            <div class="listing-filter-card px-4 py-3 hidden lg:flex flex-col xl:flex-row xl:items-center gap-3">
-                <p class="text-sm text-slate-700 mr-auto">
+            <div class="listing-results-bar listing-filter-card hidden lg:flex">
+                <p class="listing-results-meta">
                     <strong>{{ number_format($resultListingsCount) }}</strong>
                     {{ $activeCategoryName !== '' ? ' listings found in '.$activeCategoryName : ' listings found' }}
                 </p>
-                <div class="flex flex-wrap items-center gap-2">
+                <div class="listing-results-actions">
                     @auth
                         <form method="POST" action="{{ route('favorites.searches.store') }}">
                             @csrf
@@ -276,9 +276,9 @@
                             <input type="hidden" name="date_filter" value="{{ $dateFilter }}">
                         @endif
 
-                        <label class="h-10 px-4 rounded-full border border-slate-300 bg-white inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+                        <label class="listing-results-sort">
                             <span>Sort by</span>
-                            <select name="sort" class="bg-transparent text-sm font-semibold focus:outline-none" onchange="this.form.submit()">
+                            <select name="sort" class="listing-results-sort-select" onchange="this.form.submit()">
                                 <option value="smart" @selected($sort === 'smart')>Recommended</option>
                                 <option value="newest" @selected($sort === 'newest')>Newest</option>
                                 <option value="oldest" @selected($sort === 'oldest')>Oldest</option>
@@ -570,7 +570,6 @@
                 countrySelect.value = matchedCountryOption.value;
                 await loadCities(matchedCountryOption.value, cityName);
             } catch (error) {
-                // no-op
             }
         });
     })();

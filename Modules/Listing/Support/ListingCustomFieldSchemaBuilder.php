@@ -4,8 +4,8 @@ namespace Modules\Listing\Support;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Carbon;
@@ -22,9 +22,6 @@ class ListingCustomFieldSchemaBuilder
             ->exists();
     }
 
-    /**
-     * @return array<int, Component>
-     */
     public static function formComponents(?int $categoryId): array
     {
         return ListingCustomField::query()
@@ -38,10 +35,6 @@ class ListingCustomFieldSchemaBuilder
             ->all();
     }
 
-    /**
-     * @param  array<string, mixed>  $values
-     * @return array<int, array{label: string, value: string}>
-     */
     public static function presentableValues(?int $categoryId, array $values): array
     {
         if ($values === []) {

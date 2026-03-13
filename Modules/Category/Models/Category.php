@@ -114,6 +114,72 @@ class Category extends Model
             ->all();
     }
 
+    public static function activeCount(): int
+    {
+        return (int) static::query()
+            ->active()
+            ->count();
+    }
+
+    public static function homeParentCategories(int $limit = 8): Collection
+    {
+        return static::query()
+            ->active()
+            ->whereNull('parent_id')
+            ->ordered()
+            ->limit($limit)
+            ->get();
+    }
+
+    public static function headerNavigationItems(int $limit = 8): array
+    {
+        return static::query()
+            ->active()
+            ->whereNull('parent_id')
+            ->ordered()
+            ->limit($limit)
+            ->get(['id', 'name', 'icon'])
+            ->map(fn (self $category): array => [
+                'id' => (int) $category->id,
+                'name' => (string) $category->name,
+                'icon_url' => $category->iconUrl(),
+            ])
+            ->all();
+    }
+
+    public static function activeAiCatalog(): Collection
+    {
+        return static::query()
+            ->active()
+            ->ordered()
+            ->get(['id', 'name', 'parent_id']);
+    }
+
+    public static function panelQuickCatalog(): array
+    {
+        $all = static::query()
+            ->active()
+            ->ordered()
+            ->get(['id', 'name', 'parent_id', 'icon']);
+
+        $childrenCount = static::query()
+            ->active()
+            ->selectRaw('parent_id, count(*) as aggregate')
+            ->whereNotNull('parent_id')
+            ->groupBy('parent_id')
+            ->pluck('aggregate', 'parent_id');
+
+        return $all
+            ->map(fn (self $category): array => [
+                'id' => (int) $category->id,
+                'name' => (string) $category->name,
+                'parent_id' => $category->parent_id ? (int) $category->parent_id : null,
+                'icon' => $category->icon,
+                'has_children' => ((int) ($childrenCount[$category->id] ?? 0)) > 0,
+            ])
+            ->all();
+    }
+
     public static function rootIdNameOptions(): array
     {
         return static::query()

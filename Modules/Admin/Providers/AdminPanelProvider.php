@@ -1,7 +1,7 @@
 <?php
+
 namespace Modules\Admin\Providers;
 
-use App\Http\Middleware\BootstrapAppData;
 use A909M\FilamentStateFusion\FilamentStateFusionPlugin;
 use DutchCodingCompany\FilamentDeveloperLogins\FilamentDeveloperLoginsPlugin;
 use Filament\Http\Middleware\Authenticate;
@@ -21,13 +21,10 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
-use MWGuerra\FileManager\FileManagerPlugin;
-use MWGuerra\FileManager\Filament\Pages\FileManager;
 use Modules\Demo\App\Http\Middleware\ResolveDemoRequest;
-use Modules\Admin\Filament\Resources\CategoryResource;
-use Modules\Admin\Filament\Resources\ListingResource;
-use Modules\Admin\Filament\Resources\LocationResource;
-use Modules\Admin\Filament\Resources\UserResource;
+use Modules\Site\App\Http\Middleware\BootstrapAppData;
+use MWGuerra\FileManager\Filament\Pages\FileManager;
+use MWGuerra\FileManager\FileManagerPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {

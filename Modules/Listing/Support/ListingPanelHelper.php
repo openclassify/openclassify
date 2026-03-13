@@ -2,7 +2,7 @@
 
 namespace Modules\Listing\Support;
 
-use App\Settings\GeneralSettings;
+use Modules\Site\App\Settings\GeneralSettings;
 use Throwable;
 
 class ListingPanelHelper
@@ -32,7 +32,7 @@ class ListingPanelHelper
         return self::currencyCodes()[0] ?? 'USD';
     }
 
-    public static function normalizeCurrency(null | string $currency): string
+    public static function normalizeCurrency(?string $currency): string
     {
         $normalized = strtoupper(substr(trim((string) $currency), 0, 3));
         $codes = self::currencyCodes();

@@ -9,5 +9,7 @@
     "User": true,
     "Video": true,
     "S3": true,
-    "Demo": true
+    "Demo": true,
+    "Panel": true,
+    "Site": true
 }

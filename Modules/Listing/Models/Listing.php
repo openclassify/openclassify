@@ -1,22 +1,25 @@
 <?php
+
 namespace Modules\Listing\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
-use Modules\Listing\Support\ListingImageViewData;
 use Modules\Listing\States\ListingStatus;
+use Modules\Listing\Support\ListingImageViewData;
 use Modules\Listing\Support\ListingPanelHelper;
+use Modules\User\App\Models\User;
+use Modules\Video\Enums\VideoStatus;
 use Modules\Video\Models\Video;
-use Spatie\Image\Enums\Fit;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -97,7 +100,7 @@ class Listing extends Model implements HasMedia
         return $query->where('status', 'active');
     }
 
-    public function scopeOwnedByUser(Builder $query, int | string | null $userId): Builder
+    public function scopeOwnedByUser(Builder $query, int|string|null $userId): Builder
     {
         return $query->where('user_id', $userId);
     }
@@ -125,6 +128,24 @@ class Listing extends Model implements HasMedia
                 ->orWhere('city', 'like', "%{$search}%")
                 ->orWhere('country', 'like', "%{$search}%");
         });
+    }
+
+    public function scopeWithPanelIndexState(Builder $query): Builder
+    {
+        return $query
+            ->with('category:id,name')
+            ->withCount('favoritedByUsers')
+            ->withCount('videos')
+            ->withCount([
+                'videos as ready_videos_count' => fn (Builder $videoQuery): Builder => $videoQuery
+                    ->whereNotNull('path')
+                    ->where('is_active', true),
+                'videos as pending_videos_count' => fn (Builder $videoQuery): Builder => $videoQuery
+                    ->whereIn('status', [
+                        VideoStatus::Pending->value,
+                        VideoStatus::Processing->value,
+                    ]),
+            ]);
     }
 
     public function scopeForCategory(Builder $query, ?int $categoryId): Builder
@@ -272,7 +293,7 @@ class Listing extends Model implements HasMedia
         ];
     }
 
-    public static function panelStatusCountsForUser(int | string $userId): array
+    public static function panelStatusCountsForUser(int|string $userId): array
     {
         $counts = static::query()
             ->ownedByUser($userId)
@@ -286,6 +307,49 @@ class Listing extends Model implements HasMedia
             'pending' => (int) ($counts['pending'] ?? 0),
             'sold' => (int) ($counts['sold'] ?? 0),
             'expired' => (int) ($counts['expired'] ?? 0),
+        ];
+    }
+
+    public static function activeCount(): int
+    {
+        return (int) static::query()
+            ->active()
+            ->count();
+    }
+
+    public static function homeFeatured(int $limit = 4): Collection
+    {
+        return static::query()
+            ->active()
+            ->where('is_featured', true)
+            ->latest()
+            ->take($limit)
+            ->get();
+    }
+
+    public static function homeRecent(int $limit = 8): Collection
+    {
+        return static::query()
+            ->active()
+            ->latest()
+            ->take($limit)
+            ->get();
+    }
+
+    public static function panelIndexDataForUser(User $user, string $search, string $status): array
+    {
+        $listings = static::query()
+            ->ownedByUser($user->getKey())
+            ->withPanelIndexState()
+            ->searchTerm($search)
+            ->forPanelStatus($status)
+            ->latest('id')
+            ->paginate(10)
+            ->withQueryString();
+
+        return [
+            'listings' => $listings,
+            'counts' => static::panelStatusCountsForUser($user->getKey()),
         ];
     }
 
@@ -435,6 +499,34 @@ class Listing extends Model implements HasMedia
         };
     }
 
+    public function loadPanelEditor(): self
+    {
+        return $this->load([
+            'category:id,name',
+            'videos:id,listing_id,title,status,is_active,path,upload_path,duration_seconds,size',
+        ]);
+    }
+
+    public function assertOwnedBy(User $user): void
+    {
+        abort_unless((int) $this->user_id === (int) $user->getKey(), 403);
+    }
+
+    public function markAsSold(): void
+    {
+        $this->forceFill([
+            'status' => 'sold',
+        ])->save();
+    }
+
+    public function republish(): void
+    {
+        $this->forceFill([
+            'status' => 'active',
+            'expires_at' => now()->addDays(self::DEFAULT_PANEL_EXPIRY_WINDOW_DAYS),
+        ])->save();
+    }
+
     public function updateFromPanel(array $attributes): void
     {
         $payload = Arr::only($attributes, [
@@ -460,7 +552,7 @@ class Listing extends Model implements HasMedia
         $this->forceFill($payload)->save();
     }
 
-    public static function createFromFrontend(array $data, null | int | string $userId): self
+    public static function createFromFrontend(array $data, null|int|string $userId): self
     {
         $baseSlug = Str::slug((string) ($data['title'] ?? 'listing'));
         $baseSlug = $baseSlug !== '' ? $baseSlug : 'listing';

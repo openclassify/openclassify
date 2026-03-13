@@ -9,10 +9,15 @@ use Modules\Category\Models\Category;
 class ListingCustomField extends Model
 {
     public const TYPE_TEXT = 'text';
+
     public const TYPE_TEXTAREA = 'textarea';
+
     public const TYPE_NUMBER = 'number';
+
     public const TYPE_SELECT = 'select';
+
     public const TYPE_BOOLEAN = 'boolean';
+
     public const TYPE_DATE = 'date';
 
     protected $fillable = [
@@ -99,5 +104,27 @@ class ListingCustomField extends Model
                 'sort_order' => (int) ($attributes['sort_order'] ?? 0),
             ],
         );
+    }
+
+    public static function panelFieldDefinitions(?int $categoryId): array
+    {
+        return static::query()
+            ->active()
+            ->forCategory($categoryId)
+            ->ordered()
+            ->get(['name', 'label', 'type', 'is_required', 'placeholder', 'help_text', 'options'])
+            ->map(fn (self $field): array => [
+                'name' => (string) $field->name,
+                'label' => (string) $field->label,
+                'type' => (string) $field->type,
+                'is_required' => (bool) $field->is_required,
+                'placeholder' => $field->placeholder,
+                'help_text' => $field->help_text,
+                'options' => collect($field->options ?? [])
+                    ->map(fn ($option): string => (string) $option)
+                    ->values()
+                    ->all(),
+            ])
+            ->all();
     }
 }

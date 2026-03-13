@@ -2,11 +2,11 @@
 
 namespace Modules\Demo\App\Support;
 
-use App\Settings\GeneralSettings;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Modules\Demo\App\Models\DemoInstance;
+use Modules\Site\App\Settings\GeneralSettings;
 use Modules\User\App\Models\User;
 use Spatie\Permission\PermissionRegistrar;
 use Throwable;

@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-[1320px] mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-[220px,1fr] gap-4">
-        @include('panel.partials.sidebar', ['activeMenu' => 'favorites', 'activeFavoritesTab' => $activeTab])
+        @include('panel::partials.sidebar', ['activeMenu' => 'favorites', 'activeFavoritesTab' => $activeTab])
 
         <section class="bg-white border border-slate-200">
             @if($requiresLogin ?? false)
