@@ -18,7 +18,7 @@ use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Listing\Support\QuickListingCategorySuggester;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
-use Modules\S3\Support\MediaStorage;
+use Modules\Site\App\Support\LocalMedia;
 use Modules\User\App\Models\Profile;
 use Modules\Video\Models\Video;
 use Throwable;
@@ -641,10 +641,11 @@ class PanelQuickListingForm extends Component
                 continue;
             }
 
-            $listing
-                ->addMedia($photo->getRealPath())
-                ->usingFileName($photo->getClientOriginalName())
-                ->toMediaCollection('listing-images', $mediaDisk);
+            $listing->attachListingImage(
+                $photo->getRealPath(),
+                $photo->getClientOriginalName(),
+                $mediaDisk
+            );
         }
 
         foreach ($this->videos as $index => $video) {
@@ -757,7 +758,7 @@ class PanelQuickListingForm extends Component
 
     private function frontendMediaDisk(): string
     {
-        return (string) config('media_storage.local_disk', MediaStorage::diskFromDriver(MediaStorage::DRIVER_LOCAL));
+        return LocalMedia::disk();
     }
 
     private function handlePublishValidationFailure(ValidationException $exception): void

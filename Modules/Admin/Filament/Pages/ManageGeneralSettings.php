@@ -4,21 +4,18 @@ namespace Modules\Admin\Filament\Pages;
 
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Modules\Admin\Support\HomeSlideFormSchema;
 use Modules\Location\Support\CountryCodeManager;
-use Modules\S3\Support\MediaStorage;
 use Modules\Site\App\Settings\GeneralSettings;
 use Modules\Site\App\Support\HomeSlideDefaults;
+use Modules\Site\App\Support\LocalMedia;
 use Tapp\FilamentCountryCodeField\Forms\Components\CountryCodeSelect;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
@@ -44,15 +41,8 @@ class ManageGeneralSettings extends SettingsPage
         return [
             'site_name' => filled($data['site_name'] ?? null) ? $data['site_name'] : $defaults['site_name'],
             'site_description' => filled($data['site_description'] ?? null) ? $data['site_description'] : $defaults['site_description'],
-            'media_disk' => MediaStorage::normalizeDriver($data['media_disk'] ?? $defaults['media_disk']),
-            'home_slides' => $this->normalizeHomeSlides(
-                $data['home_slides'] ?? $defaults['home_slides'],
-                MediaStorage::storedDisk('public'),
-            ),
+            'home_slides' => $this->normalizeHomeSlides($data['home_slides'] ?? $defaults['home_slides']),
             'site_logo' => $data['site_logo'] ?? null,
-            'site_logo_disk' => filled($data['site_logo'] ?? null)
-                ? MediaStorage::storedDisk($data['site_logo_disk'] ?? 'public')
-                : null,
             'sender_name' => filled($data['sender_name'] ?? null) ? $data['sender_name'] : $defaults['sender_name'],
             'sender_email' => filled($data['sender_email'] ?? null) ? $data['sender_email'] : $defaults['sender_email'],
             'default_language' => filled($data['default_language'] ?? null) ? $data['default_language'] : $defaults['default_language'],
@@ -77,14 +67,7 @@ class ManageGeneralSettings extends SettingsPage
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $mediaDriver = MediaStorage::normalizeDriver($data['media_disk'] ?? null);
-        $mediaDisk = MediaStorage::diskFromDriver($mediaDriver);
-
-        $data['media_disk'] = $mediaDriver;
-        $data['home_slides'] = $this->normalizeHomeSlides($data['home_slides'] ?? [], $mediaDisk);
-        $data['site_logo_disk'] = MediaStorage::managesPath($data['site_logo'] ?? null)
-            ? MediaStorage::storedDisk($data['site_logo_disk'] ?? null, $mediaDriver)
-            : null;
+        $data['home_slides'] = $this->normalizeHomeSlides($data['home_slides'] ?? []);
         $data['currencies'] = $this->normalizeCurrencies($data['currencies'] ?? []);
 
         return $data;
@@ -106,32 +89,16 @@ class ManageGeneralSettings extends SettingsPage
                     ->default($defaults['site_description'])
                     ->rows(3)
                     ->maxLength(500),
-                Select::make('media_disk')
-                    ->label('Media Storage')
-                    ->options(MediaStorage::options())
-                    ->default($defaults['media_disk'])
-                    ->required()
-                    ->native(false)
-                    ->helperText('Storage driver used for listing images, videos, the site logo, and home slide visuals.'),
                 HomeSlideFormSchema::make(
                     $defaults['home_slides'],
-                    fn ($state): array => $this->normalizeHomeSlides($state, MediaStorage::activeDisk()),
+                    fn ($state): array => $this->normalizeHomeSlides($state),
                 ),
-                Hidden::make('site_logo_disk'),
                 FileUpload::make('site_logo')
                     ->label('Site Logo')
                     ->image()
-                    ->disk(fn (Get $get): string => MediaStorage::storedDisk($get('site_logo_disk'), $get('media_disk')))
+                    ->disk(LocalMedia::disk())
                     ->directory('settings')
-                    ->visibility('public')
-                    ->afterStateUpdated(function (Get $get, Set $set, mixed $state): void {
-                        $set(
-                            'site_logo_disk',
-                            MediaStorage::managesPath($state)
-                                ? MediaStorage::diskFromDriver($get('media_disk'))
-                                : null,
-                        );
-                    }),
+                    ->visibility('public'),
                 TextInput::make('sender_name')
                     ->label('Sender Name')
                     ->default($defaults['sender_name'])
@@ -242,9 +209,7 @@ class ManageGeneralSettings extends SettingsPage
         return [
             'site_name' => $siteName,
             'site_description' => 'A fast and secure marketplace for buying and selling.',
-            'media_disk' => MediaStorage::defaultDriver(),
             'home_slides' => $this->defaultHomeSlides(),
-            'site_logo_disk' => null,
             'sender_name' => $siteName,
             'sender_email' => (string) config('mail.from.address', 'info@'.$siteHost),
             'default_language' => in_array(config('app.locale'), array_keys($this->localeOptions()), true) ? (string) config('app.locale') : 'en',
@@ -292,8 +257,8 @@ class ManageGeneralSettings extends SettingsPage
         return HomeSlideDefaults::defaults();
     }
 
-    private function normalizeHomeSlides(mixed $state, ?string $defaultDisk = null): array
+    private function normalizeHomeSlides(mixed $state): array
     {
-        return HomeSlideDefaults::normalize($state, $defaultDisk);
+        return HomeSlideDefaults::normalize($state);
     }
 }

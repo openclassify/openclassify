@@ -44,7 +44,7 @@
                 'subtitle' => $subtitle !== '' ? $subtitle : 'Buy and sell everything in your area',
                 'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : 'Browse Listings',
                 'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : 'Post Listing',
-                'image_url' => \Modules\S3\Support\MediaStorage::url($imagePath, $slide['disk'] ?? null),
+                'image_url' => \Modules\Site\App\Support\LocalMedia::url($imagePath),
             ];
         })
         ->values();

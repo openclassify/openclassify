@@ -1,9 +1,12 @@
 <?php
 
+use MWGuerra\FileManager\Models\FileSystemItem;
+use MWGuerra\FileManager\Policies\FileSystemItemPolicy;
+
 return [
     'mode' => 'database', // 'database' or 'storage'
     'storage_mode' => [
-        'disk' => env('FILEMANAGER_DISK', env('FILESYSTEM_DISK', 'public')),
+        'disk' => 'public',
         'root' => env('FILEMANAGER_ROOT', ''),
         'show_hidden' => env('FILEMANAGER_SHOW_HIDDEN', false),
         'url_expiration' => env('FILEMANAGER_URL_EXPIRATION', 60),
@@ -17,7 +20,7 @@ return [
         'public_disks' => ['public'],
         'public_access_disks' => [],
     ],
-    'model' => \MWGuerra\FileManager\Models\FileSystemItem::class,
+    'model' => FileSystemItem::class,
     'file_manager' => [
         'enabled' => true,
         'navigation' => [
@@ -40,7 +43,7 @@ return [
         'enabled' => true,
     ],
     'upload' => [
-        'disk' => env('FILEMANAGER_DISK', env('FILESYSTEM_DISK', 'public')),
+        'disk' => 'public',
         'directory' => env('FILEMANAGER_UPLOAD_DIR', 'uploads'),
         'max_file_size' => 100 * 1024, // 100 MB in kilobytes
         'allowed_mimes' => [
@@ -91,7 +94,7 @@ return [
             'delete_any' => null,  // Bulk delete
             'download' => null,    // Download files
         ],
-        'policy' => \MWGuerra\FileManager\Policies\FileSystemItemPolicy::class,
+        'policy' => FileSystemItemPolicy::class,
     ],
     'sidebar' => [
         'enabled' => true,

@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use Modules\S3\Support\MediaStorage;
+use Modules\Site\App\Support\LocalMedia;
 use Modules\Video\Models\Video;
 
 class VideoFormSchema
@@ -127,7 +127,7 @@ class VideoFormSchema
 
         return FileUpload::make('upload_path')
             ->label('Source video')
-            ->disk(fn (?Video $record): string => MediaStorage::storedDisk($record?->upload_disk))
+            ->disk(fn (): string => LocalMedia::disk())
             ->directory(trim((string) config('video.upload_directory', 'videos/uploads'), '/'))
             ->visibility('public')
             ->acceptedFileTypes([
@@ -192,7 +192,7 @@ class VideoFormSchema
 
     protected static function normalizeData(array $data): array
     {
-        $data['upload_disk'] = (string) config('video.disk', MediaStorage::activeDisk());
+        $data['upload_disk'] = (string) config('video.disk', LocalMedia::disk());
 
         if (blank($data['title'] ?? null) && filled($data['upload_path'] ?? null)) {
             $data['title'] = str(pathinfo((string) $data['upload_path'], PATHINFO_FILENAME))

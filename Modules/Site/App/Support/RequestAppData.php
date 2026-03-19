@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\View;
 use Modules\Category\Models\Category;
 use Modules\Location\Models\Country;
 use Modules\Location\Support\CountryCodeManager;
-use Modules\S3\Support\MediaStorage;
 use Modules\Site\App\Settings\GeneralSettings;
 use Modules\User\App\Models\User;
 use Throwable;
@@ -42,12 +41,10 @@ final class RequestAppData
         $fallbackAppleClientId = config('services.apple.client_id');
         $fallbackAppleClientSecret = config('services.apple.client_secret');
         $fallbackDefaultCountryCode = (string) config('app.default_country_code', '+90');
-        $fallbackMediaDriver = MediaStorage::defaultDriver();
 
         $generalSettings = [
             'site_name' => $fallbackName,
             'site_description' => $fallbackDescription,
-            'media_disk' => $fallbackMediaDriver,
             'home_slides' => $fallbackHomeSlides,
             'site_logo_url' => null,
             'default_language' => $fallbackLocale,
@@ -94,18 +91,13 @@ final class RequestAppData
             $appleClientId = trim((string) ($settings->apple_client_id ?: $fallbackAppleClientId));
             $appleClientSecret = trim((string) ($settings->apple_client_secret ?: $fallbackAppleClientSecret));
             $defaultCountryCode = CountryCodeManager::normalizeCountryCode($settings->default_country_code ?? $fallbackDefaultCountryCode);
-            $mediaDriver = MediaStorage::normalizeDriver($settings->media_disk ?? null);
 
             return [
                 'site_name' => trim((string) ($settings->site_name ?: $fallbackName)),
                 'site_description' => trim((string) ($settings->site_description ?: $fallbackDescription)),
-                'media_disk' => $mediaDriver,
-                'home_slides' => HomeSlideDefaults::normalize(
-                    $settings->home_slides ?? [],
-                    MediaStorage::diskFromDriver($mediaDriver),
-                ),
+                'home_slides' => HomeSlideDefaults::normalize($settings->home_slides ?? []),
                 'site_logo_url' => filled($settings->site_logo)
-                    ? MediaStorage::url($settings->site_logo, $settings->site_logo_disk ?? null)
+                    ? LocalMedia::url($settings->site_logo)
                     : null,
                 'default_language' => $defaultLanguage,
                 'default_country_code' => $defaultCountryCode,
@@ -164,8 +156,6 @@ final class RequestAppData
             'app.default_country_code' => $generalSettings['default_country_code'] ?? '+90',
             'app.default_country_iso2' => CountryCodeManager::iso2FromCountryCode($generalSettings['default_country_code'] ?? '+90') ?? 'TR',
         ]);
-
-        MediaStorage::applyRuntimeConfig();
     }
 
     private function resolveHeaderLocationCountries(): array

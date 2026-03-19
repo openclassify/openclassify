@@ -4,7 +4,7 @@ namespace Modules\Video\Support;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Modules\S3\Support\MediaStorage;
+use Modules\Site\App\Support\LocalMedia;
 use Modules\Video\Models\Video;
 use RuntimeException;
 use Symfony\Component\Process\Process;
@@ -13,7 +13,7 @@ class VideoTranscoder
 {
     public function transcode(Video $video): array
     {
-        $disk = (string) config('video.disk', MediaStorage::activeDisk());
+        $disk = (string) config('video.disk', LocalMedia::disk());
         $inputDisk = Storage::disk((string) ($video->upload_disk ?: $disk));
         $outputDisk = Storage::disk($disk);
         $workspace = storage_path('app/private/video-processing/'.Str::uuid());

@@ -1,5 +1,6 @@
 <?php
 
+use Modules\Site\App\Support\HomeSlideDefaults;
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
 return new class extends SettingsMigration
@@ -8,9 +9,7 @@ return new class extends SettingsMigration
     {
         $this->migrator->add('general.site_name', 'OpenClassify');
         $this->migrator->add('general.site_description', 'The marketplace for buying and selling everything.');
-        $this->migrator->add('general.media_disk', \Modules\S3\Support\MediaStorage::defaultDriver());
         $this->migrator->add('general.site_logo', null);
-        $this->migrator->add('general.site_logo_disk', null);
         $this->migrator->add('general.default_language', 'en');
         $this->migrator->add('general.default_country_code', '+90');
         $this->migrator->add('general.currencies', ['USD']);
@@ -30,6 +29,6 @@ return new class extends SettingsMigration
         $this->migrator->add('general.enable_apple_login', false);
         $this->migrator->add('general.apple_client_id', null);
         $this->migrator->add('general.apple_client_secret', null);
-        $this->migrator->add('general.home_slides', \Modules\Site\App\Support\HomeSlideDefaults::defaults());
+        $this->migrator->add('general.home_slides', HomeSlideDefaults::defaults());
     }
 };

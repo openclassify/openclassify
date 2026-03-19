@@ -2,6 +2,7 @@
 
 namespace Modules\User\App\Models;
 
+use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
@@ -17,7 +18,7 @@ use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
-use Modules\S3\Support\MediaStorage;
+use Modules\Site\App\Support\LocalMedia;
 use Modules\User\App\States\UserStatus;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -50,7 +51,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
     protected static function newFactory(): Factory
     {
-        return \Database\Factories\UserFactory::new();
+        return UserFactory::new();
     }
 
     public function getActivitylogOptions(): LogOptions
@@ -128,21 +129,17 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
         $path = trim((string) $this->avatar_url);
 
-        if (! MediaStorage::managesPath($path)) {
-            return MediaStorage::url($path);
+        if (! LocalMedia::managesPath($path)) {
+            return LocalMedia::url($path);
         }
 
-        $activeDisk = MediaStorage::activeDisk();
+        $disk = LocalMedia::disk();
 
-        if (Storage::disk($activeDisk)->exists($path)) {
-            return Storage::disk($activeDisk)->url($path);
+        if (Storage::disk($disk)->exists($path)) {
+            return Storage::disk($disk)->url($path);
         }
 
-        if ($activeDisk !== 'public' && Storage::disk('public')->exists($path)) {
-            return Storage::disk('public')->url($path);
-        }
-
-        return MediaStorage::url($path, $activeDisk);
+        return LocalMedia::url($path);
     }
 
     public function getDisplayName(): string

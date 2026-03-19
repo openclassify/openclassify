@@ -11,9 +11,11 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
+use Modules\Conversation\App\Models\Conversation;
 use Modules\Listing\States\ListingStatus;
 use Modules\Listing\Support\ListingImageViewData;
 use Modules\Listing\Support\ListingPanelHelper;
+use Modules\Site\App\Support\LocalMedia;
 use Modules\User\App\Models\User;
 use Modules\Video\Enums\VideoStatus;
 use Modules\Video\Models\Video;
@@ -63,23 +65,23 @@ class Listing extends Model implements HasMedia
 
     public function category()
     {
-        return $this->belongsTo(\Modules\Category\Models\Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(\Modules\User\App\Models\User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function favoritedByUsers()
     {
-        return $this->belongsToMany(\Modules\User\App\Models\User::class, 'favorite_listings')
+        return $this->belongsToMany(User::class, 'favorite_listings')
             ->withTimestamps();
     }
 
     public function conversations()
     {
-        return $this->hasMany(\Modules\Conversation\App\Models\Conversation::class);
+        return $this->hasMany(Conversation::class);
     }
 
     public function videos()
@@ -453,6 +455,7 @@ class Listing extends Model implements HasMedia
             return;
         }
 
+        $disk = $this->mediaDisk();
         $targetFileName = trim((string) ($fileName ?: basename($absolutePath)));
         $existingMediaItems = $this->getMedia('listing-images');
 
@@ -462,7 +465,7 @@ class Listing extends Model implements HasMedia
             if (
                 $existingMedia
                 && (string) $existingMedia->file_name === $targetFileName
-                && (string) $existingMedia->disk === 'public'
+                && (string) $existingMedia->disk === $disk
             ) {
                 try {
                     if (is_file($existingMedia->getPath())) {
@@ -474,12 +477,25 @@ class Listing extends Model implements HasMedia
         }
 
         $this->clearMediaCollection('listing-images');
+        $this->attachListingImage($absolutePath, $targetFileName, $disk);
+    }
+
+    public function attachListingImage(string $absolutePath, string $fileName, ?string $disk = null): void
+    {
+        if (! is_file($absolutePath)) {
+            return;
+        }
+
+        $targetDisk = is_string($disk) && trim($disk) !== ''
+            ? trim($disk)
+            : $this->mediaDisk();
 
         $this
             ->addMedia($absolutePath)
-            ->usingFileName($targetFileName)
+            ->usingFileName(trim($fileName))
+            ->withCustomProperties(self::mediaCustomProperties())
             ->preservingOriginal()
-            ->toMediaCollection('listing-images', 'public');
+            ->toMediaCollection('listing-images', $targetDisk);
     }
 
     public function statusValue(): string
@@ -571,7 +587,7 @@ class Listing extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('listing-images')->useDisk('public');
+        $this->addMediaCollection('listing-images')->useDisk($this->mediaDisk());
     }
 
     public function registerMediaConversions(?Media $media = null): void
@@ -642,6 +658,37 @@ class Listing extends Model implements HasMedia
         $argv = implode(' ', (array) ($_SERVER['argv'] ?? []));
 
         return str_contains($argv, 'db:seed') || str_contains($argv, '--seed');
+    }
+
+    private function mediaDisk(): string
+    {
+        return LocalMedia::disk();
+    }
+
+    public static function mediaCustomProperties(): array
+    {
+        $scope = static::mediaPathScope();
+
+        return $scope !== null
+            ? ['path_scope' => $scope]
+            : [];
+    }
+
+    public static function mediaPathScope(): ?string
+    {
+        $connection = (string) config('database.default', 'pgsql');
+        $searchPath = config("database.connections.{$connection}.search_path");
+        $value = is_array($searchPath)
+            ? implode('_', $searchPath)
+            : (string) $searchPath;
+        $scope = (string) Str::of($value)
+            ->before(',')
+            ->trim()
+            ->lower()
+            ->replaceMatches('/[^a-z0-9_]+/', '_')
+            ->trim('_');
+
+        return $scope !== '' ? $scope : null;
     }
 
     protected function location(): Attribute

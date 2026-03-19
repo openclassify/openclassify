@@ -23,6 +23,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
@@ -31,6 +32,7 @@ use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
 use Modules\Location\Support\CountryCodeManager;
+use Modules\Site\App\Support\LocalMedia;
 use Modules\Video\Support\Filament\VideoFormSchema;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 
@@ -39,7 +41,7 @@ class AdminListingResourceSchema
     public static function form(): array
     {
         return [
-            TextInput::make('title')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', \Illuminate\Support\Str::slug($state).'-'.\Illuminate\Support\Str::random(4))),
+            TextInput::make('title')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug($state).'-'.Str::random(4))),
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             Textarea::make('description')->rows(4),
             TextInput::make('price')
@@ -101,6 +103,8 @@ class AdminListingResourceSchema
                 ->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('images')
                 ->collection('listing-images')
+                ->disk(fn (): string => LocalMedia::disk())
+                ->customProperties(fn (): array => Listing::mediaCustomProperties())
                 ->multiple()
                 ->image()
                 ->reorderable(),

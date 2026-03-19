@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'disk' => env('VIDEO_DISK', env('MEDIA_DISK', env('FILESYSTEM_DISK', 's3'))),
+    'disk' => env('VIDEO_DISK', env('FILESYSTEM_DISK', 'public')),
     'upload_directory' => env('VIDEO_UPLOAD_DIRECTORY', 'videos/uploads'),
     'processed_directory' => env('VIDEO_PROCESSED_DIRECTORY', 'videos/mobile'),
     'queue' => env('VIDEO_QUEUE', 'videos'),
