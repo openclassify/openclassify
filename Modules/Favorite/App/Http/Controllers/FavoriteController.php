@@ -5,14 +5,12 @@ namespace Modules\Favorite\App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Schema;
 use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\AuthRedirector;
-use Throwable;
 
 class FavoriteController extends Controller
 {
@@ -40,13 +38,7 @@ class FavoriteController extends Controller
         $user = $request->user();
         $requiresLogin = ! $user;
 
-        $categories = collect();
-        if ($this->tableExists('categories')) {
-            $categories = Category::query()
-                ->where('is_active', true)
-                ->orderBy('name')
-                ->get(['id', 'name']);
-        }
+        $categories = Category::filterOptions();
 
         $favoriteListings = $this->emptyPaginator();
         $favoriteSearches = $this->emptyPaginator();
@@ -54,64 +46,22 @@ class FavoriteController extends Controller
         $buyerConversationListingMap = [];
 
         if ($user && $activeTab === 'listings') {
-            try {
-                if ($this->tableExists('favorite_listings')) {
-                    $favoriteListings = $user->favoriteListings()
-                        ->with(['category:id,name', 'user:id,name'])
-                        ->wherePivot('created_at', '>=', now()->subYear())
-                        ->when($statusFilter === 'active', fn ($query) => $query->where('status', 'active'))
-                        ->when($selectedCategoryId, fn ($query) => $query->where('category_id', $selectedCategoryId))
-                        ->orderByPivot('created_at', 'desc')
-                        ->paginate(10)
-                        ->withQueryString();
-                }
+            $favoriteListings = $user->favoriteListingsPage($statusFilter, $selectedCategoryId);
 
-                if (
-                    $favoriteListings->isNotEmpty()
-                    && $this->tableExists('conversations')
-                ) {
-                    $userId = (int) $user->getKey();
-                    $buyerConversationListingMap = Conversation::query()
-                        ->where('buyer_id', $userId)
-                        ->whereIn('listing_id', $favoriteListings->pluck('id')->all())
-                        ->pluck('id', 'listing_id')
-                        ->map(fn ($conversationId) => (int) $conversationId)
-                        ->all();
-                }
-            } catch (Throwable) {
-                $favoriteListings = $this->emptyPaginator();
-                $buyerConversationListingMap = [];
+            if ($favoriteListings->isNotEmpty()) {
+                $buyerConversationListingMap = Conversation::listingMapForBuyer(
+                    (int) $user->getKey(),
+                    $favoriteListings->pluck('id')->all(),
+                );
             }
         }
 
         if ($user && $activeTab === 'searches') {
-            try {
-                if ($this->tableExists('favorite_searches')) {
-                    $favoriteSearches = $user->favoriteSearches()
-                        ->with('category:id,name')
-                        ->latest()
-                        ->paginate(10)
-                        ->withQueryString();
-                }
-            } catch (Throwable) {
-                $favoriteSearches = $this->emptyPaginator();
-            }
+            $favoriteSearches = $user->favoriteSearchesPage();
         }
 
         if ($user && $activeTab === 'sellers') {
-            try {
-                if ($this->tableExists('favorite_sellers')) {
-                    $favoriteSellers = $user->favoriteSellers()
-                        ->withCount([
-                            'listings as active_listings_count' => fn ($query) => $query->where('status', 'active'),
-                        ])
-                        ->orderByPivot('created_at', 'desc')
-                        ->paginate(10)
-                        ->withQueryString();
-                }
-            } catch (Throwable) {
-                $favoriteSellers = $this->emptyPaginator();
-            }
+            $favoriteSellers = $user->favoriteSellersPage();
         }
 
         return view('favorite::index', [
@@ -163,24 +113,7 @@ class FavoriteController extends Controller
             return back()->with('error', 'Select at least one filter before saving a search.');
         }
 
-        $signature = FavoriteSearch::signatureFor($filters);
-
-        $categoryName = null;
-        if (isset($filters['category'])) {
-            $categoryName = Category::query()->whereKey($filters['category'])->value('name');
-        }
-
-        $label = FavoriteSearch::labelFor($filters, is_string($categoryName) ? $categoryName : null);
-
-        $favoriteSearch = $request->user()->favoriteSearches()->firstOrCreate(
-            ['signature' => $signature],
-            [
-                'label' => $label,
-                'search_term' => $filters['search'] ?? null,
-                'category_id' => $filters['category'] ?? null,
-                'filters' => $filters,
-            ]
-        );
+        $favoriteSearch = FavoriteSearch::storeForUser($request->user(), $filters);
 
         if (! $favoriteSearch->wasRecentlyCreated) {
             return back()->with('success', 'This search is already in your favorites.');
@@ -198,15 +131,6 @@ class FavoriteController extends Controller
         $favoriteSearch->delete();
 
         return back()->with('success', 'Saved search deleted.');
-    }
-
-    private function tableExists(string $table): bool
-    {
-        try {
-            return Schema::hasTable($table);
-        } catch (Throwable) {
-            return false;
-        }
     }
 
     private function emptyPaginator(): LengthAwarePaginator

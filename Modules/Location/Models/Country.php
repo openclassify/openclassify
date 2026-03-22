@@ -131,4 +131,63 @@ class Country extends Model
             ])
             ->all();
     }
+
+    public static function browseSelection(?int $countryId, ?int $cityId): array
+    {
+        $countries = static::query()
+            ->active()
+            ->orderBy('name')
+            ->get(['id', 'name']);
+
+        $selectedCountry = $countryId
+            ? ($countries->firstWhere('id', $countryId) ?? static::query()->whereKey($countryId)->first(['id', 'name']))
+            : null;
+        $selectedCity = $cityId
+            ? City::query()->whereKey($cityId)->first(['id', 'name', 'country_id'])
+            : null;
+
+        if ($selectedCity && ! $selectedCountry) {
+            $countryId = (int) $selectedCity->country_id;
+            $selectedCountry = static::query()->whereKey($countryId)->first(['id', 'name']);
+        }
+
+        $cities = collect();
+
+        if ($selectedCountry) {
+            $countryId = (int) $selectedCountry->getKey();
+            $cities = City::query()
+                ->where('country_id', $countryId)
+                ->active()
+                ->orderBy('name')
+                ->get(['id', 'name', 'country_id']);
+
+            if ($cities->isEmpty()) {
+                $cities = City::query()
+                    ->where('country_id', $countryId)
+                    ->orderBy('name')
+                    ->get(['id', 'name', 'country_id']);
+            }
+        } else {
+            $countryId = null;
+            $cityId = null;
+        }
+
+        if ($selectedCity && $countryId && (int) $selectedCity->country_id !== $countryId) {
+            $selectedCity = null;
+            $cityId = null;
+        }
+
+        if ($selectedCity) {
+            $cityId = (int) $selectedCity->getKey();
+        }
+
+        return [
+            'country_id' => $countryId,
+            'city_id' => $cityId,
+            'countries' => $countries,
+            'cities' => $cities,
+            'selected_country_name' => $selectedCountry?->name ? (string) $selectedCountry->name : null,
+            'selected_city_name' => $selectedCity?->name ? (string) $selectedCity->name : null,
+        ];
+    }
 }

@@ -18,7 +18,7 @@ class HomeController extends Controller
         $categoryCount = Category::activeCount();
         $userCount = User::totalCount();
         $favoriteListingIds = auth()->check()
-            ? auth()->user()->homeFavoriteListingIds()
+            ? auth()->user()->favoriteListingIds()
             : [];
 
         return view('site::home', compact(

@@ -3,7 +3,6 @@
 namespace Modules\Conversation\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Listing\Models\Listing;
@@ -14,10 +13,6 @@ class ConversationDemoSeeder extends Seeder
 {
     public function run(): void
     {
-        if (! $this->conversationTablesExist()) {
-            return;
-        }
-
         $users = User::query()
             ->whereIn('email', DemoUserCatalog::emails())
             ->orderBy('email')
@@ -71,11 +66,6 @@ class ConversationDemoSeeder extends Seeder
                 $this->messagePayloads($index, true)
             );
         }
-    }
-
-    private function conversationTablesExist(): bool
-    {
-        return Schema::hasTable('conversations') && Schema::hasTable('conversation_messages');
     }
 
     private function seedConversationThread(

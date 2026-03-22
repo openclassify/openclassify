@@ -14,5 +14,6 @@ class LocationServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(module_path($this->moduleName, 'routes/web.php'));
     }
 
-    public function register(): void {}
+    public function register(): void
+    {}
 }

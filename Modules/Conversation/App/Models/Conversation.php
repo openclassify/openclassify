@@ -284,6 +284,42 @@ class Conversation extends Model
         return is_null($value) ? null : (int) $value;
     }
 
+    public static function detailForBuyerListing(int $listingId, int $buyerId): ?self
+    {
+        $conversationId = static::buyerListingConversationId($listingId, $buyerId);
+
+        if (! $conversationId) {
+            return null;
+        }
+
+        $conversation = static::query()
+            ->forUser($buyerId)
+            ->find($conversationId);
+
+        if (! $conversation) {
+            return null;
+        }
+
+        $conversation->loadThread();
+        $conversation->loadCount([
+            'messages as unread_count' => fn (Builder $query) => $query
+                ->where('sender_id', '!=', $buyerId)
+                ->whereNull('read_at'),
+        ]);
+
+        return $conversation;
+    }
+
+    public static function listingMapForBuyer(int $buyerId, array $listingIds = []): array
+    {
+        return static::query()
+            ->where('buyer_id', $buyerId)
+            ->when($listingIds !== [], fn (Builder $query): Builder => $query->whereIn('listing_id', $listingIds))
+            ->pluck('id', 'listing_id')
+            ->map(fn ($conversationId): int => (int) $conversationId)
+            ->all();
+    }
+
     public static function unreadCountForUser(int $userId): int
     {
         return (int) ConversationMessage::query()

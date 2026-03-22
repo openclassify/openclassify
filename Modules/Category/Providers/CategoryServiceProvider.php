@@ -15,5 +15,6 @@ class CategoryServiceProvider extends ServiceProvider
         $this->loadViewsFrom(module_path($this->moduleName, 'resources/views'), 'category');
     }
 
-    public function register(): void {}
+    public function register(): void
+    {}
 }

@@ -8,42 +8,36 @@ return new class extends Migration
 {
     public function up(): void
     {
-        if (! Schema::hasTable('favorite_listings')) {
-            Schema::create('favorite_listings', function (Blueprint $table): void {
-                $table->id();
-                $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-                $table->foreignId('listing_id')->constrained('listings')->cascadeOnDelete();
-                $table->timestamps();
+        Schema::create('favorite_listings', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('listing_id')->constrained('listings')->cascadeOnDelete();
+            $table->timestamps();
 
-                $table->unique(['user_id', 'listing_id']);
-            });
-        }
+            $table->unique(['user_id', 'listing_id']);
+        });
 
-        if (! Schema::hasTable('favorite_sellers')) {
-            Schema::create('favorite_sellers', function (Blueprint $table): void {
-                $table->id();
-                $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-                $table->foreignId('seller_id')->constrained('users')->cascadeOnDelete();
-                $table->timestamps();
+        Schema::create('favorite_sellers', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('seller_id')->constrained('users')->cascadeOnDelete();
+            $table->timestamps();
 
-                $table->unique(['user_id', 'seller_id']);
-            });
-        }
+            $table->unique(['user_id', 'seller_id']);
+        });
 
-        if (! Schema::hasTable('favorite_searches')) {
-            Schema::create('favorite_searches', function (Blueprint $table): void {
-                $table->id();
-                $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-                $table->string('label')->nullable();
-                $table->string('search_term')->nullable();
-                $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
-                $table->json('filters')->nullable();
-                $table->string('signature', 64);
-                $table->timestamps();
+        Schema::create('favorite_searches', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('label')->nullable();
+            $table->string('search_term')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
+            $table->json('filters')->nullable();
+            $table->string('signature', 64);
+            $table->timestamps();
 
-                $table->unique(['user_id', 'signature']);
-            });
-        }
+            $table->unique(['user_id', 'signature']);
+        });
     }
 
     public function down(): void

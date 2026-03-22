@@ -3,7 +3,6 @@
 namespace Modules\Site\App\Support;
 
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Modules\Category\Models\Category;
 use Modules\Location\Models\Country;
@@ -67,14 +66,6 @@ final class RequestAppData
             'apple_client_id' => $fallbackAppleClientId,
             'apple_client_secret' => $fallbackAppleClientSecret,
         ];
-
-        try {
-            if (! Schema::hasTable('settings')) {
-                return $generalSettings;
-            }
-        } catch (Throwable) {
-            return $generalSettings;
-        }
 
         try {
             $settings = app(GeneralSettings::class);
@@ -141,15 +132,15 @@ final class RequestAppData
             'filament-google-maps.keys.server_key' => $mapsKey,
             'services.google.client_id' => $generalSettings['google_client_id'],
             'services.google.client_secret' => $generalSettings['google_client_secret'],
-            'services.google.redirect' => url('/oauth/callback/google'),
+            'services.google.redirect' => route('auth.social.callback', ['provider' => 'google'], absolute: true),
             'services.google.enabled' => (bool) $generalSettings['google_login_enabled'],
             'services.facebook.client_id' => $generalSettings['facebook_client_id'],
             'services.facebook.client_secret' => $generalSettings['facebook_client_secret'],
-            'services.facebook.redirect' => url('/oauth/callback/facebook'),
+            'services.facebook.redirect' => route('auth.social.callback', ['provider' => 'facebook'], absolute: true),
             'services.facebook.enabled' => (bool) $generalSettings['facebook_login_enabled'],
             'services.apple.client_id' => $generalSettings['apple_client_id'],
             'services.apple.client_secret' => $generalSettings['apple_client_secret'],
-            'services.apple.redirect' => url('/oauth/callback/apple'),
+            'services.apple.redirect' => route('auth.social.callback', ['provider' => 'apple'], absolute: true),
             'services.apple.stateless' => true,
             'services.apple.enabled' => (bool) $generalSettings['apple_login_enabled'],
             'money.defaults.currency' => $generalSettings['currencies'][0] ?? 'USD',
@@ -161,10 +152,6 @@ final class RequestAppData
     private function resolveHeaderLocationCountries(): array
     {
         try {
-            if (! Schema::hasTable('countries') || ! Schema::hasTable('cities')) {
-                return [];
-            }
-
             return Country::headerLocationOptions();
         } catch (Throwable) {
             return [];
@@ -174,10 +161,6 @@ final class RequestAppData
     private function resolveHeaderNavCategories(): array
     {
         try {
-            if (! Schema::hasTable('categories')) {
-                return [];
-            }
-
             return Category::headerNavigationItems();
         } catch (Throwable) {
             return [];

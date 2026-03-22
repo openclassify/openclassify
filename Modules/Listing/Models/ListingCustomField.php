@@ -4,6 +4,7 @@ namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 
 class ListingCustomField extends Model
@@ -86,6 +87,24 @@ class ListingCustomField extends Model
             ->all();
 
         return collect($options)->mapWithKeys(fn (string $option): array => [$option => $option])->all();
+    }
+
+    public static function uniqueNameFromLabel(string $label, ?self $record = null): string
+    {
+        $baseName = Str::slug($label, '_');
+        $baseName = $baseName !== '' ? $baseName : 'custom_field';
+        $name = $baseName;
+        $counter = 1;
+
+        while (static::query()
+            ->where('name', $name)
+            ->when($record, fn (Builder $query): Builder => $query->whereKeyNot($record->getKey()))
+            ->exists()) {
+            $name = "{$baseName}_{$counter}";
+            $counter++;
+        }
+
+        return $name;
     }
 
     public static function upsertSeeded(Category $category, array $attributes): self

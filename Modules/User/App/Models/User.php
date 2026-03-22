@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
@@ -186,6 +187,11 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         return true;
     }
 
+    public function rememberListing(Listing $listing): void
+    {
+        $this->favoriteListings()->syncWithoutDetaching([$listing->getKey()]);
+    }
+
     public function unreadInboxCount(): int
     {
         return Conversation::unreadCountForUser((int) $this->getKey());
@@ -223,12 +229,49 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         return (int) static::query()->count();
     }
 
-    public function homeFavoriteListingIds(): array
+    public function favoriteListingIds(): array
     {
         return $this->favoriteListings()
             ->pluck('listings.id')
             ->map(fn ($id): int => (int) $id)
             ->all();
+    }
+
+    public function homeFavoriteListingIds(): array
+    {
+        return $this->favoriteListingIds();
+    }
+
+    public function favoriteListingsPage(string $statusFilter = 'all', ?int $categoryId = null, int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->favoriteListings()
+            ->with(['category:id,name', 'user:id,name'])
+            ->wherePivot('created_at', '>=', now()->subYear())
+            ->when($statusFilter === 'active', fn ($query) => $query->where('status', 'active'))
+            ->when($categoryId, fn ($query) => $query->where('category_id', $categoryId))
+            ->orderByPivot('created_at', 'desc')
+            ->paginate($perPage)
+            ->withQueryString();
+    }
+
+    public function favoriteSearchesPage(int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->favoriteSearches()
+            ->with('category:id,name')
+            ->latest()
+            ->paginate($perPage)
+            ->withQueryString();
+    }
+
+    public function favoriteSellersPage(int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->favoriteSellers()
+            ->withCount([
+                'listings as active_listings_count' => fn ($query) => $query->where('status', 'active'),
+            ])
+            ->orderByPivot('created_at', 'desc')
+            ->paginate($perPage)
+            ->withQueryString();
     }
 
     public function panelListingOptions(): Collection

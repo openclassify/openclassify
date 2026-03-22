@@ -53,4 +53,36 @@ class FavoriteSearch extends Model
 
         return $labelParts !== [] ? implode(' · ', $labelParts) : 'Filtered search';
     }
+
+    public static function isSavedForUser(User $user, array $filters): bool
+    {
+        $normalized = static::normalizeFilters($filters);
+
+        if ($normalized === []) {
+            return false;
+        }
+
+        return $user->favoriteSearches()
+            ->where('signature', static::signatureFor($normalized))
+            ->exists();
+    }
+
+    public static function storeForUser(User $user, array $filters): self
+    {
+        $normalized = static::normalizeFilters($filters);
+        $signature = static::signatureFor($normalized);
+        $categoryName = isset($normalized['category'])
+            ? Category::query()->whereKey($normalized['category'])->value('name')
+            : null;
+
+        return $user->favoriteSearches()->firstOrCreate(
+            ['signature' => $signature],
+            [
+                'label' => static::labelFor($normalized, is_string($categoryName) ? $categoryName : null),
+                'search_term' => $normalized['search'] ?? null,
+                'category_id' => $normalized['category'] ?? null,
+                'filters' => $normalized,
+            ]
+        );
+    }
 }

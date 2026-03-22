@@ -319,6 +319,54 @@ class Listing extends Model implements HasMedia
             ->count();
     }
 
+    public static function overviewStats(): array
+    {
+        $counts = static::query()
+            ->selectRaw('COUNT(*) as total')
+            ->selectRaw("SUM(CASE WHEN status = 'active' THEN 1 ELSE 0 END) as active")
+            ->selectRaw("SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) as pending")
+            ->selectRaw('SUM(CASE WHEN is_featured = true THEN 1 ELSE 0 END) as featured')
+            ->first();
+
+        return [
+            'total' => (int) ($counts?->total ?? 0),
+            'active' => (int) ($counts?->active ?? 0),
+            'pending' => (int) ($counts?->pending ?? 0),
+            'featured' => (int) ($counts?->featured ?? 0),
+            'created_today' => (int) static::query()
+                ->where('created_at', '>=', now()->startOfDay())
+                ->count(),
+        ];
+    }
+
+    public static function creationTrend(int $days): array
+    {
+        $safeDays = max(1, $days);
+        $startDate = now()->startOfDay()->subDays($safeDays - 1);
+        $countsByDate = static::query()
+            ->selectRaw('DATE(created_at) as day, COUNT(*) as total')
+            ->where('created_at', '>=', $startDate)
+            ->groupBy('day')
+            ->orderBy('day')
+            ->pluck('total', 'day')
+            ->all();
+        $labels = [];
+        $data = [];
+
+        for ($index = 0; $index < $safeDays; $index++) {
+            $date = $startDate->copy()->addDays($index);
+            $dateKey = $date->toDateString();
+
+            $labels[] = $date->format('M j');
+            $data[] = (int) ($countsByDate[$dateKey] ?? 0);
+        }
+
+        return [
+            'labels' => $labels,
+            'data' => $data,
+        ];
+    }
+
     public static function homeFeatured(int $limit = 4): Collection
     {
         return static::query()
@@ -526,6 +574,16 @@ class Listing extends Model implements HasMedia
     public function assertOwnedBy(User $user): void
     {
         abort_unless((int) $this->user_id === (int) $user->getKey(), 403);
+    }
+
+    public function trackViewBy(null|int|string $viewerId): void
+    {
+        if ((int) $this->user_id === (int) $viewerId) {
+            return;
+        }
+
+        $this->increment('view_count');
+        $this->refresh();
     }
 
     public function markAsSold(): void

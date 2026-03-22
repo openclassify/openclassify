@@ -4,8 +4,6 @@ namespace Modules\Favorite\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 use Modules\Category\Models\Category;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
@@ -16,10 +14,6 @@ class FavoriteDemoSeeder extends Seeder
 {
     public function run(): void
     {
-        if (! $this->favoriteTablesExist()) {
-            return;
-        }
-
         $users = User::query()
             ->whereIn('email', DemoUserCatalog::emails())
             ->orderBy('email')
@@ -30,8 +24,11 @@ class FavoriteDemoSeeder extends Seeder
             return;
         }
 
-        DB::table('favorite_listings')->whereIn('user_id', $users->pluck('id'))->delete();
-        DB::table('favorite_sellers')->whereIn('user_id', $users->pluck('id'))->delete();
+        $users->each(function (User $user): void {
+            $user->favoriteListings()->detach();
+            $user->favoriteSellers()->detach();
+        });
+
         FavoriteSearch::query()->whereIn('user_id', $users->pluck('id'))->delete();
 
         foreach ($users as $index => $user) {
@@ -56,38 +53,25 @@ class FavoriteDemoSeeder extends Seeder
         }
     }
 
-    private function favoriteTablesExist(): bool
-    {
-        return Schema::hasTable('favorite_listings')
-            && Schema::hasTable('favorite_sellers')
-            && Schema::hasTable('favorite_searches');
-    }
-
     private function seedFavoriteListings(User $user, Collection $listings): void
     {
-        $rows = $listings
+        $payload = $listings
             ->values()
-            ->map(function (Listing $listing, int $index) use ($user): array {
+            ->mapWithKeys(function (Listing $listing, int $index): array {
                 $timestamp = now()->subHours(8 + ($index * 3));
 
-                return [
-                    'user_id' => $user->getKey(),
-                    'listing_id' => $listing->getKey(),
+                return [$listing->getKey() => [
                     'created_at' => $timestamp,
                     'updated_at' => $timestamp,
-                ];
+                ]];
             })
             ->all();
 
-        if ($rows === []) {
+        if ($payload === []) {
             return;
         }
 
-        DB::table('favorite_listings')->upsert(
-            $rows,
-            ['user_id', 'listing_id'],
-            ['updated_at']
-        );
+        $user->favoriteListings()->syncWithoutDetaching($payload);
     }
 
     private function seedFavoriteSeller(User $user, User $seller, \Illuminate\Support\Carbon $timestamp): void
@@ -96,16 +80,12 @@ class FavoriteDemoSeeder extends Seeder
             return;
         }
 
-        DB::table('favorite_sellers')->upsert(
-            [[
-                'user_id' => $user->getKey(),
-                'seller_id' => $seller->getKey(),
+        $user->favoriteSellers()->syncWithoutDetaching([
+            $seller->getKey() => [
                 'created_at' => $timestamp,
                 'updated_at' => $timestamp,
-            ]],
-            ['user_id', 'seller_id'],
-            ['updated_at']
-        );
+            ],
+        ]);
     }
 
     private function seedFavoriteSearches(User $user, array $payloads): void

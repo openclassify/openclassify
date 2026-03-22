@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
+use Modules\User\App\Models\SocialiteUser;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\AuthProviderCatalog;
 use Modules\User\App\Support\AuthRedirector;
@@ -60,46 +58,7 @@ class SocialAuthController extends Controller
 
     private function resolveUser(string $provider, mixed $oauthUser): User
     {
-        $socialiteUser = DB::table('socialite_users')
-            ->where('provider', $provider)
-            ->where('provider_id', (string) $oauthUser->getId())
-            ->first();
-
-        $user = null;
-
-        if ($socialiteUser?->user_id) {
-            $user = User::query()->find($socialiteUser->user_id);
-        }
-
-        if (! $user) {
-            $email = filled($oauthUser->getEmail())
-                ? strtolower(trim((string) $oauthUser->getEmail()))
-                : sprintf('%s_%s@social.local', $provider, $oauthUser->getId());
-
-            $user = User::query()->firstOrCreate(
-                ['email' => $email],
-                [
-                    'name' => trim((string) ($oauthUser->getName() ?: $oauthUser->getNickname() ?: ucfirst($provider).' User')),
-                    'password' => Hash::make(Str::random(40)),
-                    'status' => 'active',
-                    'email_verified_at' => now(),
-                ],
-            );
-        }
-
-        DB::table('socialite_users')->updateOrInsert(
-            [
-                'provider' => $provider,
-                'provider_id' => (string) $oauthUser->getId(),
-            ],
-            [
-                'user_id' => $user->getKey(),
-                'updated_at' => now(),
-                'created_at' => $socialiteUser?->created_at ?? now(),
-            ],
-        );
-
-        return $user;
+        return SocialiteUser::resolveUser($provider, $oauthUser);
     }
 
     private function driver(string $provider): mixed

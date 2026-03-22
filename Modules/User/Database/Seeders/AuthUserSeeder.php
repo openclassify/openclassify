@@ -3,7 +3,6 @@
 namespace Modules\User\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\DemoUserCatalog;
 use Spatie\Permission\Models\Role;
@@ -21,10 +20,6 @@ class AuthUserSeeder extends Seeder
                     'status' => 'active',
                 ],
             ));
-
-        if (! class_exists(Role::class) || ! Schema::hasTable((new Role)->getTable())) {
-            return;
-        }
 
         $adminRole = Role::query()->firstOrCreate([
             'name' => 'admin',

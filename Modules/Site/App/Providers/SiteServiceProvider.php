@@ -26,6 +26,7 @@ class SiteServiceProvider extends ServiceProvider
     {
         $viewPath = module_path('Site', 'resources/views');
 
+        $this->loadMigrationsFrom(module_path('Site', 'Database/migrations'));
         $this->loadRoutesFrom(module_path('Site', 'routes/web.php'));
         $this->loadViewsFrom($viewPath, 'site');
         View::addNamespace('app', $viewPath);

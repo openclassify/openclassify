@@ -13,5 +13,6 @@ class UserServiceProvider extends ServiceProvider
         $this->loadViewsFrom(module_path('User', 'resources/views'), 'user');
     }
 
-    public function register(): void {}
+    public function register(): void
+    {}
 }

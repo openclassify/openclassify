@@ -3,7 +3,6 @@
 namespace Modules\Video\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\DemoUserCatalog;
@@ -14,10 +13,6 @@ class VideoDemoSeeder extends Seeder
 {
     public function run(): void
     {
-        if (! Schema::hasTable('videos') || ! Schema::hasTable('listings')) {
-            return;
-        }
-
         $users = User::query()
             ->whereIn('email', DemoUserCatalog::emails())
             ->orderBy('email')

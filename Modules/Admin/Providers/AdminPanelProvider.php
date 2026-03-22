@@ -13,7 +13,6 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\View\PanelsRenderHook;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -21,8 +20,14 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use Modules\Category\CategoryPlugin;
 use Modules\Demo\App\Http\Middleware\ResolveDemoRequest;
+use Modules\Listing\ListingPlugin;
+use Modules\Location\LocationPlugin;
 use Modules\Site\App\Http\Middleware\BootstrapAppData;
+use Modules\Site\SitePlugin;
+use Modules\User\UserPlugin;
+use Modules\Video\VideoPlugin;
 use MWGuerra\FileManager\Filament\Pages\FileManager;
 use MWGuerra\FileManager\FileManagerPlugin;
 
@@ -36,11 +41,6 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors(['primary' => Color::Blue])
-            ->discoverResources(in: module_path('Admin', 'Filament/Resources'), for: 'Modules\\Admin\\Filament\\Resources')
-            ->discoverResources(in: module_path('Video', 'Filament/Admin/Resources'), for: 'Modules\\Video\\Filament\\Admin\\Resources')
-            ->discoverPages(in: module_path('Admin', 'Filament/Pages'), for: 'Modules\\Admin\\Filament\\Pages')
-            ->discoverWidgets(in: module_path('Admin', 'Filament/Widgets'), for: 'Modules\\Admin\\Filament\\Widgets')
-            ->renderHook(PanelsRenderHook::BODY_END, fn () => view('video::partials.video-upload-optimizer'))
             ->userMenuItems([
                 'view-site' => MenuItem::make()
                     ->label('View Site')
@@ -67,6 +67,12 @@ class AdminPanelProvider extends PanelProvider
                     ->users([
                         'Admin' => 'a@a.com',
                     ]),
+                CategoryPlugin::make(),
+                ListingPlugin::make(),
+                LocationPlugin::make(),
+                SitePlugin::make(),
+                UserPlugin::make(),
+                VideoPlugin::make(),
             ])
             ->pages([Dashboard::class])
             ->middleware([

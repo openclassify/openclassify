@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 use Modules\Conversation\App\Events\ConversationReadUpdated;
 use Modules\Conversation\App\Events\InboxMessageCreated;
@@ -14,7 +13,6 @@ use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Conversation\App\Support\QuickMessageCatalog;
 use Modules\Listing\Models\Listing;
-use Throwable;
 
 class ConversationController extends Controller
 {
@@ -28,28 +26,23 @@ class ConversationController extends Controller
         $conversations = collect();
         $selectedConversation = null;
 
-        if ($userId && $this->messagingTablesReady()) {
-            try {
-                [
-                    'conversations' => $conversations,
-                    'selectedConversation' => $selectedConversation,
-                    'markedRead' => $markedRead,
-                ] = $this->resolveInboxState(
-                    $userId,
-                    $messageFilter,
-                    $request->integer('conversation'),
-                    true,
-                );
+        if ($userId) {
+            [
+                'conversations' => $conversations,
+                'selectedConversation' => $selectedConversation,
+                'markedRead' => $markedRead,
+            ] = $this->resolveInboxState(
+                $userId,
+                $messageFilter,
+                $request->integer('conversation'),
+                true,
+            );
 
-                if ($selectedConversation && $markedRead) {
-                    broadcast(new ConversationReadUpdated(
-                        $userId,
-                        $selectedConversation->readPayloadFor($userId),
-                    ));
-                }
-            } catch (Throwable) {
-                $conversations = collect();
-                $selectedConversation = null;
+            if ($selectedConversation && $markedRead) {
+                broadcast(new ConversationReadUpdated(
+                    $userId,
+                    $selectedConversation->readPayloadFor($userId),
+                ));
             }
         }
 
@@ -64,8 +57,6 @@ class ConversationController extends Controller
 
     public function state(Request $request): JsonResponse
     {
-        abort_unless($this->messagingTablesReady(), 503, 'Messaging is not available yet.');
-
         $userId = (int) $request->user()->getKey();
         $messageFilter = $this->resolveMessageFilter($request);
 
@@ -91,14 +82,6 @@ class ConversationController extends Controller
 
     public function start(Request $request, Listing $listing): RedirectResponse | JsonResponse
     {
-        if (! $this->messagingTablesReady()) {
-            if ($request->expectsJson()) {
-                return response()->json(['message' => 'Messaging is not available yet.'], 503);
-            }
-
-            return back()->with('error', 'Messaging is not available yet.');
-        }
-
         $user = $request->user();
 
         if (! $listing->user_id) {
@@ -124,8 +107,7 @@ class ConversationController extends Controller
         }
 
         $conversation = Conversation::openForListingBuyer($listing, (int) $user->getKey());
-
-        $user->favoriteListings()->syncWithoutDetaching([$listing->getKey()]);
+        $user->rememberListing($listing);
 
         $message = null;
         if ($messageBody !== '') {
@@ -144,14 +126,6 @@ class ConversationController extends Controller
 
     public function send(Request $request, Conversation $conversation): RedirectResponse | JsonResponse
     {
-        if (! $this->messagingTablesReady()) {
-            if ($request->expectsJson()) {
-                return response()->json(['message' => 'Messaging is not available yet.'], 503);
-            }
-
-            return back()->with('error', 'Messaging is not available yet.');
-        }
-
         $user = $request->user();
         $userId = (int) $user->getKey();
 
@@ -187,8 +161,6 @@ class ConversationController extends Controller
 
     public function read(Request $request, Conversation $conversation): JsonResponse
     {
-        abort_unless($this->messagingTablesReady(), 503, 'Messaging is not available yet.');
-
         $userId = (int) $request->user()->getKey();
         abort_unless($conversation->hasParticipant($userId), 403);
 
@@ -310,12 +282,4 @@ class ConversationController extends Controller
         }
     }
 
-    private function messagingTablesReady(): bool
-    {
-        try {
-            return Schema::hasTable('conversations') && Schema::hasTable('conversation_messages');
-        } catch (Throwable) {
-            return false;
-        }
-    }
 }

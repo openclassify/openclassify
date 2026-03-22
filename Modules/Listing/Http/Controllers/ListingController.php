@@ -1,18 +1,15 @@
 <?php
+
 namespace Modules\Listing\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Schema;
-use Modules\Location\Models\City;
-use Modules\Location\Models\Country;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
+use Modules\Location\Models\Country;
 use Modules\Theme\Support\ThemeManager;
-use Throwable;
 
 class ListingController extends Controller
 {
@@ -53,19 +50,13 @@ class ListingController extends Controller
             $sort = 'smart';
         }
 
-        $countries = collect();
-        $cities = collect();
-        $selectedCountryName = null;
-        $selectedCityName = null;
-
-        $this->resolveLocationFilters(
-            $countryId,
-            $cityId,
-            $countries,
-            $cities,
-            $selectedCountryName,
-            $selectedCityName
-        );
+        $locationSelection = Country::browseSelection($countryId, $cityId);
+        $countryId = $locationSelection['country_id'];
+        $cityId = $locationSelection['city_id'];
+        $countries = $locationSelection['countries'];
+        $cities = $locationSelection['cities'];
+        $selectedCountryName = $locationSelection['selected_country_name'];
+        $selectedCityName = $locationSelection['selected_city_name'];
 
         $listingDirectory = Category::listingDirectory($categoryId);
 
@@ -109,29 +100,13 @@ class ListingController extends Controller
         if (auth()->check()) {
             $userId = (int) auth()->id();
 
-            $favoriteListingIds = auth()->user()
-                ->favoriteListings()
-                ->pluck('listings.id')
-                ->all();
+            $favoriteListingIds = auth()->user()->favoriteListingIds();
+            $conversationListingMap = Conversation::listingMapForBuyer($userId);
 
-            $conversationListingMap = Conversation::query()
-                ->where('buyer_id', $userId)
-                ->pluck('id', 'listing_id')
-                ->map(fn ($conversationId) => (int) $conversationId)
-                ->all();
-
-            $filters = FavoriteSearch::normalizeFilters([
+            $isCurrentSearchSaved = FavoriteSearch::isSavedForUser(auth()->user(), [
                 'search' => $search,
                 'category' => $categoryId,
             ]);
-
-            if ($filters !== []) {
-                $signature = FavoriteSearch::signatureFor($filters);
-                $isCurrentSearchSaved = auth()->user()
-                    ->favoriteSearches()
-                    ->where('signature', $signature)
-                    ->exists();
-            }
         }
 
         return view($this->themes->view('listing', 'index'), compact(
@@ -159,13 +134,7 @@ class ListingController extends Controller
 
     public function show(Listing $listing)
     {
-        if (
-            Schema::hasColumn('listings', 'view_count')
-            && (! auth()->check() || (int) auth()->id() !== (int) $listing->user_id)
-        ) {
-            $listing->increment('view_count');
-            $listing->refresh();
-        }
+        $listing->trackViewBy(auth()->id());
 
         $listing->loadMissing([
             'user:id,name,email',
@@ -193,10 +162,7 @@ class ListingController extends Controller
         if (auth()->check()) {
             $userId = (int) auth()->id();
 
-            $isListingFavorited = auth()->user()
-                ->favoriteListings()
-                ->whereKey($listing->getKey())
-                ->exists();
+            $isListingFavorited = in_array((int) $listing->getKey(), auth()->user()->favoriteListingIds(), true);
 
             if ($listing->user_id) {
                 $isSellerFavorited = auth()->user()
@@ -206,25 +172,10 @@ class ListingController extends Controller
             }
 
             if ($listing->user_id && (int) $listing->user_id !== $userId) {
-                $existingConversationId = Conversation::buyerListingConversationId(
+                $detailConversation = Conversation::detailForBuyerListing(
                     (int) $listing->getKey(),
                     $userId,
                 );
-
-                if ($existingConversationId) {
-                    $detailConversation = Conversation::query()
-                        ->forUser($userId)
-                        ->find($existingConversationId);
-
-                    if ($detailConversation) {
-                        $detailConversation->loadThread();
-                        $detailConversation->loadCount([
-                            'messages as unread_count' => fn ($query) => $query
-                                ->where('sender_id', '!=', $userId)
-                                ->whereNull('read_at'),
-                        ]);
-                    }
-                }
             }
         }
 
@@ -261,81 +212,4 @@ class ListingController extends Controller
             ->route('panel.listings.create')
             ->with('success', 'You were redirected to the listing creation screen.');
     }
-
-    private function resolveLocationFilters(
-        ?int &$countryId,
-        ?int &$cityId,
-        Collection &$countries,
-        Collection &$cities,
-        ?string &$selectedCountryName,
-        ?string &$selectedCityName
-    ): void {
-        try {
-            if (! Schema::hasTable('countries') || ! Schema::hasTable('cities')) {
-                return;
-            }
-
-            $countries = Country::query()
-                ->where('is_active', true)
-                ->orderBy('name')
-                ->get(['id', 'name']);
-
-            $selectedCountry = $countryId
-                ? $countries->firstWhere('id', $countryId)
-                : null;
-
-            if (! $selectedCountry && $countryId) {
-                $selectedCountry = Country::query()->whereKey($countryId)->first(['id', 'name']);
-            }
-
-            $selectedCity = null;
-            if ($cityId) {
-                $selectedCity = City::query()->whereKey($cityId)->first(['id', 'name', 'country_id']);
-                if (! $selectedCity) {
-                    $cityId = null;
-                }
-            }
-
-            if ($selectedCity && ! $selectedCountry) {
-                $countryId = (int) $selectedCity->country_id;
-                $selectedCountry = Country::query()->whereKey($countryId)->first(['id', 'name']);
-            }
-
-            if ($selectedCountry) {
-                $selectedCountryName = (string) $selectedCountry->name;
-                $cities = City::query()
-                    ->where('country_id', $selectedCountry->id)
-                    ->where('is_active', true)
-                    ->orderBy('name')
-                    ->get(['id', 'name', 'country_id']);
-
-                if ($cities->isEmpty()) {
-                    $cities = City::query()
-                        ->where('country_id', $selectedCountry->id)
-                        ->orderBy('name')
-                        ->get(['id', 'name', 'country_id']);
-                }
-            } else {
-                $countryId = null;
-                $cities = collect();
-            }
-
-            if ($selectedCity) {
-                if ($selectedCountry && (int) $selectedCity->country_id !== (int) $selectedCountry->id) {
-                    $selectedCity = null;
-                    $cityId = null;
-                } else {
-                    $selectedCityName = (string) $selectedCity->name;
-                }
-            }
-        } catch (Throwable) {
-            $countryId = null;
-            $cityId = null;
-            $selectedCountryName = null;
-            $selectedCityName = null;
-            $countries = collect();
-            $cities = collect();
-        }
-    }
-
 }

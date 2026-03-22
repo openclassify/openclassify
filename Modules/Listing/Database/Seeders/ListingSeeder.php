@@ -4,7 +4,6 @@ namespace Modules\Listing\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
@@ -107,10 +106,6 @@ class ListingSeeder extends Seeder
 
     private function resolveCountries(): Collection
     {
-        if (! class_exists(Country::class) || ! Schema::hasTable('countries')) {
-            return collect();
-        }
-
         return Country::query()
             ->where('is_active', true)
             ->orderBy('name')
@@ -120,10 +115,6 @@ class ListingSeeder extends Seeder
 
     private function resolveTurkeyCities(): Collection
     {
-        if (! class_exists(City::class) || ! Schema::hasTable('cities') || ! Schema::hasTable('countries')) {
-            return collect(['Istanbul', 'Ankara', 'Izmir', 'Bursa', 'Antalya']);
-        }
-
         $turkey = Country::query()
             ->where('code', 'TR')
             ->first(['id']);
