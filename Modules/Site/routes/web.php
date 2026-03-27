@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Site\App\Http\Controllers\HomeController;
 use Modules\Site\App\Http\Controllers\LanguageController;
+use Modules\Site\App\Http\Controllers\PublicMediaController;
+
+Route::get('/storage/{path}', [PublicMediaController::class, 'show'])
+    ->where('path', '.*')
+    ->name('media.legacy');
 
 Route::middleware('web')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
