@@ -39,7 +39,7 @@
 <div class="profile-page mx-auto max-w-[1320px] px-4 py-6 md:py-8">
     <div class="grid gap-6 xl:grid-cols-[300px,minmax(0,1fr)]">
         <aside class="profile-side-nav space-y-6">
-            <div class="relative overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.08)] backdrop-blur">
+            <div class="relative overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.08)]">
                 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400"></div>
 
                 <div class="relative">
@@ -83,7 +83,7 @@
         <section class="space-y-6">
             <div class="grid gap-4 sm:grid-cols-2 2xl:grid-cols-4">
                 @foreach ($stats as $stat)
-                    <div class="rounded-[26px] border border-slate-200/80 bg-white/90 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.06)] backdrop-blur">
+                    <div class="rounded-[26px] border border-slate-200/80 bg-white/90 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.06)]">
                         <p class="text-sm font-semibold text-slate-500">{{ $stat['label'] }}</p>
                         <p class="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">{{ number_format($stat['value']) }}</p>
                         <p class="mt-2 text-sm leading-6 text-slate-500">{{ $stat['hint'] }}</p>

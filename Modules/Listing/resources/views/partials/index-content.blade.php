@@ -77,7 +77,7 @@
                                         'category' => $childCategory->id,
                                     ]), $normalizeQuery));
                                 @endphp
-                                <a href="{{ $childUrl }}" class="ml-2 flex items-center justify-between rounded-lg px-2 py-1.5 text-[13px] font-medium {{ $isSelectedChild ? 'bg-rose-50 text-rose-600' : 'text-slate-600 hover:bg-slate-100' }}">
+                                <a href="{{ $childUrl }}" class="ml-2 flex items-center justify-between rounded-lg px-2 py-1.5 text-[13px] font-medium {{ $isSelectedChild ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-100' }}">
                                     <span>{{ $childCategory->name }}</span>
                                     <span>{{ number_format((int) $childCategory->active_listing_total) }}</span>
                                 </a>
@@ -110,7 +110,7 @@
                             name="country"
                             data-listing-country
                             data-cities-url-template="{{ $citiesRouteTemplate }}"
-                            class="w-full h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-200"
+                            class="w-full h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-200"
                         >
                             <option value="">Select country</option>
                             @foreach($countries as $country)
@@ -120,7 +120,7 @@
                             @endforeach
                         </select>
 
-                        <select name="city" data-listing-city class="w-full h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-200" @disabled(!$countryId)>
+                        <select name="city" data-listing-city class="w-full h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-200" @disabled(!$countryId)>
                             <option value="">{{ $countryId ? 'Select city' : 'Select country first' }}</option>
                             @foreach($cities as $city)
                                 <option value="{{ $city->id }}" @selected((int) $cityId === (int) $city->id)>
@@ -129,7 +129,7 @@
                             @endforeach
                         </select>
 
-                        <button type="button" data-use-current-location class="w-full h-10 rounded-lg border border-slate-300 bg-white text-sm font-semibold text-slate-700 hover:bg-slate-50 transition">
+                        <button type="button" data-use-current-location class="w-full h-10 rounded-lg border border-slate-300 bg-white text-sm font-semibold text-slate-700 hover:bg-slate-50">
                             Use current location
                         </button>
                     </div>
@@ -138,8 +138,8 @@
                 <section>
                     <h3 class="text-base font-extrabold text-slate-900 mb-3">Price</h3>
                     <div class="grid grid-cols-2 gap-2">
-                        <input type="number" name="min_price" value="{{ $minPriceInput }}" min="0" step="1" placeholder="Min" class="h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-200">
-                        <input type="number" name="max_price" value="{{ $maxPriceInput }}" min="0" step="1" placeholder="Max" class="h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-200">
+                        <input type="number" name="min_price" value="{{ $minPriceInput }}" min="0" step="1" placeholder="Min" class="h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-200">
+                        <input type="number" name="max_price" value="{{ $maxPriceInput }}" min="0" step="1" placeholder="Max" class="h-10 rounded-lg border border-slate-300 bg-slate-50 px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-200">
                     </div>
                 </section>
 
@@ -147,29 +147,29 @@
                     <h3 class="text-base font-extrabold text-slate-900 mb-3">Posted date</h3>
                     <div class="space-y-2 text-sm text-slate-700">
                         <label class="flex items-center gap-2">
-                            <input type="radio" name="date_filter" value="all" class="accent-rose-500" @checked($dateFilter === 'all')>
+                            <input type="radio" name="date_filter" value="all" class="accent-slate-900" @checked($dateFilter === 'all')>
                             <span>All</span>
                         </label>
                         <label class="flex items-center gap-2">
-                            <input type="radio" name="date_filter" value="today" class="accent-rose-500" @checked($dateFilter === 'today')>
+                            <input type="radio" name="date_filter" value="today" class="accent-slate-900" @checked($dateFilter === 'today')>
                             <span>Today</span>
                         </label>
                         <label class="flex items-center gap-2">
-                            <input type="radio" name="date_filter" value="week" class="accent-rose-500" @checked($dateFilter === 'week')>
+                            <input type="radio" name="date_filter" value="week" class="accent-slate-900" @checked($dateFilter === 'week')>
                             <span>Last 7 days</span>
                         </label>
                         <label class="flex items-center gap-2">
-                            <input type="radio" name="date_filter" value="month" class="accent-rose-500" @checked($dateFilter === 'month')>
+                            <input type="radio" name="date_filter" value="month" class="accent-slate-900" @checked($dateFilter === 'month')>
                             <span>Last 30 days</span>
                         </label>
                     </div>
                 </section>
 
                 <div class="flex items-center gap-2">
-                    <a href="{{ route('listings.index', $clearFiltersQuery) }}" class="flex-1 h-10 inline-flex items-center justify-center rounded-full border border-rose-300 text-rose-500 text-sm font-semibold hover:bg-rose-50 transition">
+                    <a href="{{ route('listings.index', $clearFiltersQuery) }}" class="flex-1 h-10 inline-flex items-center justify-center rounded-full border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-50">
                         Clear
                     </a>
-                    <button type="submit" class="flex-1 h-10 rounded-full bg-rose-500 text-white text-sm font-semibold hover:bg-rose-600 transition">
+                    <button type="submit" class="flex-1 h-10 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-700">
                         Apply
                     </button>
                 </div>
@@ -240,12 +240,12 @@
                             @csrf
                             <input type="hidden" name="search" value="{{ $search }}">
                             <input type="hidden" name="category_id" value="{{ $categoryId }}">
-                            <button type="submit" class="h-10 px-4 rounded-full border text-sm font-semibold transition {{ $isCurrentSearchSaved ? 'bg-emerald-100 border-emerald-200 text-emerald-700 cursor-default' : ($canSaveSearch ? 'bg-rose-50 border-rose-200 text-rose-600 hover:bg-rose-100' : 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed') }}" @disabled($isCurrentSearchSaved || ! $canSaveSearch)>
+                            <button type="submit" class="h-10 px-4 rounded-full border text-sm font-semibold {{ $isCurrentSearchSaved ? 'bg-slate-100 border-slate-200 text-slate-700 cursor-default' : ($canSaveSearch ? 'bg-slate-100 border-slate-200 text-slate-900 hover:bg-slate-200' : 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed') }}" @disabled($isCurrentSearchSaved || ! $canSaveSearch)>
                                 {{ $isCurrentSearchSaved ? 'Search saved' : 'Save search' }}
                             </button>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="h-10 px-4 inline-flex items-center rounded-full border border-slate-300 text-sm font-semibold text-slate-600 hover:bg-slate-50 transition">
+                        <a href="{{ route('login') }}" class="h-10 px-4 inline-flex items-center rounded-full border border-slate-300 text-sm font-semibold text-slate-600 hover:bg-slate-50">
                             Save search
                         </a>
                     @endauth
@@ -326,7 +326,7 @@
                                 @endif
 
                                 @if($listing->is_featured)
-                                    <span class="absolute top-2 left-2 inline-flex items-center rounded-full bg-yellow-300 text-slate-900 text-[11px] font-bold px-2.5 py-1">
+                                    <span class="absolute top-2 left-2 inline-flex items-center rounded-full bg-white border border-slate-200 text-slate-900 text-[11px] font-bold px-2.5 py-1">
                                         Featured
                                     </span>
                                 @endif
@@ -335,12 +335,12 @@
                                     @auth
                                         <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
                                             @csrf
-                                            <button type="submit" class="w-8 h-8 rounded-full grid place-items-center transition {{ $isFavorited ? 'bg-rose-500 text-white' : 'bg-white text-slate-500 hover:text-rose-500' }}" aria-label="Save listing">
+                                            <button type="submit" class="w-8 h-8 rounded-full grid place-items-center {{ $isFavorited ? 'bg-slate-900 text-white' : 'bg-white text-slate-500 hover:text-slate-900' }}" aria-label="Save listing">
                                                 ♥
                                             </button>
                                         </form>
                                     @else
-                                        <a href="{{ route('login') }}" class="w-8 h-8 rounded-full bg-white text-slate-500 hover:text-rose-500 grid place-items-center transition" aria-label="Sign in">
+                                        <a href="{{ route('login') }}" class="w-8 h-8 rounded-full bg-white text-slate-500 hover:text-slate-900 grid place-items-center" aria-label="Sign in">
                                             ♥
                                         </a>
                                     @endauth

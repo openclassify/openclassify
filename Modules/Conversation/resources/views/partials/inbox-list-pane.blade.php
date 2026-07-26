@@ -22,7 +22,7 @@
             $conversationImage = $conversationListing?->primaryImageData('thumb');
             $lastMessage = trim((string) ($conversation->lastMessage?->body ?? ''));
         @endphp
-        <a href="{{ route('panel.inbox.index', ['message_filter' => $messageFilter, 'conversation' => $conversation->id]) }}" class="block px-6 py-4 transition {{ $isSelected ? 'bg-rose-50' : 'hover:bg-slate-50' }}">
+        <a href="{{ route('panel.inbox.index', ['message_filter' => $messageFilter, 'conversation' => $conversation->id]) }}" class="block px-6 py-4 {{ $isSelected ? 'bg-rose-50' : 'hover:bg-slate-50' }}">
             <div class="flex gap-3">
                 <div class="w-14 h-14 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
                     @if($conversationImage)

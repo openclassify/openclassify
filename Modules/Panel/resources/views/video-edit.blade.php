@@ -68,10 +68,10 @@
                     </label>
 
                     <div class="flex flex-wrap items-center gap-3 xl:col-span-2">
-                        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800">
                             Save changes
                         </button>
-                        <a href="{{ route('panel.videos.index') }}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                        <a href="{{ route('panel.videos.index') }}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">
                             Back to videos
                         </a>
                     </div>

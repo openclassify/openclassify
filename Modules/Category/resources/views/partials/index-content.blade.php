@@ -26,7 +26,7 @@
             @endphp
             <a
                 href="{{ route('listings.index', ['category' => $category->id]) }}"
-                class="group flex h-full flex-col rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg"
+                class="group flex h-full flex-col rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm hover:border-blue-200 hover:shadow-lg"
             >
                 <div class="flex items-start justify-between gap-4">
                     <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-900 shadow-sm">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="mt-6 space-y-3">
-                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-950 transition group-hover:text-blue-700">
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-950 group-hover:text-blue-700">
                         {{ $category->name }}
                     </h3>
                     <p class="text-sm leading-6 text-slate-600">
@@ -56,7 +56,7 @@
                 <div class="mt-auto pt-6">
                     <span class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
                         Explore category
-                        <svg class="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="h-4 w-4 group-" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
                         </svg>
                     </span>

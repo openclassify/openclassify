@@ -175,7 +175,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
                             </svg>
                         </summary>
-                        <div class="location-panel absolute right-0 top-full mt-3 bg-white border border-slate-200 shadow-xl rounded-2xl p-4 space-y-3">
+                        <div class="location-panel absolute right-0 top-full mt-3 bg-white border border-slate-200 rounded-2xl p-4 space-y-3">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-sm font-semibold text-slate-900">Location</p>
                                 <button type="button" data-location-detect class="text-xs font-semibold text-slate-600 hover:text-slate-900">Use my location</button>
@@ -384,7 +384,7 @@
     @endif
     @if($demoRemainingLabel)
     <div class="pointer-events-none fixed bottom-4 right-4 z-40">
-        <div class="rounded-full border border-amber-200 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-amber-900 shadow-lg">
+        <div class="rounded-full border border-amber-200 bg-white px-3 py-1.5 text-[11px] font-semibold text-amber-900">
             Demo: {{ $demoRemainingCompactLabel }} left
         </div>
     </div>

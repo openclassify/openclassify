@@ -53,7 +53,7 @@
                         @enderror
                     </label>
 
-                    <button type="submit" class="inline-flex h-[52px] items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-semibold text-white transition hover:bg-slate-800">
+                    <button type="submit" class="inline-flex h-[52px] items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-semibold text-white hover:bg-slate-800">
                         Upload
                     </button>
                 </form>
@@ -92,13 +92,13 @@
                             </div>
 
                             <div class="flex flex-wrap items-center gap-2 xl:justify-end">
-                                <a href="{{ route('panel.videos.edit', $video) }}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                                <a href="{{ route('panel.videos.edit', $video) }}" class="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
                                     Edit
                                 </a>
                                 <form method="POST" action="{{ route('panel.videos.destroy', $video) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center justify-center rounded-full border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600 transition hover:bg-rose-50">
+                                    <button type="submit" class="inline-flex items-center justify-center rounded-full border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50">
                                         Delete
                                     </button>
                                 </form>

@@ -52,7 +52,7 @@
                 @csrf
                 <input type="hidden" name="message_filter" value="{{ $messageFilter }}">
                 <input type="hidden" name="message" value="{{ $quickMessage }}">
-                <button type="submit" class="inline-flex items-center h-11 px-5 rounded-full border border-rose-300 text-rose-600 font-semibold text-sm hover:bg-rose-50 transition">
+                <button type="submit" class="inline-flex items-center h-11 px-5 rounded-full border border-rose-300 text-rose-600 font-semibold text-sm hover:bg-rose-50">
                     {{ $quickMessage }}
                 </button>
             </form>
@@ -62,7 +62,7 @@
             @csrf
             <input type="hidden" name="message_filter" value="{{ $messageFilter }}">
             <input type="text" name="message" value="{{ old('message') }}" placeholder="Write a message" maxlength="2000" class="h-12 flex-1 rounded-full border border-slate-300 px-5 text-sm focus:outline-none focus:ring-2 focus:ring-rose-300" required data-inbox-message-input>
-            <button type="submit" class="h-12 w-12 rounded-full bg-black text-white grid place-items-center hover:bg-slate-800 transition" aria-label="Send" data-inbox-send-button>
+            <button type="submit" class="h-12 w-12 rounded-full bg-black text-white grid place-items-center hover:bg-slate-800" aria-label="Send" data-inbox-send-button>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h13m0 0l-5-5m5 5l-5 5"/>
                 </svg>

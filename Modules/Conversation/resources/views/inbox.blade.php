@@ -12,7 +12,7 @@
                 'title' => 'Inbox',
                 'description' => 'Read and reply to buyer messages from the same panel shell used across the site.',
                 'actions' => $requiresLogin ?? false
-                    ? new \Illuminate\Support\HtmlString('<a href="' . e(route('login', ['redirect' => request()->fullUrl()])) . '" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Log in</a>')
+                    ? new \Illuminate\Support\HtmlString('<a href="' . e(route('login', ['redirect' => request()->fullUrl()])) . '" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800">Log in</a>')
                     : null,
             ])
 

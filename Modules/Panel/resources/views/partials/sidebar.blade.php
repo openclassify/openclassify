@@ -48,7 +48,7 @@
     $favoritesActive = $activeMenu === 'favorites' || $activeFavoritesTab !== '';
 @endphp
 
-<aside class="panel-side-nav rounded-[28px] border border-slate-200/80 bg-white/90 p-3 shadow-[0_20px_48px_rgba(15,23,42,0.08)] backdrop-blur">
+<aside class="panel-side-nav rounded-[28px] border border-slate-200/80 bg-white/90 p-3 shadow-[0_20px_48px_rgba(15,23,42,0.08)]">
     <nav class="space-y-1.5">
         @foreach ($primaryItems as $item)
             <a
