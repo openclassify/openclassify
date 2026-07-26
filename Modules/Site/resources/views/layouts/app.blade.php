@@ -60,9 +60,9 @@
     ];
     $headerCategories = collect($headerNavCategories ?? [])->values();
     $menuBrowseLinks = collect([
-        ['label' => 'Home', 'url' => route('home')],
-        ['label' => 'All Listings', 'url' => route('listings.index')],
-        ['label' => 'Categories', 'url' => route('categories.index')],
+        ['label' => __('site::messages.home'), 'url' => route('home')],
+        ['label' => __('site::messages.all_listings'), 'url' => route('listings.index')],
+        ['label' => __('site::messages.categories'), 'url' => route('categories.index')],
     ]);
     $locationCountries = collect($headerLocationCountries ?? [])->values();
     $defaultCountryIso2 = strtoupper((string) config('app.default_country_iso2', 'TR'));
@@ -110,11 +110,11 @@
             <div class="flex items-center gap-3">
                 @auth
                 <a href="{{ route('panel.listings.index') }}" class="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 hover:border-slate-300 hover:text-slate-900">
-                    My Listings
+                    {{ __('site::messages.my_listings') }}
                 </a>
                 @endauth
                 <a href="{{ route('home') }}" class="inline-flex min-h-11 items-center justify-center rounded-full bg-slate-900 px-5 text-sm font-semibold text-white hover:bg-slate-700">
-                    Exit
+                    {{ __('site::messages.exit') }}
                 </a>
             </div>
         </div>
@@ -155,11 +155,11 @@
                         type="text"
                         name="search"
                         value="{{ request('search') }}"
-                        placeholder="{{ __('messages.search_placeholder') }}"
+                        placeholder="{{ __('site::messages.search_placeholder') }}"
                         class="oc-search-input"
                     >
                     <button type="submit" class="oc-search-submit">
-                        {{ __('messages.search') }}
+                        {{ __('site::messages.search') }}
                     </button>
                 </form>
 
@@ -170,7 +170,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
                                 <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
                             </svg>
-                            <span data-location-label class="oc-location-label">Choose location</span>
+                            <span data-location-label class="oc-location-label">{{ __('site::messages.choose_location') }}</span>
                             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
                             </svg>
@@ -178,7 +178,7 @@
                         <div class="location-panel absolute right-0 top-full mt-3 bg-white border border-slate-200 rounded-2xl p-4 space-y-3">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-sm font-semibold text-slate-900">Location</p>
-                                <button type="button" data-location-detect class="text-xs font-semibold text-slate-600 hover:text-slate-900">Use my location</button>
+                                <button type="button" data-location-detect class="text-xs font-semibold text-slate-600 hover:text-slate-900">{{ __('site::messages.use_my_location') }}</button>
                             </div>
                             <p data-location-status class="text-xs text-slate-500">Auto-select country and city from your browser location.</p>
                             <div class="space-y-2">
@@ -216,17 +216,17 @@
                             </svg>
                         </summary>
                         <div class="oc-account-panel">
-                            <a href="{{ $panelListingsRoute }}" class="oc-account-link">My Listings</a>
-                            <a href="{{ $profileRoute }}" class="oc-account-link">My Profile</a>
-                            <a href="{{ $favoritesRoute }}" class="oc-account-link">Favorites</a>
-                            <a href="{{ $inboxRoute }}" class="oc-account-link">Inbox</a>
+                            <a href="{{ $panelListingsRoute }}" class="oc-account-link">{{ __('site::messages.my_listings') }}</a>
+                            <a href="{{ $profileRoute }}" class="oc-account-link">{{ __('site::messages.my_profile') }}</a>
+                            <a href="{{ $favoritesRoute }}" class="oc-account-link">{{ __('site::messages.favorites') }}</a>
+                            <a href="{{ $inboxRoute }}" class="oc-account-link">{{ __('site::messages.inbox') }}</a>
                             <form method="POST" action="{{ $logoutRoute }}">
                                 @csrf
                                 <button type="submit" class="oc-account-link oc-account-link-button">Logout</button>
                             </form>
                         </div>
                     </details>
-                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Inbox" data-header-inbox-link>
+                    <a href="{{ $inboxRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="{{ __('site::messages.inbox') }}" data-header-inbox-link>
                         <span class="oc-header-badge {{ $headerMessageCount > 0 ? '' : 'hidden' }}" data-header-inbox-badge>{{ $headerBadgeLabel($headerMessageCount) }}</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
@@ -242,7 +242,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 17a2 2 0 0 0 4 0"/>
                         </svg>
                     </a>
-                    <a href="{{ $favoritesRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="Favorites">
+                    <a href="{{ $favoritesRoute }}" class="header-utility oc-desktop-utility oc-header-icon" aria-label="{{ __('site::messages.favorites') }}">
                         @if($headerFavoritesCount > 0)
                         <span class="oc-header-badge is-neutral">{{ $headerBadgeLabel($headerFavoritesCount) }}</span>
                         @endif
@@ -255,7 +255,7 @@
                     </a>
                     @else
                     <a href="{{ $loginRoute }}" class="oc-text-link oc-auth-link">
-                        {{ __('messages.login') }}
+                        {{ __('site::messages.login') }}
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary oc-cta">
                         Sell
@@ -269,7 +269,7 @@
 
                 <div class="oc-mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
                     <div class="oc-mobile-menu-header">
-                        <h2 class="oc-mobile-menu-title">Menu</h2>
+                        <h2 class="oc-mobile-menu-title">{{ __('site::messages.menu') }}</h2>
                         <button type="button" class="header-utility oc-mobile-menu-close" data-mobile-menu-close aria-label="Close navigation menu">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 6l12 12M18 6L6 18"/>
@@ -278,12 +278,12 @@
                     </div>
 
                     <div class="oc-mobile-menu-actions">
-                        <a href="{{ route('listings.index') }}" class="oc-mobile-menu-primary">Browse</a>
-                        <a href="{{ $panelCreateRoute }}" class="oc-mobile-menu-primary oc-mobile-menu-primary-strong">Sell</a>
+                        <a href="{{ route('listings.index') }}" class="oc-mobile-menu-primary">{{ __('site::messages.browse') }}</a>
+                        <a href="{{ $panelCreateRoute }}" class="oc-mobile-menu-primary oc-mobile-menu-primary-strong">{{ __('site::messages.sell') }}</a>
                     </div>
 
                     <div class="oc-mobile-menu-section">
-                        <p class="oc-mobile-menu-label">Browse</p>
+                        <p class="oc-mobile-menu-label">{{ __('site::messages.browse') }}</p>
                         <div class="oc-mobile-menu-list">
                             @foreach($menuBrowseLinks as $menuBrowseLink)
                             <a href="{{ $menuBrowseLink['url'] }}" class="oc-mobile-menu-link">
@@ -297,7 +297,7 @@
                     </div>
 
                     <div class="oc-mobile-menu-section">
-                        <p class="oc-mobile-menu-label">Account</p>
+                        <p class="oc-mobile-menu-label">{{ __('site::messages.account') }}</p>
                         <div class="oc-mobile-menu-list">
                             @auth
                             <a href="{{ $panelListingsRoute }}" class="oc-mobile-menu-link">
@@ -373,8 +373,8 @@
                         {{ $headerCategory['name'] }}
                     </a>
                     @empty
-                    <a href="{{ route('home') }}" class="oc-category-link">{{ __('messages.home') }}</a>
-                    <a href="{{ route('listings.index') }}" class="oc-category-link">{{ __('messages.listings') }}</a>
+                    <a href="{{ route('home') }}" class="oc-category-link">{{ __('site::messages.home') }}</a>
+                    <a href="{{ route('listings.index') }}" class="oc-category-link">{{ __('site::messages.listings') }}</a>
                     @endforelse
                 </div>
             </div>
@@ -422,8 +422,8 @@
                 <div>
                     <h4 class="text-slate-900 font-medium mb-4">Account</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ $loginRoute }}" class="hover:text-slate-900">{{ __('messages.login') }}</a></li>
-                        <li><a href="{{ $registerRoute }}" class="hover:text-slate-900">{{ __('messages.register') }}</a></li>
+                        <li><a href="{{ $loginRoute }}" class="hover:text-slate-900">{{ __('site::messages.login') }}</a></li>
+                        <li><a href="{{ $registerRoute }}" class="hover:text-slate-900">{{ __('site::messages.register') }}</a></li>
                     </ul>
                 </div>
                 <div>

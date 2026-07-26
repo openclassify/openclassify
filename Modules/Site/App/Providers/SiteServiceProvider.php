@@ -31,6 +31,7 @@ class SiteServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path('Site', 'Database/migrations'));
         $this->loadRoutesFrom(module_path('Site', 'routes/web.php'));
         $this->loadViewsFrom($viewPath, 'site');
+        $this->loadTranslationsFrom(module_path('Site', 'lang'), 'site');
         View::addNamespace('app', $viewPath);
     }
 }

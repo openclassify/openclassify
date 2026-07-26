@@ -39,12 +39,10 @@
 <div class="profile-page mx-auto max-w-[1320px] px-4 py-6 md:py-8">
     <div class="grid gap-6 xl:grid-cols-[300px,minmax(0,1fr)]">
         <aside class="profile-side-nav space-y-6">
-            <div class="relative overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_55px_rgba(15,23,42,0.08)]">
-                <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400"></div>
-
+            <div class="relative overflow-hidden rounded-[30px] border border-slate-200 bg-white p-6">
                 <div class="relative">
                     <div class="flex items-start gap-4">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-slate-900 text-xl font-semibold tracking-tight text-white shadow-[0_16px_30px_rgba(15,23,42,0.2)]">
+                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-slate-900 text-xl font-semibold tracking-tight text-white shadow-sm">
                             {{ $initials !== '' ? $initials : 'U' }}
                         </div>
 
@@ -71,7 +69,7 @@
                         @endif
                     </div>
 
-                    <div class="mt-6 rounded-[24px] bg-slate-950 px-5 py-4 text-white shadow-[0_18px_38px_rgba(15,23,42,0.22)]">
+                    <div class="mt-6 rounded-[24px] bg-slate-950 px-5 py-4 text-white shadow-sm">
                         <p class="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-slate-300">Profile visibility</p>
                     </div>
                 </div>
@@ -83,7 +81,7 @@
         <section class="space-y-6">
             <div class="grid gap-4 sm:grid-cols-2 2xl:grid-cols-4">
                 @foreach ($stats as $stat)
-                    <div class="rounded-[26px] border border-slate-200/80 bg-white/90 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.06)]">
+                    <div class="rounded-[26px] border border-slate-200 bg-white p-5 shadow-sm">
                         <p class="text-sm font-semibold text-slate-500">{{ $stat['label'] }}</p>
                         <p class="mt-3 text-4xl font-semibold tracking-[-0.04em] text-slate-950">{{ number_format($stat['value']) }}</p>
                         <p class="mt-2 text-sm leading-6 text-slate-500">{{ $stat['hint'] }}</p>

@@ -112,9 +112,9 @@
 
     <section>
         <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl md:text-2xl font-semibold text-[var(--oc-text)]">Browse Categories</h2>
+            <h2 class="text-xl md:text-2xl font-semibold text-[var(--oc-text)]">{{ __('site::messages.browse_categories') }}</h2>
             <a href="{{ route('categories.index') }}" class="oc-text-link text-sm font-semibold">
-                View all
+                {{ __('site::messages.view_all') }}
             </a>
         </div>
         <div class="flex flex-wrap gap-2">
@@ -137,7 +137,7 @@
 
     <section>
         <div class="flex items-center justify-between mb-4">
-            <h2 class="text-xl md:text-2xl font-semibold text-[var(--oc-text)]">Recent Listings</h2>
+            <h2 class="text-xl md:text-2xl font-semibold text-[var(--oc-text)]">{{ __('site::messages.recent_listings') }}</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             @forelse($listingCards as $listing)
@@ -196,16 +196,16 @@
     <section class="rounded-2xl border border-[var(--oc-border)] px-6 py-8 md:px-10 md:py-12">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-                <h2 class="text-xl md:text-2xl font-semibold text-[var(--oc-text)]">{{ __('messages.sell_something') }}</h2>
+                <h2 class="text-xl md:text-2xl font-semibold text-[var(--oc-text)]">{{ __('site::messages.sell_something') }}</h2>
                 <p class="text-[var(--oc-muted)] mt-2 text-sm md:text-base">Create a free listing in minutes and reach buyers in your area.</p>
             </div>
             @auth
             <a href="{{ route('panel.listings.create') }}" class="btn-primary px-6 py-3 font-semibold whitespace-nowrap">
-                Post listing
+                {{ __('site::messages.post_listing_cta') }}
             </a>
             @else
             <a href="{{ route('register') }}" class="btn-primary px-6 py-3 font-semibold whitespace-nowrap">
-                Start free
+                {{ __('site::messages.start_free') }}
             </a>
             @endauth
         </div>

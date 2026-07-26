@@ -48,7 +48,7 @@
     $favoritesActive = $activeMenu === 'favorites' || $activeFavoritesTab !== '';
 @endphp
 
-<aside class="panel-side-nav rounded-[28px] border border-slate-200/80 bg-white/90 p-3 shadow-[0_20px_48px_rgba(15,23,42,0.08)]">
+<aside class="panel-side-nav rounded-[28px] border border-slate-200 bg-white p-3 shadow-sm">
     <nav class="space-y-1.5">
         @foreach ($primaryItems as $item)
             <a
@@ -56,7 +56,7 @@
                 data-level="primary"
                 @class([
                     'group flex items-center justify-between gap-3 rounded-2xl px-4 py-3.5 text-sm font-semibold transition',
-                    'bg-slate-900 text-white shadow-[0_16px_30px_rgba(15,23,42,0.16)]' => $activeMenu === $item['key'],
+                    'bg-slate-900 text-white shadow-sm' => $activeMenu === $item['key'],
                     'text-slate-700 hover:bg-slate-50 hover:text-slate-900' => $activeMenu !== $item['key'],
                 ])
             >
