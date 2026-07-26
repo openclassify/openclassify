@@ -292,7 +292,7 @@
 
             @if($listings->isEmpty())
                 <div class="listing-filter-card py-14 text-center text-slate-500">
-                    No listings match this filter.
+                    {{ __('listing::messages.no_listings_match_filter') }}
                 </div>
             @else
                 <div class="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">

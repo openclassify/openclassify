@@ -26,4 +26,5 @@ return [
     'price_on_request' => 'Price on request',
     'no_listings_yet' => 'No listings yet.',
     'no_listings_match_filter' => 'No listings match this filter.',
+    'posted_at' => 'Posted :time',
 ];

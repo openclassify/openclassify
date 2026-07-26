@@ -420,7 +420,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-slate-900 font-medium mb-4">Account</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">{{ __('site::messages.account') }}</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ $loginRoute }}" class="hover:text-slate-900">{{ __('site::messages.login') }}</a></li>
                         <li><a href="{{ $registerRoute }}" class="hover:text-slate-900">{{ __('site::messages.register') }}</a></li>

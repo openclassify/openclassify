@@ -187,7 +187,7 @@
             </article>
             @empty
             <div class="col-span-2 border border-dashed border-[var(--oc-border)] rounded-2xl py-20 text-center text-[var(--oc-muted)]">
-                No listings yet.
+                {{ __('listing::messages.no_listings_yet') }}
             </div>
             @endforelse
         </div>
