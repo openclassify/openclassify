@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Demo\App\Http\Middleware;
 
 use Closure;
@@ -10,9 +12,7 @@ use Modules\Demo\App\Support\DemoSchemaManager;
 
 class ResolveDemoRequest
 {
-    public function __construct(private readonly DemoSchemaManager $demoSchemaManager)
-    {
-    }
+    public function __construct(private readonly DemoSchemaManager $demoSchemaManager) {}
 
     public function handle(Request $request, Closure $next)
     {

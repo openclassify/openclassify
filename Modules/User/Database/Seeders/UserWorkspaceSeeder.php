@@ -1,18 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Conversation\Database\Seeders\ConversationDemoSeeder;
+use Modules\Favorite\Database\Seeders\FavoriteDemoSeeder;
+use Modules\Listing\Database\Seeders\ListingPanelDemoSeeder;
+use Modules\Video\Database\Seeders\VideoDemoSeeder;
 
 class UserWorkspaceSeeder extends Seeder
 {
     public function run(): void
     {
         $this->call([
-            \Modules\Listing\Database\Seeders\ListingPanelDemoSeeder::class,
-            \Modules\Favorite\Database\Seeders\FavoriteDemoSeeder::class,
-            \Modules\Conversation\Database\Seeders\ConversationDemoSeeder::class,
-            \Modules\Video\Database\Seeders\VideoDemoSeeder::class,
+            ListingPanelDemoSeeder::class,
+            FavoriteDemoSeeder::class,
+            ConversationDemoSeeder::class,
+            VideoDemoSeeder::class,
         ]);
     }
 }

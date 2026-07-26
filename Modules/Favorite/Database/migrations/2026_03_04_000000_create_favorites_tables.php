@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -35,9 +38,10 @@ return new class extends Migration
             $table->json('filters')->nullable();
             $table->string('signature', 64);
             $table->timestamps();
-
-            $table->unique(['user_id', 'signature']);
+            $table->softDeletes();
         });
+
+        DB::statement('CREATE UNIQUE INDEX favorite_searches_user_id_signature_unique ON favorite_searches (user_id, signature) WHERE deleted_at IS NULL');
     }
 
     public function down(): void

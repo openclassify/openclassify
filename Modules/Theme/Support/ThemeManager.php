@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Theme\Support;
 
 use Illuminate\Contracts\Config\Repository;
@@ -8,9 +10,7 @@ use Illuminate\Support\Str;
 
 class ThemeManager
 {
-    public function __construct(private Repository $config)
-    {
-    }
+    public function __construct(private Repository $config) {}
 
     public function activeTheme(string $module): string
     {

@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Video\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -16,6 +19,8 @@ use Modules\Video\Jobs\ProcessVideo;
 
 class Video extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'listing_id',
         'user_id',

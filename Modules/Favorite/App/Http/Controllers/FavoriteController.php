@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Favorite\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Category\Models\Category;
@@ -14,9 +17,7 @@ use Modules\User\App\Support\AuthRedirector;
 
 class FavoriteController extends Controller
 {
-    public function __construct(private AuthRedirector $redirector)
-    {
-    }
+    public function __construct(private AuthRedirector $redirector) {}
 
     public function index(Request $request)
     {
@@ -141,7 +142,7 @@ class FavoriteController extends Controller
         ]);
     }
 
-    private function redirectBack(Request $request): \Illuminate\Http\RedirectResponse
+    private function redirectBack(Request $request): RedirectResponse
     {
         $target = $this->redirector->sanitize((string) $request->input('redirect_to', ''));
 

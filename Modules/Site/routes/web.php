@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Support\Facades\Route;
 use Modules\Site\App\Http\Controllers\HomeController;
 use Modules\Site\App\Http\Controllers\LanguageController;

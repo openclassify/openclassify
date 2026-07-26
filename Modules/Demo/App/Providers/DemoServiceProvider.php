@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Demo\App\Providers;
 
 use Illuminate\Support\ServiceProvider;

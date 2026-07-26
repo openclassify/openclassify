@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -17,6 +19,5 @@ class ListingServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(module_path($this->moduleName, 'routes/web.php'));
     }
 
-    public function register(): void
-    {}
+    public function register(): void {}
 }

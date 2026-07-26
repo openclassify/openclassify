@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\DemoUserCatalog;
@@ -69,7 +72,7 @@ class ListingPanelDemoSeeder extends Seeder
         };
     }
 
-    private function expiresAtForIndex(int $index): \Illuminate\Support\Carbon
+    private function expiresAtForIndex(int $index): Carbon
     {
         return match ($this->statusForIndex($index)) {
             'expired' => now()->subDays(4 + ($index % 5)),

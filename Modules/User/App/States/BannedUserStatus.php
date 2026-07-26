@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\States;
 
 use Filament\Support\Contracts\HasColor;
@@ -16,7 +18,7 @@ class BannedUserStatus extends UserStatus implements HasColor, HasDescription, H
         return 'Banned';
     }
 
-    public function getColor(): string | array | null
+    public function getColor(): string|array|null
     {
         return 'danger';
     }

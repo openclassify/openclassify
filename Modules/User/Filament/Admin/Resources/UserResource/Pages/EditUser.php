@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\Filament\Admin\Resources\UserResource\Pages;
 
 use Filament\Actions\DeleteAction;
@@ -10,6 +12,7 @@ use STS\FilamentImpersonate\Actions\Impersonate;
 class EditUser extends EditRecord
 {
     protected static string $resource = UserResource::class;
+
     protected function getHeaderActions(): array
     {
         return [

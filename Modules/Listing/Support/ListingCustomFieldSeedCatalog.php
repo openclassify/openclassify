@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Support;
 
 use Illuminate\Support\Str;
@@ -46,7 +48,7 @@ final class ListingCustomFieldSeedCatalog
 
     private static function fieldName(string $categorySlug, string $name): string
     {
-        return Str::slug($categorySlug . '_' . $name, '_');
+        return Str::slug($categorySlug.'_'.$name, '_');
     }
 
     private static function familyDefinitions(string $rootSlug): array

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing;
 
 use Filament\Contracts\Plugin;
@@ -14,7 +16,7 @@ final class ListingPlugin implements Plugin
 
     public static function make(): static
     {
-        return app(static::class);
+        return app(self::class);
     }
 
     public function register(Panel $panel): void

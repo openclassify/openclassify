@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Video\Support;
 
 use Illuminate\Support\Facades\Storage;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Category\Filament\Admin\Resources\CategoryResource\Pages;
 
 use Modules\Category\Filament\Admin\Resources\CategoryResource;

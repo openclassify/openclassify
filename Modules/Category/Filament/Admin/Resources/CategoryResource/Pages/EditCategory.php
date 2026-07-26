@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Category\Filament\Admin\Resources\CategoryResource\Pages;
 
 use Filament\Actions\DeleteAction;

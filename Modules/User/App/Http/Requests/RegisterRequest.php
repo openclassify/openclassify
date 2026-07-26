@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -19,7 +21,7 @@ class RegisterRequest extends FormRequest
         return [
             'first_name' => ['required', 'string', 'max:120'],
             'last_name' => ['required', 'string', 'max:120'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique((new User())->getTable(), 'email')],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique((new User)->getTable(), 'email')],
             'password' => ['required', Password::defaults()],
             'terms' => ['accepted'],
             'marketing_opt_in' => ['nullable', 'boolean'],

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Panel\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Modules\Site\App\Support\LocalMedia;
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 

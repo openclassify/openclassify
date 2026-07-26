@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -18,8 +20,7 @@ class RegisterController extends Controller
     public function __construct(
         private AuthProviderCatalog $providers,
         private AuthRedirector $redirector,
-    ) {
-    }
+    ) {}
 
     public function create(Request $request): View
     {
@@ -35,7 +36,7 @@ class RegisterController extends Controller
     {
         $this->redirector->rememberInputTarget($request);
 
-        $user = User::query()->create([
+        $user = User::registerFrom([
             'name' => $request->fullName(),
             'email' => $request->string('email')->toString(),
             'password' => $request->string('password')->toString(),

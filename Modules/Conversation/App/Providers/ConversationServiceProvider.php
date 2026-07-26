@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Conversation\App\Providers;
 
 use Illuminate\Support\Facades\Broadcast;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Panel\App\Livewire;
 
 use Illuminate\Support\Collection;

@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Location\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Spatie\Activitylog\LogOptions;
-use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\Support\LogOptions;
 
 class City extends Model
 {
-    use LogsActivity;
+    use LogsActivity, SoftDeletes;
 
     protected $fillable = ['name', 'country_id', 'is_active'];
 
@@ -27,7 +30,7 @@ class City extends Model
         return LogOptions::defaults()
             ->logFillable()
             ->logOnlyDirty()
-            ->dontSubmitEmptyLogs();
+            ->dontLogEmptyChanges();
     }
 
     public function country(): BelongsTo

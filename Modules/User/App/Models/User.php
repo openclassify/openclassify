@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Models;
 
 use Database\Factories\UserFactory;
@@ -9,9 +11,10 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
@@ -21,8 +24,8 @@ use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
 use Modules\Site\App\Support\LocalMedia;
 use Modules\User\App\States\UserStatus;
-use Spatie\Activitylog\LogOptions;
-use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\Support\LogOptions;
 use Spatie\ModelStates\HasStates;
 use Spatie\Permission\Traits\HasRoles;
 use Throwable;
@@ -35,6 +38,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     use HasStates;
     use LogsActivity;
     use Notifiable;
+    use SoftDeletes;
     use TwoFactorAuthenticatable;
 
     protected $fillable = ['name', 'email', 'password', 'avatar_url', 'status'];
@@ -55,13 +59,27 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         return UserFactory::new();
     }
 
+    public static function registerFrom(array $data): self
+    {
+        return static::query()->create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => $data['password'],
+        ]);
+    }
+
+    public function updatePassword(string $password): void
+    {
+        $this->forceFill(['password' => $password])->save();
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
             ->logFillable()
             ->logExcept(['password'])
             ->logOnlyDirty()
-            ->dontSubmitEmptyLogs();
+            ->dontLogEmptyChanges();
     }
 
     public function canAccessPanel(Panel $panel): bool

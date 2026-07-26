@@ -1,6 +1,6 @@
 # Listing Theme Contract
 
-Active template is resolved from `config('theme.modules.listing')`.
+Active template is resolved from `config('theme.modules.listing')`, defaulting to `default`.
 
 Directory structure:
 
@@ -11,7 +11,6 @@ Fallback order:
 
 1. `listing::themes.{active}.{view}`
 2. `listing::themes.default.{view}`
-3. `listing::{view}`
 
 To add a new theme:
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Support\Filament;
 
 use A909M\FilamentStateFusion\Forms\Components\StateFusionSelect;

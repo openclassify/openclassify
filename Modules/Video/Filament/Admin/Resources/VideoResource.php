@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Video\Filament\Admin\Resources;
 
 use BackedEnum;
@@ -16,9 +18,9 @@ class VideoResource extends Resource
 {
     protected static ?string $model = Video::class;
 
-    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-film';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-film';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Catalog';
+    protected static string|UnitEnum|null $navigationGroup = 'Catalog';
 
     protected static ?string $navigationLabel = 'Videos';
 

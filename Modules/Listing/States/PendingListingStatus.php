@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\States;
 
 use Filament\Support\Contracts\HasColor;
@@ -16,7 +18,7 @@ class PendingListingStatus extends ListingStatus implements HasColor, HasDescrip
         return 'Pending';
     }
 
-    public function getColor(): string | array | null
+    public function getColor(): string|array|null
     {
         return 'warning';
     }

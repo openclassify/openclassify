@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Demo\App\Support;
 
+use Database\Seeders\DatabaseSeeder;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
@@ -180,7 +183,7 @@ final class DemoSchemaManager
             ]);
 
             Artisan::call('db:seed', [
-                '--class' => \Database\Seeders\DatabaseSeeder::class,
+                '--class' => DatabaseSeeder::class,
                 '--database' => $this->defaultConnection,
                 '--force' => true,
             ]);

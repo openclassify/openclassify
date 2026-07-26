@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Support;
 
 use Illuminate\Support\Collection;
@@ -8,7 +10,9 @@ use Modules\Category\Models\Category;
 final class SampleListingImageCatalog
 {
     private const DIRECTORY = 'sample_image';
+
     private const MAX_PIXELS = 12000000;
+
     private const MAX_EDGE = 4200;
 
     private const CATEGORY_IMAGES = [

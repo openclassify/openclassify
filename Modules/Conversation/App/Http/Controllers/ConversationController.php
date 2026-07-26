@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Conversation\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -80,7 +82,7 @@ class ConversationController extends Controller
         ]);
     }
 
-    public function start(Request $request, Listing $listing): RedirectResponse | JsonResponse
+    public function start(Request $request, Listing $listing): RedirectResponse|JsonResponse
     {
         $user = $request->user();
 
@@ -124,7 +126,7 @@ class ConversationController extends Controller
             ->with('success', $messageBody !== '' ? 'Message sent.' : 'Conversation started.');
     }
 
-    public function send(Request $request, Conversation $conversation): RedirectResponse | JsonResponse
+    public function send(Request $request, Conversation $conversation): RedirectResponse|JsonResponse
     {
         $user = $request->user();
         $userId = (int) $user->getKey();
@@ -275,11 +277,11 @@ class ConversationController extends Controller
 
             if ($participantId === $senderId) {
                 broadcast($event)->toOthers();
+
                 continue;
             }
 
             broadcast($event);
         }
     }
-
 }

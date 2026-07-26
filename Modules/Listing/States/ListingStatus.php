@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\States;
 
 use A909M\FilamentStateFusion\Concerns\StateFusionInfo;

@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -23,8 +26,8 @@ use Modules\Site\App\Support\LocalMedia;
 use Modules\User\App\Models\User;
 use Modules\Video\Enums\VideoStatus;
 use Modules\Video\Models\Video;
-use Spatie\Activitylog\LogOptions;
-use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -34,7 +37,7 @@ use Throwable;
 
 class Listing extends Model implements HasMedia
 {
-    use HasFactory, HasStates, InteractsWithMedia, LogsActivity;
+    use HasFactory, HasStates, InteractsWithMedia, LogsActivity, SoftDeletes;
 
     private const DEFAULT_PANEL_EXPIRY_WINDOW_DAYS = 30;
 
@@ -64,7 +67,7 @@ class Listing extends Model implements HasMedia
         return LogOptions::defaults()
             ->logFillable()
             ->logOnlyDirty()
-            ->dontSubmitEmptyLogs();
+            ->dontLogEmptyChanges();
     }
 
     public function category()
@@ -604,9 +607,6 @@ class Listing extends Model implements HasMedia
         return (int) $this->user_id !== (int) $user->getKey();
     }
 
-    /**
-     * @return array{phone: string, email: string}
-     */
     public function contactDetailsFor(?User $user): array
     {
         $canAccess = $this->canRevealContactTo($user)
@@ -743,7 +743,7 @@ class Listing extends Model implements HasMedia
             },
         };
 
-        if ($this->status::class === $target) {
+        if ($target === $this->status::class) {
             return;
         }
 

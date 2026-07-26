@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
+use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
-use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
 use Modules\Location\Models\Country;
@@ -14,9 +16,7 @@ use Modules\Theme\Support\ThemeManager;
 
 class ListingController extends Controller
 {
-    public function __construct(private ThemeManager $themes)
-    {
-    }
+    public function __construct(private ThemeManager $themes) {}
 
     public function index()
     {

@@ -6,4 +6,3 @@ return [
     'max_photo_count' => 20,
     'max_photo_size_kb' => 5120,
 ];
-

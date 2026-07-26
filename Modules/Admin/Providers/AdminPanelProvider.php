@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Admin\Providers;
 
 use A909M\FilamentStateFusion\FilamentStateFusionPlugin;

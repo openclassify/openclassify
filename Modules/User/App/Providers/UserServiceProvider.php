@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -13,6 +15,5 @@ class UserServiceProvider extends ServiceProvider
         $this->loadViewsFrom(module_path('User', 'resources/views'), 'user');
     }
 
-    public function register(): void
-    {}
+    public function register(): void {}
 }

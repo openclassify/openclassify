@@ -1,19 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Category\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Modules\Listing\Models\Listing;
-use Spatie\Activitylog\LogOptions;
-use Spatie\Activitylog\Traits\LogsActivity;
+use Modules\Listing\Models\ListingCustomField;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\Support\LogOptions;
 
 class Category extends Model
 {
-    use LogsActivity;
+    use LogsActivity, SoftDeletes;
 
     private const ICON_PATHS = [
         'car' => 'img/category/car.png',
@@ -41,7 +45,7 @@ class Category extends Model
         return LogOptions::defaults()
             ->logFillable()
             ->logOnlyDirty()
-            ->dontSubmitEmptyLogs();
+            ->dontLogEmptyChanges();
     }
 
     public function parent(): BelongsTo
@@ -56,7 +60,7 @@ class Category extends Model
 
     public function listings(): HasMany
     {
-        return $this->hasMany(\Modules\Listing\Models\Listing::class);
+        return $this->hasMany(Listing::class);
     }
 
     public function scopeActive(Builder $query): Builder
@@ -353,12 +357,12 @@ class Category extends Model
 
     public function listingCustomFields(): HasMany
     {
-        return $this->hasMany(\Modules\Listing\Models\ListingCustomField::class);
+        return $this->hasMany(ListingCustomField::class);
     }
 
     public function activeListings(): HasMany
     {
-        return $this->hasMany(\Modules\Listing\Models\Listing::class)->where('status', 'active');
+        return $this->hasMany(Listing::class)->where('status', 'active');
     }
 
     public function resolvedIconPath(): ?string

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Conversation\App\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -17,8 +19,7 @@ class ConversationReadUpdated implements ShouldBroadcastNow
     public function __construct(
         public int $userId,
         public array $payload,
-    ) {
-    }
+    ) {}
 
     public function broadcastOn(): PrivateChannel
     {

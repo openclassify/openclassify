@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Favorite\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Modules\Category\Models\Category;
 use Modules\Favorite\App\Models\FavoriteSearch;
@@ -74,7 +77,7 @@ class FavoriteDemoSeeder extends Seeder
         $user->favoriteListings()->syncWithoutDetaching($payload);
     }
 
-    private function seedFavoriteSeller(User $user, User $seller, \Illuminate\Support\Carbon $timestamp): void
+    private function seedFavoriteSeller(User $user, User $seller, Carbon $timestamp): void
     {
         if ((int) $user->getKey() === (int) $seller->getKey()) {
             return;

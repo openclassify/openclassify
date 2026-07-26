@@ -1,13 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Favorite\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Category\Models\Category;
 use Modules\User\App\Models\User;
 
 class FavoriteSearch extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['user_id', 'label', 'search_term', 'category_id', 'filters', 'signature'];
 
     protected $casts = ['filters' => 'array'];

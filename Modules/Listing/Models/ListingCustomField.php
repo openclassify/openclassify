@@ -1,14 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 
 class ListingCustomField extends Model
 {
+    use SoftDeletes;
+
     public const TYPE_TEXT = 'text';
 
     public const TYPE_TEXTAREA = 'textarea';
@@ -42,7 +47,7 @@ class ListingCustomField extends Model
 
     public function category()
     {
-        return $this->belongsTo(\Modules\Category\Models\Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function scopeActive(Builder $query): Builder

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Modules\Site\App\Support\HomeSlideDefaults;
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 

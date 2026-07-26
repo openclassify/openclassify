@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -11,6 +13,5 @@ class AdminServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path('Admin', 'Database/migrations'));
     }
 
-    public function register(): void
-    {}
+    public function register(): void {}
 }

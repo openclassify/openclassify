@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -16,9 +18,7 @@ class PasswordController extends Controller
             'password' => ['required', Password::defaults(), 'confirmed'],
         ]);
 
-        $request->user()->update([
-            'password' => $validated['password'],
-        ]);
+        $request->user()->updatePassword($validated['password']);
 
         return back()->with('status', 'password-updated');
     }

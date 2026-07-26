@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Support;
 
 use Illuminate\Contracts\JsonSchema\JsonSchema;

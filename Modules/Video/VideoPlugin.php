@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Video;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\View\PanelsRenderHook;
+use Illuminate\Contracts\View\View;
 
 final class VideoPlugin implements Plugin
 {
@@ -15,7 +18,7 @@ final class VideoPlugin implements Plugin
 
     public static function make(): static
     {
-        return app(static::class);
+        return app(self::class);
     }
 
     public function register(Panel $panel): void
@@ -27,7 +30,7 @@ final class VideoPlugin implements Plugin
             )
             ->renderHook(
                 PanelsRenderHook::BODY_END,
-                fn (): \Illuminate\Contracts\View\View => view('video::partials.video-upload-optimizer'),
+                fn (): View => view('video::partials.video-upload-optimizer'),
             );
     }
 

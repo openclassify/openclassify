@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Demo\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -17,8 +19,7 @@ class DemoController extends Controller
         Request $request,
         DemoSchemaManager $demoSchemaManager,
         TurnstileVerifier $turnstileVerifier,
-    ): RedirectResponse
-    {
+    ): RedirectResponse {
         abort_unless(config('demo.enabled'), 404);
 
         $cookieName = (string) config('demo.cookie_name', 'oc2_demo');

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'disk' => env('VIDEO_DISK', env('FILESYSTEM_DISK', 'public')),
     'upload_directory' => env('VIDEO_UPLOAD_DIRECTORY', 'videos/uploads'),

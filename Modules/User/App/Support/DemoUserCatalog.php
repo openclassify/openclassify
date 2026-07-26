@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Support;
 
 use Illuminate\Support\Str;
@@ -8,7 +10,7 @@ final class DemoUserCatalog
 {
     public static function records(): array
     {
-        $password = static::resolvePassword();
+        $password = self::resolvePassword();
 
         return [
             [

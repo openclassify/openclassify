@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Video\Filament\Admin\Resources\VideoResource\Pages;
 
 use Filament\Actions\DeleteAction;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Listing\Filament\Admin\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget;

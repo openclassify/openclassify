@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -18,8 +20,7 @@ class SocialAuthController extends Controller
     public function __construct(
         private AuthProviderCatalog $providers,
         private AuthRedirector $redirector,
-    ) {
-    }
+    ) {}
 
     public function redirect(Request $request, string $provider): RedirectResponse
     {

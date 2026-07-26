@@ -1,7 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Modules\Category\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 
 class CategorySeeder extends Seeder
@@ -26,7 +30,7 @@ class CategorySeeder extends Seeder
             );
 
             foreach ($data['children'] as $i => $childName) {
-                $childSlug = $data['slug'] . '-' . \Illuminate\Support\Str::slug($childName);
+                $childSlug = $data['slug'].'-'.Str::slug($childName);
                 Category::updateOrCreate(
                     ['slug' => $childSlug],
                     ['name' => $childName, 'slug' => $childSlug, 'parent_id' => $parent->id, 'level' => 1, 'sort_order' => $i, 'is_active' => true]

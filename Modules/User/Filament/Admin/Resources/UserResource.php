@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\User\Filament\Admin\Resources;
 
 use A909M\FilamentStateFusion\Tables\Columns\StateFusionSelectColumn;
@@ -11,9 +13,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
-use Modules\User\Filament\Admin\Resources\UserResource\Pages;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\Filament\UserFormFields;
+use Modules\User\Filament\Admin\Resources\UserResource\Pages;
 use STS\FilamentImpersonate\Actions\Impersonate;
 use UnitEnum;
 
