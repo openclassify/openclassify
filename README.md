@@ -6,7 +6,8 @@ OpenClassify is a modular classifieds marketplace built with Laravel 12 and Fila
 
 ## Core Stack
 
-- Laravel 12
+- PHP 8.5
+- Laravel 13
 - FilamentPHP v5
 - `nwidart/laravel-modules`
 - Blade + Tailwind + Vite
