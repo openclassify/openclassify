@@ -1,6 +1,6 @@
 # OpenClassify
 
-OpenClassify is a modular classifieds marketplace built with Laravel 12 and Filament v5.
+OpenClassify is a modular classifieds marketplace built with Laravel 13 and Filament v5.
 
 ![OpenClassify Screenshot](public/screenshot.jpg)
 
