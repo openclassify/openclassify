@@ -82,7 +82,7 @@ class FavoriteController extends Controller
     {
         $isNowFavorite = $request->user()->toggleFavoriteListing($listing);
 
-        return $this->redirectBack($request)->with('success', $isNowFavorite ? 'Listing added to favorites.' : 'Listing removed from favorites.');
+        return $this->redirectBack($request)->with('success', $isNowFavorite ? __('favorite::messages.listing_added') : __('favorite::messages.listing_removed'));
     }
 
     public function toggleSeller(Request $request, User $seller)
@@ -90,12 +90,12 @@ class FavoriteController extends Controller
         $user = $request->user();
 
         if ((int) $user->getKey() === (int) $seller->getKey()) {
-            return $this->redirectBack($request)->with('error', 'You cannot favorite your own account.');
+            return $this->redirectBack($request)->with('error', __('favorite::messages.own_account'));
         }
 
         $isNowFavorite = $user->toggleFavoriteSeller($seller);
 
-        return $this->redirectBack($request)->with('success', $isNowFavorite ? 'Seller added to favorites.' : 'Seller removed from favorites.');
+        return $this->redirectBack($request)->with('success', $isNowFavorite ? __('favorite::messages.seller_added') : __('favorite::messages.seller_removed'));
     }
 
     public function storeSearch(Request $request)
@@ -111,16 +111,16 @@ class FavoriteController extends Controller
         ]);
 
         if ($filters === []) {
-            return back()->with('error', 'Select at least one filter before saving a search.');
+            return back()->with('error', __('favorite::messages.select_filter'));
         }
 
         $favoriteSearch = FavoriteSearch::storeForUser($request->user(), $filters);
 
         if (! $favoriteSearch->wasRecentlyCreated) {
-            return back()->with('success', 'This search is already in your favorites.');
+            return back()->with('success', __('favorite::messages.already_saved'));
         }
 
-        return back()->with('success', 'Search added to favorites.');
+        return back()->with('success', __('favorite::messages.search_saved'));
     }
 
     public function destroySearch(Request $request, FavoriteSearch $favoriteSearch)
@@ -131,7 +131,7 @@ class FavoriteController extends Controller
 
         $favoriteSearch->delete();
 
-        return back()->with('success', 'Saved search deleted.');
+        return back()->with('success', __('favorite::messages.search_removed'));
     }
 
     private function emptyPaginator(): LengthAwarePaginator

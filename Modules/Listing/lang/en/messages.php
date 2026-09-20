@@ -27,4 +27,13 @@ return [
     'no_listings_yet' => 'No listings yet.',
     'no_listings_match_filter' => 'No listings match this filter.',
     'posted_at' => 'Posted :time',
+    'status_sold' => 'Sold',
+    'status_expired' => 'Expired',
+    'status_pending' => 'Pending review',
+    'status_live' => 'Live',
+    'hint_sold' => 'This listing is marked as sold.',
+    'hint_expired' => 'This listing is waiting to be republished.',
+    'hint_pending' => 'Waiting for moderation approval.',
+    'hint_live' => 'Visible to visitors right now.',
+    'redirected_to_create' => 'You were redirected to the listing creation screen.',
 ];

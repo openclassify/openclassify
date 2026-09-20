@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Listing\Models;
 
-use App\Support\FavoriteDirectory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +15,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
+use Modules\Favorite\App\Models\FavoriteListing;
 use Modules\Listing\States\ActiveListingStatus;
 use Modules\Listing\States\ExpiredListingStatus;
 use Modules\Listing\States\ListingStatus;
@@ -83,6 +83,8 @@ class Listing extends Model implements HasMedia
     public function favoritedByUsers()
     {
         return $this->belongsToMany(User::class, 'favorite_listings')
+            ->using(FavoriteListing::class)
+            ->wherePivotNull('deleted_at')
             ->withTimestamps();
     }
 
@@ -391,7 +393,7 @@ class Listing extends Model implements HasMedia
             ->paginate(10)
             ->withQueryString();
 
-        $favoriteCounts = FavoriteDirectory::listingFavoriteCounts(
+        $favoriteCounts = FavoriteListing::countsForListings(
             $listings->getCollection()->map(static fn (self $listing): int => (int) $listing->getKey())->all()
         );
 
@@ -423,24 +425,24 @@ class Listing extends Model implements HasMedia
     {
         return match ($this->statusValue()) {
             'sold' => [
-                'label' => 'Sold',
+                'label' => __('listing::messages.status_sold'),
                 'badge_class' => 'is-success',
-                'hint' => 'This listing is marked as sold.',
+                'hint' => __('listing::messages.hint_sold'),
             ],
             'expired' => [
-                'label' => 'Expired',
+                'label' => __('listing::messages.status_expired'),
                 'badge_class' => 'is-danger',
-                'hint' => 'This listing is waiting to be republished.',
+                'hint' => __('listing::messages.hint_expired'),
             ],
             'pending' => [
-                'label' => 'Pending review',
+                'label' => __('listing::messages.status_pending'),
                 'badge_class' => 'is-warning',
-                'hint' => 'Waiting for moderation approval.',
+                'hint' => __('listing::messages.hint_pending'),
             ],
             default => [
-                'label' => 'Live',
+                'label' => __('listing::messages.status_live'),
                 'badge_class' => 'is-primary',
-                'hint' => 'Visible to visitors right now.',
+                'hint' => __('listing::messages.hint_live'),
             ],
         };
     }

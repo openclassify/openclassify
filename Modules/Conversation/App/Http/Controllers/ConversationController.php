@@ -63,24 +63,24 @@ class ConversationController extends Controller
 
         if (! $listing->user_id) {
             if ($request->expectsJson()) {
-                return response()->json(['message' => 'A conversation cannot be started for this listing.'], 422);
+                return response()->json(['message' => __('conversation::messages.cannot_start')], 422);
             }
 
-            return back()->with('error', 'A conversation cannot be started for this listing.');
+            return back()->with('error', __('conversation::messages.cannot_start'));
         }
 
         if ((int) $listing->user_id === (int) $user->getKey()) {
             if ($request->expectsJson()) {
-                return response()->json(['message' => 'You cannot message your own listing.'], 422);
+                return response()->json(['message' => __('conversation::messages.own_listing')], 422);
             }
 
-            return back()->with('error', 'You cannot message your own listing.');
+            return back()->with('error', __('conversation::messages.own_listing'));
         }
 
         $messageBody = trim((string) $request->string('message'));
 
         if ($request->expectsJson() && $messageBody === '') {
-            return response()->json(['message' => 'Message cannot be empty.'], 422);
+            return response()->json(['message' => __('conversation::messages.empty_message')], 422);
         }
 
         $conversation = Conversation::openForListingBuyer($listing, (int) $user->getKey());
@@ -98,7 +98,7 @@ class ConversationController extends Controller
 
         return redirect()
             ->route('panel.inbox.index', array_merge($this->inboxFilters($request), ['conversation' => $conversation->getKey()]))
-            ->with('success', $messageBody !== '' ? 'Message sent.' : 'Conversation started.');
+            ->with('success', $messageBody !== '' ? __('conversation::messages.message_sent') : 'Conversation started.');
     }
 
     public function send(Request $request, Conversation $conversation): RedirectResponse|JsonResponse
@@ -118,10 +118,10 @@ class ConversationController extends Controller
 
         if ($messageBody === '') {
             if ($request->expectsJson()) {
-                return response()->json(['message' => 'Message cannot be empty.'], 422);
+                return response()->json(['message' => __('conversation::messages.empty_message')], 422);
             }
 
-            return back()->with('error', 'Message cannot be empty.');
+            return back()->with('error', __('conversation::messages.empty_message'));
         }
 
         $message = $conversation->createMessageFor($userId, $messageBody);
@@ -133,7 +133,7 @@ class ConversationController extends Controller
 
         return redirect()
             ->route('panel.inbox.index', array_merge($this->inboxFilters($request), ['conversation' => $conversation->getKey()]))
-            ->with('success', 'Message sent.');
+            ->with('success', __('conversation::messages.message_sent'));
     }
 
     public function read(Request $request, Conversation $conversation): JsonResponse

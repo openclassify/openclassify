@@ -52,4 +52,8 @@ return [
     'photos_hint' => 'En fazla sekiz net fotoğraf ekleyin. İlki kapak olur.',
     'uploading' => 'Yükleniyor',
     'publishing' => 'Yayınlanıyor',
+    'video_uploaded' => 'Video yüklendi.',
+    'video_updated' => 'Video güncellendi.',
+    'video_deleted' => 'Video silindi.',
+    'listing_removed' => 'İlan kaldırıldı.',
 ];

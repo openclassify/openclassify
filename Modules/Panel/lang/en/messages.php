@@ -52,4 +52,8 @@ return [
     'photos_hint' => 'Add up to eight clear photos. The first one is the cover.',
     'uploading' => 'Uploading',
     'publishing' => 'Publishing',
+    'video_uploaded' => 'Video uploaded.',
+    'video_updated' => 'Video updated.',
+    'video_deleted' => 'Video deleted.',
+    'listing_removed' => 'Listing removed.',
 ];

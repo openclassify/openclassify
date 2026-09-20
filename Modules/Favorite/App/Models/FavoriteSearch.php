@@ -56,7 +56,7 @@ class FavoriteSearch extends Model
             $labelParts[] = $categoryName;
         }
 
-        return $labelParts !== [] ? implode(' · ', $labelParts) : 'Filtered search';
+        return $labelParts !== [] ? implode(' · ', $labelParts) : __('favorite::messages.filtered_search');
     }
 
     public static function isSavedForUser(User $user, array $filters): bool

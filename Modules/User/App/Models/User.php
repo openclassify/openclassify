@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\App\Models;
 
-use App\Support\FavoriteDirectory;
 use App\Support\NotificationDirectory;
 use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
@@ -23,7 +22,9 @@ use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Models\ConversationMessage;
+use Modules\Favorite\App\Models\FavoriteListing;
 use Modules\Favorite\App\Models\FavoriteSearch;
+use Modules\Favorite\App\Models\FavoriteSeller;
 use Modules\Listing\Models\Listing;
 use Modules\Site\App\Support\LocalMedia;
 use Modules\User\App\States\UserStatus;
@@ -105,12 +106,12 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
     public function favoriteListings()
     {
-        return $this->belongsToMany(Listing::class, 'favorite_listings')->withTimestamps();
+        return $this->belongsToMany(Listing::class, 'favorite_listings')->using(FavoriteListing::class)->wherePivotNull('deleted_at')->withTimestamps();
     }
 
     public function favoriteSellers()
     {
-        return $this->belongsToMany(self::class, 'favorite_sellers', 'user_id', 'seller_id')->withTimestamps();
+        return $this->belongsToMany(self::class, 'favorite_sellers', 'user_id', 'seller_id')->using(FavoriteSeller::class)->wherePivotNull('deleted_at')->withTimestamps();
     }
 
     public function favoriteSearches()
@@ -225,7 +226,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
 
     public function savedListingsCount(): int
     {
-        return FavoriteDirectory::savedListingCountForUser((int) $this->getKey());
+        return FavoriteListing::countForUser((int) $this->getKey());
     }
 
     public function headerBadgeCounts(): array
@@ -299,8 +300,8 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         $userId = (int) $this->getKey();
 
         $this->setAttribute('listings_count', Listing::query()->ownedByUser($userId)->count());
-        $this->setAttribute('favorite_listings_count', FavoriteDirectory::savedListingCountForUser($userId));
-        $this->setAttribute('favorite_sellers_count', FavoriteDirectory::savedSellerCountForUser($userId));
+        $this->setAttribute('favorite_listings_count', FavoriteListing::countForUser($userId));
+        $this->setAttribute('favorite_sellers_count', FavoriteSeller::countForUser($userId));
         $this->setAttribute('favorite_searches_count', FavoriteSearch::query()->where('user_id', $userId)->count());
 
         return $this;

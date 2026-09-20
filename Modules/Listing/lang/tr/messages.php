@@ -27,4 +27,13 @@ return [
     'no_listings_yet' => 'Henüz ilan yok.',
     'no_listings_match_filter' => 'Bu filtreyle eşleşen ilan yok.',
     'posted_at' => ':time paylaşıldı',
+    'status_sold' => 'Satıldı',
+    'status_expired' => 'Süresi doldu',
+    'status_pending' => 'İncelemede',
+    'status_live' => 'Yayında',
+    'hint_sold' => 'Bu ilan satıldı olarak işaretlendi.',
+    'hint_expired' => 'Bu ilan yeniden yayınlanmayı bekliyor.',
+    'hint_pending' => 'Moderasyon onayı bekleniyor.',
+    'hint_live' => 'Şu anda ziyaretçilere görünür.',
+    'redirected_to_create' => 'İlan oluşturma ekranına yönlendirildiniz.',
 ];

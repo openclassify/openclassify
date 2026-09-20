@@ -2,13 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Support;
+namespace Modules\Favorite\App\Models;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-final class FavoriteDirectory
+class FavoriteListing extends Pivot
 {
-    public static function listingFavoriteCounts(array $listingIds): array
+    use SoftDeletes;
+
+    protected $table = 'favorite_listings';
+
+    public $incrementing = true;
+
+    public static function countsForListings(array $listingIds): array
     {
         $unique = array_values(array_unique(array_map(static fn (int $id): int => $id, $listingIds)));
 
@@ -16,7 +23,7 @@ final class FavoriteDirectory
             return [];
         }
 
-        return DB::table('favorite_listings')
+        return static::query()
             ->whereIn('listing_id', $unique)
             ->selectRaw('listing_id, COUNT(*) as aggregate')
             ->groupBy('listing_id')
@@ -25,13 +32,8 @@ final class FavoriteDirectory
             ->all();
     }
 
-    public static function savedListingCountForUser(int $userId): int
+    public static function countForUser(int $userId): int
     {
-        return (int) DB::table('favorite_listings')->where('user_id', $userId)->count();
-    }
-
-    public static function savedSellerCountForUser(int $userId): int
-    {
-        return (int) DB::table('favorite_sellers')->where('user_id', $userId)->count();
+        return static::query()->where('user_id', $userId)->count();
     }
 }

@@ -232,6 +232,6 @@ class ListingController extends Controller
 
         return redirect()
             ->route('panel.listings.create')
-            ->with('success', 'You were redirected to the listing creation screen.');
+            ->with('success', __('listing::messages.redirected_to_create'));
     }
 }

@@ -13,4 +13,12 @@ return [
     'search_saved' => 'Search saved.',
     'search_removed' => 'Saved search removed.',
     'run_search' => 'Run search',
+    'listing_added' => 'Listing added to favorites.',
+    'listing_removed' => 'Listing removed from favorites.',
+    'seller_added' => 'Seller added to favorites.',
+    'seller_removed' => 'Seller removed from favorites.',
+    'own_account' => 'You cannot favorite your own account.',
+    'select_filter' => 'Select at least one filter before saving a search.',
+    'already_saved' => 'This search is already in your favorites.',
+    'filtered_search' => 'Filtered search',
 ];

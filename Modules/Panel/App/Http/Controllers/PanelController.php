@@ -90,7 +90,7 @@ class PanelController extends Controller
 
         return redirect()
             ->route('panel.listings.edit', $listing)
-            ->with('success', 'Listing updated.');
+            ->with('success', __('panel::messages.listing_updated'));
     }
 
     public function videos(Request $request): View
@@ -113,7 +113,7 @@ class PanelController extends Controller
 
         return redirect()
             ->route('panel.videos.edit', $video)
-            ->with('success', 'Video uploaded.');
+            ->with('success', __('panel::messages.video_uploaded'));
     }
 
     public function editVideo(Request $request, Video $video): View
@@ -143,7 +143,7 @@ class PanelController extends Controller
 
         return redirect()
             ->route('panel.videos.edit', $video)
-            ->with('success', 'Video updated.');
+            ->with('success', __('panel::messages.video_updated'));
     }
 
     public function destroyVideo(Request $request, Video $video): RedirectResponse
@@ -153,7 +153,7 @@ class PanelController extends Controller
 
         return redirect()
             ->route('panel.videos.index')
-            ->with('success', 'Video deleted.');
+            ->with('success', __('panel::messages.video_deleted'));
     }
 
     public function profile(Request $request): View
@@ -170,7 +170,7 @@ class PanelController extends Controller
         $listing->assertOwnedBy($request->user());
         $listing->delete();
 
-        return back()->with('success', 'Listing removed.');
+        return back()->with('success', __('panel::messages.listing_removed'));
     }
 
     public function markListingAsSold(Request $request, Listing $listing): RedirectResponse
@@ -178,7 +178,7 @@ class PanelController extends Controller
         $listing->assertOwnedBy($request->user());
         $listing->markAsSold();
 
-        return back()->with('success', 'Listing marked as sold.');
+        return back()->with('success', __('panel::messages.listing_sold'));
     }
 
     public function republishListing(Request $request, Listing $listing): RedirectResponse
@@ -186,6 +186,6 @@ class PanelController extends Controller
         $listing->assertOwnedBy($request->user());
         $listing->republish();
 
-        return back()->with('success', 'Listing republished.');
+        return back()->with('success', __('panel::messages.listing_republished'));
     }
 }

@@ -12,4 +12,8 @@ return [
     'select_conversation' => 'Bir görüşme seçin',
     'quick_replies' => 'Hızlı yanıtlar',
     'back' => 'Geri',
+    'cannot_start' => 'Bu ilan için görüşme başlatılamaz.',
+    'own_listing' => 'Kendi ilanınıza mesaj gönderemezsiniz.',
+    'empty_message' => 'Mesaj boş olamaz.',
+    'message_sent' => 'Mesaj gönderildi.',
 ];

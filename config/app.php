@@ -8,7 +8,7 @@ return [
     'debug' => (bool) env('APP_DEBUG', false),
     'url' => env('APP_URL', 'http://localhost'),
     'timezone' => 'UTC',
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'tr'),
 
     'available_locales' => ['en', 'tr', 'ar', 'zh', 'es', 'fr', 'de', 'pt', 'ru', 'ja'],
 

@@ -27,6 +27,7 @@ class DemoServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->guardConfiguration();
+        $this->loadTranslationsFrom(module_path('Demo', 'lang'), 'demo');
         $this->loadMigrationsFrom(module_path('Demo', 'Database/migrations'));
         $this->loadRoutesFrom(module_path('Demo', 'routes/web.php'));
     }
