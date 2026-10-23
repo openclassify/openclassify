@@ -17,6 +17,7 @@ use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Review\Filament\Admin\Resources\ReviewResource\Pages;
 use Modules\Review\Models\Review;
 use UnitEnum;
@@ -50,7 +51,7 @@ class ReviewResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('rating')->badge()->sortable(),
             TextColumn::make('title')->searchable()->limit(40),
@@ -58,9 +59,12 @@ class ReviewResource extends Resource
             TextColumn::make('author_id')->label('Author')->sortable(),
             IconColumn::make('is_approved')->boolean()->label('Approved'),
             ResourceTableColumns::createdAtHidden(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             SelectFilter::make('rating')->options([1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5']),
             TernaryFilter::make('is_approved')->label('Approved'),
+            ResourceTableFilters::dateRange(),
+            ResourceTableFilters::user('seller_id', 'Seller'),
+            ResourceTableFilters::user('author_id', 'Author'),
         ])->actions(ResourceTableActions::editDelete());
     }
 

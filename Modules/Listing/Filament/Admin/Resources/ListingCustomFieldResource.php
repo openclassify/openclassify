@@ -14,8 +14,11 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Category\Models\Category;
 use Modules\Listing\Filament\Admin\Resources\ListingCustomFieldResource\Pages;
 use Modules\Listing\Models\ListingCustomField;
@@ -80,7 +83,7 @@ class ListingCustomFieldResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table
+        return ResourceTableFilters::layout($table
             ->columns([
                 TextColumn::make('id')->sortable(),
                 TextColumn::make('label')->searchable()->sortable(),
@@ -91,7 +94,13 @@ class ListingCustomFieldResource extends Resource
                 IconColumn::make('is_active')->boolean()->label('Active'),
                 TextColumn::make('sort_order')->sortable(),
             ])
-            ->defaultSort('id', 'desc')
+            ->defaultSort('id', 'desc'), [
+                ResourceTableFilters::options('type', ListingCustomField::typeOptions(), 'Type'),
+                SelectFilter::make('category_id')->label('Category')->relationship('category', 'name')->searchable()->preload(),
+                TernaryFilter::make('is_required')->label('Required'),
+                TernaryFilter::make('is_active')->label('Active'),
+                ResourceTableFilters::dateRange(),
+            ])
             ->actions(ResourceTableActions::editDelete());
     }
 

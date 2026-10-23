@@ -2,6 +2,7 @@
 @import './base/reset.css';
 @import './base/typography.css';
 @import './base/layout.css';
+@import './base/responsive.css';
 @import './components/button.css';
 @import './components/form.css';
 @import './components/card.css';

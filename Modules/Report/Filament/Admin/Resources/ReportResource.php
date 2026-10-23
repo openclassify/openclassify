@@ -15,6 +15,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Report\Filament\Admin\Resources\ReportResource\Pages;
 use Modules\Report\Models\Report;
 use UnitEnum;
@@ -54,7 +55,7 @@ class ReportResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('subject_type')->badge()->sortable(),
             TextColumn::make('subject_id')->label('Subject')->sortable(),
@@ -62,7 +63,7 @@ class ReportResource extends Resource
             TextColumn::make('status')->badge()->sortable(),
             TextColumn::make('reporter_id')->label('Reporter'),
             ResourceTableColumns::createdAtHidden(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             SelectFilter::make('status')->options(fn (): array => collect(Report::statuses())->mapWithKeys(
                 static fn (string $status): array => [$status => __('report::messages.status_'.$status)]
             )->all()),
@@ -70,6 +71,8 @@ class ReportResource extends Resource
                 Report::SUBJECT_LISTING => 'Listing',
                 Report::SUBJECT_USER => 'User',
             ]),
+            ResourceTableFilters::dateRange(),
+            ResourceTableFilters::user('reporter_id', 'Reporter'),
         ])->actions(ResourceTableActions::editDelete());
     }
 

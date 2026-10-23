@@ -34,8 +34,8 @@
 }
 
 .badge--solid {
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .pill {
@@ -59,9 +59,9 @@
 }
 
 .pill.is-active {
-    background: var(--ink-900);
-    border-color: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    border-color: var(--solid);
+    color: var(--on-solid);
 }
 
 .pill svg {
@@ -231,8 +231,8 @@
 }
 
 .pagination__item[aria-current='page'] {
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .pagination__item[aria-disabled='true'] {

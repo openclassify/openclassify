@@ -10,9 +10,12 @@ use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\Filament\UserFormFields;
 use Modules\User\Filament\Admin\Resources\UserResource\Pages;
@@ -40,15 +43,18 @@ class UserResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('name')->searchable()->sortable(),
             TextColumn::make('email')->searchable()->sortable(),
             TextColumn::make('roles.name')->badge()->label('Roles'),
             StateFusionSelectColumn::make('status'),
             TextColumn::make('created_at')->dateTime()->sortable(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             StateFusionSelectFilter::make('status'),
+            ResourceTableFilters::dateRange(),
+            TernaryFilter::make('email_verified_at')->label('Email verified')->nullable(),
+            SelectFilter::make('roles')->relationship('roles', 'name')->multiple()->preload(),
         ])->actions(ResourceTableActions::editActivityDelete(static::class, [
             Impersonate::make(),
         ]));

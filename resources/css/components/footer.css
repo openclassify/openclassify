@@ -121,8 +121,8 @@
     gap: var(--space-3);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .promo-banner__title {

@@ -11,9 +11,11 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Notification\Filament\Admin\Resources\UserNotificationResource\Pages;
 use Modules\Notification\Models\UserNotification;
 use UnitEnum;
@@ -45,18 +47,21 @@ class UserNotificationResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('title')->searchable()->limit(48),
             TextColumn::make('type')->badge()->sortable(),
             TextColumn::make('user_id')->label('User')->sortable(),
             TextColumn::make('read_at')->dateTime()->label('Read')->placeholder('Unread'),
             ResourceTableColumns::createdAtHidden(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             SelectFilter::make('type')->options([
                 'offer' => 'Offer', 'message' => 'Message', 'review' => 'Review',
                 'listing' => 'Listing', 'promotion' => 'Promotion', 'saved_search' => 'Saved search',
             ]),
+            ResourceTableFilters::dateRange(),
+            ResourceTableFilters::user('user_id', 'User'),
+            TernaryFilter::make('read_at')->label('Read')->nullable(),
         ])->actions(ResourceTableActions::editDelete());
     }
 

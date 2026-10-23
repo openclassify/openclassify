@@ -20,6 +20,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Page\Filament\Admin\Resources\PageResource\Pages;
 use Modules\Page\Models\Page;
 use UnitEnum;
@@ -58,7 +59,7 @@ class PageResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('title')->searchable()->sortable(),
             TextColumn::make('slug')->searchable(),
@@ -66,11 +67,12 @@ class PageResource extends Resource
             IconColumn::make('is_published')->boolean()->label('Published'),
             TextColumn::make('sort_order')->sortable(),
             ResourceTableColumns::createdAtHidden(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             SelectFilter::make('placement')->options(fn (): array => collect(Page::placements())->mapWithKeys(
                 static fn (string $placement): array => [$placement => ucfirst($placement)]
             )->all()),
             TernaryFilter::make('is_published')->label('Published'),
+            ResourceTableFilters::dateRange(),
         ])->actions(ResourceTableActions::editDelete());
     }
 
