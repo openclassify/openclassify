@@ -5,7 +5,7 @@
     $panelSection = $panelSection ?? '';
     $panelItems = [
         ['key' => 'dashboard', 'label' => __('panel::messages.dashboard'), 'icon' => 'chart', 'url' => route('panel.index'), 'count' => null],
-        ['key' => 'listings', 'label' => __('panel::messages.my_listings'), 'icon' => 'tag', 'url' => route('panel.listings.index'), 'count' => \Modules\Listing\Models\Listing::query()->ownedByUser($panelUserId)->count()],
+        ['key' => 'listings', 'label' => __('panel::messages.my_listings'), 'icon' => 'tag', 'url' => route('panel.listings.index'), 'count' => \Modules\Listing\Models\Listing::countForUser($panelUserId)],
         ['key' => 'offers', 'label' => __('offer::messages.offers'), 'icon' => 'sort', 'url' => route('panel.offers.index'), 'count' => \Modules\Offer\Models\Offer::pendingCountForSeller($panelUserId)],
         ['key' => 'inbox', 'label' => __('panel::messages.inbox'), 'icon' => 'mail', 'url' => route('panel.inbox.index'), 'count' => auth()->user()->unreadInboxCount()],
         ['key' => 'notifications', 'label' => __('notification::messages.notifications'), 'icon' => 'bell', 'url' => route('panel.notifications.index'), 'count' => \Modules\Notification\Models\UserNotification::unreadCountForUser($panelUserId)],

@@ -16,9 +16,7 @@ final class ListingDirectory
             return [];
         }
 
-        return Listing::query()
-            ->whereIn('id', $unique)
-            ->get(['id', 'title', 'slug', 'price', 'currency', 'user_id', 'status', 'images'])
+        return Listing::summariesByIds($unique)
             ->mapWithKeys(static fn (Listing $listing): array => [
                 (int) $listing->getKey() => [
                     'id' => (int) $listing->getKey(),
@@ -40,18 +38,16 @@ final class ListingDirectory
 
     public static function sellerIdFor(int $listingId): ?int
     {
-        $value = Listing::query()->whereKey($listingId)->value('user_id');
-
-        return $value === null ? null : (int) $value;
+        return Listing::sellerIdOf($listingId);
     }
 
     public static function titleFor(int $listingId): string
     {
-        return (string) Listing::query()->whereKey($listingId)->value('title');
+        return Listing::titleOf($listingId);
     }
 
     public static function exists(int $listingId): bool
     {
-        return Listing::query()->whereKey($listingId)->exists();
+        return Listing::existsById($listingId);
     }
 }

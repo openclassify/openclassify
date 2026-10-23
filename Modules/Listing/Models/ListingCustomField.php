@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
@@ -48,6 +49,16 @@ class ListingCustomField extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public static function hasActiveForCategory(?int $categoryId): bool
+    {
+        return static::query()->active()->forCategory($categoryId)->exists();
+    }
+
+    public static function orderedActiveForCategory(?int $categoryId): EloquentCollection
+    {
+        return static::query()->active()->forCategory($categoryId)->ordered()->get();
     }
 
     public function scopeActive(Builder $query): Builder

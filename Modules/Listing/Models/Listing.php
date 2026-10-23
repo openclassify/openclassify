@@ -6,9 +6,11 @@ namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -114,6 +116,74 @@ class Listing extends Model implements HasMedia
     public function scopeOwnedByUser(Builder $query, int|string|null $userId): Builder
     {
         return $query->where('user_id', $userId);
+    }
+
+    public static function summariesByIds(array $ids): EloquentCollection
+    {
+        return static::query()
+            ->whereIn('id', $ids)
+            ->get(['id', 'title', 'slug', 'price', 'currency', 'user_id', 'status', 'images']);
+    }
+
+    public static function sellerIdOf(int $id): ?int
+    {
+        $value = static::query()->whereKey($id)->value('user_id');
+
+        return $value === null ? null : (int) $value;
+    }
+
+    public static function titleOf(int $id): string
+    {
+        return (string) static::query()->whereKey($id)->value('title');
+    }
+
+    public static function existsById(int $id): bool
+    {
+        return static::query()->whereKey($id)->exists();
+    }
+
+    public static function countForUser(int $userId): int
+    {
+        return static::query()->ownedByUser($userId)->count();
+    }
+
+    public static function activeCountForUser(int $userId): int
+    {
+        return static::query()->ownedByUser($userId)->active()->count();
+    }
+
+    public static function totalViewsForUser(int $userId): int
+    {
+        return (int) static::query()->ownedByUser($userId)->sum('view_count');
+    }
+
+    public static function recentForUser(int $userId, int $limit = 5): EloquentCollection
+    {
+        return static::query()->ownedByUser($userId)->latest('id')->limit($limit)->get();
+    }
+
+    public static function paginatePublicForSeller(int $sellerId, int $perPage = 12): LengthAwarePaginator
+    {
+        return static::query()
+            ->publicFeed()
+            ->ownedByUser($sellerId)
+            ->paginate($perPage)
+            ->withQueryString();
+    }
+
+    public static function browse(array $filters, ?array $categoryIds, string $sort, int $perPage = 16): array
+    {
+        $query = static::query()
+            ->active()
+            ->with('category:id,name')
+            ->forBrowseFilters([...$filters, 'category_ids' => $categoryIds])
+            ->applyBrowseSort($sort);
+
+        return [
+            'allTotal' => static::query()->active()->forBrowseFilters($filters)->count(),
+            'filteredTotal' => (clone $query)->count(),
+            'listings' => $query->paginate($perPage)->withQueryString(),
+        ];
     }
 
     public function scopeForPanelStatus(Builder $query, string $status): Builder

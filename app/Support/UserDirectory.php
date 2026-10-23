@@ -16,9 +16,7 @@ final class UserDirectory
             return [];
         }
 
-        return User::query()
-            ->whereIn('id', $unique)
-            ->get(['id', 'name', 'created_at'])
+        return User::summariesByIds($unique)
             ->mapWithKeys(static fn (User $user): array => [
                 (int) $user->getKey() => [
                     'id' => (int) $user->getKey(),
@@ -38,14 +36,12 @@ final class UserDirectory
 
     public static function nameFor(int $userId): string
     {
-        $name = User::query()->whereKey($userId)->value('name');
-
-        return is_string($name) ? $name : '';
+        return User::nameOf($userId);
     }
 
     public static function exists(int $userId): bool
     {
-        return User::query()->whereKey($userId)->exists();
+        return User::existsById($userId);
     }
 
     public static function initials(string $name): string

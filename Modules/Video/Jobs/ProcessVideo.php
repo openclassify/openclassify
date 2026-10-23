@@ -30,7 +30,7 @@ class ProcessVideo implements ShouldQueue
 
     public function handle(VideoTranscoder $transcoder): void
     {
-        $video = Video::query()->find($this->videoId);
+        $video = Video::find($this->videoId);
 
         if (! $video || blank($video->upload_path)) {
             return;

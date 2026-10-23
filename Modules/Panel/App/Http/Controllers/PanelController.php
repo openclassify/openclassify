@@ -27,16 +27,12 @@ class PanelController extends Controller
 
         return view('panel::dashboard', [
             'stats' => [
-                'active' => Listing::query()->ownedByUser($userId)->active()->count(),
-                'views' => (int) Listing::query()->ownedByUser($userId)->sum('view_count'),
+                'active' => Listing::activeCountForUser($userId),
+                'views' => Listing::totalViewsForUser($userId),
                 'offers' => Offer::pendingCountForSeller($userId),
                 'reviews' => Review::summaryForSeller($userId),
             ],
-            'recentListings' => Listing::query()
-                ->ownedByUser($userId)
-                ->latest('id')
-                ->limit(5)
-                ->get(),
+            'recentListings' => Listing::recentForUser($userId),
             'notifications' => UserNotification::latestForUser($userId),
         ]);
     }
