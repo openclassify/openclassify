@@ -18,6 +18,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Promotion\Filament\Admin\Resources\PromotionPlanResource\Pages;
 use Modules\Promotion\Models\PromotionPlan;
 use UnitEnum;
@@ -56,7 +57,7 @@ class PromotionPlanResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('name')->searchable()->sortable(),
             TextColumn::make('price')->money(fn (PromotionPlan $record): string => (string) $record->getAttribute('currency'))->sortable(),
@@ -64,9 +65,13 @@ class PromotionPlanResource extends Resource
             IconColumn::make('grants_featured')->boolean()->label('Featured'),
             IconColumn::make('grants_urgent')->boolean()->label('Urgent'),
             ResourceTableColumns::activeIcon(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             TernaryFilter::make('is_active')->label('Active'),
             TernaryFilter::make('grants_featured')->label('Featured'),
+            ResourceTableFilters::dateRange(),
+            ResourceTableFilters::numberRange('price', 'Price'),
+            ResourceTableFilters::numberRange('duration_days', 'Duration (days)'),
+            TernaryFilter::make('grants_urgent')->label('Urgent'),
         ])->actions(ResourceTableActions::editDelete());
     }
 

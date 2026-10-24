@@ -7,6 +7,7 @@ namespace Modules\Admin\Support\Filament;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\RestoreAction;
 
 final class ResourceTableActions
 {
@@ -15,6 +16,7 @@ final class ResourceTableActions
         return [
             EditAction::make(),
             DeleteAction::make(),
+            RestoreAction::make(),
         ];
     }
 
@@ -25,6 +27,7 @@ final class ResourceTableActions
             self::activities($resourceClass),
             ...$afterActivity,
             DeleteAction::make(),
+            RestoreAction::make(),
         ];
     }
 

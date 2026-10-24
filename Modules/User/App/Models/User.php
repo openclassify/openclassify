@@ -248,6 +248,23 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         return static::query()->whereIn('id', $ids)->get(['id', 'name', 'created_at']);
     }
 
+    public static function searchOptions(string $term, int $limit = 50): array
+    {
+        return static::query()
+            ->where(fn ($query) => $query->where('name', 'ilike', "%{$term}%")->orWhere('email', 'ilike', "%{$term}%"))
+            ->limit($limit)
+            ->get(['id', 'name', 'email'])
+            ->mapWithKeys(fn (self $user): array => [$user->getKey() => "{$user->name} ({$user->email})"])
+            ->all();
+    }
+
+    public static function labelOf(int $id): string
+    {
+        $user = static::query()->find($id, ['id', 'name', 'email']);
+
+        return $user === null ? (string) $id : "{$user->name} ({$user->email})";
+    }
+
     public static function nameOf(int $id): string
     {
         $name = static::query()->whereKey($id)->value('name');

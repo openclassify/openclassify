@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Location\Filament\Admin\Resources\CityResource\Pages;
 use Modules\Location\Models\City;
 use UnitEnum;
@@ -46,14 +47,14 @@ class CityResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('name')->searchable()->sortable(),
             TextColumn::make('country.name')->label('Country')->searchable()->sortable(),
             TextColumn::make('districts_count')->counts('districts')->label('Districts')->sortable(),
             ResourceTableColumns::activeIcon(),
             ResourceTableColumns::createdAtHidden(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             SelectFilter::make('country_id')
                 ->label('Country')
                 ->relationship('country', 'name')
@@ -67,6 +68,7 @@ class CityResource extends Resource
                     blank: fn (Builder $query): Builder => $query,
                 ),
             TernaryFilter::make('is_active')->label('Active'),
+            ResourceTableFilters::dateRange(),
         ])->actions(ResourceTableActions::editActivityDelete(static::class));
     }
 

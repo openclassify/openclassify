@@ -30,8 +30,8 @@
     width: 28px;
     height: 28px;
     border-radius: var(--radius-xs);
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -243,8 +243,8 @@
 }
 
 .category-bar__link.is-active {
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .drawer {

@@ -22,8 +22,8 @@
 }
 
 .button--primary {
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .button--primary:hover {

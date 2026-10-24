@@ -38,8 +38,8 @@
 }
 
 .panel-nav__item.is-active {
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .panel-nav__item svg {
@@ -272,8 +272,8 @@
 
 .thread__bubble--out {
     align-self: flex-end;
-    background: var(--ink-900);
-    color: #ffffff;
+    background: var(--solid);
+    color: var(--on-solid);
 }
 
 .thread__text {

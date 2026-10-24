@@ -15,6 +15,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Offer\Filament\Admin\Resources\OfferResource\Pages;
 use Modules\Offer\Models\Offer;
 use UnitEnum;
@@ -50,7 +51,7 @@ class OfferResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return $table->columns([
+        return ResourceTableFilters::layout($table->columns([
             ResourceTableColumns::id(),
             TextColumn::make('listing_id')->label('Listing')->sortable(),
             TextColumn::make('amount')->money(fn (Offer $record): string => (string) $record->getAttribute('currency'))->sortable(),
@@ -58,10 +59,14 @@ class OfferResource extends Resource
             TextColumn::make('buyer_id')->label('Buyer'),
             TextColumn::make('seller_id')->label('Seller'),
             ResourceTableColumns::createdAtHidden(),
-        ])->defaultSort('id', 'desc')->filters([
+        ])->defaultSort('id', 'desc'), [
             SelectFilter::make('status')->options(fn (): array => collect(Offer::statuses())->mapWithKeys(
                 static fn (string $status): array => [$status => __('offer::messages.status_'.$status)]
             )->all()),
+            ResourceTableFilters::dateRange(),
+            ResourceTableFilters::numberRange('amount', 'Amount'),
+            ResourceTableFilters::user('buyer_id', 'Buyer'),
+            ResourceTableFilters::user('seller_id', 'Seller'),
         ])->actions(ResourceTableActions::editDelete());
     }
 

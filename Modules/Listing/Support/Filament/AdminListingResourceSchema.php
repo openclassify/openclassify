@@ -8,7 +8,6 @@ use A909M\FilamentStateFusion\Forms\Components\StateFusionSelect;
 use A909M\FilamentStateFusion\Tables\Columns\StateFusionSelectColumn;
 use A909M\FilamentStateFusion\Tables\Filters\StateFusionSelectFilter;
 use Cheesegrits\FilamentGoogleMaps\Fields\Map;
-use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
@@ -19,14 +18,12 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Enums\FiltersLayout;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Modules\Admin\Support\Filament\ResourceTableActions;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
@@ -116,7 +113,7 @@ class AdminListingResourceSchema
 
     public static function configureTable(Table $table, string $resourceClass): Table
     {
-        return $table
+        return ResourceTableFilters::layout($table
             ->columns([
                 SpatieMediaLibraryImageColumn::make('images')
                     ->collection('listing-images')
@@ -134,7 +131,7 @@ class AdminListingResourceSchema
                 TextColumn::make('country')->sortable(),
                 TextColumn::make('created_at')->dateTime()->sortable(),
             ])
-            ->filters([
+            ->defaultSort('id', 'desc'), [
                 StateFusionSelectFilter::make('status'),
                 SelectFilter::make('category_id')
                     ->label('Category')
@@ -153,30 +150,11 @@ class AdminListingResourceSchema
                     ->options(fn (): array => City::nameOptions(null, false))
                     ->searchable(),
                 TernaryFilter::make('is_featured')->label('Featured'),
-                Filter::make('created_at')
-                    ->label('Created Date')
-                    ->schema([
-                        DatePicker::make('from')->label('From'),
-                        DatePicker::make('until')->label('Until'),
-                    ])
-                    ->query(fn (Builder $query, array $data): Builder => $query
-                        ->when($data['from'] ?? null, fn (Builder $builder, string $date): Builder => $builder->whereDate('created_at', '>=', $date))
-                        ->when($data['until'] ?? null, fn (Builder $builder, string $date): Builder => $builder->whereDate('created_at', '<=', $date))),
-                Filter::make('price')
-                    ->label('Price Range')
-                    ->schema([
-                        TextInput::make('min')->numeric()->label('Min'),
-                        TextInput::make('max')->numeric()->label('Max'),
-                    ])
-                    ->query(fn (Builder $query, array $data): Builder => $query
-                        ->when($data['min'] ?? null, fn (Builder $builder, string $amount): Builder => $builder->where('price', '>=', (float) $amount))
-                        ->when($data['max'] ?? null, fn (Builder $builder, string $amount): Builder => $builder->where('price', '<=', (float) $amount))),
+                ResourceTableFilters::dateRange(),
+                ResourceTableFilters::dateRange('updated_at', 'Updated'),
+                ResourceTableFilters::numberRange('price', 'Price Range'),
+                ResourceTableFilters::numberRange('view_count', 'Views'),
             ])
-            ->filtersLayout(FiltersLayout::AboveContentCollapsible)
-            ->filtersFormColumns(3)
-            ->filtersFormWidth('7xl')
-            ->persistFiltersInSession()
-            ->defaultSort('id', 'desc')
             ->actions(ResourceTableActions::editActivityDelete($resourceClass));
     }
 }

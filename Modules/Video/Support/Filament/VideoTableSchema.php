@@ -13,6 +13,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
+use Modules\Admin\Support\Filament\ResourceTableFilters;
 use Modules\Video\Enums\VideoStatus;
 use Modules\Video\Models\Video;
 
@@ -41,7 +42,7 @@ class VideoTableSchema
                 ->toggleable();
         }
 
-        return $table
+        return ResourceTableFilters::layout($table
             ->columns([
                 ...$columns,
                 TextColumn::make('status')
@@ -65,7 +66,7 @@ class VideoTableSchema
                     ->since()
                     ->sortable(),
             ])
-            ->filters([
+            ->defaultSort('id', 'desc'), [
                 SelectFilter::make('status')
                     ->options(VideoStatus::options()),
                 SelectFilter::make('listing_id')
@@ -82,8 +83,9 @@ class VideoTableSchema
                         ->searchable()
                         ->preload(),
                 ] : []),
+                ResourceTableFilters::dateRange(),
+                ResourceTableFilters::dateRange('processed_at', 'Processed'),
             ])
-            ->defaultSort('id', 'desc')
             ->actions([
                 Action::make('watch')
                     ->icon('heroicon-o-play-circle')

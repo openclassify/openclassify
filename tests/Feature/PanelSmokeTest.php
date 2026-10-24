@@ -67,6 +67,11 @@ class PanelSmokeTest extends TestCase
             'listings' => ['/admin/listings'],
             'categories' => ['/admin/categories'],
             'users' => ['/admin/users'],
+            'cities' => ['/admin/cities'],
+            'countries' => ['/admin/countries'],
+            'districts' => ['/admin/districts'],
+            'custom fields' => ['/admin/listing-custom-fields'],
+            'videos' => ['/admin/videos'],
         ];
     }
 
