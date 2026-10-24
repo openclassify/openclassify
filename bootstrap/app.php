@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -28,6 +30,4 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->appendToPriorityList(BootstrapAppData::class, SetLocale::class);
         $middleware->prependToPriorityList(AuthenticatesRequests::class, ResolveDemoRequest::class);
     })
-    ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })->create();
+    ->withExceptions(function (Exceptions $exceptions): void {})->create();

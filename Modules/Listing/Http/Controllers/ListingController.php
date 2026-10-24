@@ -74,25 +74,11 @@ class ListingController extends Controller
             'date_filter' => $dateFilter,
         ];
 
-        $allListingsTotal = Listing::query()
-            ->active()
-            ->forBrowseFilters($browseFilters)
-            ->count();
-
-        $listingsQuery = Listing::query()
-            ->active()
-            ->with('category:id,name')
-            ->forBrowseFilters([
-                ...$browseFilters,
-                'category_ids' => $listingDirectory['filterIds'],
-            ])
-            ->applyBrowseSort($sort);
-
-        $filteredListingsTotal = (clone $listingsQuery)->count();
-
-        $listings = $listingsQuery
-            ->paginate(16)
-            ->withQueryString();
+        [
+            'allTotal' => $allListingsTotal,
+            'filteredTotal' => $filteredListingsTotal,
+            'listings' => $listings,
+        ] = Listing::browse($browseFilters, $listingDirectory['filterIds'], $sort);
 
         $categories = $listingDirectory['categories'];
         $selectedCategory = $listingDirectory['selectedCategory'];

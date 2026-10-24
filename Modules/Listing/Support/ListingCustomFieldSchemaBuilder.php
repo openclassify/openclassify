@@ -18,19 +18,12 @@ class ListingCustomFieldSchemaBuilder
 {
     public static function hasFields(?int $categoryId): bool
     {
-        return ListingCustomField::query()
-            ->active()
-            ->forCategory($categoryId)
-            ->exists();
+        return ListingCustomField::hasActiveForCategory($categoryId);
     }
 
     public static function formComponents(?int $categoryId): array
     {
-        return ListingCustomField::query()
-            ->active()
-            ->forCategory($categoryId)
-            ->ordered()
-            ->get()
+        return ListingCustomField::orderedActiveForCategory($categoryId)
             ->map(fn (ListingCustomField $field): ?Component => self::makeFieldComponent($field))
             ->filter()
             ->values()
@@ -43,12 +36,7 @@ class ListingCustomFieldSchemaBuilder
             return [];
         }
 
-        $fieldsByName = ListingCustomField::query()
-            ->active()
-            ->forCategory($categoryId)
-            ->ordered()
-            ->get()
-            ->keyBy('name');
+        $fieldsByName = ListingCustomField::orderedActiveForCategory($categoryId)->keyBy('name');
 
         $result = [];
 

@@ -16,7 +16,7 @@ class SellerController extends Controller
 {
     public function show(Request $request, int $seller): View
     {
-        $profile = User::query()->whereKey($seller)->first(['id', 'name', 'created_at']);
+        $profile = User::publicProfile($seller);
 
         abort_if($profile === null, 404);
 
@@ -26,12 +26,8 @@ class SellerController extends Controller
 
         return view('user::sellers.show', [
             'seller' => $profile,
-            'listings' => Listing::query()
-                ->publicFeed()
-                ->ownedByUser($sellerId)
-                ->paginate(12)
-                ->withQueryString(),
-            'listingCount' => Listing::query()->active()->ownedByUser($sellerId)->count(),
+            'listings' => Listing::paginatePublicForSeller($sellerId),
+            'listingCount' => Listing::activeCountForUser($sellerId),
             'summary' => Review::summaryForSeller($sellerId),
             'distribution' => Review::distributionForSeller($sellerId),
             'reviews' => $reviews,

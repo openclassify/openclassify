@@ -238,6 +238,28 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         ];
     }
 
+    public static function publicProfile(int $id): ?self
+    {
+        return static::query()->whereKey($id)->first(['id', 'name', 'created_at']);
+    }
+
+    public static function summariesByIds(array $ids): Collection
+    {
+        return static::query()->whereIn('id', $ids)->get(['id', 'name', 'created_at']);
+    }
+
+    public static function nameOf(int $id): string
+    {
+        $name = static::query()->whereKey($id)->value('name');
+
+        return is_string($name) ? $name : '';
+    }
+
+    public static function existsById(int $id): bool
+    {
+        return static::query()->whereKey($id)->exists();
+    }
+
     public static function totalCount(): int
     {
         return (int) static::query()->count();
