@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'offers' => 'Offerte',
+    'make_offer' => 'Fai un\'offerta',
+    'your_offer' => 'La tua offerta',
+    'offer_message' => 'Messaggio al venditore',
+    'send_offer' => 'Invia offerta',
+    'sent' => 'Offerta inviata al venditore.',
+    'accepted' => 'Offerta accettata.',
+    'declined' => 'Offerta rifiutata.',
+    'withdrawn' => 'Offerta ritirata.',
+    'cannot_offer_own' => 'Non puoi fare un\'offerta sul tuo stesso annuncio.',
+    'received' => 'Ricevute',
+    'sent_tab' => 'Inviate',
+    'accept' => 'Accetta',
+    'decline' => 'Rifiuta',
+    'withdraw' => 'Ritira',
+    'status_pending' => 'In attesa',
+    'status_accepted' => 'Accettata',
+    'status_declined' => 'Rifiutata',
+    'status_withdrawn' => 'Ritirata',
+    'no_offers' => 'Nessuna offerta presente',
+    'no_offers_hint' => 'Le offerte degli acquirenti appariranno qui.',
+    'all' => 'Tutte',
+    'best_offer' => 'Offerta migliore',
+    'notification_received_title' => 'Nuova offerta',
+    'notification_received_body' => 'Hai ricevuto un\'offerta di :amount per l\'annuncio :listing.',
+    'notification_accepted_title' => 'Offerta accettata',
+    'notification_accepted_body' => 'La tua offerta per l\'annuncio :listing è stata accettata.',
+    'notification_declined_title' => 'Offerta rifiutata',
+    'notification_declined_body' => 'La tua offerta per l\'annuncio :listing è stata rifiutata.',
+    'sign_in_to_offer' => 'Accedi per fare un\'offerta.',
+];
