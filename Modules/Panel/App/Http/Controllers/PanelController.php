@@ -98,7 +98,7 @@ class PanelController extends Controller
     {
         $validated = $request->validated();
 
-        $listing = $request->user()->listings()->whereKey($validated['listing_id'])->firstOrFail();
+        $listing = $request->user()->ownedListing((int) $validated['listing_id']);
 
         $video = Video::createFromUploadedFile($listing, $request->file('video_file'), [
             'title' => $validated['title'] ?? null,
@@ -127,7 +127,7 @@ class PanelController extends Controller
         $video->assertOwnedBy($request->user());
         $validated = $request->validated();
 
-        $listing = $request->user()->listings()->whereKey($validated['listing_id'])->firstOrFail();
+        $listing = $request->user()->ownedListing((int) $validated['listing_id']);
 
         $video->updateFromPanel([
             'listing_id' => $listing->getKey(),

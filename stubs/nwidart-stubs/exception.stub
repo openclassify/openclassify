@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $CLASS_NAMESPACE$;
 
 use Exception;
 
 class $CLASS$ extends Exception
 {
-    //
+
 }

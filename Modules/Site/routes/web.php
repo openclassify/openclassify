@@ -11,10 +11,10 @@ Route::get('/storage/{path}', [PublicMediaController::class, 'show'])
     ->where('path', '.*')
     ->name('media.legacy');
 
-Route::middleware('web')->group(function () {
+Route::middleware('web')->group(function (): void {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');
-    Route::get('/dashboard', fn () => auth()->check()
+    Route::get('/dashboard', fn (): mixed => auth()->check()
         ? redirect()->route('panel.listings.index')
         : redirect()->route('login'))
         ->name('dashboard');

@@ -132,7 +132,7 @@ class ListingSeeder extends Seeder
             ->where('is_active', true)
             ->orderBy('name')
             ->pluck('name')
-            ->map(fn ($name): string => trim((string) $name))
+            ->map(fn (mixed $name): string => trim((string) $name))
             ->filter(fn (string $name): bool => $name !== '')
             ->values();
 
@@ -170,13 +170,13 @@ class ListingSeeder extends Seeder
 
     private function resolveLocation(int $index, Collection $countries, Collection $turkeyCities): array
     {
-        $turkeyCountry = $countries->first(fn ($country): bool => strtoupper((string) $country->code) === 'TR');
+        $turkeyCountry = $countries->first(fn (mixed $country): bool => strtoupper((string) $country->code) === 'TR');
         $turkeyName = trim((string) ($turkeyCountry->name ?? 'Turkey')) ?: 'Turkey';
         $useForeignCountry = $countries->count() > 1 && $index % 4 === 0;
 
         if ($useForeignCountry) {
             $foreignCountries = $countries
-                ->filter(fn ($country): bool => strtoupper((string) $country->code) !== 'TR')
+                ->filter(fn (mixed $country): bool => strtoupper((string) $country->code) !== 'TR')
                 ->values();
 
             if ($foreignCountries->isNotEmpty()) {

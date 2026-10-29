@@ -6,6 +6,7 @@ namespace Modules\Conversation\App\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
+use Modules\User\App\Models\User;
 
 class ConversationServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,7 @@ class ConversationServiceProvider extends ServiceProvider
         $this->loadViewsFrom(module_path('Conversation', 'resources/views'), 'conversation');
         $this->loadTranslationsFrom(module_path('Conversation', 'lang'), 'conversation');
 
-        Broadcast::channel('users.{id}.inbox', function ($user, $id): bool {
+        Broadcast::channel('users.{id}.inbox', function (User $user, int|string $id): bool {
             return (int) $user->getKey() === (int) $id;
         });
     }

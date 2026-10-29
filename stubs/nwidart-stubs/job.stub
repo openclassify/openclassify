@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $NAMESPACE$;
 
 use Illuminate\Bus\Queueable;
@@ -9,19 +11,13 @@ class $CLASS$ implements ShouldQueue
 {
     use Dispatchable, Queueable;
 
-    /**
-     * Create a new job instance.
-     */
     public function __construct()
     {
-        //
+
     }
 
-    /**
-     * Execute the job.
-     */
     public function handle(): void
     {
-        //
+
     }
 }

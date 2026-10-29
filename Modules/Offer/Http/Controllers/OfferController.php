@@ -58,6 +58,8 @@ class OfferController extends Controller
             abort(404);
         }
 
+        abort_unless($summary['status'] === 'active', 422);
+
         $buyerId = (int) $request->user()->getKey();
 
         if ($buyerId === $summary['seller_id']) {
@@ -69,7 +71,7 @@ class OfferController extends Controller
             $buyerId,
             $summary['seller_id'],
             (float) $validated['amount'],
-            (string) $request->input('currency', config('app.default_currency', 'USD')),
+            $summary['currency'],
             $validated['message'] ?? null,
         );
 

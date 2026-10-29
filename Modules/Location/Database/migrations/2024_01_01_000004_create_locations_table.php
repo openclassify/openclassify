@@ -11,7 +11,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('code', 3);
@@ -24,7 +24,7 @@ return new class extends Migration
 
         DB::statement('CREATE UNIQUE INDEX countries_code_unique ON countries (code) WHERE deleted_at IS NULL');
 
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->foreignId('country_id')->constrained('countries')->cascadeOnDelete();
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('districts', function (Blueprint $table) {
+        Schema::create('districts', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->foreignId('city_id')->constrained('cities')->cascadeOnDelete();
@@ -42,7 +42,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('neighborhoods', function (Blueprint $table) {
+        Schema::create('neighborhoods', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->foreignId('district_id')->constrained('districts')->cascadeOnDelete();

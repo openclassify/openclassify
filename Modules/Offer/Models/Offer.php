@@ -33,6 +33,9 @@ class Offer extends Model
     ];
 
     protected $casts = [
+        'listing_id' => 'integer',
+        'buyer_id' => 'integer',
+        'seller_id' => 'integer',
         'amount' => 'decimal:2',
         'responded_at' => 'datetime',
     ];
@@ -76,25 +79,23 @@ class Offer extends Model
 
     public static function place(int $listingId, int $buyerId, int $sellerId, float $amount, string $currency, ?string $message): self
     {
-        static::query()
-            ->forListing($listingId)
-            ->forBuyer($buyerId)
-            ->pending()
-            ->update(['status' => self::STATUS_WITHDRAWN, 'responded_at' => now()]);
+        return (new static)->getConnection()->transaction(static function () use ($listingId, $buyerId, $sellerId, $amount, $currency, $message): self {
+            (new static)->getConnection()->select('SELECT pg_advisory_xact_lock(hashtextextended(?, 0))', [
+                'offers:'.$listingId.':'.$buyerId,
+            ]);
+            static::query()->forListing($listingId)->forBuyer($buyerId)->pending()
+                ->update(['status' => self::STATUS_WITHDRAWN, 'responded_at' => now()]);
 
-        $offer = static::query()->make([
-            'listing_id' => $listingId,
-            'buyer_id' => $buyerId,
-            'seller_id' => $sellerId,
-            'amount' => $amount,
-            'currency' => $currency,
-            'message' => $message,
-            'status' => self::STATUS_PENDING,
-        ]);
-
-        $offer->save();
-
-        return $offer;
+            return static::query()->create([
+                'listing_id' => $listingId,
+                'buyer_id' => $buyerId,
+                'seller_id' => $sellerId,
+                'amount' => $amount,
+                'currency' => $currency,
+                'message' => $message,
+                'status' => self::STATUS_PENDING,
+            ]);
+        });
     }
 
     public static function receivedBySeller(int $sellerId, string $status, int $perPage = 12): LengthAwarePaginator
@@ -159,26 +160,24 @@ class Offer extends Model
 
     public function accept(): void
     {
-        $this->forceFill([
-            'status' => self::STATUS_ACCEPTED,
-            'responded_at' => now(),
-        ])->save();
+        $this->respond(self::STATUS_ACCEPTED);
     }
 
     public function decline(): void
     {
-        $this->forceFill([
-            'status' => self::STATUS_DECLINED,
-            'responded_at' => now(),
-        ])->save();
+        $this->respond(self::STATUS_DECLINED);
     }
 
     public function withdraw(): void
     {
-        $this->forceFill([
-            'status' => self::STATUS_WITHDRAWN,
-            'responded_at' => now(),
-        ])->save();
+        $this->respond(self::STATUS_WITHDRAWN);
+    }
+
+    private function respond(string $status): void
+    {
+        $values = ['status' => $status, 'responded_at' => now()];
+        abort_unless(static::query()->whereKey($this->getKey())->pending()->update($values) === 1, 422);
+        $this->forceFill($values)->syncOriginal();
     }
 
     public function isPending(): bool

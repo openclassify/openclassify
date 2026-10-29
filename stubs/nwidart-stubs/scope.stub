@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $CLASS_NAMESPACE$;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -8,11 +10,9 @@ use Illuminate\Database\Eloquent\Scope;
 
 class $CLASS$ implements Scope
 {
-    /**
-     * Apply the scope to a given Eloquent query builder.
-     */
+
     public function apply(Builder $builder, Model $model): void
     {
-        //
+
     }
 }

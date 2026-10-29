@@ -15,6 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -40,7 +41,7 @@ class AdminListingResourceSchema
     public static function form(): array
     {
         return [
-            TextInput::make('title')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug($state).'-'.Str::random(4))),
+            TextInput::make('title')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn (mixed $state, Set $set): mixed => $set('slug', Str::slug($state).'-'.Str::random(4))),
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             Textarea::make('description')->rows(4),
             TextInput::make('price')
@@ -55,7 +56,7 @@ class AdminListingResourceSchema
                 ->options(fn (): array => Category::activeIdNameOptions())
                 ->searchable()
                 ->live()
-                ->afterStateUpdated(fn ($state, $set) => $set('custom_fields', []))
+                ->afterStateUpdated(fn (mixed $state, Set $set): mixed => $set('custom_fields', []))
                 ->nullable(),
             Select::make('user_id')->relationship('user', 'email')->label('Owner')->searchable()->preload()->nullable(),
             Section::make('Custom Fields')
@@ -78,7 +79,7 @@ class AdminListingResourceSchema
                 ->searchable()
                 ->preload()
                 ->live()
-                ->afterStateUpdated(fn ($state, $set) => $set('city', null))
+                ->afterStateUpdated(fn (mixed $state, Set $set): mixed => $set('city', null))
                 ->nullable(),
             Select::make('city')
                 ->label('City')

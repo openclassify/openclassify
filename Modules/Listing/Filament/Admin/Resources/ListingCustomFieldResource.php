@@ -11,6 +11,8 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -41,7 +43,7 @@ class ListingCustomFieldResource extends Resource
                 ->required()
                 ->maxLength(255)
                 ->live(onBlur: true)
-                ->afterStateUpdated(function ($state, $set, ?ListingCustomField $record): void {
+                ->afterStateUpdated(function (mixed $state, Set $set, ?ListingCustomField $record): void {
                     $set('name', ListingCustomField::uniqueNameFromLabel((string) $state, $record));
                 }),
             TextInput::make('name')
@@ -64,7 +66,7 @@ class ListingCustomFieldResource extends Resource
             TagsInput::make('options')
                 ->label('Select Options')
                 ->placeholder('Add an option and press Enter')
-                ->visible(fn ($get): bool => $get('type') === ListingCustomField::TYPE_SELECT)
+                ->visible(fn (Get $get): bool => $get('type') === ListingCustomField::TYPE_SELECT)
                 ->helperText('Used only for Select type fields.'),
             TextInput::make('sort_order')
                 ->numeric()

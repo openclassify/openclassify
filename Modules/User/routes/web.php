@@ -14,12 +14,12 @@ use Modules\User\App\Http\Controllers\Auth\SocialAuthController;
 use Modules\User\App\Http\Controllers\ProfileController;
 use Modules\User\App\Http\Controllers\SellerController;
 
-Route::middleware('web')->group(function () {
+Route::middleware('web')->group(function (): void {
     Route::get('/sellers/{seller}', [SellerController::class, 'show'])
         ->whereNumber('seller')
         ->name('sellers.show');
 
-    Route::middleware('guest')->group(function () {
+    Route::middleware('guest')->group(function (): void {
         Route::get('/register', [RegisterController::class, 'create'])->name('register');
         Route::post('/register', [RegisterController::class, 'store']);
 
@@ -32,13 +32,13 @@ Route::middleware('web')->group(function () {
         Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->name('password.reset');
         Route::post('/reset-password', [ResetPasswordController::class, 'store'])->name('password.store');
 
-        Route::prefix('/auth/social')->name('auth.social.')->group(function () {
+        Route::prefix('/auth/social')->name('auth.social.')->group(function (): void {
             Route::get('/{provider}', [SocialAuthController::class, 'redirect'])->name('redirect');
             Route::get('/{provider}/callback', [SocialAuthController::class, 'callback'])->name('callback');
         });
     });
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth')->group(function (): void {
         Route::get('/verify-email', [EmailVerificationController::class, 'notice'])->name('verification.notice');
         Route::get('/verify-email/{id}/{hash}', [EmailVerificationController::class, 'verify'])
             ->middleware(['signed', 'throttle:6,1'])

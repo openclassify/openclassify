@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $NAMESPACE$;
 
 use $EVENTNAME$;
@@ -10,19 +12,13 @@ class $CLASS$ implements ShouldQueue
 {
     use InteractsWithQueue;
 
-    /**
-     * Create the event listener.
-     */
     public function __construct()
     {
-        //
+
     }
 
-    /**
-     * Handle the event.
-     */
     public function handle($SHORTEVENTNAME$ $event): void
     {
-        //
+
     }
 }

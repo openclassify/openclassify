@@ -10,6 +10,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TernaryFilter;
@@ -34,7 +35,7 @@ class CategoryResource extends Resource
     public static function form(Schema $schema): Schema
     {
         return $schema->schema([
-            TextInput::make('name')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug($state))),
+            TextInput::make('name')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn (mixed $state, Set $set): mixed => $set('slug', Str::slug($state))),
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             TextInput::make('description')->maxLength(500),
             TextInput::make('icon')->maxLength(100),
@@ -83,7 +84,7 @@ class CategoryResource extends Resource
             Action::make('toggleChildren')
                 ->label(fn (Category $record, Pages\ListCategories $livewire): string => $livewire->hasExpandedChildren($record) ? 'Hide subcategories' : 'Show subcategories')
                 ->icon(fn (Category $record, Pages\ListCategories $livewire): string => $livewire->hasExpandedChildren($record) ? 'heroicon-o-chevron-down' : 'heroicon-o-chevron-right')
-                ->action(fn (Category $record, Pages\ListCategories $livewire) => $livewire->toggleChildren($record))
+                ->action(fn (Category $record, Pages\ListCategories $livewire): mixed => $livewire->toggleChildren($record))
                 ->visible(fn (Category $record): bool => $record->parent_id === null && $record->children_count > 0),
             ...ResourceTableActions::editActivityDelete(static::class),
         ]);

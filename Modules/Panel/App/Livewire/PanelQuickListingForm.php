@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Panel\App\Livewire;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -93,7 +94,7 @@ class PanelQuickListingForm extends Component
         $this->restoreDraft();
     }
 
-    public function render()
+    public function render(): View
     {
         return view('panel::quick-create');
     }
@@ -590,7 +591,7 @@ class PanelQuickListingForm extends Component
             ];
 
             if ($type === ListingCustomField::TYPE_SELECT) {
-                $options = collect($field['options'] ?? [])->map(fn ($option): string => (string) $option)->all();
+                $options = collect($field['options'] ?? [])->map(fn (mixed $option): string => (string) $option)->all();
                 $fieldRules[] = Rule::in($options);
             }
 
@@ -670,8 +671,8 @@ class PanelQuickListingForm extends Component
         $fieldsByName = collect($this->listingCustomFields)->keyBy('name');
 
         return collect($this->customFieldValues)
-            ->filter(fn ($value, $key): bool => $fieldsByName->has((string) $key))
-            ->map(function ($value, $key) use ($fieldsByName): mixed {
+            ->filter(fn (mixed $value, int|string $key): bool => $fieldsByName->has((string) $key))
+            ->map(function (mixed $value, int|string $key) use ($fieldsByName): mixed {
                 $field = $fieldsByName->get((string) $key);
                 $type = (string) ($field['type'] ?? ListingCustomField::TYPE_TEXT);
 
@@ -681,7 +682,7 @@ class PanelQuickListingForm extends Component
                     default => is_string($value) ? trim($value) : $value,
                 };
             })
-            ->filter(function ($value, $key) use ($fieldsByName): bool {
+            ->filter(function (mixed $value, int|string $key) use ($fieldsByName): bool {
                 $field = $fieldsByName->get((string) $key);
                 $type = (string) ($field['type'] ?? ListingCustomField::TYPE_TEXT);
 
@@ -779,9 +780,9 @@ class PanelQuickListingForm extends Component
 
     private function stepForValidationErrors(array $keys): int
     {
-        $normalizedKeys = collect($keys)->map(fn ($key) => (string) $key)->values();
+        $normalizedKeys = collect($keys)->map(fn (int|string $key): string => (string) $key)->values();
 
-        if ($normalizedKeys->contains(fn ($key) => str_starts_with($key, 'photos') || str_starts_with($key, 'videos'))) {
+        if ($normalizedKeys->contains(fn (int|string $key): bool => str_starts_with($key, 'photos') || str_starts_with($key, 'videos'))) {
             return 1;
         }
 
@@ -789,7 +790,7 @@ class PanelQuickListingForm extends Component
             return 2;
         }
 
-        if ($normalizedKeys->contains(fn ($key) => in_array($key, [
+        if ($normalizedKeys->contains(fn (int|string $key): mixed => in_array($key, [
             'listingTitle',
             'price',
             'description',
@@ -799,7 +800,7 @@ class PanelQuickListingForm extends Component
             return 3;
         }
 
-        if ($normalizedKeys->contains(fn ($key) => str_starts_with($key, 'customFieldValues.'))) {
+        if ($normalizedKeys->contains(fn (int|string $key): mixed => str_starts_with($key, 'customFieldValues.'))) {
             return 4;
         }
 
@@ -822,7 +823,7 @@ class PanelQuickListingForm extends Component
         $this->detectedConfidence = isset($draft['detectedConfidence']) ? (float) $draft['detectedConfidence'] : null;
         $this->detectedReason = isset($draft['detectedReason']) ? (string) $draft['detectedReason'] : null;
         $this->detectedError = isset($draft['detectedError']) ? (string) $draft['detectedError'] : null;
-        $this->detectedAlternatives = collect($draft['detectedAlternatives'] ?? [])->filter(fn ($id) => is_numeric($id))->map(fn ($id) => (int) $id)->values()->all();
+        $this->detectedAlternatives = collect($draft['detectedAlternatives'] ?? [])->filter(fn (int|string $id): mixed => is_numeric($id))->map(fn (int|string $id): int => (int) $id)->values()->all();
         $this->listingTitle = (string) ($draft['listingTitle'] ?? '');
         $this->price = (string) ($draft['price'] ?? '');
         $this->description = (string) ($draft['description'] ?? '');

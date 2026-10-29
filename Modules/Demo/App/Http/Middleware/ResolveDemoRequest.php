@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Modules\Demo\App\Support\DemoSchemaManager;
+use Symfony\Component\HttpFoundation\Response;
 
 class ResolveDemoRequest
 {
     public function __construct(private readonly DemoSchemaManager $demoSchemaManager) {}
 
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         if ($this->shouldUsePublicSchema($request)) {
             $this->demoSchemaManager->activatePublic();

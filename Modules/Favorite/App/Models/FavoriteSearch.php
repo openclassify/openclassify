@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Favorite\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Category\Models\Category;
 use Modules\User\App\Models\User;
@@ -17,12 +18,12 @@ class FavoriteSearch extends Model
 
     protected $casts = ['filters' => 'array'];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
@@ -30,8 +31,8 @@ class FavoriteSearch extends Model
     public static function normalizeFilters(array $filters): array
     {
         return collect($filters)
-            ->map(fn ($value) => is_string($value) ? trim($value) : $value)
-            ->filter(fn ($value) => $value !== null && $value !== '' && $value !== [])
+            ->map(fn (mixed $value): mixed => is_string($value) ? trim($value) : $value)
+            ->filter(fn (mixed $value): bool => $value !== null && $value !== '' && $value !== [])
             ->sortKeys()
             ->all();
     }

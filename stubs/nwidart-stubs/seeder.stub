@@ -1,16 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $NAMESPACE$;
 
 use Illuminate\Database\Seeder;
 
 class $NAME$ extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
-        // $this->call([]);
+
     }
 }

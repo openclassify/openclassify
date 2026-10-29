@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Modules\User\App\Models\User;
 use SocialiteProviders\Apple\Provider;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
@@ -18,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Gate::before(function ($user): ?bool {
+        Gate::before(function (User $user): ?bool {
             if (method_exists($user, 'hasRole') && $user->hasRole('admin')) {
                 return true;
             }
@@ -42,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
             $switch
                 ->locales($availableLocales)
                 ->labels(collect($availableLocales)->mapWithKeys(
-                    fn (string $locale) => [$locale => $localeLabels[$locale] ?? strtoupper($locale)]
+                    fn (string $locale): array => [$locale => $localeLabels[$locale] ?? strtoupper($locale)]
                 )->all())
                 ->visible(insidePanels: count($availableLocales) > 1, outsidePanels: false);
         });

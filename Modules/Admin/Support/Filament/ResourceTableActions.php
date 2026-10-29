@@ -8,6 +8,7 @@ use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\RestoreAction;
+use Illuminate\Database\Eloquent\Model;
 
 final class ResourceTableActions
 {
@@ -35,6 +36,6 @@ final class ResourceTableActions
     {
         return Action::make('activities')
             ->icon('heroicon-o-clock')
-            ->url(fn ($record): string => $resourceClass::getUrl('activities', ['record' => $record]));
+            ->url(fn (Model $record): string => $resourceClass::getUrl('activities', ['record' => $record]));
     }
 }

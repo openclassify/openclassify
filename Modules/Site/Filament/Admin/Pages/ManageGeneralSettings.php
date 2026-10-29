@@ -93,7 +93,7 @@ class ManageGeneralSettings extends SettingsPage
                     ->maxLength(500),
                 HomeSlideFormSchema::make(
                     $defaults['home_slides'],
-                    fn ($state): array => $this->normalizeHomeSlides($state),
+                    fn (mixed $state): array => $this->normalizeHomeSlides($state),
                 ),
                 FileUpload::make('site_logo')
                     ->label('Site Logo')
@@ -130,8 +130,8 @@ class ManageGeneralSettings extends SettingsPage
                     ->helperText('Add 3-letter currency codes such as TRY, USD, or EUR.')
                     ->required()
                     ->rules(['array', 'min:1'])
-                    ->afterStateHydrated(fn (TagsInput $component, $state) => $component->state($this->normalizeCurrencies($state)))
-                    ->dehydrateStateUsing(fn ($state) => $this->normalizeCurrencies($state)),
+                    ->afterStateHydrated(fn (TagsInput $component, mixed $state): mixed => $component->state($this->normalizeCurrencies($state)))
+                    ->dehydrateStateUsing(fn (mixed $state): mixed => $this->normalizeCurrencies($state)),
                 TextInput::make('linkedin_url')
                     ->label('LinkedIn URL')
                     ->url()
@@ -235,7 +235,7 @@ class ManageGeneralSettings extends SettingsPage
         ];
 
         return collect(config('app.available_locales', ['en']))
-            ->mapWithKeys(fn (string $locale) => [$locale => $labels[$locale] ?? strtoupper($locale)])
+            ->mapWithKeys(fn (string $locale): array => [$locale => $labels[$locale] ?? strtoupper($locale)])
             ->all();
     }
 
@@ -244,9 +244,9 @@ class ManageGeneralSettings extends SettingsPage
         $source = is_array($state) ? $state : (filled($state) ? [$state] : []);
 
         $normalized = collect($source)
-            ->filter(fn ($currency) => is_string($currency) && trim($currency) !== '')
-            ->map(fn (string $currency) => strtoupper(substr(trim($currency), 0, 3)))
-            ->filter(fn (string $currency) => strlen($currency) === 3)
+            ->filter(fn (mixed $currency): bool => is_string($currency) && trim($currency) !== '')
+            ->map(fn (string $currency): mixed => strtoupper(substr(trim($currency), 0, 3)))
+            ->filter(fn (string $currency): bool => strlen($currency) === 3)
             ->unique()
             ->values()
             ->all();

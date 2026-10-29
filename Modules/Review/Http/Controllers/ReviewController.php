@@ -35,8 +35,8 @@ class ReviewController extends Controller
 
         $listingId = isset($validated['listing_id']) ? (int) $validated['listing_id'] : null;
 
-        if ($listingId !== null && ! ListingDirectory::exists($listingId)) {
-            $listingId = null;
+        if ($listingId !== null) {
+            abort_unless(ListingDirectory::sellerIdFor($listingId) === $seller, 422);
         }
 
         if ($listingId !== null && Review::authorHasReviewed($authorId, $listingId)) {
