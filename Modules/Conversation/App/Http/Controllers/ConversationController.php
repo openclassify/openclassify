@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Conversation\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -221,7 +222,7 @@ class ConversationController extends Controller
         ];
     }
 
-    private function renderInboxList($conversations, string $messageFilter, ?Conversation $selectedConversation): string
+    private function renderInboxList(Collection $conversations, string $messageFilter, ?Conversation $selectedConversation): string
     {
         return view('conversation::partials.inbox-list-pane', [
             'conversations' => $conversations,

@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
@@ -20,27 +23,27 @@ class Conversation extends Model
 
     protected $casts = ['last_message_at' => 'datetime'];
 
-    public function listing()
+    public function listing(): BelongsTo
     {
         return $this->belongsTo(Listing::class);
     }
 
-    public function seller()
+    public function seller(): BelongsTo
     {
         return $this->belongsTo(User::class, 'seller_id');
     }
 
-    public function buyer()
+    public function buyer(): BelongsTo
     {
         return $this->belongsTo(User::class, 'buyer_id');
     }
 
-    public function messages()
+    public function messages(): HasMany
     {
         return $this->hasMany(ConversationMessage::class);
     }
 
-    public function lastMessage()
+    public function lastMessage(): HasOne
     {
         return $this->hasOne(ConversationMessage::class)
             ->latestOfMany()
@@ -75,14 +78,15 @@ class Conversation extends Model
     {
         return $query
             ->with([
-                'listing:id,title,price,currency,user_id',
+                'listing:id,title,price,currency,user_id,images',
+                'listing.media',
                 'buyer:id,name',
                 'seller:id,name',
                 'lastMessage',
                 'lastMessage.sender:id,name',
             ])
             ->withCount([
-                'messages as unread_count' => fn (Builder $messageQuery) => $messageQuery
+                'messages as unread_count' => fn (Builder $messageQuery): Builder => $messageQuery
                     ->where('sender_id', '!=', $userId)
                     ->whereNull('read_at'),
             ])
@@ -123,8 +127,9 @@ class Conversation extends Model
     public function loadThread(): void
     {
         $this->load([
-            'listing:id,title,price,currency,user_id',
-            'messages' => fn ($query) => $query->with('sender:id,name')->ordered(),
+            'listing:id,title,price,currency,user_id,images',
+            'listing.media',
+            'messages' => fn (HasMany $query): HasMany => $query->with('sender:id,name')->ordered(),
         ]);
     }
 
@@ -137,7 +142,7 @@ class Conversation extends Model
     {
         return collect([$this->buyer_id, $this->seller_id])
             ->filter()
-            ->map(fn ($id): int => (int) $id)
+            ->map(fn (int|string $id): int => (int) $id)
             ->unique()
             ->values()
             ->all();
@@ -198,7 +203,8 @@ class Conversation extends Model
     public function summaryPayloadFor(int $viewerId): array
     {
         $this->loadMissing([
-            'listing:id,title,price,currency,user_id',
+            'listing:id,title,price,currency,user_id,images',
+            'listing.media',
             'buyer:id,name,email',
             'seller:id,name,email',
             'lastMessage',
@@ -305,7 +311,7 @@ class Conversation extends Model
 
         $conversation->loadThread();
         $conversation->loadCount([
-            'messages as unread_count' => fn (Builder $query) => $query
+            'messages as unread_count' => fn (Builder $query): Builder => $query
                 ->where('sender_id', '!=', $buyerId)
                 ->whereNull('read_at'),
         ]);
@@ -319,7 +325,7 @@ class Conversation extends Model
             ->where('buyer_id', $buyerId)
             ->when($listingIds !== [], fn (Builder $query): Builder => $query->whereIn('listing_id', $listingIds))
             ->pluck('id', 'listing_id')
-            ->map(fn ($conversationId): int => (int) $conversationId)
+            ->map(fn (int|string $conversationId): int => (int) $conversationId)
             ->all();
     }
 

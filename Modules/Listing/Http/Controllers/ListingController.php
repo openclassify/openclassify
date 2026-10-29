@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace Modules\Listing\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
+use Modules\Favorite\App\Models\FavoriteSeller;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
 use Modules\Location\Models\Country;
@@ -21,7 +24,7 @@ class ListingController extends Controller
 {
     public function __construct(private ThemeManager $themes) {}
 
-    public function index()
+    public function index(): View
     {
         $search = trim((string) request('search', ''));
 
@@ -91,7 +94,7 @@ class ListingController extends Controller
             $userId = (int) auth()->id();
 
             $favoriteListingIds = auth()->user()->favoriteListingIds();
-            $conversationListingMap = Conversation::listingMapForBuyer($userId);
+            $conversationListingMap = $listings->isEmpty() ? [] : Conversation::listingMapForBuyer($userId, $listings->pluck('id')->all());
 
             $isCurrentSearchSaved = FavoriteSearch::isSavedForUser(auth()->user(), [
                 'search' => $search,
@@ -122,17 +125,11 @@ class ListingController extends Controller
         ));
     }
 
-    public function show(Listing $listing)
+    public function show(Listing $listing): View
     {
         $listing->trackViewBy(auth()->id());
 
-        $listing->loadMissing([
-            'user:id,name,email',
-            'category:id,name,parent_id,slug',
-            'category.parent:id,name,parent_id,slug',
-            'category.parent.parent:id,name,parent_id,slug',
-            'videos' => fn ($query) => $query->published()->ordered(),
-        ]);
+        $listing->loadDetail();
         $presentableCustomFields = ListingCustomFieldSchemaBuilder::presentableValues(
             $listing->category_id ? (int) $listing->category_id : null,
             $listing->custom_fields ?? [],
@@ -155,10 +152,7 @@ class ListingController extends Controller
             $isListingFavorited = in_array((int) $listing->getKey(), auth()->user()->favoriteListingIds(), true);
 
             if ($listing->user_id) {
-                $isSellerFavorited = auth()->user()
-                    ->favoriteSellers()
-                    ->whereKey($listing->user_id)
-                    ->exists();
+                $isSellerFavorited = FavoriteSeller::contains($userId, (int) $listing->user_id);
             }
 
             if ($listing->user_id && (int) $listing->user_id !== $userId) {
@@ -201,7 +195,7 @@ class ListingController extends Controller
         return response()->json($listing->contactDetailsFor(auth()->user()));
     }
 
-    public function create()
+    public function create(): RedirectResponse
     {
         if (! auth()->check()) {
             return redirect()->route('login');
@@ -210,7 +204,7 @@ class ListingController extends Controller
         return redirect()->route('panel.listings.create');
     }
 
-    public function store()
+    public function store(): RedirectResponse
     {
         if (! auth()->check()) {
             return redirect()->route('login');

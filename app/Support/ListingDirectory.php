@@ -23,6 +23,7 @@ final class ListingDirectory
                     'title' => (string) $listing->getAttribute('title'),
                     'slug' => (string) $listing->getAttribute('slug'),
                     'price' => $listing->panelPriceLabel(),
+                    'currency' => (string) $listing->getAttribute('currency'),
                     'image' => $listing->primaryImageUrl('thumb'),
                     'seller_id' => $listing->getAttribute('user_id') === null ? null : (int) $listing->getAttribute('user_id'),
                     'status' => $listing->statusValue(),

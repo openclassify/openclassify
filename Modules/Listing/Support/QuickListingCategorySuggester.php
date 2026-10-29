@@ -88,8 +88,8 @@ class QuickListingCategorySuggester
                 : null;
 
             $alternatives = collect($response['alternatives'] ?? [])
-                ->filter(fn ($value): bool => is_numeric($value))
-                ->map(fn ($value): int => (int) $value)
+                ->filter(fn (mixed $value): bool => is_numeric($value))
+                ->map(fn (mixed $value): int => (int) $value)
                 ->filter(fn (int $id): bool => in_array($id, $categoryIds, true))
                 ->unique()
                 ->values()

@@ -13,6 +13,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Livewire\Component;
 use Modules\Admin\Support\Filament\ResourceTableActions;
 use Modules\Admin\Support\Filament\ResourceTableColumns;
 use Modules\Admin\Support\Filament\ResourceTableFilters;
@@ -35,7 +36,7 @@ class UserResource extends Resource
         return $schema->schema([
             UserFormFields::name(),
             UserFormFields::email(),
-            UserFormFields::password(fn ($livewire) => $livewire instanceof Pages\CreateUser),
+            UserFormFields::password(fn (Component $livewire): bool => $livewire instanceof Pages\CreateUser),
             UserFormFields::status(),
             UserFormFields::roles(),
         ]);

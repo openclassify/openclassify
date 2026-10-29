@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $NAMESPACE$;
 
 use Illuminate\Bus\Queueable;
@@ -11,25 +13,16 @@ class $CLASS$ extends Notification
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     */
     public function __construct()
     {
-        //
+
     }
 
-    /**
-     * Get the notification's delivery channels.
-     */
     public function via($notifiable): array
     {
         return ['mail'];
     }
 
-    /**
-     * Get the mail representation of the notification.
-     */
     public function toMail($notifiable): MailMessage
     {
         return (new MailMessage)
@@ -38,9 +31,6 @@ class $CLASS$ extends Notification
             ->line('Thank you for using our application!');
     }
 
-    /**
-     * Get the array representation of the notification.
-     */
     public function toArray($notifiable): array
     {
         return [];

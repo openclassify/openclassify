@@ -51,7 +51,7 @@ class ListingCustomFieldSchemaBuilder
             if (is_bool($value)) {
                 $displayValue = $value ? 'Yes' : 'No';
             } elseif (is_array($value)) {
-                $displayValue = implode(', ', array_map(fn ($item): string => (string) $item, $value));
+                $displayValue = implode(', ', array_map(fn (mixed $item): string => (string) $item, $value));
             } elseif ($field?->type === ListingCustomField::TYPE_DATE) {
                 try {
                     $displayValue = Carbon::parse((string) $value)->format('M j, Y');

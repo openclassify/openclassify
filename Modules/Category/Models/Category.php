@@ -76,7 +76,7 @@ class Category extends Model
     public function scopeForAdminHierarchy(Builder $query, array $expandedParentIds = []): Builder
     {
         $expandedParentIds = collect($expandedParentIds)
-            ->map(fn ($id): int => (int) $id)
+            ->map(fn (int|string $id): int => (int) $id)
             ->filter()
             ->unique()
             ->values()
@@ -219,7 +219,7 @@ class Category extends Model
             ->active()
             ->whereNull('parent_id')
             ->with([
-                'children' => fn ($query) => $query->active()->ordered(),
+                'children' => fn (HasMany $query): HasMany => $query->active()->ordered(),
             ])
             ->ordered()
             ->get();
@@ -238,10 +238,10 @@ class Category extends Model
             ->selectRaw('category_id, count(*) as aggregate')
             ->groupBy('category_id')
             ->pluck('aggregate', 'category_id')
-            ->map(fn ($count): int => (int) $count);
+            ->map(fn (mixed $count): int => (int) $count);
 
         return [
-            'categories' => static::buildListingDirectoryTree($categories, $activeListingCounts),
+            'categories' => static::buildListingDirectoryTree($categories->groupBy('parent_id'), $activeListingCounts),
             'selectedCategory' => $selectedCategoryId
                 ? $categories->firstWhere('id', $selectedCategoryId)
                 : null,
@@ -285,8 +285,9 @@ class Category extends Model
         while ($frontier->isNotEmpty()) {
             $children = static::query()
                 ->whereIn('parent_id', $frontier->all())
+                ->whereNotIn('id', $ids->all())
                 ->pluck('id')
-                ->map(fn ($id): int => (int) $id)
+                ->map(fn (int|string $id): int => (int) $id)
                 ->values();
 
             if ($children->isEmpty()) {
@@ -332,27 +333,24 @@ class Category extends Model
 
     private function collectAncestorIds(): array
     {
-        $ancestorIds = [];
-        $node = $this->relationLoaded('parent') ? $this->parent : null;
+        $ids = [];
+        $seen = [(int) $this->getKey() => true];
+        $node = $this;
 
-        while ($node) {
-            $ancestorIds[] = (int) $node->getKey();
-            $node = $node->relationLoaded('parent') ? $node->parent : null;
+        while ($node->parent_id !== null) {
+            $parentId = (int) $node->parent_id;
+            if (isset($seen[$parentId])) {
+                break;
+            }
+            $seen[$parentId] = true;
+            $node = $node->relationLoaded('parent') ? $node->parent : static::query()->find($parentId);
+            if ($node === null) {
+                break;
+            }
+            $ids[] = $parentId;
         }
 
-        if ($ancestorIds !== [] || ! $this->parent_id) {
-            return $ancestorIds;
-        }
-
-        $parentId = $this->parent_id;
-        $guard = 0;
-
-        while ($parentId !== null && $guard++ < 32) {
-            $ancestorIds[] = $parentId;
-            $parentId = static::query()->whereKey($parentId)->value('parent_id');
-        }
-
-        return $ancestorIds;
+        return $ids;
     }
 
     public function listingCustomFields(): HasMany
@@ -393,10 +391,7 @@ class Category extends Model
 
     private static function buildListingDirectoryTree(Collection $categories, Collection $activeListingCounts, ?int $parentId = null): Collection
     {
-        return $categories
-            ->filter(fn (Category $category): bool => $parentId === null
-                ? $category->parent_id === null
-                : (int) $category->parent_id === $parentId)
+        return $categories->get($parentId ?? '', collect())
             ->values()
             ->map(function (Category $category) use ($categories, $activeListingCounts): Category {
                 $children = static::buildListingDirectoryTree($categories, $activeListingCounts, (int) $category->getKey());
@@ -423,7 +418,8 @@ class Category extends Model
             $children = $categories
                 ->filter(fn (Category $category): bool => $category->parent_id !== null && in_array((int) $category->parent_id, $frontier->all(), true))
                 ->pluck('id')
-                ->map(fn ($id): int => (int) $id)
+                ->map(fn (int|string $id): int => (int) $id)
+                ->diff($ids)
                 ->values();
 
             if ($children->isEmpty()) {

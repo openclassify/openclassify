@@ -105,11 +105,10 @@ App URLs:
 
 Requirements: PHP 8.4+, Composer, Node 20+, PostgreSQL 16+.
 
-Create the databases first:
+Create the database first:
 
 ```bash
 createdb openclassify
-createdb openclassify_testing
 ```
 
 ```bash
@@ -197,21 +196,13 @@ Channel strategy:
 - private channel: `users.{id}.inbox`
 - events: `InboxMessageCreated`, `ConversationReadUpdated`
 
-## Test and Build
+## Code Checks and Build
 
 ```bash
-php artisan test
 npm run type-check
 npm run lint
 npm run build
 vendor/bin/pint
-```
-
-The test suite runs against the `openclassify_testing` PostgreSQL database. Prepare
-it once with:
-
-```bash
-APP_ENV=testing DB_DATABASE=openclassify_testing php artisan migrate:fresh --seed --force
 ```
 
 ## Production Checklist

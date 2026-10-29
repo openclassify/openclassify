@@ -4,12 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Favorite\App\Models;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use App\Support\FavoriteRecord;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FavoriteListing extends Pivot
+class FavoriteListing extends Model
 {
-    use SoftDeletes;
+    use FavoriteRecord, SoftDeletes;
+
+    protected const string TARGET_KEY = 'listing_id';
+
+    protected $guarded = [];
+
+    protected $casts = ['user_id' => 'integer', 'listing_id' => 'integer'];
 
     protected $table = 'favorite_listings';
 

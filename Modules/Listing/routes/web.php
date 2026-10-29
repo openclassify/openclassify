@@ -4,7 +4,7 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use Modules\Listing\Http\Controllers\ListingController;
 
-Route::middleware('web')->prefix('listings')->name('listings.')->group(function () {
+Route::middleware('web')->prefix('listings')->name('listings.')->group(function (): void {
     Route::get('/', [ListingController::class, 'index'])->name('index');
     Route::get('/create', [ListingController::class, 'create'])->name('create');
     Route::post('/', [ListingController::class, 'store'])->name('store');

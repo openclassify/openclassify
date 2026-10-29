@@ -44,7 +44,7 @@ final class HomeSlideDefaults
         $source = is_array($slides) ? $slides : [];
 
         $normalized = collect($source)
-            ->filter(fn ($slide): bool => is_array($slide))
+            ->filter(fn (mixed $slide): bool => is_array($slide))
             ->values()
             ->map(function (array $slide, int $index) use ($defaults): ?array {
                 $fallback = $defaults[$index] ?? $defaults[array_key_last($defaults)];
@@ -68,7 +68,7 @@ final class HomeSlideDefaults
                     'image_path' => $imagePath !== '' ? $imagePath : ($fallback['image_path'] ?? null),
                 ];
             })
-            ->filter(fn ($slide): bool => is_array($slide))
+            ->filter(fn (mixed $slide): bool => is_array($slide))
             ->values();
 
         return $normalized
@@ -85,7 +85,7 @@ final class HomeSlideDefaults
         }
 
         if (is_array($value)) {
-            $firstValue = Arr::first($value, fn ($item): bool => is_string($item) && trim($item) !== '');
+            $firstValue = Arr::first($value, fn (mixed $item): bool => is_string($item) && trim($item) !== '');
 
             return is_string($firstValue) ? trim($firstValue) : '';
         }

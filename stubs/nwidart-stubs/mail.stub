@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $NAMESPACE$;
 
 use Illuminate\Bus\Queueable;
@@ -11,17 +13,11 @@ class $CLASS$ extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
     public function __construct()
     {
-        //
+
     }
 
-    /**
-     * Build the message.
-     */
     public function build(): self
     {
         return $this->view('view.name');

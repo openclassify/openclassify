@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $NAMESPACE$;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -8,11 +10,8 @@ class $CLASS$
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     */
     public function __construct()
     {
-        //
+
     }
 }

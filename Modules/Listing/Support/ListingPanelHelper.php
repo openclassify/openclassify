@@ -12,9 +12,9 @@ class ListingPanelHelper
     public static function currencyCodes(): array
     {
         $codes = collect(config('app.currencies', ['USD']))
-            ->filter(fn ($code) => is_string($code) && trim($code) !== '')
-            ->map(fn (string $code) => strtoupper(substr(trim($code), 0, 3)))
-            ->filter(fn (string $code) => strlen($code) === 3)
+            ->filter(fn (mixed $code): bool => is_string($code) && trim($code) !== '')
+            ->map(fn (string $code): mixed => strtoupper(substr(trim($code), 0, 3)))
+            ->filter(fn (string $code): bool => strlen($code) === 3)
             ->unique()
             ->values()
             ->all();
@@ -25,7 +25,7 @@ class ListingPanelHelper
     public static function currencyOptions(): array
     {
         return collect(self::currencyCodes())
-            ->mapWithKeys(fn (string $code) => [$code => $code])
+            ->mapWithKeys(fn (string $code): array => [$code => $code])
             ->all();
     }
 

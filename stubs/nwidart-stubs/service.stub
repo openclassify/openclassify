@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $CLASS_NAMESPACE$;
 
 class $CLASS$
 {
     public function handle()
     {
-        //
+
     }
 }

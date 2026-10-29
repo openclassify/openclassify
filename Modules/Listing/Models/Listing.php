@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
@@ -72,30 +74,22 @@ class Listing extends Model implements HasMedia
             ->dontLogEmptyChanges();
     }
 
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function favoritedByUsers()
-    {
-        return $this->belongsToMany(User::class, 'favorite_listings')
-            ->using(FavoriteListing::class)
-            ->wherePivotNull('deleted_at')
-            ->withTimestamps();
-    }
-
-    public function conversations()
+    public function conversations(): HasMany
     {
         return $this->hasMany(Conversation::class);
     }
 
-    public function videos()
+    public function videos(): HasMany
     {
         return $this->hasMany(Video::class)->ordered();
     }
@@ -105,7 +99,7 @@ class Listing extends Model implements HasMedia
         return $query
             ->active()
             ->orderByDesc('is_featured')
-            ->orderByDesc('created_at');
+            ->orderByDesc('created_at')->orderByDesc('id');
     }
 
     public function scopeActive(Builder $query): Builder
@@ -122,7 +116,14 @@ class Listing extends Model implements HasMedia
     {
         return static::query()
             ->whereIn('id', $ids)
-            ->get(['id', 'title', 'slug', 'price', 'currency', 'user_id', 'status', 'images']);
+            ->with('media')->get(['id', 'title', 'slug', 'price', 'currency', 'user_id', 'status', 'images']);
+    }
+
+    public static function activeCountsForUsers(array $userIds): array
+    {
+        return static::query()->active()->whereIn('user_id', $userIds)
+            ->selectRaw('user_id, COUNT(*) as aggregate')->groupBy('user_id')
+            ->pluck('aggregate', 'user_id')->map(static fn (mixed $count): int => (int) $count)->all();
     }
 
     public static function sellerIdOf(int $id): ?int
@@ -159,12 +160,12 @@ class Listing extends Model implements HasMedia
 
     public static function recentForUser(int $userId, int $limit = 5): EloquentCollection
     {
-        return static::query()->ownedByUser($userId)->latest('id')->limit($limit)->get();
+        return static::query()->with(['category:id,name', 'media'])->ownedByUser($userId)->latest('id')->limit($limit)->get();
     }
 
     public static function paginatePublicForSeller(int $sellerId, int $perPage = 12): LengthAwarePaginator
     {
-        return static::query()
+        return static::query()->with(['category:id,name', 'media'])
             ->publicFeed()
             ->ownedByUser($sellerId)
             ->paginate($perPage)
@@ -175,14 +176,16 @@ class Listing extends Model implements HasMedia
     {
         $query = static::query()
             ->active()
-            ->with('category:id,name')
+            ->with(['category:id,name', 'media'])
             ->forBrowseFilters([...$filters, 'category_ids' => $categoryIds])
             ->applyBrowseSort($sort);
 
+        $listings = $query->paginate($perPage)->withQueryString();
+
         return [
-            'allTotal' => static::query()->active()->forBrowseFilters($filters)->count(),
-            'filteredTotal' => (clone $query)->count(),
-            'listings' => $query->paginate($perPage)->withQueryString(),
+            'allTotal' => $categoryIds === null ? $listings->total() : static::query()->active()->forBrowseFilters($filters)->count(),
+            'filteredTotal' => $listings->total(),
+            'listings' => $listings,
         ];
     }
 
@@ -204,16 +207,16 @@ class Listing extends Model implements HasMedia
 
         return $query->where(function (Builder $searchQuery) use ($search): void {
             $searchQuery
-                ->where('title', 'like', "%{$search}%")
-                ->orWhere('description', 'like', "%{$search}%")
-                ->orWhere('city', 'like', "%{$search}%")
-                ->orWhere('country', 'like', "%{$search}%");
+                ->where('title', 'ilike', "%{$search}%")
+                ->orWhere('description', 'ilike', "%{$search}%")
+                ->orWhere('city', 'ilike', "%{$search}%")
+                ->orWhere('country', 'ilike', "%{$search}%");
         });
     }
 
     public function scopeWithPanelIndexState(Builder $query): Builder
     {
-        return $query->with('category:id,name');
+        return $query->with(['category:id,name', 'media']);
     }
 
     public function scopeForCategory(Builder $query, ?int $categoryId): Builder
@@ -248,11 +251,11 @@ class Listing extends Model implements HasMedia
         $query
             ->searchTerm($search)
             ->forCategoryIds(is_array($categoryIds) ? $categoryIds : null)
-            ->when(! is_null($userId) && $userId > 0, fn (Builder $builder) => $builder->where('user_id', $userId))
-            ->when($country !== null && $country !== '', fn (Builder $builder) => $builder->where('country', $country))
-            ->when($city !== null && $city !== '', fn (Builder $builder) => $builder->where('city', $city))
-            ->when(! is_null($minPrice), fn (Builder $builder) => $builder->whereNotNull('price')->where('price', '>=', $minPrice))
-            ->when(! is_null($maxPrice), fn (Builder $builder) => $builder->whereNotNull('price')->where('price', '<=', $maxPrice));
+            ->when(! is_null($userId) && $userId > 0, fn (Builder $builder): Builder => $builder->where('user_id', $userId))
+            ->when($country !== null && $country !== '', fn (Builder $builder): Builder => $builder->where('country', $country))
+            ->when($city !== null && $city !== '', fn (Builder $builder): Builder => $builder->where('city', $city))
+            ->when(! is_null($minPrice), fn (Builder $builder): Builder => $builder->whereNotNull('price')->where('price', '>=', $minPrice))
+            ->when(! is_null($maxPrice), fn (Builder $builder): Builder => $builder->whereNotNull('price')->where('price', '<=', $maxPrice));
 
         return match ($dateFilter) {
             'today' => $query->where('created_at', '>=', Carbon::now()->startOfDay()),
@@ -265,11 +268,11 @@ class Listing extends Model implements HasMedia
     public function scopeApplyBrowseSort(Builder $query, string $sort): Builder
     {
         return match ($sort) {
-            'newest' => $query->reorder()->orderByDesc('created_at'),
-            'oldest' => $query->reorder()->orderBy('created_at'),
-            'price_asc' => $query->reorder()->orderByRaw('price is null')->orderBy('price'),
-            'price_desc' => $query->reorder()->orderByRaw('price is null')->orderByDesc('price'),
-            default => $query->reorder()->orderByDesc('is_featured')->orderByDesc('created_at'),
+            'newest' => $query->reorder()->orderByDesc('created_at')->orderByDesc('id'),
+            'oldest' => $query->reorder()->orderBy('created_at')->orderBy('id'),
+            'price_asc' => $query->reorder()->orderByRaw('price is null')->orderBy('price')->orderBy('id'),
+            'price_desc' => $query->reorder()->orderByRaw('price is null')->orderByDesc('price')->orderByDesc('id'),
+            default => $query->reorder()->orderByDesc('is_featured')->orderByDesc('created_at')->orderByDesc('id'),
         };
     }
 
@@ -297,7 +300,7 @@ class Listing extends Model implements HasMedia
         }
 
         return collect($this->images ?? [])
-            ->filter(fn ($value): bool => is_string($value) && trim($value) !== '')
+            ->filter(fn (mixed $value): bool => is_string($value) && trim($value) !== '')
             ->map(fn (string $url): array => [
                 'gallery' => ListingImageViewData::fromUrl($url),
                 'thumb' => ListingImageViewData::fromUrl($url),
@@ -315,7 +318,7 @@ class Listing extends Model implements HasMedia
         }
 
         $fallback = collect($this->images ?? [])
-            ->first(fn ($value): bool => is_string($value) && trim($value) !== '');
+            ->first(fn (mixed $value): bool => is_string($value) && trim($value) !== '');
 
         return ListingImageViewData::fromUrl(is_string($fallback) ? $fallback : null);
     }
@@ -325,11 +328,23 @@ class Listing extends Model implements HasMedia
         return ListingImageViewData::pickUrl($this->primaryImageData($context), $viewport);
     }
 
+    public function loadDetail(): void
+    {
+        $this->loadMissing([
+            'user:id,name,email',
+            'category:id,name,parent_id,slug',
+            'category.parent:id,name,parent_id,slug',
+            'category.parent.parent:id,name,parent_id,slug',
+            'media',
+            'videos' => fn (HasMany $query): HasMany => $query->published()->ordered(),
+        ]);
+    }
+
     public function relatedSuggestions(int $limit = 8): Collection
     {
         $baseQuery = static::query()
             ->publicFeed()
-            ->with(['category:id,name', 'videos'])
+            ->with(['category:id,name', 'videos', 'media'])
             ->whereKeyNot($this->getKey());
 
         $primary = (clone $baseQuery)
@@ -435,7 +450,7 @@ class Listing extends Model implements HasMedia
 
     public static function homeFeatured(int $limit = 4): Collection
     {
-        return static::query()
+        return static::query()->with(['category:id,name', 'media'])
             ->active()
             ->where('is_featured', true)
             ->latest()
@@ -445,7 +460,7 @@ class Listing extends Model implements HasMedia
 
     public static function homeRecent(int $limit = 8): Collection
     {
-        return static::query()
+        return static::query()->with(['category:id,name', 'media'])
             ->active()
             ->latest()
             ->take($limit)
@@ -550,7 +565,7 @@ class Listing extends Model implements HasMedia
         }
 
         $expiresAt = $this->expires_at->copy()->startOfDay();
-        $days = Carbon::today()->diffInDays($expiresAt, false);
+        $days = (int) Carbon::today()->diffInDays($expiresAt, false);
 
         return match (true) {
             $days > 0 => $days.' days left',

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace $CLASS_NAMESPACE$;
 
 use Exception;
@@ -8,19 +10,14 @@ use Illuminate\Http\Response;
 
 class $CLASS$ extends Exception
 {
-    /**
-     * Report the exception.
-     */
+
     public function report(): void
     {
-        //
+
     }
 
-    /**
-     * Render the exception as an HTTP response.
-     */
     public function render(Request $request): Response
     {
-        //
+
     }
 }

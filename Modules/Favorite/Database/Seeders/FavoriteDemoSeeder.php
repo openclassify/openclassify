@@ -8,7 +8,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Modules\Category\Models\Category;
+use Modules\Favorite\App\Models\FavoriteListing;
 use Modules\Favorite\App\Models\FavoriteSearch;
+use Modules\Favorite\App\Models\FavoriteSeller;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
 use Modules\User\App\Support\DemoUserCatalog;
@@ -28,8 +30,8 @@ class FavoriteDemoSeeder extends Seeder
         }
 
         $users->each(function (User $user): void {
-            $user->favoriteListings()->detach();
-            $user->favoriteSellers()->detach();
+            $user->favoriteListings()->delete();
+            $user->favoriteSellers()->delete();
         });
 
         FavoriteSearch::query()->whereIn('user_id', $users->pluck('id'))->delete();
@@ -74,7 +76,9 @@ class FavoriteDemoSeeder extends Seeder
             return;
         }
 
-        $user->favoriteListings()->syncWithoutDetaching($payload);
+        foreach ($payload as $listingId => $timestamps) {
+            FavoriteListing::remember((int) $user->getKey(), (int) $listingId, $timestamps);
+        }
     }
 
     private function seedFavoriteSeller(User $user, User $seller, Carbon $timestamp): void
@@ -83,11 +87,9 @@ class FavoriteDemoSeeder extends Seeder
             return;
         }
 
-        $user->favoriteSellers()->syncWithoutDetaching([
-            $seller->getKey() => [
-                'created_at' => $timestamp,
-                'updated_at' => $timestamp,
-            ],
+        FavoriteSeller::remember((int) $user->getKey(), (int) $seller->getKey(), [
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp,
         ]);
     }
 

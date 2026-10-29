@@ -190,9 +190,9 @@ final class RequestAppData
     private function normalizeCurrencies(array $currencies): array
     {
         $normalized = collect($currencies)
-            ->filter(fn ($currency) => is_string($currency) && trim($currency) !== '')
-            ->map(fn (string $currency) => strtoupper(substr(trim($currency), 0, 3)))
-            ->filter(fn (string $currency) => strlen($currency) === 3)
+            ->filter(fn (mixed $currency): bool => is_string($currency) && trim($currency) !== '')
+            ->map(fn (string $currency): mixed => strtoupper(substr(trim($currency), 0, 3)))
+            ->filter(fn (string $currency): bool => strlen($currency) === 3)
             ->unique()
             ->values()
             ->all();

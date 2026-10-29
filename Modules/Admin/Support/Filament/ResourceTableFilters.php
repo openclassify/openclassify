@@ -62,7 +62,7 @@ final class ResourceTableFilters
             ->label($label)
             ->searchable()
             ->getSearchResultsUsing(fn (string $search): array => User::searchOptions($search))
-            ->getOptionLabelUsing(fn ($value): string => User::labelOf((int) $value));
+            ->getOptionLabelUsing(fn (mixed $value): string => User::labelOf((int) $value));
     }
 
     public static function options(string $column, array $options, ?string $label = null): SelectFilter
