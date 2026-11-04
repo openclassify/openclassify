@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Demo\App\Providers;
 
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
 use Modules\Demo\App\Console\CleanupDemoCommand;
 use Modules\Demo\App\Console\PrepareDemoCommand;
@@ -22,6 +23,12 @@ class DemoServiceProvider extends ServiceProvider
                 CleanupDemoCommand::class,
             ]);
         }
+
+        $this->callAfterResolving(Schedule::class, static function (Schedule $schedule): void {
+            if (config('demo.enabled')) {
+                $schedule->command('demo:cleanup')->hourly();
+            }
+        });
     }
 
     public function boot(): void

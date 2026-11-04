@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Listing\Providers;
 
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
+use Modules\Listing\Models\Listing;
 
 class ListingServiceProvider extends ServiceProvider
 {
@@ -20,5 +22,10 @@ class ListingServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(module_path($this->moduleName, 'lang'), $this->moduleNameLower);
     }
 
-    public function register(): void {}
+    public function register(): void
+    {
+        $this->callAfterResolving(Schedule::class, static function (Schedule $schedule): void {
+            $schedule->call(static fn () => Listing::expireOutdated())->name('listing:expire')->hourly()->withoutOverlapping();
+        });
+    }
 }

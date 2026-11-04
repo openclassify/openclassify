@@ -41,7 +41,7 @@ return [
     'decoder' => null,
 
     'cache' => [
-        'enabled' => env('SETTINGS_CACHE_ENABLED', false),
+        'enabled' => env('SETTINGS_CACHE_ENABLED', true),
         'store' => null,
         'prefix' => null,
         'ttl' => null,

@@ -20,9 +20,6 @@
         'es' => 'Español', 'fr' => 'Français', 'de' => 'Deutsch', 'pt' => 'Português',
         'ru' => 'Русский', 'ja' => '日本語',
     ];
-    $legalPages = \Modules\Page\Models\Page::navigation(\Modules\Page\Models\Page::PLACEMENT_LEGAL);
-    $helpPages = \Modules\Page\Models\Page::navigation(\Modules\Page\Models\Page::PLACEMENT_HELP);
-    $footerPages = \Modules\Page\Models\Page::navigation(\Modules\Page\Models\Page::PLACEMENT_FOOTER);
     $chromeless = trim((string) $__env->yieldContent('chromeless')) === '1';
     $sellRoute = $isAuthenticated ? route('panel.listings.create') : route('login');
 @endphp

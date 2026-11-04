@@ -7,7 +7,6 @@ namespace App\Providers;
 use BezhanSalleh\LanguageSwitch\LanguageSwitch;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Modules\User\App\Models\User;
 use SocialiteProviders\Apple\Provider;
@@ -26,8 +25,6 @@ class AppServiceProvider extends ServiceProvider
 
             return null;
         });
-
-        View::addNamespace('app', resource_path('views'));
 
         Event::listen(function (SocialiteWasCalled $event): void {
             $event->extendSocialite('apple', Provider::class);

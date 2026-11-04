@@ -46,7 +46,7 @@ class ReviewSeeder extends Seeder
 
             $authorId = $candidates[$index % count($candidates)];
 
-            if (Review::authorHasReviewed($authorId, $listingId)) {
+            if (Review::authorHasReviewed($authorId, $sellerId, $listingId)) {
                 $index++;
 
                 continue;

@@ -7,7 +7,6 @@ namespace Modules\Panel\App\Livewire;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
@@ -16,7 +15,6 @@ use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Models\ListingCustomField;
-use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
 use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Listing\Support\QuickListingCategorySuggester;
 use Modules\Location\Models\City;
@@ -166,14 +164,6 @@ class PanelQuickListingForm extends Component
         $this->publishError = null;
         $this->validateCategoryStep();
         $this->currentStep = 3;
-    }
-
-    public function goToFeaturesStep(): void
-    {
-        $this->publishError = null;
-        $this->validateCategoryStep();
-        $this->validateDetailsStep();
-        $this->currentStep = 4;
     }
 
     public function goToPreviewStep(): void
@@ -358,17 +348,6 @@ class PanelQuickListingForm extends Component
         };
     }
 
-    public function getSelectedCategoryNameProperty(): ?string
-    {
-        if (! $this->selectedCategoryId) {
-            return null;
-        }
-
-        $category = collect($this->categories)->firstWhere('id', $this->selectedCategoryId);
-
-        return $category['name'] ?? null;
-    }
-
     public function getSelectedCategoryPathProperty(): string
     {
         if (! $this->selectedCategoryId) {
@@ -376,21 +355,6 @@ class PanelQuickListingForm extends Component
         }
 
         return implode(' › ', $this->categoryPathParts($this->selectedCategoryId));
-    }
-
-    public function getDetectedAlternativeNamesProperty(): array
-    {
-        if ($this->detectedAlternatives === []) {
-            return [];
-        }
-
-        $categoriesById = collect($this->categories)->keyBy('id');
-
-        return collect($this->detectedAlternatives)
-            ->map(fn (int $id): ?string => $categoriesById[$id]['name'] ?? null)
-            ->filter()
-            ->values()
-            ->all();
     }
 
     public function getAvailableCitiesProperty(): array
@@ -441,47 +405,9 @@ class PanelQuickListingForm extends Component
         return $city['name'] ?? null;
     }
 
-    public function getPreviewCustomFieldsProperty(): array
-    {
-        return ListingCustomFieldSchemaBuilder::presentableValues(
-            $this->selectedCategoryId,
-            $this->sanitizedCustomFieldValues(),
-        );
-    }
-
-    public function getTitleCharactersProperty(): int
-    {
-        return mb_strlen($this->listingTitle);
-    }
-
-    public function getDescriptionCharactersProperty(): int
-    {
-        return mb_strlen($this->description);
-    }
-
     public function getCurrentUserNameProperty(): string
     {
         return (string) (auth()->user()?->name ?: 'User');
-    }
-
-    public function getCurrentUserInitialProperty(): string
-    {
-        return Str::upper(Str::substr($this->currentUserName, 0, 1));
-    }
-
-    public function categoryIconComponent(?string $icon): string
-    {
-        return match ($icon) {
-            'car' => 'heroicon-o-truck',
-            'laptop', 'computer' => 'heroicon-o-computer-desktop',
-            'shirt' => 'heroicon-o-swatch',
-            'home', 'sofa' => 'heroicon-o-home-modern',
-            'briefcase' => 'heroicon-o-briefcase',
-            'wrench' => 'heroicon-o-wrench-screwdriver',
-            'football' => 'heroicon-o-trophy',
-            'phone', 'mobile' => 'heroicon-o-device-phone-mobile',
-            default => 'heroicon-o-tag',
-        };
     }
 
     private function validatePhotos(): void

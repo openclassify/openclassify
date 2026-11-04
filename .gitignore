@@ -29,3 +29,4 @@ composer.lock
 .codex/config.toml
 /public/vendor/
 package-lock.json
+/storage/media-library

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
 
 class Review extends Model
 {
@@ -43,9 +42,9 @@ class Review extends Model
         return $query->where('seller_id', $sellerId);
     }
 
-    public function scopeForListing(Builder $query, int $listingId): Builder
+    public function scopeForListing(Builder $query, ?int $listingId): Builder
     {
-        return $query->where('listing_id', $listingId);
+        return $listingId === null ? $query->whereNull('listing_id') : $query->where('listing_id', $listingId);
     }
 
     public function scopeWrittenBy(Builder $query, int $authorId): Builder
@@ -67,27 +66,6 @@ class Review extends Model
             'total' => $total,
             'average' => $total > 0 ? round((float) ($row?->getAttribute('average') ?? 0), 1) : 0.0,
         ];
-    }
-
-    public static function summariesForSellers(array $sellerIds): array
-    {
-        if ($sellerIds === []) {
-            return [];
-        }
-
-        return static::query()
-            ->approved()
-            ->whereIn('seller_id', $sellerIds)
-            ->selectRaw('seller_id, COUNT(*) as total, COALESCE(AVG(rating), 0) as average')
-            ->groupBy('seller_id')
-            ->get()
-            ->mapWithKeys(fn (self $row): array => [
-                (int) $row->getAttribute('seller_id') => [
-                    'total' => (int) $row->getAttribute('total'),
-                    'average' => round((float) $row->getAttribute('average'), 1),
-                ],
-            ])
-            ->all();
     }
 
     public static function distributionForSeller(int $sellerId): array
@@ -118,16 +96,6 @@ class Review extends Model
             ->withQueryString();
     }
 
-    public static function latestForSeller(int $sellerId, int $limit = 5): Collection
-    {
-        return static::query()
-            ->approved()
-            ->forSeller($sellerId)
-            ->latest('id')
-            ->limit($limit)
-            ->get();
-    }
-
     public static function receivedBySeller(int $sellerId, int $perPage = 10): LengthAwarePaginator
     {
         return static::query()
@@ -137,10 +105,11 @@ class Review extends Model
             ->withQueryString();
     }
 
-    public static function authorHasReviewed(int $authorId, int $listingId): bool
+    public static function authorHasReviewed(int $authorId, int $sellerId, ?int $listingId): bool
     {
         return static::query()
             ->writtenBy($authorId)
+            ->forSeller($sellerId)
             ->forListing($listingId)
             ->exists();
     }
@@ -160,21 +129,6 @@ class Review extends Model
         $review->save();
 
         return $review;
-    }
-
-    public static function pendingCount(): int
-    {
-        return (int) static::query()->where('is_approved', false)->count();
-    }
-
-    public function approve(): void
-    {
-        $this->forceFill(['is_approved' => true])->save();
-    }
-
-    public function reject(): void
-    {
-        $this->forceFill(['is_approved' => false])->save();
     }
 
     public function authorId(): int

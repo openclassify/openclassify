@@ -51,4 +51,9 @@ final class ListingDirectory
     {
         return Listing::existsById($listingId);
     }
+
+    public static function setFeatured(array $listingIds, bool $featured): void
+    {
+        Listing::setFeatured($listingIds, $featured);
+    }
 }

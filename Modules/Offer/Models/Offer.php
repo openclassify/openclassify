@@ -147,17 +147,6 @@ class Offer extends Model
             ->first();
     }
 
-    public static function listingIdsWithOffersForSeller(int $sellerId): array
-    {
-        return static::query()
-            ->forSeller($sellerId)
-            ->pluck('listing_id')
-            ->map(static fn (mixed $value): int => (int) $value)
-            ->unique()
-            ->values()
-            ->all();
-    }
-
     public function accept(): void
     {
         $this->respond(self::STATUS_ACCEPTED);

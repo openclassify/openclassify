@@ -61,7 +61,7 @@ class Video extends Model
             $video->scheduleProcessingIfNeeded();
         });
 
-        static::deleting(function (self $video): void {
+        static::forceDeleting(function (self $video): void {
             $video->deleteStoredFiles();
         });
     }

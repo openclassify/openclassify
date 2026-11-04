@@ -48,7 +48,7 @@ class PanelController extends Controller
         $search = trim((string) $request->string('search'));
         $status = (string) $request->string('status', 'all');
 
-        if (! in_array($status, ['all', 'sold', 'expired'], true)) {
+        if (! in_array($status, ['all', 'active', 'pending', 'sold', 'expired'], true)) {
             $status = 'all';
         }
 
@@ -72,7 +72,7 @@ class PanelController extends Controller
                 $listing->category_id ? (int) $listing->category_id : null,
                 (array) $listing->custom_fields,
             ),
-            'statusOptions' => Listing::panelStatusOptions(),
+            'statusOptions' => $listing->ownerStatusOptions(),
         ]);
     }
 

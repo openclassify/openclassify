@@ -113,23 +113,6 @@ class CountryCodeManager
             })['country_code'] ?? null;
     }
 
-    public static function normalizeStoredCountry(?string $value): ?string
-    {
-        $value = trim((string) $value);
-
-        if ($value === '') {
-            return null;
-        }
-
-        $countryCode = self::countryCodeFromLabelOrCode($value);
-
-        if (! $countryCode) {
-            return $value;
-        }
-
-        return self::labelFromCountryCode($countryCode) ?? $value;
-    }
-
     private static function countries(): Collection
     {
         static $countries;

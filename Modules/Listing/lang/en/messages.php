@@ -35,5 +35,7 @@ return [
     'hint_expired' => 'This listing is waiting to be republished.',
     'hint_pending' => 'Waiting for moderation approval.',
     'hint_live' => 'Visible to visitors right now.',
-    'redirected_to_create' => 'You were redirected to the listing creation screen.',
+    'no_expiry' => 'No expiry limit',
+    'days_left' => '{0} Ends today|{1} :count day left|[2,*] :count days left',
+    'expired_days_ago' => '{1} Expired :count day ago|[2,*] Expired :count days ago',
 ];

@@ -52,11 +52,15 @@ class DemoInstance extends Model
 
     public static function prepare(string $uuid, string $schema): self
     {
-        return static::query()->updateOrCreate(['uuid' => $uuid], [
+        $instance = static::withTrashed()->firstOrNew(['uuid' => $uuid]);
+        $instance->forceFill([
             'schema_name' => $schema,
             'prepared_at' => now(),
             'expires_at' => now()->addMinutes((int) config('demo.ttl_minutes', 360)),
-        ]);
+            'deleted_at' => null,
+        ])->save();
+
+        return $instance;
     }
 
     public function extendExpiry(): void

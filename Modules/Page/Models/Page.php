@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 class Page extends Model
 {
@@ -19,6 +19,8 @@ class Page extends Model
     public const PLACEMENT_LEGAL = 'legal';
 
     public const PLACEMENT_HELP = 'help';
+
+    private const NAVIGATION_CACHE_KEY = 'pages.navigation';
 
     protected $fillable = [
         'title',
@@ -37,6 +39,15 @@ class Page extends Model
         'sort_order' => 'integer',
     ];
 
+    protected static function booted(): void
+    {
+        $forget = static fn (): bool => Cache::forget(self::NAVIGATION_CACHE_KEY);
+
+        static::saved($forget);
+        static::deleted($forget);
+        static::restored($forget);
+    }
+
     public static function placements(): array
     {
         return [
@@ -51,24 +62,21 @@ class Page extends Model
         return $query->where('is_published', true);
     }
 
-    public function scopeWithPlacement(Builder $query, string $placement): Builder
-    {
-        return $query->where('placement', $placement);
-    }
-
     public static function findPublished(string $slug): ?self
     {
         return static::query()->published()->where('slug', $slug)->first();
     }
 
-    public static function navigation(string $placement): Collection
+    public static function navigationByPlacement(): array
     {
-        return static::query()
+        return Cache::remember(self::NAVIGATION_CACHE_KEY, 3600, static fn (): array => static::query()
             ->published()
-            ->withPlacement($placement)
+            ->whereIn('placement', static::placements())
             ->orderBy('sort_order')
             ->orderBy('title')
-            ->get(['id', 'title', 'slug']);
+            ->get(['id', 'title', 'slug', 'placement'])
+            ->groupBy('placement')
+            ->all());
     }
 
     public static function publishedSlugs(): Collection
@@ -77,21 +85,6 @@ class Page extends Model
             ->published()
             ->orderBy('sort_order')
             ->get(['slug', 'updated_at']);
-    }
-
-    public static function uniqueSlug(string $title): string
-    {
-        $base = Str::slug($title);
-        $base = $base !== '' ? $base : 'page';
-        $slug = $base;
-        $suffix = 1;
-
-        while (static::query()->where('slug', $slug)->exists()) {
-            $suffix++;
-            $slug = $base.'-'.$suffix;
-        }
-
-        return $slug;
     }
 
     public function metaTitleValue(): string

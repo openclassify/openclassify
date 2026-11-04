@@ -87,6 +87,7 @@ final class DemoSchemaManager
         $count = 0;
         foreach (DemoInstance::expired() as $instance) {
             DemoInstance::dropSchema($instance->schema_name);
+            DemoStoragePath::purgeForUuid($instance->uuid);
             $instance->delete();
             $count++;
         }
@@ -97,26 +98,6 @@ final class DemoSchemaManager
     public function resolveLoginUser(): User
     {
         return User::demoLoginUser();
-    }
-
-    public function clearDemoArtifacts(?string $uuid): void
-    {
-        $uuid = $this->normalizeUuid($uuid);
-
-        if (! $uuid) {
-            return;
-        }
-
-        $instance = DemoInstance::findByUuid($uuid);
-
-        if ($instance) {
-            DemoInstance::dropSchema($instance->schema_name);
-            $instance->delete();
-
-            return;
-        }
-
-        DemoInstance::dropSchema($this->schemaNameFor($uuid));
     }
 
     private function reuse(DemoInstance $instance): DemoInstance

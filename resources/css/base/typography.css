@@ -6,6 +6,7 @@
     letter-spacing: var(--tracking-tight);
     line-height: var(--leading-tight);
     color: var(--ink-900);
+    text-wrap: balance;
 }
 
 .title-hero {
@@ -27,6 +28,7 @@
 }
 
 .text-lead {
+    text-wrap: pretty;
     font-size: var(--text-lg);
     color: var(--ink-600);
     line-height: var(--leading-normal);

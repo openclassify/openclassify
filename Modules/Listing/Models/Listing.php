@@ -49,7 +49,7 @@ class Listing extends Model implements HasMedia
         'title', 'description', 'price', 'currency', 'category_id',
         'images', 'custom_fields',
         'contact_phone', 'contact_email', 'expires_at',
-        'city', 'country', 'latitude', 'longitude', 'location', 'view_count',
+        'city', 'country', 'latitude', 'longitude', 'location',
     ];
 
     protected $casts = [
@@ -124,6 +124,24 @@ class Listing extends Model implements HasMedia
         return static::query()->active()->whereIn('user_id', $userIds)
             ->selectRaw('user_id, COUNT(*) as aggregate')->groupBy('user_id')
             ->pluck('aggregate', 'user_id')->map(static fn (mixed $count): int => (int) $count)->all();
+    }
+
+    public static function setFeatured(array $ids, bool $featured): void
+    {
+        if ($ids === []) {
+            return;
+        }
+
+        static::query()->whereIn('id', $ids)->update(['is_featured' => $featured]);
+    }
+
+    public static function expireOutdated(): int
+    {
+        return static::query()
+            ->active()
+            ->whereNotNull('expires_at')
+            ->where('expires_at', '<', now())
+            ->update(['status' => 'expired']);
     }
 
     public static function sellerIdOf(int $id): ?int
@@ -276,15 +294,6 @@ class Listing extends Model implements HasMedia
         };
     }
 
-    public function themeGallery(): array
-    {
-        return collect($this->galleryImageData())
-            ->map(fn (array $image): ?string => ListingImageViewData::pickUrl($image['gallery'] ?? null))
-            ->filter(fn (?string $url): bool => is_string($url) && $url !== '')
-            ->values()
-            ->all();
-    }
-
     public function galleryImageData(): array
     {
         $mediaItems = $this->getMedia('listing-images');
@@ -366,14 +375,17 @@ class Listing extends Model implements HasMedia
         return $primary->concat($fallback)->values();
     }
 
-    public static function panelStatusOptions(): array
+    public function ownerStatusOptions(): array
     {
-        return [
-            'pending' => 'Pending',
-            'active' => 'Active',
-            'sold' => 'Sold',
-            'expired' => 'Expired',
-        ];
+        $statuses = match ($this->statusValue()) {
+            'pending' => ['pending'],
+            'expired' => ['expired', 'sold'],
+            default => ['active', 'sold'],
+        };
+
+        return collect($statuses)
+            ->mapWithKeys(fn (string $status): array => [$status => __('listing::messages.status_'.($status === 'active' ? 'live' : $status))])
+            ->all();
     }
 
     public static function panelStatusCountsForUser(int|string $userId): array
@@ -500,7 +512,7 @@ class Listing extends Model implements HasMedia
     public function panelPriceLabel(): string
     {
         if (is_null($this->price)) {
-            return 'Free';
+            return __('listing::messages.free');
         }
 
         return number_format((float) $this->price, 2, ',', '.').' '.($this->currency ?? 'TL');
@@ -539,51 +551,21 @@ class Listing extends Model implements HasMedia
             trim((string) $this->country),
         ])->filter()->values();
 
-        return $parts->isNotEmpty() ? $parts->implode(', ') : 'Location not specified';
-    }
-
-    public function panelPublishedAt(): ?Carbon
-    {
-        $createdAt = $this->created_at?->copy();
-        $expiresAt = $this->expires_at?->copy();
-
-        if (! $createdAt) {
-            return $expiresAt;
-        }
-
-        if (! $expiresAt || $expiresAt->greaterThanOrEqualTo($createdAt)) {
-            return $createdAt;
-        }
-
-        return $expiresAt->subDays(self::DEFAULT_PANEL_EXPIRY_WINDOW_DAYS);
+        return $parts->isNotEmpty() ? $parts->implode(', ') : __('listing::messages.location_not_specified');
     }
 
     public function panelExpirySummary(): string
     {
         if (! $this->expires_at) {
-            return 'No expiry limit';
+            return __('listing::messages.no_expiry');
         }
 
         $expiresAt = $this->expires_at->copy()->startOfDay();
         $days = (int) Carbon::today()->diffInDays($expiresAt, false);
 
-        return match (true) {
-            $days > 0 => $days.' days left',
-            $days === 0 => 'Ends today',
-            default => 'Expired '.abs($days).' days ago',
-        };
-    }
-
-    public function panelVideoSummary(int $total, int $ready, int $pending): ?array
-    {
-        if ($total < 1) {
-            return null;
-        }
-
-        return [
-            'label' => $total.' videos',
-            'detail' => $ready.' ready'.($pending > 0 ? ', '.$pending.' processing' : ''),
-        ];
+        return $days >= 0
+            ? trans_choice('listing::messages.days_left', $days, ['count' => $days])
+            : trans_choice('listing::messages.expired_days_ago', abs($days), ['count' => abs($days)]);
     }
 
     public function replacePublicImage(string $absolutePath, ?string $fileName = null): void
@@ -644,12 +626,7 @@ class Listing extends Model implements HasMedia
 
     public function statusLabel(): string
     {
-        return match ($this->statusValue()) {
-            'sold' => 'Sold',
-            'expired' => 'Expired',
-            'pending' => 'Pending',
-            default => 'Active',
-        };
+        return $this->panelStatusMeta()['label'];
     }
 
     public function loadPanelEditor(): self
@@ -671,8 +648,13 @@ class Listing extends Model implements HasMedia
             return;
         }
 
-        $this->increment('view_count');
-        $this->refresh();
+        $this->incrementQuietly('view_count');
+    }
+
+    public function isVisibleTo(?User $user): bool
+    {
+        return in_array($this->statusValue(), ['active', 'sold'], true)
+            || ($user !== null && (int) $this->user_id === (int) $user->getKey());
     }
 
     public function hasContactDetails(): bool
@@ -689,26 +671,20 @@ class Listing extends Model implements HasMedia
         return (int) $this->user_id !== (int) $user->getKey();
     }
 
-    public function contactDetailsFor(?User $user): array
+    public function contactDetails(): array
     {
-        $canAccess = $this->canRevealContactTo($user)
-            || ($user && $this->user_id && (int) $this->user_id === (int) $user->getKey());
-
-        if (! $canAccess) {
-            return [
-                'phone' => '',
-                'email' => '',
-            ];
-        }
-
         return [
-            'phone' => filled($this->contact_phone) ? (string) $this->contact_phone : '',
-            'email' => filled($this->contact_email) ? (string) $this->contact_email : '',
+            'phone' => (string) ($this->contact_phone ?? ''),
+            'email' => (string) ($this->contact_email ?? ''),
         ];
     }
 
     public function markAsSold(): void
     {
+        if ($this->statusValue() !== 'active') {
+            return;
+        }
+
         $this->forceFill([
             'status' => 'sold',
         ])->save();
@@ -716,6 +692,10 @@ class Listing extends Model implements HasMedia
 
     public function republish(): void
     {
+        if (! in_array($this->statusValue(), ['expired', 'sold'], true)) {
+            return;
+        }
+
         $this->forceFill([
             'status' => 'active',
             'expires_at' => now()->addDays(self::DEFAULT_PANEL_EXPIRY_WINDOW_DAYS),
