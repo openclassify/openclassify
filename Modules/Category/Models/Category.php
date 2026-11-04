@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Models\ListingCustomField;
 use Spatie\Activitylog\Models\Concerns\LogsActivity;
@@ -18,6 +19,8 @@ use Spatie\Activitylog\Support\LogOptions;
 class Category extends Model
 {
     use LogsActivity, SoftDeletes;
+
+    private const HEADER_CACHE_KEY = 'categories.header';
 
     private const ICON_PATHS = [
         'car' => 'img/category/car.png',
@@ -39,6 +42,15 @@ class Category extends Model
     protected $fillable = ['name', 'slug', 'description', 'icon', 'parent_id', 'level', 'sort_order', 'is_active'];
 
     protected $casts = ['is_active' => 'boolean'];
+
+    protected static function booted(): void
+    {
+        $forget = static fn (): bool => Cache::forget(self::HEADER_CACHE_KEY);
+
+        static::saved($forget);
+        static::deleted($forget);
+        static::restored($forget);
+    }
 
     public function getActivitylogOptions(): LogOptions
     {
@@ -137,7 +149,7 @@ class Category extends Model
 
     public static function headerNavigationItems(int $limit = 8): array
     {
-        return static::query()
+        return Cache::remember(self::HEADER_CACHE_KEY, 3600, static fn (): array => static::query()
             ->active()
             ->whereNull('parent_id')
             ->ordered()
@@ -148,7 +160,7 @@ class Category extends Model
                 'name' => (string) $category->name,
                 'icon_url' => $category->iconUrl(),
             ])
-            ->all();
+            ->all());
     }
 
     public static function activeAiCatalog(): Collection
@@ -279,88 +291,41 @@ class Category extends Model
 
     public function descendantAndSelfIds(): Collection
     {
-        $ids = collect([(int) $this->getKey()]);
-        $frontier = $ids;
+        $table = $this->getTable();
 
-        while ($frontier->isNotEmpty()) {
-            $children = static::query()
-                ->whereIn('parent_id', $frontier->all())
-                ->whereNotIn('id', $ids->all())
-                ->pluck('id')
-                ->map(fn (int|string $id): int => (int) $id)
-                ->values();
-
-            if ($children->isEmpty()) {
-                break;
-            }
-
-            $ids = $ids
-                ->merge($children)
-                ->unique()
-                ->values();
-
-            $frontier = $children;
-        }
-
-        return $ids;
+        return collect($this->getConnection()->select(
+            "WITH RECURSIVE tree AS (
+                SELECT id FROM {$table} WHERE id = ? AND deleted_at IS NULL
+                UNION
+                SELECT c.id FROM {$table} c JOIN tree t ON c.parent_id = t.id WHERE c.deleted_at IS NULL
+            ) SELECT id FROM tree",
+            [(int) $this->getKey()],
+        ))->map(static fn (object $row): int => (int) $row->id)->values();
     }
 
     public function breadcrumbTrail(): Collection
     {
-        $ancestorIds = $this->collectAncestorIds();
-
-        if ($ancestorIds === []) {
-            return collect([$this]);
-        }
-
-        $ancestors = static::query()
-            ->whereIn('id', $ancestorIds)
-            ->get()
-            ->keyBy('id');
-
-        $trail = collect();
-
-        foreach (array_reverse($ancestorIds) as $ancestorId) {
-            $ancestor = $ancestors->get($ancestorId);
-
-            if ($ancestor) {
-                $trail->push($ancestor);
-            }
-        }
-
-        return $trail->push($this);
-    }
-
-    private function collectAncestorIds(): array
-    {
-        $ids = [];
+        $trail = collect([$this]);
         $seen = [(int) $this->getKey() => true];
         $node = $this;
 
-        while ($node->parent_id !== null) {
-            $parentId = (int) $node->parent_id;
-            if (isset($seen[$parentId])) {
+        while ($node->parent_id !== null && ! isset($seen[(int) $node->parent_id])) {
+            $seen[(int) $node->parent_id] = true;
+            $node = $node->relationLoaded('parent') ? $node->parent : $node->parent()->first();
+
+            if (! $node instanceof self) {
                 break;
             }
-            $seen[$parentId] = true;
-            $node = $node->relationLoaded('parent') ? $node->parent : static::query()->find($parentId);
-            if ($node === null) {
-                break;
-            }
-            $ids[] = $parentId;
+
+            $trail->prepend($node);
         }
 
-        return $ids;
+        return $trail;
     }
 
     public function listingCustomFields(): HasMany
     {
         return $this->hasMany(ListingCustomField::class);
-    }
-
-    public function activeListings(): HasMany
-    {
-        return $this->hasMany(Listing::class)->where('status', 'active');
     }
 
     public function resolvedIconPath(): ?string

@@ -39,7 +39,7 @@ class ReviewController extends Controller
             abort_unless(ListingDirectory::sellerIdFor($listingId) === $seller, 422);
         }
 
-        if ($listingId !== null && Review::authorHasReviewed($authorId, $listingId)) {
+        if (Review::authorHasReviewed($authorId, $seller, $listingId)) {
             return back()->with('error', __('review::messages.already_reviewed'));
         }
 

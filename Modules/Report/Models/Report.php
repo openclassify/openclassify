@@ -100,27 +100,4 @@ class Report extends Model
             ->where('reporter_id', $reporterId)
             ->exists();
     }
-
-    public static function openCount(): int
-    {
-        return (int) static::query()->open()->count();
-    }
-
-    public function resolve(?string $note = null): void
-    {
-        $this->forceFill([
-            'status' => self::STATUS_RESOLVED,
-            'resolution_note' => $note,
-            'resolved_at' => now(),
-        ])->save();
-    }
-
-    public function dismiss(?string $note = null): void
-    {
-        $this->forceFill([
-            'status' => self::STATUS_DISMISSED,
-            'resolution_note' => $note,
-            'resolved_at' => now(),
-        ])->save();
-    }
 }

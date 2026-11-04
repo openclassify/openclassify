@@ -39,7 +39,7 @@ class OfferController extends Controller
             'offers' => $offers,
             'listings' => $listings,
             'people' => UserDirectory::resolve($counterpartIds),
-            'counts' => Offer::statusCountsForSeller($userId),
+            'counts' => $direction === 'received' ? Offer::statusCountsForSeller($userId) : [],
             'status' => $status,
             'direction' => $direction,
         ]);

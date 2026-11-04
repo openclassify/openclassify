@@ -35,5 +35,7 @@ return [
     'hint_expired' => 'Bu ilan yeniden yayınlanmayı bekliyor.',
     'hint_pending' => 'Moderasyon onayı bekleniyor.',
     'hint_live' => 'Şu anda ziyaretçilere görünür.',
-    'redirected_to_create' => 'İlan oluşturma ekranına yönlendirildiniz.',
+    'no_expiry' => 'Süre sınırı yok',
+    'days_left' => '{0} Bugün bitiyor|[1,*] :count gün kaldı',
+    'expired_days_ago' => '[1,*] :count gün önce sona erdi',
 ];

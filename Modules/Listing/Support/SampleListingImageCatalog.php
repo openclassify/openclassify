@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Listing\Support;
 
 use Illuminate\Support\Collection;
-use Modules\Category\Models\Category;
 
 final class SampleListingImageCatalog
 {
@@ -193,21 +192,6 @@ final class SampleListingImageCatalog
             ->values();
     }
 
-    public static function pathFor(Category $category, int $seed): ?string
-    {
-        $paths = self::uniquePaths();
-
-        if ($paths->isEmpty()) {
-            return null;
-        }
-
-        if ($seed < 0 || $seed >= $paths->count()) {
-            return null;
-        }
-
-        return $paths->get($seed);
-    }
-
     public static function fileNameFor(string $absolutePath, string $slug): string
     {
         $extension = strtolower((string) pathinfo($absolutePath, PATHINFO_EXTENSION));
@@ -217,16 +201,6 @@ final class SampleListingImageCatalog
             : '';
 
         return $slug.$hashSuffix.($extension !== '' ? '.'.$extension : '');
-    }
-
-    private static function resolvePathsForSlug(string $slug): Collection
-    {
-        $fileNames = self::CATEGORY_IMAGES[$slug] ?? self::FAMILY_IMAGES[$slug] ?? [];
-
-        return collect($fileNames)
-            ->map(fn (string $fileName): string => public_path(self::DIRECTORY.'/'.$fileName))
-            ->filter(fn (string $path): bool => self::isAllowed($path))
-            ->values();
     }
 
     private static function allPaths(): Collection

@@ -14,7 +14,7 @@
     <div class="listing-card__media">
         <a href="{{ route('listings.show', $listing) }}" aria-label="{{ $listing->getAttribute('title') }}">
             @if($image)
-                <img src="{{ $image }}" alt="{{ $listing->getAttribute('title') }}" loading="lazy" decoding="async">
+                <img src="{{ $image }}" alt="{{ $listing->getAttribute('title') }}" width="1080" height="810" loading="lazy" decoding="async">
             @else
                 <span class="listing-card__placeholder"><x-ui.icon name="image"/></span>
             @endif

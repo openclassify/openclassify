@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Conversation\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -220,24 +219,6 @@ class ConversationController extends Controller
             'selectedConversation' => $selectedConversation,
             'markedRead' => $markedRead,
         ];
-    }
-
-    private function renderInboxList(Collection $conversations, string $messageFilter, ?Conversation $selectedConversation): string
-    {
-        return view('conversation::partials.inbox-list-pane', [
-            'conversations' => $conversations,
-            'messageFilter' => $messageFilter,
-            'selectedConversation' => $selectedConversation,
-        ])->render();
-    }
-
-    private function renderInboxThread(?Conversation $selectedConversation, string $messageFilter): string
-    {
-        return view('conversation::partials.inbox-thread-pane', [
-            'selectedConversation' => $selectedConversation,
-            'messageFilter' => $messageFilter,
-            'quickMessages' => QuickMessageCatalog::all(),
-        ])->render();
     }
 
     private function broadcastMessageCreated(

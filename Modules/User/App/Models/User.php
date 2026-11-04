@@ -25,7 +25,6 @@ use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Conversation\App\Models\Conversation;
-use Modules\Conversation\App\Models\ConversationMessage;
 use Modules\Favorite\App\Models\FavoriteListing;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Favorite\App\Models\FavoriteSeller;
@@ -146,21 +145,6 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     public function favoriteSearches(): HasMany
     {
         return $this->hasMany(FavoriteSearch::class);
-    }
-
-    public function buyerConversations(): HasMany
-    {
-        return $this->hasMany(Conversation::class, 'buyer_id');
-    }
-
-    public function sellerConversations(): HasMany
-    {
-        return $this->hasMany(Conversation::class, 'seller_id');
-    }
-
-    public function sentConversationMessages(): HasMany
-    {
-        return $this->hasMany(ConversationMessage::class, 'sender_id');
     }
 
     public function canImpersonate(): bool
@@ -291,11 +275,6 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     public function favoriteListingIds(): array
     {
         return FavoriteListing::idsForUser((int) $this->getKey());
-    }
-
-    public function homeFavoriteListingIds(): array
-    {
-        return $this->favoriteListingIds();
     }
 
     public function favoriteListingsPage(string $statusFilter = 'all', ?int $categoryId = null, int $perPage = 10): LengthAwarePaginator

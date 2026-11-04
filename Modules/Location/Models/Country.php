@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Cache;
 use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
 
 class Country extends Model
 {
     use LogsActivity, SoftDeletes;
+
+    private const HEADER_CACHE_KEY = 'countries.header';
 
     protected $fillable = ['name', 'code', 'phone_code', 'flag', 'is_active'];
 
@@ -22,6 +25,15 @@ class Country extends Model
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true);
+    }
+
+    protected static function booted(): void
+    {
+        $forget = static fn (): bool => Cache::forget(self::HEADER_CACHE_KEY);
+
+        static::saved($forget);
+        static::deleted($forget);
+        static::restored($forget);
     }
 
     public function getActivitylogOptions(): LogOptions
@@ -79,7 +91,7 @@ class Country extends Model
 
     public static function headerLocationOptions(): array
     {
-        return static::query()
+        return Cache::remember(self::HEADER_CACHE_KEY, 3600, static fn (): array => static::query()
             ->active()
             ->orderBy('name')
             ->get(['id', 'name', 'code'])
@@ -88,7 +100,7 @@ class Country extends Model
                 'name' => (string) $country->name,
                 'code' => strtoupper((string) $country->code),
             ])
-            ->all();
+            ->all());
     }
 
     public static function resolveLookup(string $value): ?self

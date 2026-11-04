@@ -7,7 +7,6 @@ namespace Modules\Listing\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
 use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Favorite\App\Models\FavoriteSearch;
@@ -27,35 +26,16 @@ class ListingController extends Controller
     public function index(): View
     {
         $search = trim((string) request('search', ''));
-
-        $categoryId = request()->integer('category');
-        $categoryId = $categoryId > 0 ? $categoryId : null;
-
-        $countryId = request()->integer('country');
-        $countryId = $countryId > 0 ? $countryId : null;
-
-        $cityId = request()->integer('city');
-        $cityId = $cityId > 0 ? $cityId : null;
-
-        $sellerUserId = request()->integer('user');
-        $sellerUserId = $sellerUserId > 0 ? $sellerUserId : null;
-
+        $categoryId = $this->positiveInteger('category');
+        $countryId = $this->positiveInteger('country');
+        $cityId = $this->positiveInteger('city');
+        $sellerUserId = $this->positiveInteger('user');
         $minPriceInput = trim((string) request('min_price', ''));
         $maxPriceInput = trim((string) request('max_price', ''));
         $minPrice = is_numeric($minPriceInput) ? max((float) $minPriceInput, 0) : null;
         $maxPrice = is_numeric($maxPriceInput) ? max((float) $maxPriceInput, 0) : null;
-
-        $dateFilter = (string) request('date_filter', 'all');
-        $allowedDateFilters = ['all', 'today', 'week', 'month'];
-        if (! in_array($dateFilter, $allowedDateFilters, true)) {
-            $dateFilter = 'all';
-        }
-
-        $sort = (string) request('sort', 'smart');
-        $allowedSorts = ['smart', 'newest', 'oldest', 'price_asc', 'price_desc'];
-        if (! in_array($sort, $allowedSorts, true)) {
-            $sort = 'smart';
-        }
+        $dateFilter = $this->oneOf('date_filter', ['all', 'today', 'week', 'month']);
+        $sort = $this->oneOf('sort', ['smart', 'newest', 'oldest', 'price_asc', 'price_desc']);
 
         $locationSelection = Country::browseSelection($countryId, $cityId);
         $countryId = $locationSelection['country_id'];
@@ -127,6 +107,8 @@ class ListingController extends Controller
 
     public function show(Listing $listing): View
     {
+        abort_unless($listing->isVisibleTo(auth()->user()), 404);
+
         $listing->trackViewBy(auth()->id());
 
         $listing->loadDetail();
@@ -192,26 +174,20 @@ class ListingController extends Controller
     {
         abort_unless($listing->canRevealContactTo(auth()->user()), 403);
 
-        return response()->json($listing->contactDetailsFor(auth()->user()));
+        return response()->json($listing->contactDetails());
     }
 
-    public function create(): RedirectResponse
+    private function positiveInteger(string $key): ?int
     {
-        if (! auth()->check()) {
-            return redirect()->route('login');
-        }
+        $value = request()->integer($key);
 
-        return redirect()->route('panel.listings.create');
+        return $value > 0 ? $value : null;
     }
 
-    public function store(): RedirectResponse
+    private function oneOf(string $key, array $allowed): string
     {
-        if (! auth()->check()) {
-            return redirect()->route('login');
-        }
+        $value = (string) request($key, $allowed[0]);
 
-        return redirect()
-            ->route('panel.listings.create')
-            ->with('success', __('listing::messages.redirected_to_create'));
+        return in_array($value, $allowed, true) ? $value : $allowed[0];
     }
 }

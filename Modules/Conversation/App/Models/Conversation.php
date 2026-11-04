@@ -105,30 +105,17 @@ class Conversation extends Model
 
     public static function resolveSelected(EloquentCollection $conversations, ?int $conversationId): ?self
     {
-        $selectedConversationId = $conversationId;
+        $selected = ($conversationId ?? 0) > 0
+            ? $conversations->firstWhere('id', $conversationId)
+            : $conversations->first();
 
-        if (($selectedConversationId ?? 0) <= 0 && $conversations->isNotEmpty()) {
-            $selectedConversationId = (int) $conversations->first()->getKey();
-        }
-
-        if (($selectedConversationId ?? 0) <= 0) {
-            return null;
-        }
-
-        $selected = $conversations->firstWhere('id', $selectedConversationId);
-
-        if (! $selected instanceof self) {
-            return null;
-        }
-
-        return $selected;
+        return $selected instanceof self ? $selected : null;
     }
 
     public function loadThread(): void
     {
+        $this->loadMissing(['listing:id,title,price,currency,user_id,images', 'listing.media']);
         $this->load([
-            'listing:id,title,price,currency,user_id,images',
-            'listing.media',
             'messages' => fn (HasMany $query): HasMany => $query->with('sender:id,name')->ordered(),
         ]);
     }
@@ -283,27 +270,12 @@ class Conversation extends Model
         return $conversation;
     }
 
-    public static function buyerListingConversationId(int $listingId, int $buyerId): ?int
-    {
-        $value = static::query()
-            ->where('listing_id', $listingId)
-            ->where('buyer_id', $buyerId)
-            ->value('id');
-
-        return is_null($value) ? null : (int) $value;
-    }
-
     public static function detailForBuyerListing(int $listingId, int $buyerId): ?self
     {
-        $conversationId = static::buyerListingConversationId($listingId, $buyerId);
-
-        if (! $conversationId) {
-            return null;
-        }
-
         $conversation = static::query()
-            ->forUser($buyerId)
-            ->find($conversationId);
+            ->where('listing_id', $listingId)
+            ->where('buyer_id', $buyerId)
+            ->first();
 
         if (! $conversation) {
             return null;

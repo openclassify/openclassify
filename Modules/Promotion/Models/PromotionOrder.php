@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Promotion\Models;
 
+use App\Support\ListingDirectory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -75,24 +76,9 @@ class PromotionOrder extends Model
         ]);
 
         $order->save();
+        ListingDirectory::setFeatured([$listingId], true);
 
         return $order;
-    }
-
-    public static function activeListingIds(): array
-    {
-        return static::query()
-            ->active()
-            ->pluck('listing_id')
-            ->map(static fn (mixed $value): int => (int) $value)
-            ->unique()
-            ->values()
-            ->all();
-    }
-
-    public static function activeForListing(int $listingId): ?self
-    {
-        return static::query()->forListing($listingId)->active()->latest('id')->first();
     }
 
     public static function paginateForUser(int $userId, int $perPage = 12): LengthAwarePaginator
@@ -109,13 +95,24 @@ class PromotionOrder extends Model
         return (int) static::query()->forUser($userId)->active()->count();
     }
 
-    public static function expireOutdated(): int
+    public static function expireOutdated(): void
     {
-        return static::query()
+        $outdated = static::query()
             ->where('status', self::STATUS_ACTIVE)
             ->whereNotNull('ends_at')
-            ->where('ends_at', '<', now())
-            ->update(['status' => self::STATUS_EXPIRED]);
+            ->where('ends_at', '<', now());
+        $listingIds = (clone $outdated)->distinct()->pluck('listing_id')->map(static fn (mixed $id): int => (int) $id)->all();
+
+        if ($listingIds === []) {
+            return;
+        }
+
+        $outdated->update(['status' => self::STATUS_EXPIRED]);
+
+        $stillPromoted = static::query()->active()->whereIn('listing_id', $listingIds)
+            ->pluck('listing_id')->map(static fn (mixed $id): int => (int) $id)->all();
+
+        ListingDirectory::setFeatured(array_values(array_diff($listingIds, $stillPromoted)), false);
     }
 
     public function listingId(): int

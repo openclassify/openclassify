@@ -5,6 +5,8 @@
 @php
     $statusTabs = [
         'all' => __('panel::messages.all'),
+        'active' => __('panel::messages.active'),
+        'pending' => __('panel::messages.pending'),
         'sold' => __('panel::messages.sold'),
         'expired' => __('panel::messages.expired'),
     ];
